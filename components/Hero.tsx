@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useRef, useCallback } from "react";
 import dynamic from "next/dynamic";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { BackgroundPaths } from "@/components/ui/background-paths";
@@ -15,72 +15,13 @@ const GlobePulse = dynamic(
   { ssr: false, loading: () => null }
 );
 
-/* ---------- Typewriter Hook ---------- */
-
-const TYPEWRITER_PHRASES = [
-  "inteligencia artificial",
-  "automatizaciones IA",
-  "apps del futuro",
-];
-
-/**
- * Typewriter hook.
- *
- * The animation starts DELAYED (3.5 s) and only runs when the browser
- * is idle so it does NOT contribute to the Speed Index measurement
- * window (0–3 s after page load). Speed Index treats every visual
- * change as "progress" and a constantly-typing subtitle was inflating
- * the score from ~1.4 s to ~2.9 s.
- */
-function useTypewriter() {
-  const [text, setText] = useState("");
-  const [started, setStarted] = useState(false);
-  const [phraseIndex, setPhraseIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  // Kick off the animation only after Speed Index has stopped measuring.
-  useEffect(() => {
-    const kickoff = setTimeout(() => setStarted(true), 3500);
-    return () => clearTimeout(kickoff);
-  }, []);
-
-  useEffect(() => {
-    if (!started) return;
-    const currentPhrase = TYPEWRITER_PHRASES[phraseIndex];
-    const timeout = setTimeout(
-      () => {
-        if (!isDeleting) {
-          setText(currentPhrase.slice(0, charIndex + 1));
-          setCharIndex((prev) => prev + 1);
-          if (charIndex + 1 === currentPhrase.length) {
-            setTimeout(() => setIsDeleting(true), 2200);
-          }
-        } else {
-          setText(currentPhrase.slice(0, charIndex - 1));
-          setCharIndex((prev) => prev - 1);
-          if (charIndex - 1 === 0) {
-            setIsDeleting(false);
-            setPhraseIndex((prev) => (prev + 1) % TYPEWRITER_PHRASES.length);
-          }
-        }
-      },
-      isDeleting ? 35 : 75
-    );
-    return () => clearTimeout(timeout);
-  }, [started, charIndex, isDeleting, phraseIndex]);
-
-  return text;
-}
-
 /* ----------------------------------------------------------------------
- * Previously this component animated the headline letter-by-letter.
- * That caused two problems on mobile:
- *   - LCP was delayed ~1s waiting for the stagger to finish.
- *   - Each letter wrapped in its own <motion.span> caused layout work.
- * Now we render the text statically so it paints on first frame
- * (huge LCP win). The visual delight is preserved via a single cheap
- * word-level fade further down.
+ * Every animation in this component was removed or made static. The
+ * Hero is now rendered in a single paint; no client-side timers, no
+ * framer-motion, no continuous keyframes on the visible viewport.
+ * This yields green Speed Index / LCP on throttled mobile (the
+ * typewriter, letter stagger and continuous orb/path fades were
+ * previously inflating the score).
  * -------------------------------------------------------------------- */
 
 /* ---------- Stats ---------- */
@@ -97,7 +38,6 @@ const stats = [
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
   const spotlightRef = useRef<HTMLDivElement>(null);
-  const typedText = useTypewriter();
 
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     if (spotlightRef.current) {
@@ -122,32 +62,15 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* Background orbs — animation delayed 4 s so they stay static during
-          the Speed Index measurement window (0–3 s). Each orb is huge
-          (500×500 px with 130 px blur) so any movement counted as visual
-          progress and was inflating the Speed Index score. */}
+      {/* Background orbs — STATIC gradients (no animation at all).
+          The floating animation inflated the Speed Index on mobile
+          because Lighthouse's throttled measurement window extends
+          past 4 s, and each orb is huge (500×500 px with heavy blur)
+          so any sub-pixel movement counted as significant visual change. */}
       <div className="pointer-events-none absolute inset-0 z-[1]" aria-hidden="true">
-        <div
-          className="absolute left-[8%] top-[18%] h-[500px] w-[500px] rounded-full bg-cyan-core/6 blur-[130px]"
-          style={{
-            animation: "float-orb 12s ease-in-out 4s infinite",
-            willChange: "transform",
-          }}
-        />
-        <div
-          className="absolute right-[8%] top-[8%] h-[450px] w-[450px] rounded-full bg-violet-core/6 blur-[130px]"
-          style={{
-            animation: "float-orb 15s ease-in-out 4s infinite reverse",
-            willChange: "transform",
-          }}
-        />
-        <div
-          className="absolute bottom-[15%] left-[38%] h-[350px] w-[350px] rounded-full bg-electric-blue/4 blur-[100px]"
-          style={{
-            animation: "float-orb 18s ease-in-out 4s infinite",
-            willChange: "transform",
-          }}
-        />
+        <div className="absolute left-[8%] top-[18%] h-[500px] w-[500px] rounded-full bg-cyan-core/6 blur-[130px]" />
+        <div className="absolute right-[8%] top-[8%] h-[450px] w-[450px] rounded-full bg-violet-core/6 blur-[130px]" />
+        <div className="absolute bottom-[15%] left-[38%] h-[350px] w-[350px] rounded-full bg-electric-blue/4 blur-[100px]" />
       </div>
 
       {/* Grid overlay */}
@@ -172,11 +95,11 @@ export default function Hero() {
                 meaningfully impact Speed Index. */}
             <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-border bg-surface/60 px-5 py-2.5 text-sm backdrop-blur-md">
               <span className="relative flex h-2.5 w-2.5">
-                {/* animate-ping delayed 4s so the pulsing dot doesn't count
-                    as "visual progress" during Speed Index measurement. */}
+                {/* Static green dot with a halo glow — no animation.
+                    Visually reads as "online/available" without costing SI. */}
                 <span
-                  className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
-                  style={{ animation: "ping 1s cubic-bezier(0,0,0.2,1) 4s infinite" }}
+                  className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-40"
+                  style={{ filter: "blur(3px)" }}
                 />
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500" />
               </span>
@@ -195,19 +118,12 @@ export default function Hero() {
               <span className="block text-text-primary mt-1">para empresas.</span>
             </h1>
 
-            {/* Rotating decorative subtitle — not an H1, purely visual.
-                The typewriter has reserved width so it doesn't cause layout shifts. */}
-            <p
-              aria-live="polite"
-              className="mt-4 font-code text-sm uppercase tracking-[0.2em] text-cyan-light/80 min-h-[1.5em]"
-              style={{ minWidth: "14ch" }}
-            >
+            {/* Static decorative subtitle — previous typewriter ran
+                continuously from t=3.5s which still fell inside the
+                mobile Speed Index window under Lighthouse throttling. */}
+            <p className="mt-4 font-code text-sm uppercase tracking-[0.2em] text-cyan-light/80">
               <span className="text-text-muted mr-2">{">"}</span>
-              {typedText || "Neurovia Systems"}
-              <span
-                className="ml-0.5 inline-block w-[2px] align-middle animate-pulse bg-cyan-core"
-                style={{ height: "0.85em" }}
-              />
+              Neurovia Systems · IA · Software · Automatización
             </p>
 
             {/* Subheadline — SEO-friendly paragraph with industry keywords */}
@@ -277,14 +193,14 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator — CSS-only opacity fade via animation-delay,
-          no framer-motion subscription needed. */}
+      {/* Scroll indicator — static, no animation. The bounce previously
+          ran continuously from t=0 which counted as visual progress in
+          the Speed Index measurement window. */}
       <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0"
-        style={{ animation: "fade-in 0.4s ease-out 2s forwards" }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
         aria-hidden="true"
       >
-        <ChevronDown size={24} className="animate-scroll-indicator text-text-muted" />
+        <ChevronDown size={24} className="text-text-muted opacity-70" />
       </div>
     </section>
   );
