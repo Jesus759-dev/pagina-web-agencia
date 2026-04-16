@@ -178,6 +178,13 @@ code, pre {
   to { transform: rotate(1turn); }
 }
 
+/* Simple CSS-only fade-in used for the Hero scroll indicator and other
+   decorative elements — cheaper than booting up framer-motion. */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 /* Navbar active link indicator */
 .nav-indicator {
   transition: left 0.3s cubic-bezier(0.23, 1, 0.32, 1),

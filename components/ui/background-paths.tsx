@@ -38,7 +38,10 @@ function FloatingPaths({ position, color }: { position: number; color: "cyan" | 
             strokeWidth={path.width}
             style={{
               opacity: path.baseOpacity,
-              animation: `path-fade ${path.duration}s ${path.delay}s ease-in-out infinite alternate`,
+              // + 4 s delay so animation starts AFTER the Speed Index window.
+              // Each path's visual change during 0–3 s was counted as progress
+              // even though the effect is subtle (0.04 → 0.18 opacity).
+              animation: `path-fade ${path.duration}s ${4 + path.delay}s ease-in-out infinite alternate`,
             }}
           />
         ))}
