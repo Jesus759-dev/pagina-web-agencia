@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import CustomCursor from "@/components/CustomCursor";
-import ScrollProgress from "@/components/ScrollProgress";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import DeferredChrome from "@/components/DeferredChrome";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -330,10 +328,10 @@ export default function RootLayout({
             </p>
           </div>
         </noscript>
-        <CustomCursor />
-        <ScrollProgress />
-        <WhatsAppButton />
         {children}
+        {/* Decorative chrome is lazy-loaded after hydration so it never
+            blocks Largest Contentful Paint or First Contentful Paint. */}
+        <DeferredChrome />
       </body>
     </html>
   );

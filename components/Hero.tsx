@@ -1,10 +1,20 @@
 "use client";
 
 import { useEffect, useState, useRef, useCallback } from "react";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { BackgroundPaths } from "@/components/ui/background-paths";
-import { GlobePulse } from "@/components/ui/cobe-globe-pulse";
+
+/**
+ * The cobe globe is a desktop-only decoration that weighs ~30 KB
+ * and runs WebGL. We lazy-load it so the Hero's LCP and Speed Index
+ * are not delayed by the 3D work.
+ */
+const GlobePulse = dynamic(
+  () => import("@/components/ui/cobe-globe-pulse").then((m) => m.GlobePulse),
+  { ssr: false, loading: () => null }
+);
 
 /* ---------- Typewriter Hook ---------- */
 
