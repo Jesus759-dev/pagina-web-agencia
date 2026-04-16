@@ -1,26 +1,232 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-void: #020408;
+  --color-deep-space: #080D14;
+  --color-surface: #0D1520;
+  --color-elevated: #111C2D;
+  --color-border: #1A2840;
+  --color-cyan-core: #00C8E8;
+  --color-cyan-light: #22D3EE;
+  --color-violet-core: #7C3AED;
+  --color-violet-light: #B197FC;
+  --color-electric-blue: #2563EB;
+  --color-amber-core: #F59E0B;
+  --color-amber-dark: #D97706;
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #CBD5E1;
+  --color-text-muted: #A8B8CC;
+
+  --font-heading: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+  --font-code: var(--font-jetbrains-mono);
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 35s linear infinite;
+  --animate-float: particle-float 6s ease-in-out infinite;
+  --animate-glow-pulse: glow-pulse 3s ease-in-out infinite;
+  --animate-gradient-shift: gradient-shift 8s ease infinite;
+  --animate-scroll-indicator: scroll-indicator 2s ease-in-out infinite;
+  --animate-float-orb: float-orb 8s ease-in-out infinite;
+  --animate-shimmer: shimmer 2s ease-in-out infinite;
+  --animate-border-rotate: border-rotate 3s linear infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes particle-float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-20px) translateX(10px); }
+  50% { transform: translateY(-10px) translateX(-5px); }
+  75% { transform: translateY(-30px) translateX(15px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes scroll-indicator {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(12px); opacity: 0.3; }
+}
+
+/* Floating animation for orbs */
+@keyframes float-orb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -30px) scale(1.05); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+/* Shine/shimmer animation */
+@keyframes shimmer {
+  0% { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(200%) skewX(-15deg); }
+}
+
+/* prefers-reduced-motion: disable non-essential animations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(ellipse 900px 700px at 15% 40%, rgba(0, 200, 232, 0.07) 0%, transparent 65%),
+    radial-gradient(ellipse 700px 900px at 85% 15%, rgba(124, 58, 237, 0.09) 0%, transparent 65%),
+    radial-gradient(ellipse 500px 500px at 50% 95%, rgba(37, 99, 235, 0.05) 0%, transparent 70%),
+    #020408;
+  color: #F8FAFC;
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+/* Noise texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+}
+
+code, pre {
+  font-family: var(--font-code), monospace;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #22D3EE 0%, #60A5FA 40%, #B197FC 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-cta {
+  background: linear-gradient(135deg, #00C8E8 0%, #2563EB 35%, #7C3AED 100%);
+}
+
+.cta-amber {
+  background: #F59E0B;
+  color: #020408;
+  font-weight: 600;
+}
+
+.cta-amber:hover {
+  background: #D97706;
+}
+
+.gradient-border {
+  border-image: linear-gradient(135deg, #06B6D4, #8B5CF6) 1;
+}
+
+.glassmorphism {
+  background: rgba(13, 21, 32, 0.8);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.card-glow:hover {
+  box-shadow: 0 0 30px rgba(0, 200, 232, 0.18), 0 0 60px rgba(124, 58, 237, 0.12);
+}
+
+/* Animated gradient border wrapper — uses transform:rotate() for GPU compositing */
+.animated-border-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.animated-border-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -60%;
+  background: conic-gradient(
+    from 0deg,
+    #00C8E8,
+    #7C3AED,
+    #2563EB,
+    #00C8E8
+  );
+  animation: border-spin 3s linear infinite;
+}
+
+@keyframes border-spin {
+  to { transform: rotate(1turn); }
+}
+
+/* Navbar active link indicator */
+.nav-indicator {
+  transition: left 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+              width 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+::selection {
+  background: rgba(0, 200, 232, 0.3);
+  color: #F8FAFC;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020408;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E2D42;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #06B6D4;
+}
+
+/* --------------------------------------------------------------------------
+ * Performance: skip rendering work for sections that are far off-screen.
+ * The browser can short-circuit layout/paint for elements marked with
+ * `content-visibility: auto`, using the `contain-intrinsic-size` hint to
+ * reserve layout space. Huge win on long pages with many animated sections.
+ * We leave the first 3 sections (Hero, TechStack, VideoShowcase) untouched
+ * so the visible part of the page renders without any jank.
+ * -------------------------------------------------------------------------- */
+main > section:nth-child(n + 4) {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px;
+}
+
+/* Respect users who have enabled reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
