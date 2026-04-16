@@ -79,8 +79,6 @@ export default function Hero() {
     }
   }, []);
 
-  const headlineWords = ["Tu", "negocio,", "potenciado"];
-
   return (
     <section
       ref={heroRef}
@@ -136,37 +134,44 @@ export default function Hero() {
               <span className="text-text-secondary tracking-wide">Disponible para nuevos proyectos</span>
             </motion.div>
 
-            {/* Headline — static paint for fast LCP, reserved height on the
-                typewriter line so it doesn't reflow as characters appear. */}
+            {/* Headline — semantic, SEO-friendly H1 that makes sense
+                on its own (without depending on the typewriter animation).
+                Google and screen readers read the complete sentence
+                immediately on first paint, which is critical for LCP and SEO. */}
             <h1 className="font-heading text-4xl font-light leading-[1.15] tracking-tight sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl">
-              <span className="block text-text-primary">
-                {headlineWords.join(" ")}
+              <span className="block text-text-primary">Desarrollo de software con</span>
+              <span className="block font-bold gradient-text mt-1">
+                inteligencia artificial
               </span>
-
-              <span
-                className="block font-bold gradient-text mt-1 min-h-[1.15em]"
-                style={{ minWidth: "14ch" }}
-              >
-                {typedText || "\u00A0"}
-                <span
-                  className="ml-0.5 inline-block w-[3px] align-middle animate-pulse bg-cyan-core"
-                  style={{ height: "0.85em" }}
-                />
-              </span>
-
-              <span className="block text-text-primary mt-1">real.</span>
+              <span className="block text-text-primary mt-1">para empresas.</span>
             </h1>
 
-            {/* Subheadline */}
+            {/* Rotating decorative subtitle — not an H1, purely visual.
+                The typewriter has reserved width so it doesn't cause layout shifts. */}
+            <p
+              aria-live="polite"
+              className="mt-4 font-code text-sm uppercase tracking-[0.2em] text-cyan-light/80 min-h-[1.5em]"
+              style={{ minWidth: "14ch" }}
+            >
+              <span className="text-text-muted mr-2">{">"}</span>
+              {typedText || "Neurovia Systems"}
+              <span
+                className="ml-0.5 inline-block w-[2px] align-middle animate-pulse bg-cyan-core"
+                style={{ height: "0.85em" }}
+              />
+            </p>
+
+            {/* Subheadline — SEO-friendly paragraph with industry keywords */}
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.15 }}
               className="mt-6 max-w-xl text-lg leading-relaxed text-text-secondary sm:text-xl lg:mx-0"
             >
-              Aplicaciones con IA, sitios web y automatizaciones para empresas que
-              quieren resultados reales.{" "}
-              <span className="text-text-primary font-medium">Entregas rápidas.</span>
+              <strong className="text-text-primary">Neurovia Systems</strong> construye
+              plataformas web, dashboards corporativos, automatizaciones empresariales
+              e infraestructura IT para empresas que quieren crecer.{" "}
+              <span className="text-text-primary font-medium">Entregas rápidas, resultados medibles.</span>
             </motion.p>
 
             {/* CTAs */}
