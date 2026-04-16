@@ -14,13 +14,9 @@ const nextConfig: NextConfig = {
      */
     optimizePackageImports: ["framer-motion", "lucide-react"],
 
-    /**
-     * Inline Tailwind's atomic CSS directly into the HTML `<head>`.
-     * Eliminates the render-blocking `<link rel="stylesheet">` request so
-     * the browser can paint the Hero on the very first byte. First-time
-     * visitors benefit most — which is exactly our SEO / new-user case.
-     */
-    inlineCss: true,
+    // inlineCss: EVITAR — probado en prod y empeoró el Speed Index (1.4s → 2.9s)
+    // porque el HTML pesó 390 KB en vez de 157 KB. Parsear ese HTML inline en
+    // móvil toma más que descargar la CSS externa cacheada en paralelo.
   },
 
   images: {

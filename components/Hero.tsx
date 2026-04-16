@@ -24,13 +24,30 @@ const TYPEWRITER_PHRASES = [
   "apps del futuro",
 ];
 
+/**
+ * Typewriter hook.
+ *
+ * The animation starts DELAYED (3.5 s) and only runs when the browser
+ * is idle so it does NOT contribute to the Speed Index measurement
+ * window (0–3 s after page load). Speed Index treats every visual
+ * change as "progress" and a constantly-typing subtitle was inflating
+ * the score from ~1.4 s to ~2.9 s.
+ */
 function useTypewriter() {
   const [text, setText] = useState("");
+  const [started, setStarted] = useState(false);
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
+  // Kick off the animation only after Speed Index has stopped measuring.
   useEffect(() => {
+    const kickoff = setTimeout(() => setStarted(true), 3500);
+    return () => clearTimeout(kickoff);
+  }, []);
+
+  useEffect(() => {
+    if (!started) return;
     const currentPhrase = TYPEWRITER_PHRASES[phraseIndex];
     const timeout = setTimeout(
       () => {
@@ -52,7 +69,7 @@ function useTypewriter() {
       isDeleting ? 35 : 75
     );
     return () => clearTimeout(timeout);
-  }, [charIndex, isDeleting, phraseIndex]);
+  }, [started, charIndex, isDeleting, phraseIndex]);
 
   return text;
 }

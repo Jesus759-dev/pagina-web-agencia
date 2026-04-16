@@ -1,17 +1,15 @@
 "use client";
 
 /**
- * Defers the decorative UI chrome (custom cursor, scroll progress bar,
- * WhatsApp floating button) so they don't block First Contentful Paint
- * or Largest Contentful Paint.
+ * Defers ONLY the fully optional decorations:
+ *   - CustomCursor (desktop-only, cosmetic, heavy mouse tracking)
  *
- * These three components are purely visual — the page is fully usable
- * without them — so we pay zero initial JS cost for them on first load.
+ * WhatsAppButton and ScrollProgress render eagerly alongside the Hero
+ * in the layout because they occupy real estate above the fold and
+ * deferring them caused "pop-in" that hurt the Speed Index metric.
  *
- * `ssr: false` is critical: it prevents the server from emitting the
- * markup (and therefore the initial JS reference) for these widgets.
- * The browser downloads and mounts them only after the main thread
- * is idle.
+ * The WhatsApp floating button is also part of the call-to-action UX,
+ * so it needs to be visible from the very first paint.
  */
 
 import dynamic from "next/dynamic";
@@ -19,19 +17,7 @@ import dynamic from "next/dynamic";
 const CustomCursor = dynamic(() => import("@/components/CustomCursor"), {
   ssr: false,
 });
-const ScrollProgress = dynamic(() => import("@/components/ScrollProgress"), {
-  ssr: false,
-});
-const WhatsAppButton = dynamic(() => import("@/components/WhatsAppButton"), {
-  ssr: false,
-});
 
 export default function DeferredChrome() {
-  return (
-    <>
-      <CustomCursor />
-      <ScrollProgress />
-      <WhatsAppButton />
-    </>
-  );
+  return <CustomCursor />;
 }
