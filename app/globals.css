@@ -214,10 +214,14 @@ code, pre {
  * We leave the first 3 sections (Hero, TechStack, VideoShowcase) untouched
  * so the visible part of the page renders without any jank.
  * -------------------------------------------------------------------------- */
-main > section:nth-child(n + 4) {
-  content-visibility: auto;
-  /* Reserve ~900px of vertical space while the section is off-screen; width follows container. */
-  contain-intrinsic-size: auto 900px;
+/* Apply content-visibility only on desktop where section heights are more
+   predictable. On mobile the dynamic heights caused ~0.1 CLS shifts when
+   sections entered the viewport with the wrong intrinsic size. */
+@media (min-width: 1024px) {
+  main > section:nth-child(n + 5) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 1100px;
+  }
 }
 
 /* Respect users who have enabled reduced motion */

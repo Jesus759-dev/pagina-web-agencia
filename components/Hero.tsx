@@ -47,30 +47,15 @@ function useTypewriter() {
   return text;
 }
 
-/* ---------- Animated Word ---------- */
-
-function AnimatedWord({ word, wordIndex }: { word: string; wordIndex: number }) {
-  return (
-    <span className="inline-block mr-[0.25em] last:mr-0">
-      {word.split("").map((letter, letterIndex) => (
-        <motion.span
-          key={`${wordIndex}-${letterIndex}`}
-          initial={{ y: 60, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{
-            delay: 0.3 + wordIndex * 0.12 + letterIndex * 0.03,
-            type: "spring",
-            stiffness: 160,
-            damping: 22,
-          }}
-          className="inline-block"
-        >
-          {letter}
-        </motion.span>
-      ))}
-    </span>
-  );
-}
+/* ----------------------------------------------------------------------
+ * Previously this component animated the headline letter-by-letter.
+ * That caused two problems on mobile:
+ *   - LCP was delayed ~1s waiting for the stagger to finish.
+ *   - Each letter wrapped in its own <motion.span> caused layout work.
+ * Now we render the text statically so it paints on first frame
+ * (huge LCP win). The visual delight is preserved via a single cheap
+ * word-level fade further down.
+ * -------------------------------------------------------------------- */
 
 /* ---------- Stats ---------- */
 
@@ -137,11 +122,11 @@ export default function Hero() {
 
           {/* LEFT — text content */}
           <div className="flex-1 text-center lg:text-left">
-            {/* Badge */}
+            {/* Badge — opacity-only entrance to avoid CLS */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
               className="mb-8 inline-flex items-center gap-3 rounded-full border border-border bg-surface/60 px-5 py-2.5 text-sm backdrop-blur-md"
             >
               <span className="relative flex h-2.5 w-2.5">
@@ -151,42 +136,32 @@ export default function Hero() {
               <span className="text-text-secondary tracking-wide">Disponible para nuevos proyectos</span>
             </motion.div>
 
-            {/* Headline */}
+            {/* Headline — static paint for fast LCP, reserved height on the
+                typewriter line so it doesn't reflow as characters appear. */}
             <h1 className="font-heading text-4xl font-light leading-[1.15] tracking-tight sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl">
               <span className="block text-text-primary">
-                {headlineWords.map((word, wi) => (
-                  <AnimatedWord key={word} word={word} wordIndex={wi} />
-                ))}
+                {headlineWords.join(" ")}
               </span>
 
-              <motion.span
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.8, duration: 0.5 }}
-                className="block font-bold gradient-text mt-1"
+              <span
+                className="block font-bold gradient-text mt-1 min-h-[1.15em]"
+                style={{ minWidth: "14ch" }}
               >
                 {typedText || "\u00A0"}
                 <span
                   className="ml-0.5 inline-block w-[3px] align-middle animate-pulse bg-cyan-core"
                   style={{ height: "0.85em" }}
                 />
-              </motion.span>
+              </span>
 
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.0, duration: 0.5 }}
-                className="block text-text-primary mt-1"
-              >
-                real.
-              </motion.span>
+              <span className="block text-text-primary mt-1">real.</span>
             </h1>
 
             {/* Subheadline */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 1.1 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
               className="mt-6 max-w-xl text-lg leading-relaxed text-text-secondary sm:text-xl lg:mx-0"
             >
               Aplicaciones con IA, sitios web y automatizaciones para empresas que
@@ -196,9 +171,9 @@ export default function Hero() {
 
             {/* CTAs */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 1.25 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.25 }}
               className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:justify-start"
             >
               <a
@@ -224,25 +199,25 @@ export default function Hero() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.7, delay: 1.4 }}
+              transition={{ duration: 0.5, delay: 0.35 }}
               className="mt-3 text-sm text-text-muted"
             >
               Sin compromiso. Primera sesión 100% gratuita.
             </motion.p>
 
-            {/* Stats row */}
+            {/* Stats row — no vertical transform to avoid CLS */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.55 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.45 }}
               className="mt-12 grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4"
             >
               {stats.map((stat, i) => (
                 <motion.div
                   key={stat.value}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.6 + i * 0.1 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4, delay: 0.5 + i * 0.05 }}
                   className="text-center lg:text-left"
                 >
                   <p className="font-heading text-3xl font-bold gradient-text sm:text-4xl">
