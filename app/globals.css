@@ -216,7 +216,8 @@ code, pre {
  * -------------------------------------------------------------------------- */
 main > section:nth-child(n + 4) {
   content-visibility: auto;
-  contain-intrinsic-size: 1px 800px;
+  /* Reserve ~900px of vertical space while the section is off-screen; width follows container. */
+  contain-intrinsic-size: auto 900px;
 }
 
 /* Respect users who have enabled reduced motion */

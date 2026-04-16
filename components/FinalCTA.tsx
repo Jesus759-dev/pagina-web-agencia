@@ -30,7 +30,9 @@ export default function FinalCTA() {
 
           <div className="mt-10">
             <a
-              href="mailto:hola@neuroviasystems.com"
+              href="https://wa.me/529937226350?text=Hola%20Neurovia%20Systems%2C%20quiero%20agendar%20una%20consulta%20estrat%C3%A9gica%20gratuita"
+              target="_blank"
+              rel="noopener noreferrer"
               className="cta-amber group inline-flex items-center gap-3 rounded-xl px-10 py-5 text-lg transition-transform hover:scale-105"
             >
               Agenda tu consulta estrategica gratuita

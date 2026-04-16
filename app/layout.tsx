@@ -27,7 +27,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://neuroviasystems.com"),
+  metadataBase: new URL("https://neuroviasystems.com.mx"),
   title: "Neurovia Systems | Agencia de IA, Desarrollo Web e Infraestructura IT",
   description:
     "Agencia digital especializada en aplicaciones con IA, sitios web de alto rendimiento, automatizaciones empresariales y redes Ubiquiti. Presencia en toda Latinoamérica con respuesta en menos de 24 horas.",
@@ -50,23 +50,23 @@ export const metadata: Metadata = {
     "software petróleo y gas",
     "tienda online WooCommerce",
   ],
-  authors: [{ name: "Neurovia Systems", url: "https://neuroviasystems.com" }],
+  authors: [{ name: "Neurovia Systems", url: "https://neuroviasystems.com.mx" }],
   creator: "Neurovia Systems",
   publisher: "Neurovia Systems",
   alternates: {
-    canonical: "https://neuroviasystems.com",
+    canonical: "https://neuroviasystems.com.mx",
   },
   openGraph: {
     title: "Neurovia Systems | Agencia de IA, Desarrollo Web e Infraestructura IT",
     description:
       "Tu negocio, potenciado por inteligencia artificial real. Aplicaciones inteligentes, sitios web, automatizaciones e infraestructura IT para toda Latinoamérica.",
-    url: "https://neuroviasystems.com",
+    url: "https://neuroviasystems.com.mx",
     siteName: "Neurovia Systems",
     locale: "es_MX",
     type: "website",
     videos: [
       {
-        url: "https://neuroviasystems.com/videos/neurovia-showcase.mp4",
+        url: "https://neuroviasystems.com.mx/videos/neurovia-showcase.mp4",
         width: 1280,
         height: 720,
         type: "video/mp4",
@@ -80,8 +80,8 @@ export const metadata: Metadata = {
       "Tu negocio, potenciado por inteligencia artificial real.",
     players: [
       {
-        playerUrl: "https://neuroviasystems.com/#video-showcase",
-        streamUrl: "https://neuroviasystems.com/videos/neurovia-showcase.mp4",
+        playerUrl: "https://neuroviasystems.com.mx/#video-showcase",
+        streamUrl: "https://neuroviasystems.com.mx/videos/neurovia-showcase.mp4",
         width: 1280,
         height: 720,
       },
@@ -111,10 +111,10 @@ const structuredData = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://neuroviasystems.com/#organization",
+      "@id": "https://neuroviasystems.com.mx/#organization",
       name: "Neurovia Systems",
-      url: "https://neuroviasystems.com",
-      logo: "https://neuroviasystems.com/logo.png",
+      url: "https://neuroviasystems.com.mx",
+      logo: "https://neuroviasystems.com.mx/logo.png",
       description:
         "Agencia digital especializada en IA, desarrollo web, automatizaciones e infraestructura IT para empresas en Latinoamérica.",
       areaServed: { "@type": "Place", name: "Latinoamérica" },
@@ -133,33 +133,33 @@ const structuredData = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://neuroviasystems.com/#website",
-      url: "https://neuroviasystems.com",
+      "@id": "https://neuroviasystems.com.mx/#website",
+      url: "https://neuroviasystems.com.mx",
       name: "Neurovia Systems",
-      publisher: { "@id": "https://neuroviasystems.com/#organization" },
+      publisher: { "@id": "https://neuroviasystems.com.mx/#organization" },
       inLanguage: "es-MX",
     },
     {
       "@type": "VideoObject",
-      "@id": "https://neuroviasystems.com/#hero-video",
+      "@id": "https://neuroviasystems.com.mx/#hero-video",
       name: "Neurovia Systems — Agencia de IA, Desarrollo Web e Infraestructura IT",
       description:
         "Conoce cómo Neurovia Systems transforma negocios con aplicaciones de IA, sitios web de alto rendimiento, automatizaciones empresariales y despliegues de infraestructura IT (redes Ubiquiti, armado de PCs, mantenimiento).",
       thumbnailUrl: [
-        "https://neuroviasystems.com/projects/requisiciones-dashboard.png",
+        "https://neuroviasystems.com.mx/projects/requisiciones-dashboard.png",
       ],
       uploadDate: "2026-04-15",
-      contentUrl: "https://neuroviasystems.com/videos/neurovia-showcase.mp4",
-      embedUrl: "https://neuroviasystems.com/#video-showcase",
-      publisher: { "@id": "https://neuroviasystems.com/#organization" },
+      contentUrl: "https://neuroviasystems.com.mx/videos/neurovia-showcase.mp4",
+      embedUrl: "https://neuroviasystems.com.mx/#video-showcase",
+      publisher: { "@id": "https://neuroviasystems.com.mx/#organization" },
       inLanguage: "es",
     },
     {
       "@type": "ProfessionalService",
       name: "Neurovia Systems",
-      image: "https://neuroviasystems.com/logo.png",
-      "@id": "https://neuroviasystems.com/#service",
-      url: "https://neuroviasystems.com",
+      image: "https://neuroviasystems.com.mx/logo.png",
+      "@id": "https://neuroviasystems.com.mx/#service",
+      url: "https://neuroviasystems.com.mx",
       telephone: "+52-993-722-6350",
       priceRange: "$$",
       serviceType: [

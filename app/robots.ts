@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/_next/", "/api/"],
       },
     ],
-    sitemap: "https://neuroviasystems.com/sitemap.xml",
-    host: "https://neuroviasystems.com",
+    sitemap: "https://neuroviasystems.com.mx/sitemap.xml",
+    host: "https://neuroviasystems.com.mx",
   };
 }

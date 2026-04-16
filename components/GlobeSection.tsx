@@ -21,19 +21,24 @@ export default function GlobeSection() {
   return (
     <section
       aria-label="Alcance global"
-      className="relative bg-deep-space pt-24 sm:pt-32 pb-12 sm:pb-16"
+      // Mobile: tall enough to fit the full globe comfortably.
+      // Desktop: asymmetric padding so the globe can straddle the boundary below.
+      className="relative bg-deep-space py-20 sm:py-24 lg:pt-32 lg:pb-16"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center gap-16 lg:flex-row lg:items-center lg:gap-20">
+        {/* On mobile the text goes first (better reading order for SEO and small screens).
+            On desktop the globe sits on the left and text on the right. */}
+        <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-20">
 
-          {/* Globe — left on desktop. Translated down so it straddles
-              the boundary between this dark section and the light section below. */}
+          {/* Globe. On desktop we translate it down to straddle the boundary
+              between this dark section and the light section below. On mobile
+              it sits in the normal flow, fully visible and centered. */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.9, ease: "easeOut" }}
-            className="relative z-30 w-full max-w-xs shrink-0 sm:max-w-sm lg:w-[460px] xl:w-[520px] lg:translate-y-[42%] lg:-mb-[260px] xl:-mb-[300px]"
+            className="order-2 relative z-30 w-full max-w-[260px] shrink-0 sm:max-w-sm lg:order-1 lg:w-[460px] lg:max-w-none xl:w-[520px] lg:translate-y-[42%] lg:-mb-[260px] xl:-mb-[300px]"
             aria-hidden="true"
           >
             <div className="relative">
@@ -43,13 +48,13 @@ export default function GlobeSection() {
             </div>
           </motion.div>
 
-          {/* Text — right on desktop */}
+          {/* Text — appears first on mobile (order-1), right column on desktop (lg:order-2). */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
-            className="flex-1 text-center lg:text-left"
+            className="order-1 flex-1 text-center lg:order-2 lg:text-left"
           >
             <span className="inline-flex items-center gap-2 rounded-full border border-cyan-core/30 bg-cyan-core/10 px-4 py-1.5 text-sm font-medium text-cyan-light">
               🌎 Presencia global
