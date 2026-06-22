@@ -34,7 +34,7 @@ const SITE_TITLE =
   "Neurovia Systems | Desarrollo de Software, IA y Automatización Empresarial";
 const SITE_DESCRIPTION =
   "Empresa tecnológica especializada en desarrollo de software, inteligencia artificial, automatización empresarial, plataformas web, dashboards corporativos y soluciones digitales a medida.";
-const OG_IMAGE = `${SITE_URL}/projects/requisiciones-dashboard.png`;
+const OG_IMAGE = `${SITE_URL}/images/og-robotic-hand.jpg`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -98,7 +98,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "Neurovia Systems — Desarrollo de Software, IA y Automatización Empresarial",
-        type: "image/png",
+        type: "image/jpeg",
       },
     ],
     videos: [
