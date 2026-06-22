@@ -58,6 +58,14 @@ export const metadata: Metadata = {
     "software a medida México",
     "desarrollo web México",
     "desarrollo web Latinoamérica",
+    "desarrollo web Villahermosa",
+    "desarrollo web Tabasco",
+    "agencia de software Villahermosa",
+    "agencia de software Tabasco",
+    "páginas web Villahermosa",
+    "automatización empresarial Tabasco",
+    "inteligencia artificial Villahermosa",
+    "soporte IT Villahermosa Tabasco",
     "agencia de software",
     "aplicaciones IA a medida",
     "infraestructura IT empresarial",
@@ -132,11 +140,8 @@ export const metadata: Metadata = {
     // TODO: Pega aquí el código que te dé Google Search Console al verificar
     // google: "TU-CODIGO-DE-VERIFICACION-AQUI",
   },
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
-  },
+  // Favicon: app/icon.svg (logo Neurovia) is picked up automatically via the
+  // Next.js file convention — no explicit config needed.
 };
 
 /**
@@ -163,7 +168,20 @@ const structuredData = {
       image: OG_IMAGE,
       description: SITE_DESCRIPTION,
       foundingDate: "2024",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Villahermosa",
+        addressRegion: "Tabasco",
+        addressCountry: "MX",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 17.9892,
+        longitude: -92.9281,
+      },
       areaServed: [
+        { "@type": "City", name: "Villahermosa" },
+        { "@type": "State", name: "Tabasco" },
         { "@type": "Country", name: "México" },
         { "@type": "Place", name: "Latinoamérica" },
       ],
@@ -224,7 +242,20 @@ const structuredData = {
       telephone: "+52-993-722-6350",
       priceRange: "$$",
       description: SITE_DESCRIPTION,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Villahermosa",
+        addressRegion: "Tabasco",
+        addressCountry: "MX",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 17.9892,
+        longitude: -92.9281,
+      },
       areaServed: [
+        { "@type": "City", name: "Villahermosa" },
+        { "@type": "State", name: "Tabasco" },
         { "@type": "Country", name: "México" },
         { "@type": "Place", name: "Latinoamérica" },
       ],
@@ -294,9 +325,11 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
         <meta name="color-scheme" content="light" />
 
-        {/* Geo targeting for Mexico */}
-        <meta name="geo.region" content="MX" />
-        <meta name="geo.placename" content="México" />
+        {/* Geo targeting — Villahermosa, Tabasco (México) */}
+        <meta name="geo.region" content="MX-TAB" />
+        <meta name="geo.placename" content="Villahermosa, Tabasco, México" />
+        <meta name="geo.position" content="17.9892;-92.9281" />
+        <meta name="ICBM" content="17.9892, -92.9281" />
         <meta name="language" content="es-MX" />
 
         {/* JSON-LD structured data — the single @graph covers all entities */}
