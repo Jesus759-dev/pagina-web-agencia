@@ -66,7 +66,7 @@ export default function PuntoDeVenta() {
             <div className="overflow-hidden rounded-2xl border border-line">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/projects/punto-de-venta.jpeg"
+                src="/projects/punto-de-venta-menu.jpeg"
                 alt="Sistema de Punto de Venta"
                 className="block h-auto w-full object-contain"
               />
