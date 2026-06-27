@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import TechStack from "@/components/TechStack";
 import Services from "@/components/Services";
+import PuntoDeVenta from "@/components/PuntoDeVenta";
 import Portfolio from "@/components/Portfolio";
 import WhyUs from "@/components/WhyUs";
 import Process from "@/components/Process";
@@ -19,6 +20,7 @@ export default function Home() {
         <Stats />
         <TechStack />
         <Services />
+        <PuntoDeVenta />
         <Portfolio />
         <WhyUs />
         <Process />

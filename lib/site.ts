@@ -16,3 +16,9 @@ export const WA_DEFAULT = waLink(
 export const WA_INVENTARIO = waLink(
   "Hola Neurovia Systems, me interesa el Sistema de Inventario (pago único o membresía)"
 );
+
+/**
+ * Landing page del producto Punto de Venta.
+ * TODO: reemplazar con la URL final cuando esté disponible.
+ */
+export const POS_LANDING = "https://puntodeventa.neuroviasystems.cloud";

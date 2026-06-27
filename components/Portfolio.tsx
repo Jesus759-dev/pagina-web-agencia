@@ -20,6 +20,28 @@ function Pill() {
   );
 }
 
+/* Overlay de censura para capturas con datos sensibles del cliente. */
+function Confidencial() {
+  return (
+    <div className="absolute inset-0 z-[3] flex items-center justify-center">
+      <div
+        className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.1em] text-white"
+        style={{
+          background: "rgba(12,18,32,.55)",
+          backdropFilter: "blur(2px)",
+          WebkitBackdropFilter: "blur(2px)",
+        }}
+      >
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" />
+          <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+        </svg>
+        Confidencial
+      </div>
+    </div>
+  );
+}
+
 function Stack({ items }: { items: string[] }) {
   return (
     <div className="mt-[22px] flex flex-wrap gap-2">
@@ -74,9 +96,11 @@ export default function Portfolio() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/projects/chemiservis-portal.png"
-            alt="Chemiservis — Portal de Sistemas ERP"
+            alt="Cliente petrolero — Portal de Sistemas ERP"
             className="block h-full w-full object-cover"
+            style={{ filter: "blur(18px)", transform: "scale(1.1)" }}
           />
+          <Confidencial />
         </div>
         <div className="p-10">
           <div className="mb-3.5 flex items-center gap-2.5">
@@ -84,7 +108,7 @@ export default function Portfolio() {
             <span className="text-[13px] text-[#7a838f]">Suite ERP · Petróleo &amp; Gas</span>
           </div>
           <h3 className="m-0 font-heading text-[27px] font-semibold leading-[1.16] tracking-[-0.02em] text-ink">
-            Chemiservis — Suite ERP
+            Cliente petrolero — Suite ERP
           </h3>
           <p className="mt-3.5 text-[15px] leading-[1.6] text-muted">
             Plataforma operativa multisistema para la industria petrolera: portal único de acceso
@@ -104,9 +128,11 @@ export default function Portfolio() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/projects/mantenimiento-vehicular-login.png"
-              alt="Chemiservis — Sistema de Mantenimiento Vehicular"
+              alt="Cliente petrolero — Sistema de Mantenimiento Vehicular"
               className="block h-full w-full object-cover"
+              style={{ filter: "blur(18px)", transform: "scale(1.1)" }}
             />
+            <Confidencial />
           </div>
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
@@ -123,15 +149,17 @@ export default function Portfolio() {
           </div>
         </article>
 
-        {/* Chemiservis Hidráulica */}
+        {/* Cliente petrolero — Hidráulica */}
         <article className="proj-card overflow-hidden rounded-2xl border border-line bg-white">
           <div className="relative aspect-video overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/projects/chemiservis-offshore.png"
-              alt="Chemiservis Hidráulica v1.3"
+              alt="Cliente petrolero — Hidráulica v1.3"
               className="block h-full w-full object-cover"
+              style={{ filter: "blur(18px)", transform: "scale(1.1)" }}
             />
+            <Confidencial />
           </div>
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
@@ -139,7 +167,7 @@ export default function Portfolio() {
               <span className="text-[13px] text-[#7a838f]">Software técnico</span>
             </div>
             <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
-              Chemiservis Hidráulica v1.3
+              Cliente petrolero — Hidráulica v1.3
             </h3>
             <p className="mt-[11px] text-sm leading-[1.6] text-muted">
               11 módulos técnicos y simulador 3D offshore para fluidos de perforación.
@@ -147,10 +175,12 @@ export default function Portfolio() {
           </div>
         </article>
 
-        {/* Royers — opens gallery */}
-        <article
-          onClick={() => setLbIdx(0)}
-          className="proj-card cursor-pointer overflow-hidden rounded-2xl border border-line bg-white"
+        {/* Royers — enlace al sitio + galería */}
+        <a
+          href="https://royers.mx"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="proj-card block cursor-pointer overflow-hidden rounded-2xl border border-line bg-white no-underline"
         >
           <div className="relative aspect-video overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -159,8 +189,14 @@ export default function Portfolio() {
               alt="Royers S.A. de C.V. — Construcción en Tabasco"
               className="block h-full w-full object-cover"
             />
-            <div
-              className="absolute right-3 top-3 z-[4] inline-flex items-center gap-[7px] rounded-full px-3 py-1.5 text-xs font-semibold text-white"
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setLbIdx(0);
+              }}
+              className="absolute right-3 top-3 z-[4] inline-flex items-center gap-[7px] rounded-full border-0 px-3 py-1.5 text-xs font-semibold text-white"
               style={{
                 background: "rgba(12,18,32,.62)",
                 backdropFilter: "blur(6px)",
@@ -172,7 +208,7 @@ export default function Portfolio() {
                 <path d="M21 7v12a2 2 0 0 1-2 2H7" />
               </svg>
               Ver galería
-            </div>
+            </button>
           </div>
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
@@ -185,15 +221,20 @@ export default function Portfolio() {
             <p className="mt-[11px] text-sm leading-[1.6] text-muted">
               35+ años, 500+ obras y 98% de satisfacción. Renders 3D y obras entregadas —{" "}
               <span className="font-semibold" style={{ color: "var(--accent)" }}>
-                toca para ver más capturas
+                toca para visitar el sitio
               </span>
               .
             </p>
           </div>
-        </article>
+        </a>
 
         {/* Alpha Mobil */}
-        <article className="proj-card overflow-hidden rounded-2xl border border-line bg-white">
+        <a
+          href="https://alphamobil.com.mx"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="proj-card block overflow-hidden rounded-2xl border border-line bg-white no-underline"
+        >
           <div className="relative aspect-video overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -215,7 +256,37 @@ export default function Portfolio() {
               WhatsApp.
             </p>
           </div>
-        </article>
+        </a>
+
+        {/* Provalsa */}
+        <a
+          href="https://provalsa.com.mx/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="proj-card block overflow-hidden rounded-2xl border border-line bg-white no-underline"
+        >
+          <div className="relative aspect-video overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/projects/provalsa.jpg"
+              alt="Provalsa — Válvulas y equipo industrial"
+              className="block h-full w-full object-cover"
+            />
+          </div>
+          <div className="p-[26px]">
+            <div className="mb-[11px] flex items-center gap-2.5">
+              <Pill />
+              <span className="text-[13px] text-[#7a838f]">Sitio web · Válvulas industriales</span>
+            </div>
+            <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
+              Provalsa
+            </h3>
+            <p className="mt-[11px] text-sm leading-[1.6] text-muted">
+              Catálogo de válvulas y equipo industrial con presentación de productos y contacto
+              directo para cotización.
+            </p>
+          </div>
+        </a>
       </div>
 
       {/* Próximamente */}

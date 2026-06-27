@@ -76,7 +76,7 @@ export default function Hero() {
                 Empresas que ya confían
               </div>
               <div className="flex flex-wrap items-center gap-x-[22px] gap-y-2 font-heading text-[15px] font-semibold tracking-[-0.01em] text-[#3a4452]">
-                <span>Chemiservis</span>
+                <span>Cliente petrolero</span>
                 <span className="text-[#c7ccd4]">·</span>
                 <span>Royers</span>
                 <span className="text-[#c7ccd4]">·</span>
