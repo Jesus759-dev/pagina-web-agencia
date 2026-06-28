@@ -1,10 +1,11 @@
 import NeuroviaLogo from "@/components/NeuroviaLogo";
 
+// Root-relative anchors so the footer also works from the service subpages.
 const LINKS = [
-  { href: "#servicios", label: "Servicios" },
-  { href: "#proyectos", label: "Proyectos" },
-  { href: "#proceso", label: "Proceso" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/#servicios", label: "Servicios" },
+  { href: "/#proyectos", label: "Proyectos" },
+  { href: "/#proceso", label: "Proceso" },
+  { href: "/#contacto", label: "Contacto" },
 ];
 
 export default function Footer() {

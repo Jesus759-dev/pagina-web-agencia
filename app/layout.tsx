@@ -31,9 +31,9 @@ const jetbrainsMono = JetBrains_Mono({
 const SITE_URL = "https://neuroviasystems.com.mx";
 const SITE_NAME = "Neurovia Systems";
 const SITE_TITLE =
-  "Neurovia Systems | Desarrollo de Software, IA y Automatización Empresarial";
+  "Neurovia Systems | Desarrollo de Software, IA y Automatización en Villahermosa";
 const SITE_DESCRIPTION =
-  "Empresa tecnológica especializada en desarrollo de software, inteligencia artificial, automatización empresarial, plataformas web, dashboards corporativos y soluciones digitales a medida.";
+  "Desarrollo de software a medida, IA y automatización empresarial en Villahermosa, Tabasco. Creamos plataformas web y dashboards. Agenda tu consulta gratuita.";
 const OG_IMAGE = `${SITE_URL}/images/og-robotic-hand.jpg`;
 
 export const metadata: Metadata = {
@@ -161,7 +161,7 @@ const structuredData = {
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/logo.png`,
+        url: `${SITE_URL}/web-app-manifest-512x512.png`,
         width: 512,
         height: 512,
       },
@@ -351,9 +351,11 @@ export default function RootLayout({
               color: "#0c1220",
             }}
           >
-            <h1 style={{ margin: 0, fontSize: "1.5rem" }}>
+            {/* Not an <h1>: the real <h1> lives in each page (Hero / service
+                pages) and must stay unique per page for SEO. */}
+            <div style={{ margin: 0, fontSize: "1.5rem", fontWeight: 700 }}>
               Neurovia Systems — Desarrollo de Software, IA y Automatización Empresarial
-            </h1>
+            </div>
             <p style={{ maxWidth: 640, margin: "1rem auto", lineHeight: 1.5 }}>
               Empresa tecnológica especializada en desarrollo de software, inteligencia
               artificial, automatización empresarial, plataformas web, dashboards

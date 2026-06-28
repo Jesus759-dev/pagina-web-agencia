@@ -1,18 +1,27 @@
 import type { MetadataRoute } from "next";
+import { SERVICE_SLUGS } from "@/lib/serviceContent";
 
 const BASE = "https://neuroviasystems.com.mx";
 
 /**
- * Since this is a single-page site, the sitemap lists just the homepage.
- * The `images` and `videos` extensions help Google index the project
- * screenshots and the hero showcase video for rich media results.
+ * Sitemap: the homepage plus one dedicated local-SEO landing page per
+ * service (app/<slug>/page.tsx). The `images`/`videos` extensions on the
+ * homepage help Google index the project screenshots and showcase video.
  *
- * Hash-fragment anchors (#servicios, #proyectos, …) are NOT added to the
- * sitemap — Google treats them as the same URL as "/" so listing them
- * would only pollute Search Console reports.
+ * Hash-fragment anchors (#servicios, #proyectos, …) are NOT added — Google
+ * treats them as the same URL as "/", so listing them would only pollute
+ * Search Console reports. The real service routes below, however, ARE
+ * distinct URLs and must be listed so Google discovers and ranks them.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
+
+  const servicePages: MetadataRoute.Sitemap = SERVICE_SLUGS.map((slug) => ({
+    url: `${BASE}/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.9,
+  }));
 
   return [
     {
@@ -40,5 +49,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       ],
     },
+    ...servicePages,
   ];
 }

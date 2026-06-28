@@ -52,14 +52,22 @@ export default function PuntoDeVenta() {
               ))}
             </div>
 
-            <a
-              href={POS_LANDING}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary mt-8 inline-block rounded-full px-6 py-3 text-sm font-semibold no-underline"
-            >
-              Ver Punto de Venta
-            </a>
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+              <a
+                href={POS_LANDING}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-block rounded-full px-6 py-3 text-sm font-semibold no-underline"
+              >
+                Ver Punto de Venta
+              </a>
+              <a
+                href="/sistema-punto-de-venta-villahermosa"
+                className="badge-link inline-flex items-center gap-1.5 text-sm font-semibold"
+              >
+                Punto de venta en Villahermosa <span className="arr">→</span>
+              </a>
+            </div>
           </div>
 
           <div className="hidden md:block">
@@ -67,7 +75,7 @@ export default function PuntoDeVenta() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/projects/punto-de-venta-menu.jpeg"
-                alt="Sistema de Punto de Venta"
+                alt="Sistema de Punto de Venta para negocios en Villahermosa, Tabasco"
                 className="block h-auto w-full object-contain"
               />
             </div>

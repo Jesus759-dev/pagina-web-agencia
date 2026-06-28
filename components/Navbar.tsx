@@ -1,13 +1,16 @@
 import NeuroviaLogo from "@/components/NeuroviaLogo";
 import { WA_DEFAULT } from "@/lib/site";
 
+// Root-relative anchors (`/#…`) so the nav works from the service subpages
+// too: on the home page the browser just scrolls; from a subpage it navigates
+// home and then scrolls to the section.
 const LINKS = [
-  { href: "#servicios", label: "Servicios" },
-  { href: "#punto-de-venta", label: "Punto de Venta", badge: "Próximamente" },
-  { href: "#proyectos", label: "Proyectos" },
-  { href: "#proceso", label: "Proceso" },
-  { href: "#nosotros", label: "Nosotros" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/#servicios", label: "Servicios" },
+  { href: "/#punto-de-venta", label: "Punto de Venta", badge: "Próximamente" },
+  { href: "/#proyectos", label: "Proyectos" },
+  { href: "/#proceso", label: "Proceso" },
+  { href: "/#nosotros", label: "Nosotros" },
+  { href: "/#contacto", label: "Contacto" },
 ];
 
 export default function Navbar() {
@@ -24,7 +27,7 @@ export default function Navbar() {
         }}
       >
         <a
-          href="#"
+          href="/"
           className="flex items-center gap-2.5 pr-1.5 no-underline"
           aria-label="Neurovia Systems — inicio"
         >

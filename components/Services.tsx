@@ -9,6 +9,8 @@ const SERVICES = [
       "Aplicaciones web progresivas (PWA)",
       "Optimización SEO avanzada",
     ],
+    href: "/diseno-de-paginas-web-villahermosa",
+    hrefLabel: "Diseño de páginas web en Villahermosa",
   },
   {
     n: "02",
@@ -20,6 +22,8 @@ const SERVICES = [
       "Workflows inteligentes con IA",
       "Reportes automáticos personalizados",
     ],
+    href: "/automatizacion-con-ia-tabasco",
+    hrefLabel: "Automatización con IA en Tabasco",
   },
   {
     n: "03",
@@ -31,6 +35,8 @@ const SERVICES = [
       "Asistentes y chatbots personalizados",
       "Integración con tus sistemas existentes",
     ],
+    href: "/desarrollo-de-software-a-medida-villahermosa",
+    hrefLabel: "Desarrollo de software a medida en Villahermosa",
   },
   {
     n: "04",
@@ -42,6 +48,20 @@ const SERVICES = [
       "Mantenimiento preventivo y correctivo",
       "Soporte técnico y consultoría IT",
     ],
+    href: null,
+    hrefLabel: null,
+  },
+];
+
+/** Dedicated local-SEO landing pages not represented as a card above. */
+const SERVICE_PAGE_LINKS = [
+  {
+    href: "/desarrollo-de-aplicaciones-web-tabasco",
+    label: "Desarrollo de aplicaciones web a medida en Tabasco",
+  },
+  {
+    href: "/sistema-punto-de-venta-villahermosa",
+    label: "Sistema de punto de venta en Villahermosa",
   },
 ];
 
@@ -79,7 +99,28 @@ export default function Services() {
                 </div>
               ))}
             </div>
+            {s.href && (
+              <a
+                href={s.href}
+                className="badge-link mt-[26px] inline-flex items-center gap-1.5 text-sm font-semibold"
+              >
+                {s.hrefLabel} <span className="arr">→</span>
+              </a>
+            )}
           </div>
+        ))}
+      </div>
+
+      {/* Internal links to the remaining local-SEO service pages */}
+      <div className="mt-[30px] flex flex-wrap gap-3">
+        {SERVICE_PAGE_LINKS.map((l) => (
+          <a
+            key={l.href}
+            href={l.href}
+            className="badge-link inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-5 py-2.5 text-sm font-semibold"
+          >
+            {l.label} <span className="arr">→</span>
+          </a>
         ))}
       </div>
     </section>
