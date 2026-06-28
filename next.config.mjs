@@ -1,6 +1,11 @@
-import type { NextConfig } from "next";
+// Plain JS (ESM) config on purpose: the deploy host has an old GLIBC, so the
+// native SWC binary can't load and Next falls back to the wasm SWC. Loading a
+// TypeScript `next.config.ts` through that fallback fails (ERR_MODULE_NOT_FOUND
+// on the compiled config). A .mjs config needs no transpilation, so it loads
+// reliably on the shared host.
 
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
