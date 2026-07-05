@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollChoreography from "@/components/ScrollChoreography";
@@ -35,6 +36,9 @@ const SITE_TITLE =
 const SITE_DESCRIPTION =
   "Desarrollo de software a medida, IA y automatización empresarial en Villahermosa, Tabasco. Creamos plataformas web y dashboards. Agenda tu consulta gratuita.";
 const OG_IMAGE = `${SITE_URL}/images/og-robotic-hand.jpg`;
+
+/** Google Analytics 4 — measurement ID (público, viaja en el HTML). */
+const GA_MEASUREMENT_ID = "G-PBY374Y0E3";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -369,6 +373,21 @@ export default function RootLayout({
         <ScrollChoreography />
         {/* Floating WhatsApp CTA — kept from the previous build */}
         <WhatsAppButton />
+
+        {/* Google Analytics 4 — loaded after the page is interactive so it
+            never blocks first paint / LCP. Tracks all routes automatically. */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
       </body>
     </html>
   );
