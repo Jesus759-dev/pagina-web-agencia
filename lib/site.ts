@@ -27,4 +27,4 @@ export const POS_LANDING = "https://puntodeventa.neuroviasystems.cloud";
  * Portal de sistemas en vivo desarrollados por Neurovia (acceso a las demos:
  * Requisiciones, Mantenimiento Vehicular, Inventario y Punto de Venta).
  */
-export const SISTEMAS_PORTAL = "https://neuroviasystems.cloud";
+export const SISTEMAS_PORTAL = "https://neuroviasystems.cloud/";
