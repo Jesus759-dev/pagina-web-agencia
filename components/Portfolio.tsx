@@ -371,6 +371,7 @@ export default function Portfolio() {
           href="https://wa.me/529937226350?text=Hola%20Neurovia%20Systems%2C%20me%20interesa%20el%20Sistema%20de%20Inventario%20%28pago%20%C3%BAnico%20o%20membres%C3%ADa%29"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => window.gtag?.("event", "contacto_whatsapp")}
           className="cta-outline inline-flex flex-none items-center gap-2 rounded-full px-[26px] py-[13px] text-sm font-semibold no-underline"
         >
           Quiero saber más <span className="arr">→</span>

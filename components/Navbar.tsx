@@ -1,3 +1,5 @@
+"use client";
+
 import NeuroviaLogo from "@/components/NeuroviaLogo";
 import { WA_DEFAULT } from "@/lib/site";
 
@@ -54,6 +56,7 @@ export default function Navbar() {
           href={WA_DEFAULT}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => window.gtag?.("event", "contacto_whatsapp")}
           className="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold no-underline"
         >
           Consulta gratuita

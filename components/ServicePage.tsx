@@ -3,6 +3,7 @@ import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import WaConsultaButton from "@/components/WaConsultaButton";
 import { waLink } from "@/lib/site";
 import { buildServiceJsonLd, type ServicePageData } from "@/lib/serviceContent";
 
@@ -39,14 +40,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
               {data.heroLead}
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
-              <a
-                href={wa}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold no-underline"
-              >
-                Agenda una consulta gratuita <span aria-hidden="true">→</span>
-              </a>
+              <WaConsultaButton href={wa} />
               <a
                 href="/"
                 className="cta-outline inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold no-underline"
