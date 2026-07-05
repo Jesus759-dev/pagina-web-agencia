@@ -28,3 +28,34 @@ export const POS_LANDING = "https://puntodeventa.neuroviasystems.cloud";
  * Requisiciones, Mantenimiento Vehicular, Inventario y Punto de Venta).
  */
 export const SISTEMAS_PORTAL = "https://neuroviasystems.cloud/";
+
+/**
+ * Catálogo de sistemas en producción. Cada uno vive en su propio subdominio
+ * del portal .cloud. Se muestran en la página /sistemas del sitio.
+ */
+export const SISTEMAS = [
+  {
+    name: "Sistema de Requisiciones",
+    host: "requisiciones.neuroviasystems.cloud",
+    url: "https://requisiciones.neuroviasystems.cloud",
+    desc: "Órdenes de compra, cuentas por pagar, proveedores y reporte dinámico.",
+  },
+  {
+    name: "Mantenimiento Vehicular",
+    host: "mantenimiento.neuroviasystems.cloud",
+    url: "https://mantenimiento.neuroviasystems.cloud",
+    desc: "Control de flota, órdenes de servicio, unidades y bitácora de mantenimiento.",
+  },
+  {
+    name: "Inventario",
+    host: "inventario.neuroviasystems.cloud",
+    url: "https://inventario.neuroviasystems.cloud",
+    desc: "Gestión de almacén, entradas y salidas, existencias y movimientos.",
+  },
+  {
+    name: "Punto de Venta",
+    host: "puntodeventa.neuroviasystems.cloud",
+    url: POS_LANDING,
+    desc: "Terminal de ventas, tickets, cajas y control de operaciones diarias.",
+  },
+] as const;
