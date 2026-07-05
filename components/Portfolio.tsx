@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { SISTEMAS_PORTAL } from "@/lib/site";
 
 /* Royers gallery — opened from the Royers card. */
 const ROYERS_GALLERY = [
@@ -89,6 +90,16 @@ export default function Portfolio() {
         Estas no son maquetas. Son plataformas y sitios que hoy operan en petróleo, construcción,
         mobiliario corporativo e ingeniería.
       </p>
+
+      {/* Enlace al portal de sistemas en vivo desarrollados por Neurovia */}
+      <a
+        href={SISTEMAS_PORTAL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn-primary mt-7 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold no-underline"
+      >
+        Ver los sistemas en vivo <span aria-hidden="true">→</span>
+      </a>
 
       {/* Featured — full width */}
       <div className="proj-card mt-[52px] grid grid-cols-1 overflow-hidden rounded-2xl border border-line bg-white md:grid-cols-[1.3fr_1fr]">
