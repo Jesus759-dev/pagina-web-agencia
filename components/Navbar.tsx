@@ -6,7 +6,7 @@ import { WA_DEFAULT } from "@/lib/site";
 // home and then scrolls to the section.
 const LINKS = [
   { href: "/#servicios", label: "Servicios" },
-  { href: "/#punto-de-venta", label: "Punto de Venta", badge: "Próximamente" },
+  { href: "/#punto-de-venta", label: "Punto de Venta" },
   { href: "/#proyectos", label: "Proyectos" },
   { href: "/#proceso", label: "Proceso" },
   { href: "/#nosotros", label: "Nosotros" },
@@ -46,14 +46,6 @@ export default function Navbar() {
           {LINKS.map((l) => (
             <a key={l.href} href={l.href} className="pill-link flex items-center gap-1.5 text-sm">
               {l.label}
-              {l.badge && (
-                <span
-                  className="rounded-full px-1.5 py-[1px] font-code text-[9px] font-semibold uppercase tracking-[0.1em] text-white"
-                  style={{ background: "var(--accent)" }}
-                >
-                  {l.badge}
-                </span>
-              )}
             </a>
           ))}
         </div>

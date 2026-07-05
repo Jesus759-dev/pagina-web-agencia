@@ -26,12 +26,6 @@ export default function PuntoDeVenta() {
               >
                 Punto de Venta
               </span>
-              <span
-                className="rounded-full px-2.5 py-[3px] font-code text-[10px] font-semibold uppercase tracking-[0.14em] text-white"
-                style={{ background: "var(--accent)" }}
-              >
-                Próximamente
-              </span>
             </div>
             <h2 className="m-0 max-w-[760px] font-heading text-[34px] font-bold leading-[1.05] tracking-[-0.03em] text-ink sm:text-5xl">
               Vende más rápido con nuestro Punto de Venta.
