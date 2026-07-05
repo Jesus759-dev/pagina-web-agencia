@@ -298,6 +298,43 @@ export default function Portfolio() {
             </p>
           </div>
         </a>
+
+        {/* TACEF Aceros */}
+        <a
+          href="https://calm-entremet-3d7138.netlify.app/tacef%20aceros.dc"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="proj-card block overflow-hidden rounded-2xl border border-line bg-white no-underline"
+        >
+          <div
+            className="relative flex aspect-video items-center justify-center overflow-hidden"
+            style={{ background: "radial-gradient(circle at 50% 38%, #2b3543, #0d1219)" }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://calm-entremet-3d7138.netlify.app/assets/logo.jpg"
+              alt="TACEF Aceros — Sitio web corporativo"
+              className="max-h-[60%] max-w-[68%] object-contain"
+            />
+          </div>
+          <div className="p-[26px]">
+            <div className="mb-[11px] flex items-center gap-2.5">
+              <Pill />
+              <span className="text-[13px] text-[#7a838f]">Sitio web · Acero</span>
+            </div>
+            <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
+              TACEF Aceros
+            </h3>
+            <p className="mt-[11px] text-sm leading-[1.6] text-muted">
+              Sitio web corporativo para TACEF, del sector del acero: presentación de la empresa,
+              productos y contacto —{" "}
+              <span className="font-semibold" style={{ color: "var(--accent)" }}>
+                toca para visitar el sitio
+              </span>
+              .
+            </p>
+          </div>
+        </a>
       </div>
 
       {/* Próximamente */}
