@@ -254,3 +254,70 @@ code, pre {
 ::-webkit-scrollbar-track { background: #f0f1f4; }
 ::-webkit-scrollbar-thumb { background: #cbd2dc; border-radius: 5px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent, #2563eb); }
+
+/* --------------------------------------------------------------------------
+ * High-end polish pass (Fase 3) — depth, focus and typographic detail.
+ * Layered after the base styles so it refines the existing "Neurovia Landing
+ * Pro" look without changing the brand identity. Shared by ES and EN.
+ * -------------------------------------------------------------------------- */
+
+/* Balanced, tighter headings for an editorial feel */
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+/* Accessible, on-brand keyboard focus (was relying on browser defaults) */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent, #2563eb);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* Service cards — soft resting depth + a more refined, premium lift */
+.svc-card {
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04),
+    0 10px 26px -20px rgba(15, 23, 42, 0.55);
+}
+.svc-card:hover {
+  box-shadow: 0 16px 44px -18px rgba(15, 23, 42, 0.2);
+}
+
+/* Project cards — quieter at rest, elegant on hover */
+.proj-card {
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04),
+    0 12px 32px -24px rgba(15, 23, 42, 0.55);
+}
+
+/* Primary CTA — subtle grounded depth at rest, not just on hover */
+.btn-primary {
+  box-shadow: 0 10px 24px -12px var(--accent-glow, rgba(37, 99, 235, 0.5));
+}
+
+/* Testimonial + why-us cards get the same soft depth for consistency */
+.testi-grid > div,
+.why-grid > div {
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04),
+    0 10px 26px -20px rgba(15, 23, 42, 0.5);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.testi-grid > div:hover,
+.why-grid > div:hover {
+  box-shadow: 0 16px 40px -18px rgba(15, 23, 42, 0.16);
+  transform: translateY(-2px);
+}
+
+/* Smoother, more deliberate link transitions */
+.pill-link,
+.navlink,
+.badge-link {
+  transition: color 0.2s ease, filter 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testi-grid > div,
+  .why-grid > div {
+    transition: none !important;
+    transform: none !important;
+  }
+}
