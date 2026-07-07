@@ -4,11 +4,11 @@ import SistemasPage from "@/components/SistemasPage";
 const SITE_URL = "https://neuroviasystems.com.mx";
 
 export const metadata: Metadata = {
-  title: "Catálogo de Sistemas en Producción",
+  title: "Systems Catalog",
   description:
-    "Portal de sistemas de Neurovia Systems: requisiciones, mantenimiento vehicular, inventario y punto de venta. Plataformas en la nube para tu empresa.",
+    "Neurovia Systems portal: requisitions, fleet maintenance, inventory and point of sale. Cloud platforms for your company.",
   alternates: {
-    canonical: "/sistemas",
+    canonical: "/en/sistemas",
     languages: {
       "es-MX": `${SITE_URL}/sistemas`,
       "en-US": `${SITE_URL}/en/sistemas`,
@@ -18,5 +18,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <SistemasPage lang="es" />;
+  return <SistemasPage lang="en" />;
 }

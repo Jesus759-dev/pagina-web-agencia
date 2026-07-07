@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { getDict, type Locale } from "@/lib/i18n";
+import { getDict, localeBase, type Locale } from "@/lib/i18n";
 
 /* Royers gallery — opened from the Royers card. */
 const ROYERS_GALLERY = [
@@ -57,6 +57,7 @@ function Stack({ items }: { items: string[] }) {
 
 export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
   const t = getDict(lang).portfolio;
+  const base = localeBase(lang);
   const [lbIdx, setLbIdx] = useState(-1);
   const open = lbIdx >= 0;
 
@@ -91,7 +92,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
 
       {/* Enlace al catálogo de sistemas (página /sistemas del propio sitio) */}
       <a
-        href="/sistemas"
+        href={`${base}/sistemas`}
         className="btn-primary mt-7 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold no-underline"
       >
         {t.ctaSystems} <span aria-hidden="true">→</span>

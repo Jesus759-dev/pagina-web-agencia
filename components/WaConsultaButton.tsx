@@ -1,12 +1,19 @@
 "use client";
 
+import { getDict, type Locale } from "@/lib/i18n";
+
 /**
- * WhatsApp CTA usado en las páginas de servicio. Se extrae a un componente
- * cliente para que su contenedor (ServicePage) siga siendo Server Component
- * y aun así podamos disparar el evento de conversión de GA4 en el clic.
- * El estilo, el texto y el href se mantienen idénticos: solo se añade tracking.
+ * WhatsApp CTA usado en las páginas de servicio. Cliente para poder disparar
+ * el evento de conversión de GA4 en el clic sin convertir a ServicePage.
  */
-export default function WaConsultaButton({ href }: { href: string }) {
+export default function WaConsultaButton({
+  href,
+  lang = "es",
+}: {
+  href: string;
+  lang?: Locale;
+}) {
+  const label = getDict(lang).service.ctaConsulta;
   return (
     <a
       href={href}
@@ -15,7 +22,7 @@ export default function WaConsultaButton({ href }: { href: string }) {
       onClick={() => window.gtag?.("event", "contacto_whatsapp")}
       className="btn-primary inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold no-underline"
     >
-      Agenda una consulta gratuita <span aria-hidden="true">→</span>
+      {label} <span aria-hidden="true">→</span>
     </a>
   );
 }

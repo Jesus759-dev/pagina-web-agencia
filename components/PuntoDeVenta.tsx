@@ -1,8 +1,9 @@
 import { POS_LANDING } from "@/lib/site";
-import { getDict, type Locale } from "@/lib/i18n";
+import { getDict, localeBase, type Locale } from "@/lib/i18n";
 
 export default function PuntoDeVenta({ lang = "es" }: { lang?: Locale }) {
   const t = getDict(lang).pos;
+  const base = localeBase(lang);
 
   return (
     <section id="punto-de-venta" className="mx-auto max-w-[1240px] px-5 pb-10 pt-[120px] sm:px-10">
@@ -51,7 +52,7 @@ export default function PuntoDeVenta({ lang = "es" }: { lang?: Locale }) {
                 {t.cta}
               </a>
               <a
-                href="/sistema-punto-de-venta-villahermosa"
+                href={`${base}/sistema-punto-de-venta-villahermosa`}
                 className="badge-link inline-flex items-center gap-1.5 text-sm font-semibold"
               >
                 {t.cloudLink} <span className="arr">→</span>

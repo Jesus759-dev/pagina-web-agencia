@@ -257,6 +257,28 @@ const es = {
     tagline: "Software con IA, sitios web e infraestructura IT. Un solo equipo para todo tu stack tecnológico.",
     copyright: "© 2026 Neurovia Systems — Software, IA e Infraestructura IT",
   },
+  service: {
+    benefitsEyebrow: "Beneficios",
+    faqEyebrow: "Preguntas frecuentes",
+    faqTitle: "Resolvemos tus dudas",
+    relatedEyebrow: "Otros servicios",
+    relatedTitle: "Más soluciones para tu empresa en Villahermosa y Tabasco",
+    backHome: "Volver al inicio",
+    ctaConsulta: "Agenda una consulta gratuita",
+  },
+  sistemas: {
+    eyebrow: "Plataforma de sistemas",
+    h1: "Catálogo de sistemas Neurovia",
+    lead: "Portal centralizado de los sistemas que desarrollamos y mantenemos en producción: adquisiciones, mantenimiento vehicular, inventario y punto de venta. Elige un sistema para acceder.",
+    note: "Algunos sistemas requieren credenciales de acceso proporcionadas por Neurovia Systems. ¿Necesitas acceso o quieres un sistema a la medida de tu empresa? Escríbenos.",
+    enter: "Entrar al sistema",
+    systems: [
+      { name: "Sistema de Requisiciones", desc: "Órdenes de compra, cuentas por pagar, proveedores y reporte dinámico." },
+      { name: "Mantenimiento Vehicular", desc: "Control de flota, órdenes de servicio, unidades y bitácora de mantenimiento." },
+      { name: "Inventario", desc: "Gestión de almacén, entradas y salidas, existencias y movimientos." },
+      { name: "Punto de Venta", desc: "Terminal de ventas, tickets, cajas y control de operaciones diarias." },
+    ],
+  },
 };
 
 /* -------------------------------------------------------------------------- */
@@ -500,6 +522,28 @@ const en: typeof es = {
   footer: {
     tagline: "AI software, websites and IT infrastructure. One team for your entire tech stack.",
     copyright: "© 2026 Neurovia Systems — Software, AI & IT Infrastructure",
+  },
+  service: {
+    benefitsEyebrow: "Benefits",
+    faqEyebrow: "FAQ",
+    faqTitle: "We answer your questions",
+    relatedEyebrow: "Other services",
+    relatedTitle: "More solutions for your business in Villahermosa & Tabasco",
+    backHome: "Back to home",
+    ctaConsulta: "Book a free consultation",
+  },
+  sistemas: {
+    eyebrow: "Systems platform",
+    h1: "Neurovia systems catalog",
+    lead: "A central portal for the systems we build and keep in production: purchasing, fleet maintenance, inventory and point of sale. Choose a system to sign in.",
+    note: "Some systems require access credentials provided by Neurovia Systems. Need access or a system tailored to your business? Get in touch.",
+    enter: "Enter system",
+    systems: [
+      { name: "Requisitions System", desc: "Purchase orders, accounts payable, suppliers and dynamic reporting." },
+      { name: "Fleet Maintenance", desc: "Fleet control, service orders, units and maintenance logs." },
+      { name: "Inventory", desc: "Warehouse management, inbound and outbound, stock and movements." },
+      { name: "Point of Sale", desc: "Sales terminal, receipts, cash registers and daily operations control." },
+    ],
   },
 };
 

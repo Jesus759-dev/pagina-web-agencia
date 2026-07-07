@@ -1,4 +1,4 @@
-import { getDict, type Locale } from "@/lib/i18n";
+import { getDict, localeBase, type Locale } from "@/lib/i18n";
 
 // Hrefs stay pointing to the (Spanish) service pages for now; labels are
 // translated. Phase 2 will add locale-aware service routes.
@@ -16,6 +16,7 @@ const MORE_HREFS = [
 
 export default function Services({ lang = "es" }: { lang?: Locale }) {
   const t = getDict(lang).services;
+  const base = localeBase(lang);
 
   return (
     <section id="servicios" className="mx-auto max-w-[1240px] px-5 pb-10 pt-[120px] sm:px-10">
@@ -51,7 +52,7 @@ export default function Services({ lang = "es" }: { lang?: Locale }) {
               </div>
               {href && (
                 <a
-                  href={href}
+                  href={`${base}${href}`}
                   className="badge-link mt-[26px] inline-flex items-center gap-1.5 text-sm font-semibold"
                 >
                   {s.linkLabel} <span className="arr">→</span>
@@ -67,7 +68,7 @@ export default function Services({ lang = "es" }: { lang?: Locale }) {
         {MORE_HREFS.map((href, i) => (
           <a
             key={href}
-            href={href}
+            href={`${base}${href}`}
             className="badge-link inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-5 py-2.5 text-sm font-semibold"
           >
             {t.morePages[i]} <span className="arr">→</span>

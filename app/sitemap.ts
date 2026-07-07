@@ -16,12 +16,30 @@ const BASE = "https://neuroviasystems.com.mx";
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  const servicePages: MetadataRoute.Sitemap = SERVICE_SLUGS.map((slug) => ({
-    url: `${BASE}/${slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.9,
-  }));
+  const servicePages: MetadataRoute.Sitemap = SERVICE_SLUGS.flatMap((slug) => {
+    const alternates = {
+      languages: {
+        es: `${BASE}/${slug}`,
+        en: `${BASE}/en/${slug}`,
+      },
+    };
+    return [
+      {
+        url: `${BASE}/${slug}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.9,
+        alternates,
+      },
+      {
+        url: `${BASE}/en/${slug}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.8,
+        alternates,
+      },
+    ];
+  });
 
   return [
     {
