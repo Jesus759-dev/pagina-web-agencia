@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollChoreography from "@/components/ScrollChoreography";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+// Warm editorial serif for headings — reads more human and more distinguished
+// than the previous grotesque. Variable font (weight axis) via next/font.
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
   display: "swap",
 });
 
@@ -318,7 +319,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
+      className={`${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
     >
       <head>
         {/* Connection hints for third-party origins (fonts + video CDN) */}
@@ -327,7 +328,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
 
         {/* Theme color for mobile browser chrome */}
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#fdfbf7" />
         <meta name="color-scheme" content="light" />
 
         {/* Geo targeting — Villahermosa, Tabasco (México) */}

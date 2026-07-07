@@ -6,41 +6,41 @@
  * -------------------------------------------------------------------------- */
 
 @theme inline {
-  /* Surfaces */
-  --color-canvas: #ffffff;
-  --color-surface: #f7f8fb;
-  --color-surface-2: #fafbfc;
-  --color-hero: #f0f0ee;
+  /* Surfaces — warm ivory / sand palette (más humano) */
+  --color-canvas: #fdfbf7;
+  --color-surface: #f4efe6;
+  --color-surface-2: #faf6ef;
+  --color-hero: #efe8dc;
 
-  /* Borders */
-  --color-line: #e6e8ec;
-  --color-line-soft: #eef0f3;
-  --color-line-2: #e2e5ea;
+  /* Borders — warm neutrals */
+  --color-line: #e8e0d2;
+  --color-line-soft: #efe8db;
+  --color-line-2: #e1d8c8;
 
-  /* Text */
-  --color-ink: #0c1220;
-  --color-ink-2: #2e3744;
-  --color-muted: #54606f;
-  --color-faint: #8a93a0;
+  /* Text — warm charcoal instead of cold near-black */
+  --color-ink: #201d17;
+  --color-ink-2: #3a352b;
+  --color-muted: #6a6256;
+  --color-faint: #9a9184;
 
-  /* Brand / accent (default "Azul" — overridable at runtime via --accent) */
-  --color-accent: #2563eb;
+  /* Accent — deep, sober petrol/navy (más señor) */
+  --color-accent: #284a5e;
 
-  /* Logo gradient stops */
+  /* Logo gradient stops (brand mark kept intact) */
   --color-brand-cyan: #22d3ee;
   --color-brand-blue: #3b82f6;
   --color-brand-violet: #6847e5;
 
-  --font-heading: var(--font-space-grotesk);
+  --font-heading: var(--font-fraunces);
   --font-body: var(--font-inter);
   --font-code: var(--font-jetbrains-mono);
 }
 
 /* Accent theme — single source of truth, swap these three to recolor the site */
 :root {
-  --accent: #2563eb;
-  --accent-soft: rgba(37, 99, 235, 0.12);
-  --accent-glow: rgba(37, 99, 235, 0.3);
+  --accent: #284a5e;
+  --accent-soft: rgba(40, 74, 94, 0.1);
+  --accent-glow: rgba(40, 74, 94, 0.26);
 }
 
 * {
@@ -53,14 +53,16 @@ html {
 
 body {
   margin: 0;
-  background: #ffffff;
-  color: #0c1220;
+  background: #fdfbf7;
+  color: #201d17;
   font-family: var(--font-body), "Inter", system-ui, sans-serif;
   overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading), "Space Grotesk", system-ui, sans-serif;
+  font-family: var(--font-heading), "Fraunces", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 code, pre {
@@ -152,13 +154,11 @@ code, pre {
 }
 .proj-card:hover img { transform: scale(1.04); }
 
-/* Gradient wordmark for the Neurovia logotype */
+/* Wordmark for the Neurovia logotype — solid warm ink for a more sober,
+   distinguished feel (the colorful logo mark carries the brand color). */
 .brand-text {
-  background: linear-gradient(95deg, #22d3ee, #3b82f6 45%, #6847e5);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: var(--color-ink, #201d17);
+  letter-spacing: -0.005em;
 }
 
 /* --------------------------------------------------------------------------

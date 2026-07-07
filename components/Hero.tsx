@@ -11,7 +11,7 @@ export default function Hero({ lang = "es" }: { lang?: Locale }) {
       aria-label={t.sectionAria}
       data-hero
       className="relative flex min-h-screen flex-col overflow-hidden"
-      style={{ background: "#f0f0ee" }}
+      style={{ background: "#efe8dc" }}
     >
       <video
         className="absolute inset-0 z-0 h-full w-full object-cover"
@@ -29,7 +29,7 @@ export default function Hero({ lang = "es" }: { lang?: Locale }) {
         aria-hidden="true"
         style={{
           background:
-            "linear-gradient(120deg, rgba(240,240,238,.78) 0%, rgba(240,240,238,.28) 38%, rgba(240,240,238,0) 62%)",
+            "linear-gradient(120deg, rgba(239,232,220,.82) 0%, rgba(239,232,220,.30) 38%, rgba(239,232,220,0) 62%)",
         }}
       />
 
