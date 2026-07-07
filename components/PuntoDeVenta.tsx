@@ -1,13 +1,9 @@
 import { POS_LANDING } from "@/lib/site";
+import { getDict, type Locale } from "@/lib/i18n";
 
-const FEATURES = [
-  "Cobro rápido con lector de código de barras",
-  "Control de inventario en tiempo real",
-  "Reportes de ventas y cortes de caja",
-  "Multi-sucursal y multi-usuario",
-];
+export default function PuntoDeVenta({ lang = "es" }: { lang?: Locale }) {
+  const t = getDict(lang).pos;
 
-export default function PuntoDeVenta() {
   return (
     <section id="punto-de-venta" className="mx-auto max-w-[1240px] px-5 pb-10 pt-[120px] sm:px-10">
       <div
@@ -24,19 +20,18 @@ export default function PuntoDeVenta() {
                 className="font-code text-[13px] uppercase tracking-[0.12em]"
                 style={{ color: "var(--accent)" }}
               >
-                Punto de Venta
+                {t.eyebrow}
               </span>
             </div>
             <h2 className="m-0 max-w-[760px] font-heading text-[34px] font-bold leading-[1.05] tracking-[-0.03em] text-ink sm:text-5xl">
-              Vende más rápido con nuestro Punto de Venta.
+              {t.h2}
             </h2>
             <p className="m-0 mt-5 max-w-[600px] text-lg leading-[1.6] text-muted">
-              Un sistema completo para gestionar ventas, inventario y reportes desde cualquier
-              dispositivo. Conoce todos los detalles en su landing page.
+              {t.lead}
             </p>
 
             <div className="mt-[22px] flex flex-col gap-2.5">
-              {FEATURES.map((it) => (
+              {t.features.map((it) => (
                 <div key={it} className="flex items-start gap-[11px] text-sm text-[#3a4452]">
                   <span className="font-semibold" style={{ color: "var(--accent)" }}>
                     →
@@ -53,13 +48,13 @@ export default function PuntoDeVenta() {
                 rel="noopener noreferrer"
                 className="btn-primary inline-block rounded-full px-6 py-3 text-sm font-semibold no-underline"
               >
-                Ver Punto de Venta
+                {t.cta}
               </a>
               <a
                 href="/sistema-punto-de-venta-villahermosa"
                 className="badge-link inline-flex items-center gap-1.5 text-sm font-semibold"
               >
-                Punto de venta en Villahermosa <span className="arr">→</span>
+                {t.cloudLink} <span className="arr">→</span>
               </a>
             </div>
           </div>
@@ -69,7 +64,7 @@ export default function PuntoDeVenta() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/projects/punto-de-venta-menu.jpeg"
-                alt="Sistema de Punto de Venta para negocios en Villahermosa, Tabasco"
+                alt={t.imgAlt}
                 className="block h-auto w-full object-contain"
               />
             </div>

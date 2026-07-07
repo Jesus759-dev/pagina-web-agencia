@@ -29,6 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "weekly",
       priority: 1.0,
+      alternates: {
+        languages: {
+          es: BASE,
+          en: `${BASE}/en`,
+        },
+      },
       images: [
         `${BASE}/projects/requisiciones-dashboard.png`,
         `${BASE}/projects/chemiservis-offshore.png`,
@@ -48,6 +54,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
           live: "no",
         },
       ],
+    },
+    {
+      url: `${BASE}/en`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+      alternates: {
+        languages: {
+          es: BASE,
+          en: `${BASE}/en`,
+        },
+      },
     },
     ...servicePages,
   ];

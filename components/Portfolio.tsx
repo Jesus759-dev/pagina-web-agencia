@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { getDict, type Locale } from "@/lib/i18n";
 
 /* Royers gallery — opened from the Royers card. */
 const ROYERS_GALLERY = [
@@ -9,19 +10,19 @@ const ROYERS_GALLERY = [
   "/assets/royers-4.jpeg",
 ];
 
-function Pill() {
+function Pill({ label }: { label: string }) {
   return (
     <span
       className="rounded-full px-[11px] py-1 font-code text-[11px] font-medium uppercase tracking-[0.06em]"
       style={{ color: "var(--accent)", background: "var(--accent-soft)" }}
     >
-      En producción
+      {label}
     </span>
   );
 }
 
 /* Overlay de censura para capturas con datos sensibles del cliente. */
-function Confidencial() {
+function Confidencial({ label }: { label: string }) {
   return (
     <div className="absolute inset-0 z-[3] flex items-center justify-center">
       <div
@@ -36,7 +37,7 @@ function Confidencial() {
           <rect x="3" y="11" width="18" height="11" rx="2" />
           <path d="M7 11V7a5 5 0 0 1 10 0v4" />
         </svg>
-        Confidencial
+        {label}
       </div>
     </div>
   );
@@ -54,7 +55,8 @@ function Stack({ items }: { items: string[] }) {
   );
 }
 
-export default function Portfolio() {
+export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
+  const t = getDict(lang).portfolio;
   const [lbIdx, setLbIdx] = useState(-1);
   const open = lbIdx >= 0;
 
@@ -80,22 +82,19 @@ export default function Portfolio() {
   return (
     <section id="proyectos" className="mx-auto max-w-[1240px] px-5 pb-10 pt-[120px] sm:px-10">
       <div className="mb-[18px] font-code text-[13px] uppercase tracking-[0.12em]" style={{ color: "var(--accent)" }}>
-        Proyectos en producción · Capturas reales
+        {t.eyebrow}
       </div>
       <h2 className="m-0 max-w-[840px] font-heading text-[34px] font-bold leading-[1.05] tracking-[-0.03em] text-ink sm:text-5xl">
-        Evidencia real de sistemas en vivo.
+        {t.h2}
       </h2>
-      <p className="m-0 mt-5 max-w-[640px] text-lg leading-[1.6] text-muted">
-        Estas no son maquetas. Son plataformas y sitios que hoy operan en petróleo, construcción,
-        mobiliario corporativo e ingeniería.
-      </p>
+      <p className="m-0 mt-5 max-w-[640px] text-lg leading-[1.6] text-muted">{t.lead}</p>
 
       {/* Enlace al catálogo de sistemas (página /sistemas del propio sitio) */}
       <a
         href="/sistemas"
         className="btn-primary mt-7 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold no-underline"
       >
-        Ver los sistemas en vivo <span aria-hidden="true">→</span>
+        {t.ctaSystems} <span aria-hidden="true">→</span>
       </a>
 
       {/* Featured — full width */}
@@ -104,26 +103,21 @@ export default function Portfolio() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/projects/chemiservis-portal.png"
-            alt="Cliente petrolero — Portal de Sistemas ERP"
+            alt={t.alts.portal}
             className="block h-full w-full object-cover"
             style={{ filter: "blur(18px)", transform: "scale(1.1)" }}
           />
-          <Confidencial />
+          <Confidencial label={t.confidential} />
         </div>
         <div className="p-10">
           <div className="mb-3.5 flex items-center gap-2.5">
-            <Pill />
-            <span className="text-[13px] text-[#7a838f]">Suite ERP · Petróleo &amp; Gas</span>
+            <Pill label={t.inProduction} />
+            <span className="text-[13px] text-[#7a838f]">{t.featured.cat}</span>
           </div>
           <h3 className="m-0 font-heading text-[27px] font-semibold leading-[1.16] tracking-[-0.02em] text-ink">
-            Cliente petrolero — Suite ERP
+            {t.featured.title}
           </h3>
-          <p className="mt-3.5 text-[15px] leading-[1.6] text-muted">
-            Plataforma operativa multisistema para la industria petrolera: portal único de acceso
-            con módulos de Requisiciones y Compras, Mantenimiento Vehicular e Inventario. Control
-            financiero con KPIs en tiempo real, trazabilidad completa y auditoría sobre 23 áreas
-            operativas.
-          </p>
+          <p className="mt-3.5 text-[15px] leading-[1.6] text-muted">{t.featured.desc}</p>
           <Stack items={["Next.js", "PostgreSQL", "TailwindCSS", "TypeScript"]} />
         </div>
       </div>
@@ -136,24 +130,21 @@ export default function Portfolio() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/projects/mantenimiento-vehicular-login.png"
-              alt="Cliente petrolero — Sistema de Mantenimiento Vehicular"
+              alt={t.alts.mantenimiento}
               className="block h-full w-full object-cover"
               style={{ filter: "blur(18px)", transform: "scale(1.1)" }}
             />
-            <Confidencial />
+            <Confidencial label={t.confidential} />
           </div>
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
-              <Pill />
-              <span className="text-[13px] text-[#7a838f]">Sistema · Gestión de flota</span>
+              <Pill label={t.inProduction} />
+              <span className="text-[13px] text-[#7a838f]">{t.mantenimiento.cat}</span>
             </div>
             <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
-              Mantenimiento Vehicular
+              {t.mantenimiento.title}
             </h3>
-            <p className="mt-[11px] text-sm leading-[1.6] text-muted">
-              Órdenes de trabajo, alertas por kilometraje, control de costos e historial completo de
-              la flota — cada componente bajo control.
-            </p>
+            <p className="mt-[11px] text-sm leading-[1.6] text-muted">{t.mantenimiento.desc}</p>
           </div>
         </article>
 
@@ -163,23 +154,21 @@ export default function Portfolio() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/projects/chemiservis-offshore.png"
-              alt="Cliente petrolero — Hidráulica v1.3"
+              alt={t.alts.hidraulica}
               className="block h-full w-full object-cover"
               style={{ filter: "blur(18px)", transform: "scale(1.1)" }}
             />
-            <Confidencial />
+            <Confidencial label={t.confidential} />
           </div>
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
-              <Pill />
-              <span className="text-[13px] text-[#7a838f]">Software técnico</span>
+              <Pill label={t.inProduction} />
+              <span className="text-[13px] text-[#7a838f]">{t.hidraulica.cat}</span>
             </div>
             <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
-              Cliente petrolero — Hidráulica v1.3
+              {t.hidraulica.title}
             </h3>
-            <p className="mt-[11px] text-sm leading-[1.6] text-muted">
-              11 módulos técnicos y simulador 3D offshore para fluidos de perforación.
-            </p>
+            <p className="mt-[11px] text-sm leading-[1.6] text-muted">{t.hidraulica.desc}</p>
           </div>
         </article>
 
@@ -194,7 +183,7 @@ export default function Portfolio() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/assets/royers-4.jpeg"
-              alt="Royers S.A. de C.V. — Construcción en Tabasco"
+              alt={t.alts.royers}
               className="block h-full w-full object-cover"
             />
             <button
@@ -215,21 +204,21 @@ export default function Portfolio() {
                 <rect x="3" y="3" width="14" height="14" rx="2" />
                 <path d="M21 7v12a2 2 0 0 1-2 2H7" />
               </svg>
-              Ver galería
+              {t.lightbox.galleryAria}
             </button>
           </div>
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
-              <Pill />
-              <span className="text-[13px] text-[#7a838f]">Sitio web · Construcción</span>
+              <Pill label={t.inProduction} />
+              <span className="text-[13px] text-[#7a838f]">{t.royers.cat}</span>
             </div>
             <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
-              Royers S.A. de C.V.
+              {t.royers.title}
             </h3>
             <p className="mt-[11px] text-sm leading-[1.6] text-muted">
-              35+ años, 500+ obras y 98% de satisfacción. Renders 3D y obras entregadas —{" "}
+              {t.royers.descPrefix}
               <span className="font-semibold" style={{ color: "var(--accent)" }}>
-                toca para visitar el sitio
+                {t.tapToVisit}
               </span>
               .
             </p>
@@ -247,22 +236,19 @@ export default function Portfolio() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/assets/alphamobil-escritorio.webp"
-              alt="Alpha Mobil — Showroom de mobiliario corporativo"
+              alt={t.alts.alphamobil}
               className="block h-full w-full object-cover"
             />
           </div>
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
-              <Pill />
-              <span className="text-[13px] text-[#7a838f]">Sitio web · Mobiliario</span>
+              <Pill label={t.inProduction} />
+              <span className="text-[13px] text-[#7a838f]">{t.alphamobil.cat}</span>
             </div>
             <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
-              Alpha Mobil
+              {t.alphamobil.title}
             </h3>
-            <p className="mt-[11px] text-sm leading-[1.6] text-muted">
-              Showroom corporativo con catálogo, galería de proyectos y cotización directa por
-              WhatsApp.
-            </p>
+            <p className="mt-[11px] text-sm leading-[1.6] text-muted">{t.alphamobil.desc}</p>
           </div>
         </a>
 
@@ -277,22 +263,19 @@ export default function Portfolio() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/projects/provalsa.jpg"
-              alt="Provalsa — Válvulas y equipo industrial"
+              alt={t.alts.provalsa}
               className="block h-full w-full object-cover"
             />
           </div>
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
-              <Pill />
-              <span className="text-[13px] text-[#7a838f]">Sitio web · Válvulas industriales</span>
+              <Pill label={t.inProduction} />
+              <span className="text-[13px] text-[#7a838f]">{t.provalsa.cat}</span>
             </div>
             <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
-              Provalsa
+              {t.provalsa.title}
             </h3>
-            <p className="mt-[11px] text-sm leading-[1.6] text-muted">
-              Catálogo de válvulas y equipo industrial con presentación de productos y contacto
-              directo para cotización.
-            </p>
+            <p className="mt-[11px] text-sm leading-[1.6] text-muted">{t.provalsa.desc}</p>
           </div>
         </a>
 
@@ -310,23 +293,22 @@ export default function Portfolio() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="https://calm-entremet-3d7138.netlify.app/assets/logo.jpg"
-              alt="TACEF Aceros — Sitio web corporativo"
+              alt={t.alts.tacef}
               className="max-h-[60%] max-w-[68%] object-contain"
             />
           </div>
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
-              <Pill />
-              <span className="text-[13px] text-[#7a838f]">Sitio web · Acero</span>
+              <Pill label={t.inProduction} />
+              <span className="text-[13px] text-[#7a838f]">{t.tacef.cat}</span>
             </div>
             <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
-              TACEF Aceros
+              {t.tacef.title}
             </h3>
             <p className="mt-[11px] text-sm leading-[1.6] text-muted">
-              Sitio web corporativo para TACEF, del sector del acero: presentación de la empresa,
-              productos y contacto —{" "}
+              {t.tacef.descPrefix}
               <span className="font-semibold" style={{ color: "var(--accent)" }}>
-                toca para visitar el sitio
+                {t.tapToVisit}
               </span>
               .
             </p>
@@ -355,16 +337,16 @@ export default function Portfolio() {
             style={{ background: "var(--accent-soft)", color: "var(--accent)" }}
           >
             <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: "var(--accent)" }} />
-            En desarrollo · Próximamente
+            {t.comingSoon.badge}
           </div>
           <h3 className="m-0 font-heading text-[25px] font-semibold leading-[1.16] tracking-[-0.02em] text-ink">
-            Sistema de Inventario
+            {t.comingSoon.title}
           </h3>
           <p className="mt-[11px] max-w-[620px] text-[15px] leading-[1.6] text-muted">
-            Control de existencias, almacén y administración de inventario. Estamos construyendo un
-            producto propio que estará disponible por{" "}
-            <strong className="font-semibold text-ink">pago único</strong> o{" "}
-            <strong className="font-semibold text-ink">membresía</strong>.
+            {t.comingSoon.descA}
+            <strong className="font-semibold text-ink">{t.comingSoon.once}</strong>
+            {t.comingSoon.or}
+            <strong className="font-semibold text-ink">{t.comingSoon.membership}</strong>.
           </p>
         </div>
         <a
@@ -374,7 +356,7 @@ export default function Portfolio() {
           onClick={() => window.gtag?.("event", "contacto_whatsapp")}
           className="cta-outline inline-flex flex-none items-center gap-2 rounded-full px-[26px] py-[13px] text-sm font-semibold no-underline"
         >
-          Quiero saber más <span className="arr">→</span>
+          {t.comingSoon.cta} <span className="arr">→</span>
         </a>
       </div>
 
@@ -390,15 +372,15 @@ export default function Portfolio() {
           }}
           role="dialog"
           aria-modal="true"
-          aria-label="Galería Royers"
+          aria-label={t.lightbox.galleryAria}
         >
           <div className="mb-4 flex w-full max-w-[1100px] items-center justify-between">
             <div className="text-white">
               <div className="font-heading text-[18px] font-semibold tracking-[-0.02em]">
-                Royers S.A. de C.V. — Galería
+                {t.lightbox.title}
               </div>
               <div className="mt-0.5 text-[13px] text-white/60">
-                Renders 3D y obras entregadas · {lbIdx + 1} / {ROYERS_GALLERY.length}
+                {t.lightbox.subtitle} · {lbIdx + 1} / {ROYERS_GALLERY.length}
               </div>
             </div>
             <button
@@ -406,7 +388,7 @@ export default function Portfolio() {
                 e.stopPropagation();
                 setLbIdx(-1);
               }}
-              aria-label="Cerrar galería"
+              aria-label={t.lightbox.close}
               className="inline-flex h-11 w-11 items-center justify-center rounded-full border-0 text-[22px] leading-none text-white"
               style={{ background: "rgba(255,255,255,.12)" }}
             >
@@ -423,7 +405,7 @@ export default function Portfolio() {
                 e.stopPropagation();
                 step(-1);
               }}
-              aria-label="Imagen anterior"
+              aria-label={t.lightbox.prev}
               className="absolute left-[-8px] top-1/2 z-[3] inline-flex h-[52px] w-[52px] -translate-y-1/2 items-center justify-center rounded-full border-0 text-[22px] text-ink"
               style={{ background: "rgba(255,255,255,.92)", boxShadow: "0 6px 18px rgba(0,0,0,.3)" }}
             >
@@ -432,7 +414,7 @@ export default function Portfolio() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={ROYERS_GALLERY[lbIdx]}
-              alt="Captura del proyecto Royers"
+              alt={t.lightbox.imgAlt}
               className="max-h-[74vh] max-w-full rounded-xl object-contain"
               style={{ background: "#0c1220", boxShadow: "0 20px 60px rgba(0,0,0,.5)" }}
             />
@@ -441,16 +423,14 @@ export default function Portfolio() {
                 e.stopPropagation();
                 step(1);
               }}
-              aria-label="Imagen siguiente"
+              aria-label={t.lightbox.next}
               className="absolute right-[-8px] top-1/2 z-[3] inline-flex h-[52px] w-[52px] -translate-y-1/2 items-center justify-center rounded-full border-0 text-[22px] text-ink"
               style={{ background: "rgba(255,255,255,.92)", boxShadow: "0 6px 18px rgba(0,0,0,.3)" }}
             >
               ›
             </button>
           </div>
-          <div className="mt-3.5 text-xs text-white/50">
-            Toca fuera de la imagen o × para cerrar · ‹ › para navegar
-          </div>
+          <div className="mt-3.5 text-xs text-white/50">{t.lightbox.hint}</div>
         </div>
       )}
     </section>

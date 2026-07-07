@@ -1,125 +1,76 @@
-const SERVICES = [
-  {
-    n: "01",
-    title: "Desarrollo de páginas web",
-    desc: "Sitios de alto rendimiento optimizados para convertir visitantes en clientes. Velocidad, SEO y experiencia impecable.",
-    items: [
-      "Landing pages de alta conversión",
-      "E-commerce optimizado con IA",
-      "Aplicaciones web progresivas (PWA)",
-      "Optimización SEO avanzada",
-    ],
-    href: "/diseno-de-paginas-web-villahermosa",
-    hrefLabel: "Diseño de páginas web en Villahermosa",
-  },
-  {
-    n: "02",
-    title: "Automatizaciones de procesos con IA",
-    desc: "Identificamos las tareas que consumen tu tiempo y las automatizamos con flujos inteligentes. Menos errores, más productividad.",
-    items: [
-      "Automatización de procesos con n8n",
-      "Integración de APIs y servicios",
-      "Workflows inteligentes con IA",
-      "Reportes automáticos personalizados",
-    ],
-    href: "/automatizacion-con-ia-tabasco",
-    hrefLabel: "Automatización con IA en Tabasco",
-  },
-  {
-    n: "03",
-    title: "Desarrollo de sistemas web y software",
-    desc: "Software y sistemas web con IA integrada que resuelven problemas reales de tu negocio. Una solución diseñada a tu medida, no un producto genérico.",
-    items: [
-      "Plataformas y dashboards a medida",
-      "Procesamiento de documentos con IA",
-      "Asistentes y chatbots personalizados",
-      "Integración con tus sistemas existentes",
-    ],
-    href: "/desarrollo-de-software-a-medida-villahermosa",
-    hrefLabel: "Desarrollo de software a medida en Villahermosa",
-  },
-  {
-    n: "04",
-    title: "Infraestructura IT, redes y hardware",
-    desc: "Armamos, desplegamos y mantenemos tu infraestructura de cómputo y conectividad. De una workstation a medida a un despliegue Ubiquiti empresarial.",
-    items: [
-      "Armado de PCs a medida",
-      "Routers, APs y redes Ubiquiti",
-      "Mantenimiento preventivo y correctivo",
-      "Soporte técnico y consultoría IT",
-    ],
-    href: null,
-    hrefLabel: null,
-  },
+import { getDict, type Locale } from "@/lib/i18n";
+
+// Hrefs stay pointing to the (Spanish) service pages for now; labels are
+// translated. Phase 2 will add locale-aware service routes.
+const CARD_HREFS: (string | null)[] = [
+  "/diseno-de-paginas-web-villahermosa",
+  "/automatizacion-con-ia-tabasco",
+  "/desarrollo-de-software-a-medida-villahermosa",
+  null,
 ];
 
-/** Dedicated local-SEO landing pages not represented as a card above. */
-const SERVICE_PAGE_LINKS = [
-  {
-    href: "/desarrollo-de-aplicaciones-web-tabasco",
-    label: "Desarrollo de aplicaciones web a medida en Tabasco",
-  },
-  {
-    href: "/sistema-punto-de-venta-villahermosa",
-    label: "Sistema de punto de venta en Villahermosa",
-  },
+const MORE_HREFS = [
+  "/desarrollo-de-aplicaciones-web-tabasco",
+  "/sistema-punto-de-venta-villahermosa",
 ];
 
-export default function Services() {
+export default function Services({ lang = "es" }: { lang?: Locale }) {
+  const t = getDict(lang).services;
+
   return (
     <section id="servicios" className="mx-auto max-w-[1240px] px-5 pb-10 pt-[120px] sm:px-10">
       <div className="mb-[18px] font-code text-[13px] uppercase tracking-[0.12em]" style={{ color: "var(--accent)" }}>
-        Servicios
+        {t.eyebrow}
       </div>
       <h2 className="m-0 max-w-[760px] font-heading text-[34px] font-bold leading-[1.05] tracking-[-0.03em] text-ink sm:text-5xl">
-        Cuatro maneras de transformar tu negocio.
+        {t.h2}
       </h2>
-      <p className="m-0 mt-5 max-w-[600px] text-lg leading-[1.6] text-muted">
-        Software con IA, sitios web, automatizaciones e infraestructura IT. Un solo equipo para
-        todo tu stack tecnológico.
-      </p>
+      <p className="m-0 mt-5 max-w-[600px] text-lg leading-[1.6] text-muted">{t.lead}</p>
 
       <div className="mt-[52px] grid grid-cols-1 gap-[22px] md:grid-cols-2">
-        {SERVICES.map((s) => (
-          <div key={s.n} className="svc-card rounded-2xl border border-line bg-white p-[38px]">
-            <div className="font-code text-[13px]" style={{ color: "var(--accent)" }}>
-              {s.n}
+        {t.cards.map((s, i) => {
+          const href = CARD_HREFS[i];
+          return (
+            <div key={s.title} className="svc-card rounded-2xl border border-line bg-white p-[38px]">
+              <div className="font-code text-[13px]" style={{ color: "var(--accent)" }}>
+                {String(i + 1).padStart(2, "0")}
+              </div>
+              <h3 className="m-0 mt-4 font-heading text-[25px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
+                {s.title}
+              </h3>
+              <p className="mt-[13px] text-[15px] leading-[1.65] text-muted">{s.desc}</p>
+              <div className="mt-[22px] flex flex-col gap-2.5">
+                {s.items.map((it) => (
+                  <div key={it} className="flex items-start gap-[11px] text-sm text-[#3a4452]">
+                    <span className="font-semibold" style={{ color: "var(--accent)" }}>
+                      →
+                    </span>
+                    {it}
+                  </div>
+                ))}
+              </div>
+              {href && (
+                <a
+                  href={href}
+                  className="badge-link mt-[26px] inline-flex items-center gap-1.5 text-sm font-semibold"
+                >
+                  {s.linkLabel} <span className="arr">→</span>
+                </a>
+              )}
             </div>
-            <h3 className="m-0 mt-4 font-heading text-[25px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
-              {s.title}
-            </h3>
-            <p className="mt-[13px] text-[15px] leading-[1.65] text-muted">{s.desc}</p>
-            <div className="mt-[22px] flex flex-col gap-2.5">
-              {s.items.map((it) => (
-                <div key={it} className="flex items-start gap-[11px] text-sm text-[#3a4452]">
-                  <span className="font-semibold" style={{ color: "var(--accent)" }}>
-                    →
-                  </span>
-                  {it}
-                </div>
-              ))}
-            </div>
-            {s.href && (
-              <a
-                href={s.href}
-                className="badge-link mt-[26px] inline-flex items-center gap-1.5 text-sm font-semibold"
-              >
-                {s.hrefLabel} <span className="arr">→</span>
-              </a>
-            )}
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Internal links to the remaining local-SEO service pages */}
       <div className="mt-[30px] flex flex-wrap gap-3">
-        {SERVICE_PAGE_LINKS.map((l) => (
+        {MORE_HREFS.map((href, i) => (
           <a
-            key={l.href}
-            href={l.href}
+            key={href}
+            href={href}
             className="badge-link inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-5 py-2.5 text-sm font-semibold"
           >
-            {l.label} <span className="arr">→</span>
+            {t.morePages[i]} <span className="arr">→</span>
           </a>
         ))}
       </div>

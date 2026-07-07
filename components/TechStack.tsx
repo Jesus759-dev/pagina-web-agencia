@@ -1,3 +1,5 @@
+import { getDict, type Locale } from "@/lib/i18n";
+
 type Tech = { name: string; dot: string };
 
 // Two rows scrolling in opposite directions (see globals.css → marqueeA / marqueeB).
@@ -31,9 +33,6 @@ function Pill({ name, dot }: Tech) {
 }
 
 function Row({ items, anim }: { items: Tech[]; anim: "marquee-a" | "marquee-b" }) {
-  // For a seamless loop the track holds two identical halves and animates by
-  // -50%. Each half must be wider than the viewport, so repeat the base list
-  // until a half has enough pills to span even wide screens.
   const half: Tech[] = [];
   while (half.length < 16) half.push(...items);
   const doubled = [...half, ...half];
@@ -48,11 +47,12 @@ function Row({ items, anim }: { items: Tech[]; anim: "marquee-a" | "marquee-b" }
   );
 }
 
-export default function TechStack() {
+export default function TechStack({ lang = "es" }: { lang?: Locale }) {
+  const t = getDict(lang).tech;
   return (
     <section className="border-b border-line-soft bg-canvas py-16">
       <div className="mb-[34px] text-center font-code text-xs uppercase tracking-[0.16em] text-faint">
-        Trabajamos con las mejores herramientas y stack de IA disponible hoy
+        {t.heading}
       </div>
       <Row items={ROW_A} anim="marquee-a" />
       <div className="mt-3.5">
