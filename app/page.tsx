@@ -4,6 +4,7 @@ import Stats from "@/components/Stats";
 import TechStack from "@/components/TechStack";
 import Services from "@/components/Services";
 import PuntoDeVenta from "@/components/PuntoDeVenta";
+import Crm from "@/components/Crm";
 import Portfolio from "@/components/Portfolio";
 import WhyUs from "@/components/WhyUs";
 import Process from "@/components/Process";
@@ -21,6 +22,7 @@ export default function Home() {
         <TechStack />
         <Services />
         <PuntoDeVenta />
+        <Crm />
         <Portfolio />
         <WhyUs />
         <Process />

@@ -30,6 +30,7 @@ const es = {
     cta: "Consulta gratuita",
     homeAria: "Neurovia Systems — inicio",
     switchLabel: "English",
+    newBadge: "Nuevo",
   },
   hero: {
     sectionAria: "Sección principal",
@@ -284,6 +285,22 @@ const es = {
       { name: "Punto de Venta", desc: "Terminal de ventas, tickets, cajas y control de operaciones diarias." },
     ],
   },
+  crm: {
+    eyebrow: "CRM",
+    badge: "Nuevo",
+    h2: "Gestiona tus clientes con nuestro CRM.",
+    lead: "Centraliza contactos, oportunidades y seguimiento de ventas en un solo lugar. Menos hojas de cálculo, más cierres.",
+    features: [
+      "Contactos y empresas organizados",
+      "Embudo de ventas visual",
+      "Seguimiento de oportunidades y tareas",
+      "Reportes de ventas en tiempo real",
+    ],
+    cta: "Abrir el CRM",
+    allSystems: "Ver todos los sistemas",
+    mockTitle: "Pipeline de ventas",
+    stages: { prospect: "Prospecto", proposal: "Propuesta", won: "Ganado" },
+  },
 };
 
 /* -------------------------------------------------------------------------- */
@@ -301,6 +318,7 @@ const en: typeof es = {
     cta: "Free consultation",
     homeAria: "Neurovia Systems — home",
     switchLabel: "Español",
+    newBadge: "New",
   },
   hero: {
     sectionAria: "Main section",
@@ -554,6 +572,22 @@ const en: typeof es = {
       { name: "Inventory", desc: "Warehouse management, inbound and outbound, stock and movements." },
       { name: "Point of Sale", desc: "Sales terminal, receipts, cash registers and daily operations control." },
     ],
+  },
+  crm: {
+    eyebrow: "CRM",
+    badge: "New",
+    h2: "Manage your customers with our CRM.",
+    lead: "Centralize contacts, opportunities and sales follow-up in one place. Fewer spreadsheets, more closed deals.",
+    features: [
+      "Organized contacts and companies",
+      "Visual sales pipeline",
+      "Opportunity and task tracking",
+      "Real-time sales reports",
+    ],
+    cta: "Open the CRM",
+    allSystems: "See all systems",
+    mockTitle: "Sales pipeline",
+    stages: { prospect: "Prospect", proposal: "Proposal", won: "Won" },
   },
 };
 

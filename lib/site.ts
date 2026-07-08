@@ -23,6 +23,9 @@ export const WA_INVENTARIO = waLink(
  */
 export const POS_LANDING = "https://puntodeventa.neuroviasystems.cloud";
 
+/** CRM — nuevo producto. */
+export const CRM_URL = "https://crm.neuroviasystems.cloud/";
+
 /**
  * Portal de sistemas en vivo desarrollados por Neurovia (acceso a las demos:
  * Requisiciones, Mantenimiento Vehicular, Inventario y Punto de Venta).

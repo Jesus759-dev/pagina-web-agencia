@@ -8,9 +8,10 @@ export default function Navbar({ lang = "es" }: { lang?: Locale }) {
   const t = getDict(lang);
   const base = localeBase(lang);
   // Root-relative anchors (`/#…` or `/en/#…`) so the nav works from subpages too.
-  const links = [
+  const links: { href: string; label: string; badge?: string }[] = [
     { href: `${base}/#servicios`, label: t.nav.servicios },
     { href: `${base}/#punto-de-venta`, label: t.nav.puntoDeVenta },
+    { href: `${base}/#crm`, label: "CRM", badge: t.nav.newBadge },
     { href: `${base}/#proyectos`, label: t.nav.proyectos },
     { href: `${base}/#proceso`, label: t.nav.proceso },
     { href: `${base}/#nosotros`, label: t.nav.nosotros },
@@ -46,6 +47,14 @@ export default function Navbar({ lang = "es" }: { lang?: Locale }) {
           {links.map((l) => (
             <a key={l.href} href={l.href} className="pill-link flex items-center gap-1.5 text-sm">
               {l.label}
+              {l.badge && (
+                <span
+                  className="rounded-full px-1.5 py-[1px] font-code text-[9px] font-semibold uppercase tracking-[0.1em] text-white"
+                  style={{ background: "var(--accent)" }}
+                >
+                  {l.badge}
+                </span>
+              )}
             </a>
           ))}
         </div>
