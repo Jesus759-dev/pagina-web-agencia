@@ -41,9 +41,19 @@ export default function SistemasPage({ lang = "es" }: { lang?: Locale }) {
                 <div className="font-code text-[13px]" style={{ color: "var(--accent)" }}>
                   {String(i + 1).padStart(2, "0")}
                 </div>
-                <h2 className="m-0 mt-4 font-heading text-[25px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
-                  {t.systems[i].name}
-                </h2>
+                <div className="mt-4 flex items-center gap-2.5">
+                  <h2 className="m-0 font-heading text-[25px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
+                    {t.systems[i].name}
+                  </h2>
+                  {s.isNew && (
+                    <span
+                      className="rounded-full px-2.5 py-[3px] font-code text-[10px] font-semibold uppercase tracking-[0.14em] text-white"
+                      style={{ background: "var(--accent)" }}
+                    >
+                      {t.newBadge}
+                    </span>
+                  )}
+                </div>
                 <div className="mt-1.5 font-code text-[12px] text-faint">{s.host}</div>
                 <p className="mt-[13px] flex-1 text-[15px] leading-[1.65] text-muted">{t.systems[i].desc}</p>
                 <span

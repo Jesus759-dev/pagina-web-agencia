@@ -269,10 +269,12 @@ const es = {
   sistemas: {
     eyebrow: "Plataforma de sistemas",
     h1: "Catálogo de sistemas Neurovia",
-    lead: "Portal centralizado de los sistemas que desarrollamos y mantenemos en producción: adquisiciones, mantenimiento vehicular, inventario y punto de venta. Elige un sistema para acceder.",
+    lead: "Portal centralizado de los sistemas que desarrollamos y mantenemos en producción: CRM, adquisiciones, mantenimiento vehicular, inventario y punto de venta. Elige un sistema para acceder.",
     note: "Algunos sistemas requieren credenciales de acceso proporcionadas por Neurovia Systems. ¿Necesitas acceso o quieres un sistema a la medida de tu empresa? Escríbenos.",
     enter: "Entrar al sistema",
+    newBadge: "Nuevo",
     systems: [
+      { name: "CRM", desc: "Gestión de clientes, contactos, oportunidades y seguimiento de ventas en un solo lugar." },
       { name: "Sistema de Requisiciones", desc: "Órdenes de compra, cuentas por pagar, proveedores y reporte dinámico." },
       { name: "Mantenimiento Vehicular", desc: "Control de flota, órdenes de servicio, unidades y bitácora de mantenimiento." },
       { name: "Inventario", desc: "Gestión de almacén, entradas y salidas, existencias y movimientos." },
@@ -535,10 +537,12 @@ const en: typeof es = {
   sistemas: {
     eyebrow: "Systems platform",
     h1: "Neurovia systems catalog",
-    lead: "A central portal for the systems we build and keep in production: purchasing, fleet maintenance, inventory and point of sale. Choose a system to sign in.",
+    lead: "A central portal for the systems we build and keep in production: CRM, purchasing, fleet maintenance, inventory and point of sale. Choose a system to sign in.",
     note: "Some systems require access credentials provided by Neurovia Systems. Need access or a system tailored to your business? Get in touch.",
     enter: "Enter system",
+    newBadge: "New",
     systems: [
+      { name: "CRM", desc: "Customer management, contacts, opportunities and sales tracking in one place." },
       { name: "Requisitions System", desc: "Purchase orders, accounts payable, suppliers and dynamic reporting." },
       { name: "Fleet Maintenance", desc: "Fleet control, service orders, units and maintenance logs." },
       { name: "Inventory", desc: "Warehouse management, inbound and outbound, stock and movements." },
