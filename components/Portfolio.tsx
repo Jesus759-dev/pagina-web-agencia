@@ -98,6 +98,34 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
         {t.ctaSystems} <span aria-hidden="true">→</span>
       </a>
 
+      {/* Nuevo producto destacado: CRM */}
+      <a
+        href="https://crm.neuroviasystems.cloud/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="proj-card mt-8 flex flex-wrap items-center gap-x-8 gap-y-4 rounded-2xl border-2 bg-white px-8 py-7 no-underline"
+        style={{
+          borderColor: "var(--accent)",
+          boxShadow: "0 18px 50px -18px color-mix(in srgb, var(--accent) 35%, transparent)",
+        }}
+      >
+        <span
+          className="rounded-full px-2.5 py-[3px] font-code text-[10px] font-semibold uppercase tracking-[0.14em] text-white"
+          style={{ background: "var(--accent)" }}
+        >
+          {t.crmBadge}
+        </span>
+        <div className="min-w-[240px] flex-1">
+          <h3 className="m-0 font-heading text-[27px] font-semibold leading-[1.16] tracking-[-0.02em] text-ink">
+            CRM
+          </h3>
+          <p className="mt-1.5 text-[15px] leading-[1.6] text-muted">{t.crmDesc}</p>
+        </div>
+        <span className="btn-primary inline-flex flex-none items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold">
+          {t.crmCta} <span aria-hidden="true">→</span>
+        </span>
+      </a>
+
       {/* Featured — full width */}
       <div className="proj-card mt-[52px] grid grid-cols-1 overflow-hidden rounded-2xl border border-line bg-white md:grid-cols-[1.3fr_1fr]">
         <div className="relative min-h-[340px] overflow-hidden" style={{ background: "#0a1530" }}>
