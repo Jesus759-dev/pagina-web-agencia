@@ -65,7 +65,7 @@ export default function Crm({ lang = "es" }: { lang?: Locale }) {
           </div>
 
           {/* Captura real de la pantalla de acceso del CRM */}
-          <div className="hidden md:block">
+          <div className="hidden md:block" data-parallax data-parallax-speed="0.14" data-parallax-max="7">
             <div
               className="overflow-hidden rounded-2xl border border-line"
               style={{ boxShadow: "0 16px 44px -20px rgba(60,48,30,0.45)" }}

@@ -60,7 +60,7 @@ export default function PuntoDeVenta({ lang = "es" }: { lang?: Locale }) {
             </div>
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden md:block" data-parallax data-parallax-speed="0.14" data-parallax-max="7">
             <div className="overflow-hidden rounded-2xl border border-line">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
