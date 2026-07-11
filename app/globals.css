@@ -31,7 +31,7 @@
   --color-brand-blue: #3b82f6;
   --color-brand-violet: #6847e5;
 
-  --font-heading: var(--font-fraunces);
+  --font-heading: var(--font-lora);
   --font-body: var(--font-inter);
   --font-code: var(--font-jetbrains-mono);
 }
@@ -60,7 +60,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading), "Fraunces", Georgia, "Times New Roman", serif;
+  font-family: var(--font-heading), "Lora", Georgia, "Times New Roman", serif;
   font-weight: 600;
   letter-spacing: -0.01em;
 }

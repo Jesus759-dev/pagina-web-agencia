@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
+import { Lora, Inter, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollChoreography from "@/components/ScrollChoreography";
 
-// Warm editorial serif for headings — reads more human and more distinguished
-// than the previous grotesque. Variable font (weight axis) via next/font.
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+// Warm editorial serif for headings — distinguished and human, with classic
+// (non-quirky) letterforms. Variable font (weight axis) via next/font.
+const lora = Lora({
+  variable: "--font-lora",
   subsets: ["latin"],
   display: "swap",
 });
@@ -319,7 +319,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
+      className={`${lora.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
     >
       <head>
         {/* Connection hints for third-party origins (fonts + video CDN) */}
