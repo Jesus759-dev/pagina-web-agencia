@@ -60,6 +60,18 @@ export default function ScrollChoreography() {
       parImgs.push(img);
     });
 
+    // 4) Generic parallax — any element marked [data-parallax] drifts at its
+    //    own speed as it scrolls through the viewport, creating depth.
+    //    Optional attrs: data-parallax-speed (default 0.12), data-parallax-max
+    //    (default 10, clamp in %). Applies to decorative/background elements
+    //    only (never to elements that already run a reveal animation).
+    const parEls = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-parallax]")
+    );
+    parEls.forEach((el) => {
+      el.style.willChange = "transform";
+    });
+
     let raf = 0;
     const frame = () => {
       const vh = window.innerHeight || document.documentElement.clientHeight;
@@ -82,6 +94,17 @@ export default function ScrollChoreography() {
         const prog = (r.top + r.height / 2 - vh / 2) / vh;
         const ty = Math.max(-9, Math.min(9, -prog * 9));
         img.style.transform = "translateY(" + ty + "%)";
+      }
+      for (let i = 0; i < parEls.length; i++) {
+        const el = parEls[i];
+        const r = el.getBoundingClientRect();
+        if (r.bottom < -200 || r.top > vh + 200) continue;
+        const speed = parseFloat(el.dataset.parallaxSpeed || "0.12");
+        const max = parseFloat(el.dataset.parallaxMax || "10");
+        const centerOffset = r.top + r.height / 2 - vh / 2;
+        let ty = -(centerOffset / vh) * speed * 100;
+        ty = Math.max(-max, Math.min(max, ty));
+        el.style.transform = "translate3d(0," + ty + "%,0)";
       }
       raf = requestAnimationFrame(frame);
     };

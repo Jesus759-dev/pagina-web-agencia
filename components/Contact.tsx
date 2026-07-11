@@ -16,6 +16,9 @@ export default function Contact({ lang = "es" }: { lang?: Locale }) {
           <div
             className="absolute left-1/2 top-[-30%] h-[700px] w-[700px] -ml-[350px] rounded-full"
             aria-hidden="true"
+            data-parallax
+            data-parallax-speed="0.25"
+            data-parallax-max="16"
             style={{ background: "rgba(255,255,255,.12)", filter: "blur(60px)" }}
           />
           <div className="relative z-[2] mx-auto max-w-[720px]">

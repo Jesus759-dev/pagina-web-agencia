@@ -14,7 +14,11 @@ export default function Hero({ lang = "es" }: { lang?: Locale }) {
       style={{ background: "#efe8dc" }}
     >
       <video
-        className="absolute inset-0 z-0 h-full w-full object-cover"
+        className="absolute left-0 z-0 w-full object-cover"
+        data-parallax
+        data-parallax-speed="0.35"
+        data-parallax-max="12"
+        style={{ top: "-15%", height: "130%" }}
         autoPlay
         loop
         muted
