@@ -19,9 +19,9 @@ export default function Hero({ lang = "es" }: { lang?: Locale }) {
         loop
         muted
         playsInline
-        poster="/images/hero-robotic-hand.jpg"
+        poster="/images/hero-fondo.jpg"
       >
-        <source src="/videos/neurovia-robotic-hand.mp4" type="video/mp4" />
+        <source src="/videos/hero-fondo.mp4" type="video/mp4" />
       </video>
 
       <div
