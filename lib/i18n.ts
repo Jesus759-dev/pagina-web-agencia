@@ -166,6 +166,11 @@ const es = {
       title: "TACEF Aceros",
       descPrefix: "Sitio web corporativo para TACEF, del sector del acero: presentación de la empresa, productos y contacto — ",
     },
+    sotop: {
+      cat: "Sistema web · Gobierno",
+      title: "SOTOP — Gobierno de Tabasco",
+      descPrefix: "Sistema web de dictamen de equipos de soporte para la Unidad de Apoyo Técnico e Informático — ",
+    },
     comingSoon: {
       badge: "En desarrollo · Próximamente",
       title: "Sistema de Inventario",
@@ -193,6 +198,7 @@ const es = {
       alphamobil: "Alpha Mobil — Showroom de mobiliario corporativo",
       provalsa: "Provalsa — Válvulas y equipo industrial",
       tacef: "TACEF Aceros — Sitio web corporativo",
+      sotop: "SOTOP — Secretaría de Ordenamiento Territorial y Obras Públicas de Tabasco",
     },
   },
   whyus: {
@@ -455,6 +461,11 @@ const en: typeof es = {
       title: "TACEF Aceros",
       descPrefix: "Corporate website for TACEF, in the steel sector: company overview, products and contact — ",
     },
+    sotop: {
+      cat: "Web system · Government",
+      title: "SOTOP — Government of Tabasco",
+      descPrefix: "Equipment assessment web system for the IT & Technical Support Unit — ",
+    },
     comingSoon: {
       badge: "In development · Coming soon",
       title: "Inventory System",
@@ -482,6 +493,7 @@ const en: typeof es = {
       alphamobil: "Alpha Mobil — Corporate furniture showroom",
       provalsa: "Provalsa — Valves and industrial equipment",
       tacef: "TACEF Aceros — Corporate website",
+      sotop: "SOTOP — Tabasco Ministry of Territorial Planning and Public Works",
     },
   },
   whyus: {

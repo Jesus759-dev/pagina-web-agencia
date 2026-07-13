@@ -125,6 +125,39 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
 
       {/* 2×2 cards */}
       <div className="mt-[22px] grid grid-cols-1 gap-[22px] md:grid-cols-2">
+        {/* SOTOP — Gobierno de Tabasco */}
+        <a
+          href="https://sotop.neuroviasystems.cloud"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="proj-card block overflow-hidden rounded-2xl border border-line bg-white no-underline"
+        >
+          <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-white">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/projects/sotop.jpg"
+              alt={t.alts.sotop}
+              className="h-[84%] w-auto object-contain"
+            />
+          </div>
+          <div className="p-[26px]">
+            <div className="mb-[11px] flex items-center gap-2.5">
+              <Pill label={t.inProduction} />
+              <span className="text-[13px] text-[#7a838f]">{t.sotop.cat}</span>
+            </div>
+            <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
+              {t.sotop.title}
+            </h3>
+            <p className="mt-[11px] text-sm leading-[1.6] text-muted">
+              {t.sotop.descPrefix}
+              <span className="font-semibold" style={{ color: "var(--accent)" }}>
+                {t.tapToVisit}
+              </span>
+              .
+            </p>
+          </div>
+        </a>
+
         {/* Mantenimiento Vehicular */}
         <article className="proj-card overflow-hidden rounded-2xl border border-line bg-white">
           <div className="relative aspect-video overflow-hidden">
