@@ -36,7 +36,7 @@ const es = {
     sectionAria: "Sección principal",
     badge: "Sistemas en producción en México",
     h1: "Construimos el futuro digital de tu empresa.",
-    lead: "Plataformas, software a medida y automatizaciones con inteligencia artificial.",
+    lead: "Software que te devuelve tiempo: plataformas, automatización con IA y sistemas a la medida de tu negocio.",
     cta: "Agenda una consulta gratuita",
     trustLabel: "Empresas que ya confían",
     companies: ["Cliente petrolero", "Royers", "Alpha Mobil", "Provalsa"],
@@ -58,7 +58,7 @@ const es = {
     cards: [
       {
         title: "Desarrollo de páginas web",
-        desc: "Sitios de alto rendimiento optimizados para convertir visitantes en clientes. Velocidad, SEO y experiencia impecable.",
+        desc: "Sitios rápidos, optimizados para aparecer en Google y convertir visitantes en clientes.",
         items: [
           "Landing pages de alta conversión",
           "E-commerce optimizado con IA",
@@ -69,7 +69,7 @@ const es = {
       },
       {
         title: "Automatizaciones de procesos con IA",
-        desc: "Identificamos las tareas que consumen tu tiempo y las automatizamos con flujos inteligentes. Menos errores, más productividad.",
+        desc: "Recupera horas cada semana: automatizamos las tareas repetitivas de tu equipo. Menos errores, más productividad.",
         items: [
           "Automatización de procesos con n8n",
           "Integración de APIs y servicios",
@@ -80,7 +80,7 @@ const es = {
       },
       {
         title: "Desarrollo de sistemas web y software",
-        desc: "Software y sistemas web con IA integrada que resuelven problemas reales de tu negocio. Una solución diseñada a tu medida, no un producto genérico.",
+        desc: "Un sistema a tu medida en semanas, no meses. Resuelve problemas reales de tu negocio y el código es tuyo.",
         items: [
           "Plataformas y dashboards a medida",
           "Procesamiento de documentos con IA",
@@ -109,7 +109,7 @@ const es = {
   pos: {
     eyebrow: "Punto de Venta",
     h2: "Vende más rápido con nuestro Punto de Venta.",
-    lead: "Un sistema completo para gestionar ventas, inventario y reportes desde cualquier dispositivo. Conoce todos los detalles en su landing page.",
+    lead: "Controla ventas e inventario en tiempo real, desde tu celular. Cierra tu caja en segundos, no en horas.",
     features: [
       "Cobro rápido con lector de código de barras",
       "Control de inventario en tiempo real",
@@ -331,7 +331,7 @@ const en: typeof es = {
     sectionAria: "Main section",
     badge: "Systems live in production in Mexico",
     h1: "We build your company's digital future.",
-    lead: "Platforms, custom software and automation powered by artificial intelligence.",
+    lead: "Software that gives you time back: platforms, AI automation and systems built for your business.",
     cta: "Book a free consultation",
     trustLabel: "Companies that already trust us",
     companies: ["Oil & gas client", "Royers", "Alpha Mobil", "Provalsa"],
@@ -353,7 +353,7 @@ const en: typeof es = {
     cards: [
       {
         title: "Website development",
-        desc: "High-performance sites optimized to turn visitors into customers. Speed, SEO and a flawless experience.",
+        desc: "Fast sites, optimized to show up on Google and turn visitors into customers.",
         items: [
           "High-conversion landing pages",
           "AI-optimized e-commerce",
@@ -364,7 +364,7 @@ const en: typeof es = {
       },
       {
         title: "AI process automation",
-        desc: "We spot the tasks that eat your time and automate them with intelligent flows. Fewer errors, more productivity.",
+        desc: "Win back hours every week: we automate your team's repetitive tasks. Fewer errors, more productivity.",
         items: [
           "Process automation with n8n",
           "API and service integration",
@@ -375,7 +375,7 @@ const en: typeof es = {
       },
       {
         title: "Web systems & software development",
-        desc: "Software and web systems with built-in AI that solve your business's real problems. A solution designed for you, not a generic product.",
+        desc: "A system built for you in weeks, not months. It solves your real problems and the code is yours.",
         items: [
           "Custom platforms and dashboards",
           "AI document processing",
@@ -404,7 +404,7 @@ const en: typeof es = {
   pos: {
     eyebrow: "Point of Sale",
     h2: "Sell faster with our Point of Sale.",
-    lead: "A complete system to manage sales, inventory and reports from any device. See all the details on its landing page.",
+    lead: "Track sales and inventory in real time, from your phone. Close your register in seconds, not hours.",
     features: [
       "Fast checkout with barcode scanner",
       "Real-time inventory control",
