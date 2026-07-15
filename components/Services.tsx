@@ -7,6 +7,7 @@ const CARD_HREFS: (string | null)[] = [
   "/automatizacion-con-ia-tabasco",
   "/desarrollo-de-software-a-medida-villahermosa",
   null,
+  "/agentes-de-inteligencia-artificial",
 ];
 
 const MORE_HREFS = [

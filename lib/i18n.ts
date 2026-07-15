@@ -100,6 +100,17 @@ const es = {
         ],
         linkLabel: "",
       },
+      {
+        title: "Agentes de inteligencia artificial",
+        desc: "Creamos agentes de IA entrenados con tu información que atienden clientes y ejecutan tareas 24/7.",
+        items: [
+          "Asistentes que atienden WhatsApp y correo",
+          "Procesamiento automático de documentos",
+          "Calificación y seguimiento de prospectos",
+          "Conectados a tu CRM y tus sistemas",
+        ],
+        linkLabel: "Agentes de inteligencia artificial",
+      },
     ],
     morePages: [
       "Desarrollo de aplicaciones web a medida en Tabasco",
@@ -394,6 +405,17 @@ const en: typeof es = {
           "Technical support and IT consulting",
         ],
         linkLabel: "",
+      },
+      {
+        title: "Artificial intelligence agents",
+        desc: "We build AI agents trained on your data that handle customers and run tasks 24/7.",
+        items: [
+          "Assistants that handle WhatsApp and email",
+          "Automatic document processing",
+          "Lead qualification and follow-up",
+          "Connected to your CRM and systems",
+        ],
+        linkLabel: "Artificial intelligence agents",
       },
     ],
     morePages: [

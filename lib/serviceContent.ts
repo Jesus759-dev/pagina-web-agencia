@@ -326,6 +326,64 @@ const es: Record<string, ServicePageData> = {
       { href: "/automatizacion-con-ia-tabasco", label: "Automatización con inteligencia artificial en Tabasco" },
     ],
   },
+
+  "agentes-de-inteligencia-artificial": {
+    slug: "agentes-de-inteligencia-artificial",
+    metaTitle: "Agentes de Inteligencia Artificial a Medida",
+    metaDescription:
+      "Creamos agentes de inteligencia artificial a medida: automatizan tareas, atienden clientes y procesan información 24/7. Agenda tu consulta gratuita.",
+    keyword: "agentes de inteligencia artificial",
+    eyebrow: "Agentes de IA",
+    h1: "Creamos Agentes de Inteligencia Artificial a Medida",
+    heroLead:
+      "En Neurovia Systems desarrollamos agentes de inteligencia artificial que trabajan para tu empresa: responden a tus clientes, automatizan procesos y ejecutan tareas por ti, las 24 horas. No un chatbot genérico — un agente entrenado con tu información y conectado a tus sistemas.",
+    ogAlt: "Agentes de inteligencia artificial a medida — Neurovia Systems",
+    waMessage: "Hola Neurovia Systems, me interesa un agente de inteligencia artificial a medida",
+    serviceType: "Desarrollo de agentes de inteligencia artificial",
+    sections: [
+      {
+        h2: "Un agente de IA no es un chatbot cualquiera",
+        body: [
+          "Un chatbot responde preguntas frecuentes. Un agente de inteligencia artificial hace cosas: consulta tus sistemas, procesa documentos, agenda, da seguimiento y ejecuta tareas por su cuenta según las reglas que tú defines. Conectamos modelos como Claude y GPT a tus datos y herramientas para que el agente entienda tu negocio y actúe.",
+          "Desde un asistente que atiende WhatsApp y filtra prospectos, hasta un agente interno que lee facturas, extrae los datos y los captura en tu sistema — construimos el que resuelve tu problema concreto.",
+        ],
+      },
+      {
+        h2: "Entrenado con tu información, conectado a tus herramientas",
+        body: [
+          "Alimentamos al agente con tus documentos, catálogos y procesos, y lo conectamos por API a lo que ya usas: correo, WhatsApp, tu CRM, hojas de cálculo o tu ERP. Con controles y supervisión humana donde hace falta.",
+          "El resultado: menos trabajo repetitivo para tu equipo, respuestas más rápidas para tus clientes y procesos que no dependen de que alguien se acuerde de hacerlos.",
+        ],
+      },
+    ],
+    benefitsTitle: "Por qué un agente de IA con Neurovia",
+    benefits: [
+      { title: "Trabaja 24/7", desc: "Atiende y ejecuta tareas de día y de noche, sin descansos ni olvidos." },
+      { title: "Hecho a tu medida", desc: "Entrenado con tu información y conectado a tus sistemas, no una solución genérica." },
+      { title: "Con supervisión", desc: "Diseñamos controles para que el agente asista y valide, con un humano en el punto crítico." },
+      { title: "Empieza por un caso", desc: "Detectamos el proceso de mayor impacto y construimos ese agente primero." },
+    ],
+    audienceTitle: "¿Para quién es este servicio?",
+    audienceLead:
+      "Los agentes de inteligencia artificial sirven a empresas que quieren automatizar atención o procesos con criterio, no solo con respuestas fijas:",
+    audience: [
+      "Negocios que reciben muchos mensajes y quieren filtrar y responder al instante.",
+      "Áreas que procesan documentos (facturas, contratos, órdenes) de forma repetitiva.",
+      "Equipos de ventas que necesitan seguimiento y calificación automática de prospectos.",
+      "Empresas que quieren un asistente interno que consulte sus datos y genere reportes.",
+    ],
+    faq: [
+      { q: "¿Un agente de IA reemplaza a mi personal?", a: "No: lo libera de lo repetitivo. El agente hace el trabajo mecánico y tu equipo se enfoca en lo que requiere criterio humano, con supervisión donde importa." },
+      { q: "¿Con qué se puede conectar?", a: "Con WhatsApp, correo, tu CRM, hojas de cálculo, tu ERP y más, mediante integraciones por API. Aprovechamos las herramientas que ya usas." },
+      { q: "¿Es seguro para mi empresa?", a: "Sí. Diseñamos accesos, controles y validaciones, y mantenemos supervisión humana en los puntos críticos del proceso." },
+      { q: "¿Cómo empezamos?", a: "Con una consulta gratuita donde detectamos el proceso de mayor impacto y te proponemos un primer agente con un estimado claro." },
+    ],
+    related: [
+      { href: "/automatizacion-con-ia-tabasco", label: "Automatización con inteligencia artificial en Tabasco" },
+      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a medida en Villahermosa" },
+      { href: "/desarrollo-de-aplicaciones-web-tabasco", label: "Desarrollo de aplicaciones web a medida en Tabasco" },
+    ],
+  },
 };
 
 /* ============================ ENGLISH =================================== */
@@ -617,6 +675,64 @@ const en: Record<string, ServicePageData> = {
       { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Custom software development in Villahermosa" },
       { href: "/diseno-de-paginas-web-villahermosa", label: "Web design in Villahermosa" },
       { href: "/automatizacion-con-ia-tabasco", label: "AI automation in Tabasco" },
+    ],
+  },
+
+  "agentes-de-inteligencia-artificial": {
+    slug: "agentes-de-inteligencia-artificial",
+    metaTitle: "Custom Artificial Intelligence Agents",
+    metaDescription:
+      "We build custom AI agents: they automate tasks, handle customers and process information 24/7. Trained on your data. Book a free consultation.",
+    keyword: "custom AI agents",
+    eyebrow: "AI agents",
+    h1: "We Build Custom Artificial Intelligence Agents",
+    heroLead:
+      "At Neurovia Systems we build AI agents that work for your company: they answer your customers, automate processes and run tasks for you, around the clock. Not a generic chatbot — an agent trained on your information and connected to your systems.",
+    ogAlt: "Custom artificial intelligence agents — Neurovia Systems",
+    waMessage: "Hi Neurovia Systems, I'm interested in a custom AI agent",
+    serviceType: "Artificial intelligence agent development",
+    sections: [
+      {
+        h2: "An AI agent is not just any chatbot",
+        body: [
+          "A chatbot answers FAQs. An AI agent does things: it queries your systems, processes documents, schedules, follows up and runs tasks on its own by the rules you define. We connect models like Claude and GPT to your data and tools so the agent understands your business and acts.",
+          "From an assistant that handles WhatsApp and qualifies leads, to an internal agent that reads invoices, extracts the data and enters it into your system — we build the one that solves your specific problem.",
+        ],
+      },
+      {
+        h2: "Trained on your data, connected to your tools",
+        body: [
+          "We feed the agent your documents, catalogs and processes, and connect it via API to what you already use: email, WhatsApp, your CRM, spreadsheets or your ERP. With controls and human oversight where needed.",
+          "The result: less repetitive work for your team, faster answers for your customers, and processes that don't depend on someone remembering to do them.",
+        ],
+      },
+    ],
+    benefitsTitle: "Why build an AI agent with Neurovia",
+    benefits: [
+      { title: "Works 24/7", desc: "Handles and runs tasks day and night, no breaks, no forgetting." },
+      { title: "Built for you", desc: "Trained on your information and connected to your systems, not a generic solution." },
+      { title: "With oversight", desc: "We design controls so the agent assists and validates, with a human at the critical point." },
+      { title: "Start with one case", desc: "We find the highest-impact process and build that agent first." },
+    ],
+    audienceTitle: "Who is this service for?",
+    audienceLead:
+      "AI agents help companies that want to automate support or processes with judgment, not just fixed replies:",
+    audience: [
+      "Businesses that get many messages and want to filter and reply instantly.",
+      "Teams that process documents (invoices, contracts, orders) repetitively.",
+      "Sales teams that need automatic lead follow-up and qualification.",
+      "Companies that want an internal assistant to query their data and generate reports.",
+    ],
+    faq: [
+      { q: "Does an AI agent replace my staff?", a: "No: it frees them from the repetitive work. The agent does the mechanical work and your team focuses on what needs human judgment, with oversight where it matters." },
+      { q: "What can it connect to?", a: "WhatsApp, email, your CRM, spreadsheets, your ERP and more, through API integrations. We build on the tools you already use." },
+      { q: "Is it secure for my company?", a: "Yes. We design access controls and validations, and keep human oversight at the critical points of the process." },
+      { q: "How do we start?", a: "With a free consultation where we find the highest-impact process and propose a first agent with a clear estimate." },
+    ],
+    related: [
+      { href: "/automatizacion-con-ia-tabasco", label: "AI automation in Tabasco" },
+      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Custom software development in Villahermosa" },
+      { href: "/desarrollo-de-aplicaciones-web-tabasco", label: "Custom web app development in Tabasco" },
     ],
   },
 };
