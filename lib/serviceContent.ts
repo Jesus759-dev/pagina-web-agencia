@@ -384,6 +384,122 @@ const es: Record<string, ServicePageData> = {
       { href: "/desarrollo-de-aplicaciones-web-tabasco", label: "Desarrollo de aplicaciones web a medida en Tabasco" },
     ],
   },
+
+  "desarrollo-de-software-a-medida-monterrey": {
+    slug: "desarrollo-de-software-a-medida-monterrey",
+    metaTitle: "Desarrollo de Software a Medida en Monterrey",
+    metaDescription:
+      "Desarrollo de software a medida para empresas en Monterrey, Nuevo León: sistemas, plataformas y automatización con IA. Trabajo remoto. Agenda tu consulta gratuita.",
+    keyword: "desarrollo de software a medida Monterrey",
+    eyebrow: "Software a medida",
+    h1: "Desarrollo de Software a Medida en Monterrey",
+    heroLead:
+      "Desarrollamos software a medida para empresas de Monterrey y Nuevo León: sistemas de gestión, plataformas web y automatización con inteligencia artificial. Trabajamos de forma remota con el mismo estándar técnico, sin que la distancia sea un problema.",
+    ogAlt: "Desarrollo de software a medida en Monterrey — Neurovia Systems",
+    waMessage: "Hola Neurovia Systems, me interesa el desarrollo de software a medida en Monterrey",
+    serviceType: "Desarrollo de software a medida",
+    sections: [
+      {
+        h2: "Software para el ritmo industrial de Monterrey",
+        body: [
+          "Monterrey concentra manufactura, logística, comercio y servicios que mueven volúmenes altos y procesos exigentes. Cuando tu operación es específica, un programa genérico se queda corto. Desarrollamos sistemas hechos a tu medida: control de producción y requisiciones, inventario, seguimiento de proyectos, dashboards para dirección y más.",
+          "Ya tenemos sistemas en producción en empresas del sector industrial y de servicios, y aplicamos esa experiencia a los retos de las empresas regiomontanas.",
+        ],
+      },
+      {
+        h2: "Trabajo remoto, mismo estándar de calidad",
+        body: [
+          "Construimos con Next.js, React, Node.js e integración de IA, y trabajamos 100% en remoto con reuniones claras y entregas por etapas. Así operan muchas de las mejores empresas de software del mundo: obtienes el sistema que necesitas sin depender de estar en la misma ciudad.",
+          "El software es tuyo, documentado, y crece por etapas según tu presupuesto.",
+        ],
+      },
+    ],
+    benefitsTitle: "Por qué desarrollar tu software con Neurovia",
+    benefits: [
+      { title: "Trabajo 100% remoto", desc: "Colaboramos con empresas de Monterrey a distancia, con reuniones claras y avances constantes." },
+      { title: "Sistemas en producción", desc: "No vendemos promesas: ya tenemos software funcionando en empresas reales de industria y servicios." },
+      { title: "Código propio y documentado", desc: "El sistema es tuyo, sin quedar amarrado a un solo proveedor." },
+      { title: "Escalable y con IA", desc: "Arrancamos con lo esencial y sumamos automatización e inteligencia artificial cuando aporta." },
+    ],
+    audienceTitle: "¿Para quién es este servicio?",
+    audienceLead:
+      "El desarrollo de software a medida es ideal para empresas de Monterrey y Nuevo León que ya superaron las hojas de cálculo y los programas genéricos:",
+    audience: [
+      "Empresas de manufactura y logística que necesitan controlar producción, inventario o requisiciones.",
+      "Distribuidoras y comercios que gestionan pedidos, catálogos y clientes.",
+      "Empresas de servicios que quieren centralizar áreas que hoy viven en Excel.",
+      "Negocios en crecimiento que requieren dashboards y reportes a la medida.",
+    ],
+    faq: [
+      { q: "¿Trabajan de forma remota con empresas de Monterrey?", a: "Sí, 100% remoto. Coordinamos por videollamada y mensajería, con entregas por etapas para que veas avances reales sin importar la distancia." },
+      { q: "¿Cuánto tarda el desarrollo?", a: "Una primera versión funcional suele estar lista en semanas, no meses. Trabajamos por entregas para que uses el sistema mientras lo mejoramos." },
+      { q: "¿El software queda a mi nombre?", a: "Sí. El sistema y su código son de tu empresa, y te lo entregamos documentado." },
+      { q: "¿Cuánto cuesta?", a: "Depende del alcance. Partimos de un análisis gratuito y un estimado claro por etapas, para que puedas empezar por lo esencial." },
+    ],
+    related: [
+      { href: "/desarrollo-de-software-a-medida-guadalajara", label: "Desarrollo de software a medida en Guadalajara" },
+      { href: "/automatizacion-con-ia-tabasco", label: "Automatización con inteligencia artificial" },
+      { href: "/agentes-de-inteligencia-artificial", label: "Agentes de inteligencia artificial a medida" },
+    ],
+  },
+
+  "desarrollo-de-software-a-medida-guadalajara": {
+    slug: "desarrollo-de-software-a-medida-guadalajara",
+    metaTitle: "Desarrollo de Software a Medida en Guadalajara",
+    metaDescription:
+      "Desarrollo de software a medida para empresas en Guadalajara, Jalisco: sistemas, plataformas y automatización con IA. Trabajo remoto. Agenda tu consulta gratuita.",
+    keyword: "desarrollo de software a medida Guadalajara",
+    eyebrow: "Software a medida",
+    h1: "Desarrollo de Software a Medida en Guadalajara",
+    heroLead:
+      "Desarrollamos software a medida para empresas de Guadalajara y Jalisco: sistemas de gestión, plataformas web y automatización con inteligencia artificial. Trabajamos en remoto con el mismo estándar técnico, sin que la ubicación sea un límite.",
+    ogAlt: "Desarrollo de software a medida en Guadalajara — Neurovia Systems",
+    waMessage: "Hola Neurovia Systems, me interesa el desarrollo de software a medida en Guadalajara",
+    serviceType: "Desarrollo de software a medida",
+    sections: [
+      {
+        h2: "Software para el ecosistema de Guadalajara",
+        body: [
+          "Guadalajara es uno de los polos de tecnología y comercio más dinámicos de México. En un entorno así, la diferencia la hacen los sistemas que se ajustan a cómo trabaja tu empresa, no los productos genéricos. Desarrollamos plataformas, sistemas de gestión, portales para clientes, dashboards y automatizaciones a tu medida.",
+          "Integramos inteligencia artificial donde aporta valor real —procesamiento de documentos, asistentes, analítica— para que tu software no solo guarde datos, sino que te ayude a decidir.",
+        ],
+      },
+      {
+        h2: "Trabajo remoto, mismo estándar de calidad",
+        body: [
+          "Construimos con tecnologías modernas (Next.js, React, Node.js) y trabajamos 100% en remoto con reuniones claras y entregas por etapas. Obtienes el sistema que necesitas sin depender de estar en la misma ciudad.",
+          "El código es tuyo, documentado, y la plataforma crece contigo por etapas según tu presupuesto.",
+        ],
+      },
+    ],
+    benefitsTitle: "Por qué desarrollar tu software con Neurovia",
+    benefits: [
+      { title: "Trabajo 100% remoto", desc: "Colaboramos con empresas de Guadalajara a distancia, con comunicación directa y avances constantes." },
+      { title: "Sistemas en producción", desc: "Ya tenemos software funcionando en empresas reales de industria, construcción y servicios." },
+      { title: "Código propio y documentado", desc: "El sistema es tuyo; te lo entregamos documentado y listo para crecer." },
+      { title: "Escalable y con IA", desc: "Empezamos por lo esencial y sumamos automatización e inteligencia artificial cuando suma." },
+    ],
+    audienceTitle: "¿Para quién es este servicio?",
+    audienceLead:
+      "El desarrollo de software a medida es ideal para empresas de Guadalajara y Jalisco que necesitan una herramienta propia:",
+    audience: [
+      "Empresas de comercio y distribución que gestionan pedidos, catálogos e inventario.",
+      "Negocios de servicios que quieren portales para clientes o paneles internos.",
+      "Áreas que hoy dependen de Excel compartido y quieren un sistema serio.",
+      "Proyectos que requieren dashboards y reportes a la medida.",
+    ],
+    faq: [
+      { q: "¿Trabajan de forma remota con empresas de Guadalajara?", a: "Sí, 100% remoto. Coordinamos por videollamada y mensajería, con entregas por etapas para que veas avances reales sin importar la ubicación." },
+      { q: "¿Cuánto tarda el desarrollo?", a: "Una primera versión funcional suele estar lista en semanas, no meses. Trabajamos por entregas." },
+      { q: "¿El software queda a mi nombre?", a: "Sí. El sistema y su código son de tu empresa, entregados documentados." },
+      { q: "¿Cuánto cuesta?", a: "Depende del alcance. Partimos de un análisis gratuito y un estimado claro por etapas." },
+    ],
+    related: [
+      { href: "/desarrollo-de-software-a-medida-monterrey", label: "Desarrollo de software a medida en Monterrey" },
+      { href: "/automatizacion-con-ia-tabasco", label: "Automatización con inteligencia artificial" },
+      { href: "/agentes-de-inteligencia-artificial", label: "Agentes de inteligencia artificial a medida" },
+    ],
+  },
 };
 
 /* ============================ ENGLISH =================================== */
@@ -733,6 +849,122 @@ const en: Record<string, ServicePageData> = {
       { href: "/automatizacion-con-ia-tabasco", label: "AI automation in Tabasco" },
       { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Custom software development in Villahermosa" },
       { href: "/desarrollo-de-aplicaciones-web-tabasco", label: "Custom web app development in Tabasco" },
+    ],
+  },
+
+  "desarrollo-de-software-a-medida-monterrey": {
+    slug: "desarrollo-de-software-a-medida-monterrey",
+    metaTitle: "Custom Software Development in Monterrey",
+    metaDescription:
+      "Custom software development for companies in Monterrey, Nuevo León: systems, platforms and AI automation. Fully remote. Book a free consultation.",
+    keyword: "custom software development Monterrey",
+    eyebrow: "Custom software",
+    h1: "Custom Software Development in Monterrey",
+    heroLead:
+      "We build custom software for companies in Monterrey and Nuevo León: management systems, web platforms and AI automation. We work remotely to the same technical standard — distance is not a problem.",
+    ogAlt: "Custom software development in Monterrey — Neurovia Systems",
+    waMessage: "Hi Neurovia Systems, I'm interested in custom software development in Monterrey",
+    serviceType: "Custom software development",
+    sections: [
+      {
+        h2: "Software for Monterrey's industrial pace",
+        body: [
+          "Monterrey concentrates manufacturing, logistics, commerce and services that move high volumes and demanding processes. When your operation is specific, a generic program falls short. We build systems tailored to how you work: production and requisition control, inventory, project tracking, management dashboards and more.",
+          "We already have systems running in industrial and services companies, and we bring that experience to the challenges of Monterrey businesses.",
+        ],
+      },
+      {
+        h2: "Remote work, same quality standard",
+        body: [
+          "We build with Next.js, React, Node.js and AI integration, and work fully remote with clear meetings and staged deliveries. This is how many of the world's best software companies operate: you get the system you need without depending on being in the same city.",
+          "The software is yours, documented, and grows in stages according to your budget.",
+        ],
+      },
+    ],
+    benefitsTitle: "Why build your software with Neurovia",
+    benefits: [
+      { title: "Fully remote", desc: "We work with Monterrey companies at a distance, with clear meetings and steady progress." },
+      { title: "Systems in production", desc: "No promises: we already have software running in real industrial and services companies." },
+      { title: "Your own documented code", desc: "The system is yours, with no lock-in to a single vendor." },
+      { title: "Scalable and AI-ready", desc: "We start with the essentials and add automation and AI when it adds value." },
+    ],
+    audienceTitle: "Who is this service for?",
+    audienceLead:
+      "Custom software development is ideal for companies in Monterrey and Nuevo León that have outgrown spreadsheets and generic programs:",
+    audience: [
+      "Manufacturing and logistics companies that need to control production, inventory or requisitions.",
+      "Distributors and retailers managing orders, catalogs and customers.",
+      "Services companies that want to centralize areas living today in Excel.",
+      "Growing businesses that need custom dashboards and reports.",
+    ],
+    faq: [
+      { q: "Do you work remotely with companies in Monterrey?", a: "Yes, fully remote. We coordinate via video calls and messaging, with staged deliveries so you see real progress regardless of distance." },
+      { q: "How long does development take?", a: "A first working version is usually ready in weeks, not months. We work in deliverables so you can use the system while we improve it." },
+      { q: "Do I own the software?", a: "Yes. The system and its code belong to your company, handed over documented." },
+      { q: "How much does it cost?", a: "It depends on scope. We start from a free analysis and a clear staged estimate, so you can begin with the essentials." },
+    ],
+    related: [
+      { href: "/desarrollo-de-software-a-medida-guadalajara", label: "Custom software development in Guadalajara" },
+      { href: "/automatizacion-con-ia-tabasco", label: "AI automation" },
+      { href: "/agentes-de-inteligencia-artificial", label: "Custom AI agents" },
+    ],
+  },
+
+  "desarrollo-de-software-a-medida-guadalajara": {
+    slug: "desarrollo-de-software-a-medida-guadalajara",
+    metaTitle: "Custom Software Development in Guadalajara",
+    metaDescription:
+      "Custom software development for companies in Guadalajara, Jalisco: systems, platforms and AI automation. Fully remote. Book a free consultation.",
+    keyword: "custom software development Guadalajara",
+    eyebrow: "Custom software",
+    h1: "Custom Software Development in Guadalajara",
+    heroLead:
+      "We build custom software for companies in Guadalajara and Jalisco: management systems, web platforms and AI automation. We work remotely to the same technical standard — location is not a limit.",
+    ogAlt: "Custom software development in Guadalajara — Neurovia Systems",
+    waMessage: "Hi Neurovia Systems, I'm interested in custom software development in Guadalajara",
+    serviceType: "Custom software development",
+    sections: [
+      {
+        h2: "Software for the Guadalajara ecosystem",
+        body: [
+          "Guadalajara is one of Mexico's most dynamic technology and commerce hubs. In an environment like that, the difference comes from systems that fit how your company works, not generic products. We build platforms, management systems, client portals, dashboards and automation tailored to you.",
+          "We integrate artificial intelligence where it brings real value —document processing, assistants, analytics— so your software doesn't just store data, it helps you decide.",
+        ],
+      },
+      {
+        h2: "Remote work, same quality standard",
+        body: [
+          "We build with modern technologies (Next.js, React, Node.js) and work fully remote with clear meetings and staged deliveries. You get the system you need without depending on being in the same city.",
+          "The code is yours, documented, and the platform grows with you in stages according to your budget.",
+        ],
+      },
+    ],
+    benefitsTitle: "Why build your software with Neurovia",
+    benefits: [
+      { title: "Fully remote", desc: "We work with Guadalajara companies at a distance, with direct communication and steady progress." },
+      { title: "Systems in production", desc: "We already have software running in real industrial, construction and services companies." },
+      { title: "Your own documented code", desc: "The system is yours; handed over documented and ready to grow." },
+      { title: "Scalable and AI-ready", desc: "We start with the essentials and add automation and AI when it adds up." },
+    ],
+    audienceTitle: "Who is this service for?",
+    audienceLead:
+      "Custom software development is ideal for companies in Guadalajara and Jalisco that need a tool of their own:",
+    audience: [
+      "Commerce and distribution companies managing orders, catalogs and inventory.",
+      "Services businesses that want client portals or internal panels.",
+      "Teams relying on shared Excel today that want a serious system.",
+      "Projects that need custom dashboards and reports.",
+    ],
+    faq: [
+      { q: "Do you work remotely with companies in Guadalajara?", a: "Yes, fully remote. We coordinate via video calls and messaging, with staged deliveries so you see real progress regardless of location." },
+      { q: "How long does development take?", a: "A first working version is usually ready in weeks, not months. We work in deliverables." },
+      { q: "Do I own the software?", a: "Yes. The system and its code belong to your company, handed over documented." },
+      { q: "How much does it cost?", a: "It depends on scope. We start from a free analysis and a clear staged estimate." },
+    ],
+    related: [
+      { href: "/desarrollo-de-software-a-medida-monterrey", label: "Custom software development in Monterrey" },
+      { href: "/automatizacion-con-ia-tabasco", label: "AI automation" },
+      { href: "/agentes-de-inteligencia-artificial", label: "Custom AI agents" },
     ],
   },
 };
