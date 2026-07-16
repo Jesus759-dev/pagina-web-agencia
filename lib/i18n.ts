@@ -55,6 +55,8 @@ const es = {
     eyebrow: "Servicios",
     h2: "Cuatro maneras de transformar tu negocio.",
     lead: "Software con IA, sitios web, automatizaciones e infraestructura IT. Un solo equipo para todo tu stack tecnológico.",
+    watchVideo: "Ver video",
+    closeVideo: "Cerrar",
     cards: [
       {
         title: "Desarrollo de páginas web",
@@ -361,6 +363,8 @@ const en: typeof es = {
     eyebrow: "Services",
     h2: "Four ways to transform your business.",
     lead: "AI software, websites, automation and IT infrastructure. One team for your entire tech stack.",
+    watchVideo: "Watch video",
+    closeVideo: "Close",
     cards: [
       {
         title: "Website development",

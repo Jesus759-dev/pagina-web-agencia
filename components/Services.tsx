@@ -1,4 +1,5 @@
 import { getDict, localeBase, type Locale } from "@/lib/i18n";
+import ServiceReel from "@/components/ServiceReel";
 
 // Hrefs stay pointing to the (Spanish) service pages for now; labels are
 // translated. Phase 2 will add locale-aware service routes.
@@ -10,14 +11,14 @@ const CARD_HREFS: (string | null)[] = [
   "/agentes-de-inteligencia-artificial",
 ];
 
-// Per-service vertical reel (web-optimized). Same order as the cards; not
-// translated (the videos are visual). Poster is a mid-clip frame.
-const CARD_MEDIA: ({ video: string; poster: string } | null)[] = [
-  { video: "/videos/servicio-web.mp4", poster: "/images/servicio-web.jpg" },
-  { video: "/videos/servicio-auto.mp4", poster: "/images/servicio-auto.jpg" },
-  { video: "/videos/servicio-software.mp4", poster: "/images/servicio-software.jpg" },
-  { video: "/videos/servicio-redes.mp4", poster: "/images/servicio-redes.jpg" },
-  { video: "/videos/servicio-agentes.mp4", poster: "/images/servicio-agentes.jpg" },
+// Per-service reel. `preview` = tiny muted clip (autoplay on the card),
+// `full` = higher-quality clip WITH audio, loaded only when the lightbox opens.
+const CARD_MEDIA: ({ preview: string; poster: string; full: string } | null)[] = [
+  { preview: "/videos/servicio-web.mp4", poster: "/images/servicio-web.jpg", full: "/videos/servicio-web-full.mp4" },
+  { preview: "/videos/servicio-auto.mp4", poster: "/images/servicio-auto.jpg", full: "/videos/servicio-auto-full.mp4" },
+  { preview: "/videos/servicio-software.mp4", poster: "/images/servicio-software.jpg", full: "/videos/servicio-software-full.mp4" },
+  { preview: "/videos/servicio-redes.mp4", poster: "/images/servicio-redes.jpg", full: "/videos/servicio-redes-full.mp4" },
+  { preview: "/videos/servicio-agentes.mp4", poster: "/images/servicio-agentes.jpg", full: "/videos/servicio-agentes-full.mp4" },
 ];
 
 const MORE_HREFS = [
@@ -47,17 +48,14 @@ export default function Services({ lang = "es" }: { lang?: Locale }) {
             <div key={s.title} className="svc-card flex flex-col overflow-hidden rounded-2xl border border-line bg-white">
               {media && (
                 <div className="flex items-center justify-center bg-hero px-5 pb-3 pt-6">
-                  <video
-                    className="h-[260px] w-auto rounded-xl"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+                  <ServiceReel
+                    preview={media.preview}
                     poster={media.poster}
-                    style={{ boxShadow: "0 12px 28px -14px rgba(60,48,30,.45)" }}
-                  >
-                    <source src={media.video} type="video/mp4" />
-                  </video>
+                    full={media.full}
+                    title={s.title}
+                    watchLabel={t.watchVideo}
+                    closeLabel={t.closeVideo}
+                  />
                 </div>
               )}
               <div className="flex flex-1 flex-col p-[38px]">
