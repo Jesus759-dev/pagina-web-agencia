@@ -10,6 +10,16 @@ const CARD_HREFS: (string | null)[] = [
   "/agentes-de-inteligencia-artificial",
 ];
 
+// Per-service vertical reel (web-optimized). Same order as the cards; not
+// translated (the videos are visual). Poster is a mid-clip frame.
+const CARD_MEDIA: ({ video: string; poster: string } | null)[] = [
+  { video: "/videos/servicio-web.mp4", poster: "/images/servicio-web.jpg" },
+  { video: "/videos/servicio-auto.mp4", poster: "/images/servicio-auto.jpg" },
+  { video: "/videos/servicio-software.mp4", poster: "/images/servicio-software.jpg" },
+  { video: "/videos/servicio-redes.mp4", poster: "/images/servicio-redes.jpg" },
+  { video: "/videos/servicio-agentes.mp4", poster: "/images/servicio-agentes.jpg" },
+];
+
 const MORE_HREFS = [
   "/desarrollo-de-aplicaciones-web-tabasco",
   "/sistema-punto-de-venta-villahermosa",
@@ -32,33 +42,51 @@ export default function Services({ lang = "es" }: { lang?: Locale }) {
       <div className="mt-[52px] grid grid-cols-1 gap-[22px] md:grid-cols-2">
         {t.cards.map((s, i) => {
           const href = CARD_HREFS[i];
+          const media = CARD_MEDIA[i];
           return (
-            <div key={s.title} className="svc-card rounded-2xl border border-line bg-white p-[38px]">
-              <div className="font-code text-[13px]" style={{ color: "var(--accent)" }}>
-                {String(i + 1).padStart(2, "0")}
-              </div>
-              <h3 className="m-0 mt-4 font-heading text-[25px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
-                {s.title}
-              </h3>
-              <p className="mt-[13px] text-[15px] leading-[1.65] text-muted">{s.desc}</p>
-              <div className="mt-[22px] flex flex-col gap-2.5">
-                {s.items.map((it) => (
-                  <div key={it} className="flex items-start gap-[11px] text-sm text-[#3a4452]">
-                    <span className="font-semibold" style={{ color: "var(--accent)" }}>
-                      →
-                    </span>
-                    {it}
-                  </div>
-                ))}
-              </div>
-              {href && (
-                <a
-                  href={`${base}${href}`}
-                  className="badge-link mt-[26px] inline-flex items-center gap-1.5 text-sm font-semibold"
-                >
-                  {s.linkLabel} <span className="arr">→</span>
-                </a>
+            <div key={s.title} className="svc-card flex flex-col overflow-hidden rounded-2xl border border-line bg-white">
+              {media && (
+                <div className="flex items-center justify-center bg-hero px-5 pb-3 pt-6">
+                  <video
+                    className="h-[260px] w-auto rounded-xl"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    poster={media.poster}
+                    style={{ boxShadow: "0 12px 28px -14px rgba(60,48,30,.45)" }}
+                  >
+                    <source src={media.video} type="video/mp4" />
+                  </video>
+                </div>
               )}
+              <div className="flex flex-1 flex-col p-[38px]">
+                <div className="font-code text-[13px]" style={{ color: "var(--accent)" }}>
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <h3 className="m-0 mt-4 font-heading text-[25px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
+                  {s.title}
+                </h3>
+                <p className="mt-[13px] text-[15px] leading-[1.65] text-muted">{s.desc}</p>
+                <div className="mt-[22px] flex flex-col gap-2.5">
+                  {s.items.map((it) => (
+                    <div key={it} className="flex items-start gap-[11px] text-sm text-[#3a4452]">
+                      <span className="font-semibold" style={{ color: "var(--accent)" }}>
+                        →
+                      </span>
+                      {it}
+                    </div>
+                  ))}
+                </div>
+                {href && (
+                  <a
+                    href={`${base}${href}`}
+                    className="badge-link mt-[26px] inline-flex items-center gap-1.5 text-sm font-semibold"
+                  >
+                    {s.linkLabel} <span className="arr">→</span>
+                  </a>
+                )}
+              </div>
             </div>
           );
         })}
