@@ -125,6 +125,46 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
 
       {/* 2×2 cards */}
       <div className="mt-[22px] grid grid-cols-1 gap-[22px] md:grid-cols-2">
+        {/* Huella — nuevo producto propio (veterinarias) */}
+        <a
+          href="https://huellapp.neuroviasystems.cloud"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="proj-card block overflow-hidden rounded-2xl border border-line bg-white no-underline"
+        >
+          <div
+            className="relative flex aspect-video flex-col items-center justify-center gap-1.5 overflow-hidden"
+            style={{ background: "linear-gradient(150deg, #0f8378, #0b655d)" }}
+          >
+            <span className="text-[40px] leading-none" aria-hidden="true">🐾</span>
+            <span className="font-heading text-[30px] font-bold tracking-[-0.02em] text-white">Huella</span>
+            <span className="font-code text-[10px] uppercase tracking-[0.16em] text-white/80">
+              Software veterinario
+            </span>
+          </div>
+          <div className="p-[26px]">
+            <div className="mb-[11px] flex items-center gap-2.5">
+              <span
+                className="rounded-full px-2.5 py-[3px] font-code text-[10px] font-semibold uppercase tracking-[0.14em] text-white"
+                style={{ background: "var(--accent)" }}
+              >
+                {t.huella.badge}
+              </span>
+              <span className="text-[13px] text-[#7a838f]">{t.huella.cat}</span>
+            </div>
+            <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
+              {t.huella.title}
+            </h3>
+            <p className="mt-[11px] text-sm leading-[1.6] text-muted">
+              {t.huella.descPrefix}
+              <span className="font-semibold" style={{ color: "var(--accent)" }}>
+                {t.tapToVisit}
+              </span>
+              .
+            </p>
+          </div>
+        </a>
+
         {/* SOTOP — Gobierno de Tabasco */}
         <a
           href="https://sotop.neuroviasystems.cloud"

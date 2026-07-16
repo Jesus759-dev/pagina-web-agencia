@@ -184,6 +184,12 @@ const es = {
       title: "SOTOP — Gobierno de Tabasco",
       descPrefix: "Sistema web de dictamen de equipos de soporte para la Unidad de Apoyo Técnico e Informático — ",
     },
+    huella: {
+      cat: "Producto propio · Veterinarias",
+      title: "Huella",
+      descPrefix: "Software para clínicas veterinarias: expediente, mascotas, consultas y vacunas — ",
+      badge: "Nuevo",
+    },
     comingSoon: {
       badge: "En desarrollo · Próximamente",
       title: "Sistema de Inventario",
@@ -491,6 +497,12 @@ const en: typeof es = {
       cat: "Web system · Government",
       title: "SOTOP — Government of Tabasco",
       descPrefix: "Equipment assessment web system for the IT & Technical Support Unit — ",
+    },
+    huella: {
+      cat: "Own product · Vet clinics",
+      title: "Huella",
+      descPrefix: "Software for veterinary clinics: records, pets, appointments and vaccines — ",
+      badge: "New",
     },
     comingSoon: {
       badge: "In development · Coming soon",
