@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { trackContact } from "@/lib/analytics";
 
 // ---------------------------------------------------------------------------
 // WhatsApp SVG icon (official brand color #25D366)
@@ -61,7 +62,7 @@ export default function WhatsAppButton() {
         href={WA_HREF}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={() => window.gtag?.("event", "contacto_whatsapp")}
+        onClick={trackContact}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         onFocus={() => setHovered(true)}

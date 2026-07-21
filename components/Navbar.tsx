@@ -3,6 +3,7 @@
 import NeuroviaLogo from "@/components/NeuroviaLogo";
 import { WA_DEFAULT } from "@/lib/site";
 import { getDict, localeBase, type Locale } from "@/lib/i18n";
+import { trackContact } from "@/lib/analytics";
 
 export default function Navbar({ lang = "es" }: { lang?: Locale }) {
   const t = getDict(lang);
@@ -72,7 +73,7 @@ export default function Navbar({ lang = "es" }: { lang?: Locale }) {
           href={WA_DEFAULT}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => window.gtag?.("event", "contacto_whatsapp")}
+          onClick={trackContact}
           className="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold no-underline"
         >
           {t.nav.cta}

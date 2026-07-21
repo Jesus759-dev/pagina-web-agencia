@@ -2,6 +2,7 @@
 
 import { WA_DEFAULT } from "@/lib/site";
 import { getDict, type Locale } from "@/lib/i18n";
+import { trackContact } from "@/lib/analytics";
 
 export default function Hero({ lang = "es" }: { lang?: Locale }) {
   const t = getDict(lang).hero;
@@ -66,7 +67,7 @@ export default function Hero({ lang = "es" }: { lang?: Locale }) {
               href={WA_DEFAULT}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => window.gtag?.("event", "contacto_whatsapp")}
+              onClick={trackContact}
               className="hero-rise cta-outline inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold no-underline"
               style={{ animationDelay: "0.5s" }}
             >
