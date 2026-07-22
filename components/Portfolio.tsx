@@ -126,6 +126,46 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
 
       {/* 2×2 cards */}
       <div className="mt-[22px] grid grid-cols-1 gap-[22px] md:grid-cols-2">
+        {/* Neurovía SGI — nuevo producto propio (gestión integral) */}
+        <a
+          href="https://sgi.neuroviasystems.cloud"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="proj-card block overflow-hidden rounded-2xl border border-line bg-white no-underline"
+        >
+          <div
+            className="relative flex aspect-video flex-col items-center justify-center gap-1 overflow-hidden"
+            style={{ background: "linear-gradient(150deg, #263043, #131a26)" }}
+          >
+            <span className="font-heading text-[36px] font-bold tracking-[0.05em] text-white">SGI</span>
+            <span className="font-heading text-[14px] font-semibold text-white/85">Neurovía SGI</span>
+            <span className="font-code text-[10px] uppercase tracking-[0.16em]" style={{ color: "#7ea2f0" }}>
+              Gestión integral
+            </span>
+          </div>
+          <div className="p-[26px]">
+            <div className="mb-[11px] flex items-center gap-2.5">
+              <span
+                className="rounded-full px-2.5 py-[3px] font-code text-[10px] font-semibold uppercase tracking-[0.14em] text-white"
+                style={{ background: "var(--accent)" }}
+              >
+                {t.sgi.badge}
+              </span>
+              <span className="text-[13px] text-[#7a838f]">{t.sgi.cat}</span>
+            </div>
+            <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
+              {t.sgi.title}
+            </h3>
+            <p className="mt-[11px] text-sm leading-[1.6] text-muted">
+              {t.sgi.descPrefix}
+              <span className="font-semibold" style={{ color: "var(--accent)" }}>
+                {t.tapToVisit}
+              </span>
+              .
+            </p>
+          </div>
+        </a>
+
         {/* Huella — nuevo producto propio (veterinarias) */}
         <a
           href="https://huellapp.neuroviasystems.cloud"

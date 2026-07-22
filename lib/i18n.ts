@@ -190,6 +190,12 @@ const es = {
       descPrefix: "Software para clínicas veterinarias: expediente, mascotas, consultas y vacunas — ",
       badge: "Nuevo",
     },
+    sgi: {
+      cat: "Producto propio · Gestión integral",
+      title: "Neurovía SGI",
+      descPrefix: "Sistema de Gestión Integral: administra toda tu operación en una sola plataforma — ",
+      badge: "Nuevo",
+    },
     comingSoon: {
       badge: "En desarrollo · Próximamente",
       title: "Sistema de Inventario",
@@ -502,6 +508,12 @@ const en: typeof es = {
       cat: "Own product · Vet clinics",
       title: "Huella",
       descPrefix: "Software for veterinary clinics: records, pets, appointments and vaccines — ",
+      badge: "New",
+    },
+    sgi: {
+      cat: "Own product · Business management",
+      title: "Neurovía SGI",
+      descPrefix: "Integral Management System: run your whole operation from a single platform — ",
       badge: "New",
     },
     comingSoon: {
