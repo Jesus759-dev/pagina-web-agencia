@@ -14,6 +14,7 @@ export default function Navbar({ lang = "es" }: { lang?: Locale }) {
     { href: `${base}/#punto-de-venta`, label: t.nav.puntoDeVenta },
     { href: `${base}/#crm`, label: "CRM", badge: t.nav.newBadge },
     { href: `${base}/#proyectos`, label: t.nav.proyectos },
+    { href: `${base}/#mapa-clientes`, label: t.nav.dondeOperamos },
     { href: `${base}/#proceso`, label: t.nav.proceso },
     { href: `${base}/#nosotros`, label: t.nav.nosotros },
     { href: `${base}/#contacto`, label: t.nav.contacto },

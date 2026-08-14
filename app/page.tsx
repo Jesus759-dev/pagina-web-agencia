@@ -6,6 +6,7 @@ import Services from "@/components/Services";
 import PuntoDeVenta from "@/components/PuntoDeVenta";
 import Crm from "@/components/Crm";
 import Portfolio from "@/components/Portfolio";
+import ClientMapSection from "@/components/ClientMapSection";
 import WhyUs from "@/components/WhyUs";
 import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
@@ -24,6 +25,7 @@ export default function Home() {
         <PuntoDeVenta />
         <Crm />
         <Portfolio />
+        <ClientMapSection />
         <WhyUs />
         <Process />
         <Testimonials />

@@ -31,6 +31,7 @@ const es = {
     homeAria: "Neurovia Systems — inicio",
     switchLabel: "English",
     newBadge: "Nuevo",
+    dondeOperamos: "Dónde operamos",
   },
   hero: {
     sectionAria: "Sección principal",
@@ -333,6 +334,11 @@ const es = {
     mockTitle: "Pipeline de ventas",
     stages: { prospect: "Prospecto", proposal: "Propuesta", won: "Ganado" },
   },
+  map: {
+    eyebrow: "Cobertura",
+    h2: "Dónde estamos operando",
+    lead: "Ciudades donde Neurovia Systems ya tiene sistemas y proyectos en producción.",
+  },
 };
 
 /* -------------------------------------------------------------------------- */
@@ -351,6 +357,7 @@ const en: typeof es = {
     homeAria: "Neurovia Systems — home",
     switchLabel: "Español",
     newBadge: "New",
+    dondeOperamos: "Where we operate",
   },
   hero: {
     sectionAria: "Main section",
@@ -652,6 +659,11 @@ const en: typeof es = {
     imgAlt: "Neurovia Systems CRM sign-in screen",
     mockTitle: "Sales pipeline",
     stages: { prospect: "Prospect", proposal: "Proposal", won: "Won" },
+  },
+  map: {
+    eyebrow: "Coverage",
+    h2: "Where we're operating",
+    lead: "Cities where Neurovia Systems already has systems and projects in production.",
   },
 };
 
