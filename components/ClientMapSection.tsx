@@ -10,11 +10,11 @@ export default function ClientMapSection({ lang = "es" }: { lang?: Locale }) {
   const t = getDict(lang).map;
 
   return (
-    <section id="mapa-clientes" className="bg-[#05070f] py-20 sm:py-24">
+    <section id="mapa-clientes" className="bg-[#0a141b] py-20 sm:py-24">
       <div className="mx-auto max-w-[1240px] px-5 sm:px-10">
         <div
           className="mb-3 text-center font-code text-[13px] uppercase tracking-[0.12em]"
-          style={{ color: "#4fe3ff" }}
+          style={{ color: "#6fb0c6" }}
         >
           {t.eyebrow}
         </div>

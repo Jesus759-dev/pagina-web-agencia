@@ -32,6 +32,8 @@ const es = {
     switchLabel: "English",
     newBadge: "Nuevo",
     dondeOperamos: "Dónde operamos",
+    menuLabel: "Menú",
+    menuClose: "Cerrar menú",
   },
   hero: {
     sectionAria: "Sección principal",
@@ -358,6 +360,8 @@ const en: typeof es = {
     switchLabel: "Español",
     newBadge: "New",
     dondeOperamos: "Where we operate",
+    menuLabel: "Menu",
+    menuClose: "Close menu",
   },
   hero: {
     sectionAria: "Main section",

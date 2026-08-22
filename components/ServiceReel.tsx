@@ -8,7 +8,8 @@ const fmt = (s: number) =>
 /**
  * A service card's vertical reel: a lightweight muted autoplay preview that,
  * on click, opens a lightbox with the full video (audio + custom controls that
- * stay readable over the light video). The full file loads only when opened.
+ * stay readable over the light video). The full file loads only when opened,
+ * and the card preview pauses whenever it scrolls out of view.
  */
 export default function ServiceReel({
   preview,
@@ -26,14 +27,39 @@ export default function ServiceReel({
   closeLabel: string;
 }) {
   const [open, setOpen] = useState(false);
+  const [show, setShow] = useState(false); // drives the lightbox enter transition
   const [playing, setPlaying] = useState(true);
   const [muted, setMuted] = useState(false);
   const [cur, setCur] = useState(0);
   const [dur, setDur] = useState(0);
   const vref = useRef<HTMLVideoElement>(null);
+  const previewRef = useRef<HTMLVideoElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
 
+  // Pause the card preview while it's off-screen (avoids 5 videos decoding at once).
   useEffect(() => {
-    if (!open) return;
+    const v = previewRef.current;
+    if (!v) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) v.play().catch(() => {});
+        else v.pause();
+      },
+      { threshold: 0.25 }
+    );
+    io.observe(v);
+    return () => io.disconnect();
+  }, []);
+
+  // Lightbox: animate in, lock scroll, move focus in, restore it on close.
+  useEffect(() => {
+    if (!open) {
+      setShow(false);
+      return;
+    }
+    const prevFocus = document.activeElement as HTMLElement | null;
+    const raf = requestAnimationFrame(() => setShow(true));
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(false);
     };
@@ -45,9 +71,12 @@ export default function ServiceReel({
       setMuted(false);
       v.play().catch(() => {});
     }
+    closeRef.current?.focus();
     return () => {
+      cancelAnimationFrame(raf);
       window.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
+      (prevFocus ?? triggerRef.current)?.focus?.();
     };
   }, [open]);
 
@@ -65,12 +94,33 @@ export default function ServiceReel({
     setMuted(v.muted);
   };
 
-  const seek = (e: React.MouseEvent<HTMLDivElement>) => {
+  const seekTo = (pct: number) => {
     const v = vref.current;
     if (!v || !dur) return;
+    v.currentTime = Math.min(1, Math.max(0, pct)) * dur;
+  };
+
+  const seekClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    const pct = Math.min(1, Math.max(0, (e.clientX - rect.left) / rect.width));
-    v.currentTime = pct * dur;
+    seekTo((e.clientX - rect.left) / rect.width);
+  };
+
+  const seekKey = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    const v = vref.current;
+    if (!v || !dur) return;
+    if (e.key === "ArrowRight") {
+      e.preventDefault();
+      v.currentTime = Math.min(dur, v.currentTime + 5);
+    } else if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      v.currentTime = Math.max(0, v.currentTime - 5);
+    } else if (e.key === "Home") {
+      e.preventDefault();
+      v.currentTime = 0;
+    } else if (e.key === "End") {
+      e.preventDefault();
+      v.currentTime = dur;
+    }
   };
 
   const goFullscreen = () => {
@@ -82,12 +132,14 @@ export default function ServiceReel({
   return (
     <>
       <button
+        ref={triggerRef}
         type="button"
         onClick={() => setOpen(true)}
         aria-label={`${watchLabel}: ${title}`}
-        className="group relative flex cursor-pointer items-center justify-center rounded-xl border-0 bg-transparent p-0"
+        className="group relative flex cursor-pointer items-center justify-center rounded-xl border-0 bg-transparent p-0 transition-transform duration-200 active:scale-[0.98]"
       >
         <video
+          ref={previewRef}
           className="h-[260px] w-auto rounded-xl"
           autoPlay
           loop
@@ -99,7 +151,7 @@ export default function ServiceReel({
           <source src={preview} type="video/mp4" />
         </video>
         <span
-          className="pointer-events-none absolute flex h-14 w-14 items-center justify-center rounded-full text-white transition-transform duration-200 group-hover:scale-110"
+          className="pointer-events-none absolute flex h-14 w-14 items-center justify-center rounded-full text-white transition-transform duration-200 [@media(hover:hover)]:group-hover:scale-110"
           style={{ background: "rgba(40,74,94,.82)", backdropFilter: "blur(2px)" }}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -111,29 +163,34 @@ export default function ServiceReel({
       {open && (
         <div
           onClick={() => setOpen(false)}
-          className="fixed inset-0 z-[95] flex items-center justify-center px-4 py-6"
-          style={{ background: "rgba(8,12,20,.9)", backdropFilter: "blur(8px)" }}
+          className="fixed inset-0 z-[95] flex items-center justify-center px-4 py-6 transition-opacity duration-200"
+          style={{ background: "rgba(8,12,20,.9)", backdropFilter: "blur(8px)", opacity: show ? 1 : 0 }}
           role="dialog"
           aria-modal="true"
           aria-label={title}
         >
           <button
+            ref={closeRef}
             type="button"
             onClick={(e) => {
               e.stopPropagation();
               setOpen(false);
             }}
             aria-label={closeLabel}
-            className="absolute right-5 top-5 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full border-0 text-[24px] leading-none text-white"
+            className="absolute right-5 top-5 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full border-0 text-[24px] leading-none text-white transition-transform active:scale-90"
             style={{ background: "rgba(255,255,255,.16)" }}
           >
             ×
           </button>
 
           <div
-            className="relative overflow-hidden rounded-2xl"
+            className="relative overflow-hidden rounded-2xl transition-all duration-200 ease-out"
             onClick={(e) => e.stopPropagation()}
-            style={{ boxShadow: "0 24px 70px rgba(0,0,0,.5)" }}
+            style={{
+              boxShadow: "0 24px 70px rgba(0,0,0,.5)",
+              opacity: show ? 1 : 0,
+              transform: `scale(${show ? 1 : 0.95})`,
+            }}
           >
             {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
             <video
@@ -155,7 +212,7 @@ export default function ServiceReel({
                 type="button"
                 onClick={togglePlay}
                 aria-label={watchLabel}
-                className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-0 text-white"
+                className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-0 text-white transition-transform active:scale-90"
                 style={{ background: "rgba(40,74,94,.9)" }}
               >
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -169,7 +226,7 @@ export default function ServiceReel({
               className="absolute inset-x-0 bottom-0 flex items-center gap-3 px-4 py-3"
               style={{ background: "linear-gradient(to top, rgba(8,12,20,.9), rgba(8,12,20,0))" }}
             >
-              <button type="button" onClick={togglePlay} aria-label={watchLabel} className="flex-none border-0 bg-transparent p-0 text-white">
+              <button type="button" onClick={togglePlay} aria-label={watchLabel} className="flex-none border-0 bg-transparent p-0 text-white transition-transform active:scale-90">
                 {playing ? (
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z" /></svg>
                 ) : (
@@ -181,11 +238,22 @@ export default function ServiceReel({
                 {fmt(cur)} / {fmt(dur)}
               </span>
 
-              <div onClick={seek} className="relative h-1.5 flex-1 cursor-pointer rounded-full bg-white/25">
+              <div
+                role="slider"
+                tabIndex={0}
+                aria-label={title}
+                aria-valuemin={0}
+                aria-valuemax={Math.round(dur)}
+                aria-valuenow={Math.round(cur)}
+                aria-valuetext={`${fmt(cur)} / ${fmt(dur)}`}
+                onClick={seekClick}
+                onKeyDown={seekKey}
+                className="reel-seek relative h-1.5 flex-1 cursor-pointer rounded-full bg-white/25"
+              >
                 <div className="absolute inset-y-0 left-0 rounded-full bg-white" style={{ width: progress + "%" }} />
               </div>
 
-              <button type="button" onClick={toggleMute} aria-label={muted ? "Unmute" : "Mute"} className="flex-none border-0 bg-transparent p-0 text-white">
+              <button type="button" onClick={toggleMute} aria-label={muted ? "Unmute" : "Mute"} className="flex-none border-0 bg-transparent p-0 text-white transition-transform active:scale-90">
                 {muted ? (
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3l2.5 2.5-1 1L15.5 13 13 15.5l-1-1L14.5 12 12 9.5l1-1L15.5 11 18 8.5l1 1L16.5 12z" /></svg>
                 ) : (
@@ -193,7 +261,7 @@ export default function ServiceReel({
                 )}
               </button>
 
-              <button type="button" onClick={goFullscreen} aria-label="Fullscreen" className="flex-none border-0 bg-transparent p-0 text-white">
+              <button type="button" onClick={goFullscreen} aria-label="Fullscreen" className="flex-none border-0 bg-transparent p-0 text-white transition-transform active:scale-90">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h6v2H6v4H4V4zm10 0h6v6h-2V6h-4V4zM4 14h2v4h4v2H4v-6zm16 0v6h-6v-2h4v-4h2z" /></svg>
               </button>
             </div>

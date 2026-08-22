@@ -39,8 +39,8 @@ export default function Hero({ lang = "es" }: { lang?: Locale }) {
       />
 
       <div className="relative z-10 flex min-h-screen flex-col">
-        <div className="flex flex-1 items-end px-7 pb-[72px] sm:px-12 lg:pl-20 lg:pr-7">
-          <div className="max-w-[480px]">
+        <div className="flex flex-1 items-end px-6 pb-[64px] sm:px-12 sm:pb-[72px] lg:pl-20 lg:pr-7">
+          <div className="max-w-[560px]">
             <a
               href="#proyectos"
               className="hero-rise badge-link mb-4 inline-flex items-center gap-1.5 text-[13px] font-semibold"
@@ -50,14 +50,14 @@ export default function Hero({ lang = "es" }: { lang?: Locale }) {
             </a>
 
             <h1
-              className="hero-rise m-0 mb-3.5 font-heading text-[34px] font-semibold leading-[1.12] tracking-[-0.03em] text-ink sm:text-[40px]"
+              className="hero-rise m-0 mb-4 font-heading text-[38px] font-semibold leading-[1.08] tracking-[-0.03em] text-ink sm:text-[52px] lg:text-[60px]"
               style={{ animationDelay: "0.22s" }}
             >
               {t.h1}
             </h1>
 
             <p
-              className="hero-rise m-0 mb-[22px] max-w-[380px] text-sm font-normal leading-[1.55] text-[#6b7280]"
+              className="hero-rise m-0 mb-[26px] max-w-[440px] text-[15px] font-normal leading-[1.6] text-muted sm:text-base"
               style={{ animationDelay: "0.36s" }}
             >
               {t.lead}
@@ -81,10 +81,10 @@ export default function Hero({ lang = "es" }: { lang?: Locale }) {
               <div className="mb-3 font-code text-[11px] uppercase tracking-[0.14em] text-faint">
                 {t.trustLabel}
               </div>
-              <div className="flex flex-wrap items-center gap-x-[22px] gap-y-2 font-heading text-[15px] font-semibold tracking-[-0.01em] text-[#3a4452]">
+              <div className="flex flex-wrap items-center gap-x-[22px] gap-y-2 font-heading text-[15px] font-semibold tracking-[-0.01em] text-ink-2">
                 {t.companies.map((c, i) => (
                   <span key={c} className="flex items-center gap-x-[22px]">
-                    {i > 0 && <span className="text-[#c7ccd4]">·</span>}
+                    {i > 0 && <span className="text-line-2">·</span>}
                     <span>{c}</span>
                   </span>
                 ))}

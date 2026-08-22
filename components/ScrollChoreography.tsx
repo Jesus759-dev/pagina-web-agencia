@@ -3,13 +3,12 @@
 import { useEffect } from "react";
 
 /**
- * Reversible scroll choreography, ported 1:1 from the "Neurovia Landing Pro"
- * design. A single rAF loop toggles the `.in` class on tracked elements as
- * they enter/leave the viewport (so reveals replay when scrolling back up) and
- * applies a light parallax to project-card images.
+ * Scroll choreography for the "Neurovia Landing Pro" design.
  *
- * It mutates only wrapper-level classes/inline transforms — never the inner
- * DOM — so it composes safely with React's rendering.
+ * Reveals are handled by an IntersectionObserver (fire once, then unobserve) —
+ * no per-frame layout reads. Parallax is driven by a scroll/resize listener
+ * that schedules a single rAF and then goes idle, so nothing runs while the
+ * page is still. It mutates only wrapper-level classes / inline transforms.
  */
 export default function ScrollChoreography() {
   useEffect(() => {
@@ -20,17 +19,11 @@ export default function ScrollChoreography() {
       return;
     }
 
-    const tracked: Element[] = [];
-
-    // 1) Titles: rise-in (the hero runs its own load-time entrance instead)
+    // 1) Reveal targets — titles rise-in, blocks fade-up, project images wipe-in.
     document
       .querySelectorAll("section:not([data-hero]) h1, section:not([data-hero]) h2")
-      .forEach((h) => {
-      h.classList.add("reveal-title");
-      tracked.push(h);
-    });
+      .forEach((h) => h.classList.add("reveal-title"));
 
-    // 2) Blocks: staggered fade-up
     [
       ".stats-grid > div",
       ".svc-card",
@@ -43,11 +36,10 @@ export default function ScrollChoreography() {
       document.querySelectorAll(sel).forEach((el, i) => {
         el.classList.add("reveal");
         (el as HTMLElement).style.animationDelay = (i % 4) * 0.08 + "s";
-        tracked.push(el);
       });
     });
 
-    // 3) Images: wipe-in + parallax
+    // Project images: wipe-in on the wrapper + a gentle parallax drift.
     const parImgs: HTMLImageElement[] = [];
     document.querySelectorAll<HTMLImageElement>(".proj-card img").forEach((img) => {
       const c = img.parentElement;
@@ -56,15 +48,28 @@ export default function ScrollChoreography() {
       img.style.height = "118%";
       img.style.willChange = "transform";
       img.addEventListener("error", () => c.classList.add("in"));
-      tracked.push(c);
       parImgs.push(img);
     });
 
-    // 4) Generic parallax — any element marked [data-parallax] drifts at its
-    //    own speed as it scrolls through the viewport, creating depth.
-    //    Optional attrs: data-parallax-speed (default 0.12), data-parallax-max
-    //    (default 10, clamp in %). Applies to decorative/background elements
-    //    only (never to elements that already run a reveal animation).
+    // 2) Observe every reveal target — add `.in` once when it enters, then stop
+    //    watching it. Off the main thread, no forced layout.
+    const revealEls = document.querySelectorAll(
+      ".reveal, .reveal-title, .reveal-img"
+    );
+    const io = new IntersectionObserver(
+      (entries, obs) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            obs.unobserve(entry.target);
+          }
+        }
+      },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.05 }
+    );
+    revealEls.forEach((el) => io.observe(el));
+
+    // 3) Parallax — only compute during scroll/resize, then idle.
     const parEls = Array.from(
       document.querySelectorAll<HTMLElement>("[data-parallax]")
     );
@@ -73,18 +78,11 @@ export default function ScrollChoreography() {
     });
 
     let raf = 0;
-    const frame = () => {
+    let ticking = false;
+    const update = () => {
+      ticking = false;
       const vh = window.innerHeight || document.documentElement.clientHeight;
-      for (let i = 0; i < tracked.length; i++) {
-        const el = tracked[i];
-        const r = el.getBoundingClientRect();
-        const visible = r.top < vh * 0.88 && r.bottom > vh * 0.06;
-        if (visible) {
-          if (!el.classList.contains("in")) el.classList.add("in");
-        } else if (r.top >= vh * 0.88 || r.bottom <= 0) {
-          if (el.classList.contains("in")) el.classList.remove("in");
-        }
-      }
+
       for (let i = 0; i < parImgs.length; i++) {
         const img = parImgs[i];
         const parent = img.parentElement;
@@ -95,6 +93,7 @@ export default function ScrollChoreography() {
         const ty = Math.max(-9, Math.min(9, -prog * 9));
         img.style.transform = "translateY(" + ty + "%)";
       }
+
       for (let i = 0; i < parEls.length; i++) {
         const el = parEls[i];
         const r = el.getBoundingClientRect();
@@ -106,11 +105,23 @@ export default function ScrollChoreography() {
         ty = Math.max(-max, Math.min(max, ty));
         el.style.transform = "translate3d(0," + ty + "%,0)";
       }
-      raf = requestAnimationFrame(frame);
     };
-    raf = requestAnimationFrame(frame);
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      raf = requestAnimationFrame(update);
+    };
 
-    return () => cancelAnimationFrame(raf);
+    update(); // initial position
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    return () => {
+      io.disconnect();
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      cancelAnimationFrame(raf);
+    };
   }, []);
 
   return null;

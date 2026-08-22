@@ -68,7 +68,7 @@ export default function Services({ lang = "es" }: { lang?: Locale }) {
                 <p className="mt-[13px] text-[15px] leading-[1.65] text-muted">{s.desc}</p>
                 <div className="mt-[22px] flex flex-col gap-2.5">
                   {s.items.map((it) => (
-                    <div key={it} className="flex items-start gap-[11px] text-sm text-[#3a4452]">
+                    <div key={it} className="flex items-start gap-[11px] text-sm text-ink-2">
                       <span className="font-semibold" style={{ color: "var(--accent)" }}>
                         →
                       </span>

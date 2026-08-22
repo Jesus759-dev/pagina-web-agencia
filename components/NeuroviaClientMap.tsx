@@ -224,18 +224,20 @@ export default function NeuroviaClientMap() {
 
 const CSS = `
 .nv-wrap{
-  --nv-bg-deep:#05070f;
-  --nv-bg-panel:#0b1130ee;
-  --nv-state-fill:#111c40;
-  --nv-state-fill-hover:#182a5c;
-  --nv-state-fill-active:#1f3f7a;
-  --nv-state-stroke:#2b3f7a;
-  --nv-accent:#4fe3ff;
-  --nv-accent-dim:#4fe3ff55;
-  --nv-accent2:#ffb454;
-  --nv-text-primary:#eaf2ff;
-  --nv-text-muted:#7c89b8;
-  --nv-border-soft:#20305e;
+  /* Brand-cohesive dark palette: petrol + warm gold (matches --accent #284a5e),
+     not the original cold cyan/navy, so the map sings in tune with the site. */
+  --nv-bg-deep:#0a141b;
+  --nv-bg-panel:#0f1e27ee;
+  --nv-state-fill:#15272f;
+  --nv-state-fill-hover:#1d3742;
+  --nv-state-fill-active:#274c5c;
+  --nv-state-stroke:#31505c;
+  --nv-accent:#6fb0c6;
+  --nv-accent-dim:#6fb0c655;
+  --nv-accent2:#e0a45c;
+  --nv-text-primary:#eef4f2;
+  --nv-text-muted:#8a9aa0;
+  --nv-border-soft:#284049;
   position:relative;
   font-family:'Inter',system-ui,sans-serif;
   color:var(--nv-text-primary);
