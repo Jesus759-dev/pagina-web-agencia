@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollChoreography from "@/components/ScrollChoreography";
+import WebMcpTools from "@/components/WebMcpTools";
 
 // Warm editorial serif for headings — distinguished and human, with classic
 // (non-quirky) letterforms. Variable font (weight axis) via next/font.
@@ -425,6 +426,8 @@ export default function RootLayout({
         {children}
         {/* Reversible scroll reveal/parallax choreography (design parity) */}
         <ScrollChoreography />
+        {/* WebMCP tools for in-browser AI agents (experimental, feature-detected) */}
+        <WebMcpTools />
         {/* Floating WhatsApp CTA — kept from the previous build */}
         <WhatsAppButton />
 

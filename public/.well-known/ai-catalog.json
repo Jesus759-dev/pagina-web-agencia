@@ -1,0 +1,42 @@
+{
+  "specVersion": "0.1",
+  "host": {
+    "name": "Neurovia Systems",
+    "url": "https://neuroviasystems.com.mx"
+  },
+  "entries": [
+    {
+      "id": "urn:air:neuroviasystems.com.mx:content:llms-txt",
+      "displayName": "Descripción del sitio para modelos (llms.txt)",
+      "type": "text/plain",
+      "url": "https://neuroviasystems.com.mx/llms.txt",
+      "representationQueries": [
+        "¿Qué es Neurovia Systems?",
+        "¿Qué servicios y productos ofrece Neurovia?",
+        "¿Cómo contacto a Neurovia Systems?",
+        "¿Dónde opera Neurovia Systems?"
+      ]
+    },
+    {
+      "id": "urn:air:neuroviasystems.com.mx:content:sitemap",
+      "displayName": "Mapa del sitio (sitemap.xml)",
+      "type": "application/xml",
+      "url": "https://neuroviasystems.com.mx/sitemap.xml",
+      "representationQueries": [
+        "¿Qué páginas tiene el sitio de Neurovia?",
+        "Lista de URLs de Neurovia Systems"
+      ]
+    },
+    {
+      "id": "urn:air:neuroviasystems.com.mx:content:home",
+      "displayName": "Sitio web de Neurovia Systems",
+      "type": "text/html",
+      "url": "https://neuroviasystems.com.mx/",
+      "representationQueries": [
+        "Desarrollo de software a medida en Villahermosa",
+        "Automatización con inteligencia artificial para empresas",
+        "Agencia de software en Tabasco, Monterrey y Guadalajara"
+      ]
+    }
+  ]
+}

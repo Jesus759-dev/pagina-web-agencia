@@ -41,11 +41,24 @@ const nextConfig = {
     },
     {
       // RFC 8288 Link header on the home response, pointing agents/crawlers to
-      // the machine-readable site description. Only references a resource that
-      // actually exists (public/llms.txt).
+      // the machine-readable site description. Only references resources that
+      // actually exist (public/llms.txt and the ARD manifest).
       source: "/",
       headers: [
-        { key: "Link", value: "</llms.txt>; rel=\"describedby\"; type=\"text/plain\"" },
+        {
+          key: "Link",
+          value:
+            "</llms.txt>; rel=\"describedby\"; type=\"text/plain\", </.well-known/ai-catalog.json>; rel=\"service-desc\"; type=\"application/json\"",
+        },
+      ],
+    },
+    {
+      // ARD (Agentic Resource Discovery) manifest must be CORS-readable so
+      // external registries/agents can fetch it cross-origin.
+      source: "/.well-known/ai-catalog.json",
+      headers: [
+        { key: "Access-Control-Allow-Origin", value: "*" },
+        { key: "Content-Type", value: "application/json; charset=utf-8" },
       ],
     },
     {
