@@ -187,6 +187,8 @@ const structuredData = {
       },
       areaServed: [
         { "@type": "City", name: "Villahermosa" },
+        { "@type": "City", name: "Monterrey" },
+        { "@type": "City", name: "Guadalajara" },
         { "@type": "State", name: "Tabasco" },
         { "@type": "Country", name: "México" },
         { "@type": "Place", name: "Latinoamérica" },
@@ -204,6 +206,12 @@ const structuredData = {
           areaServed: ["MX", "LATAM"],
           availableLanguage: ["Spanish", "English"],
         },
+      ],
+      owns: [
+        { "@id": `${SITE_URL}/#tomin-pos` },
+        { "@id": `${SITE_URL}/#nucleo-sgi` },
+        { "@id": `${SITE_URL}/#huella` },
+        { "@id": `${SITE_URL}/#flotaops` },
       ],
     },
     {
@@ -261,6 +269,8 @@ const structuredData = {
       },
       areaServed: [
         { "@type": "City", name: "Villahermosa" },
+        { "@type": "City", name: "Monterrey" },
+        { "@type": "City", name: "Guadalajara" },
         { "@type": "State", name: "Tabasco" },
         { "@type": "Country", name: "México" },
         { "@type": "Place", name: "Latinoamérica" },
@@ -307,6 +317,48 @@ const structuredData = {
           },
         ],
       },
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": `${SITE_URL}/#tomin-pos`,
+      name: "Tomín POS",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      url: "https://puntodeventa.neuroviasystems.cloud",
+      description:
+        "Punto de venta con facturación CFDI para negocios locales (abarrotes, restaurantes, farmacias).",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": `${SITE_URL}/#nucleo-sgi`,
+      name: "Núcleo SGI",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      url: "https://sgi.neuroviasystems.cloud",
+      description:
+        "Sistema de gestión integral (HSE y cumplimiento) para contratistas del sector petrolero.",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": `${SITE_URL}/#huella`,
+      name: "Huella",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      url: "https://huellapp.neuroviasystems.cloud",
+      description:
+        "Sistema de gestión para clínicas veterinarias: expedientes, citas, vacunas e inventario.",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": `${SITE_URL}/#flotaops`,
+      name: "FlotaOps",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      description: "Control y rastreo de flotas vehiculares para empresas de transporte.",
+      publisher: { "@id": `${SITE_URL}/#organization` },
     },
   ],
 };

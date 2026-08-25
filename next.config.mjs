@@ -40,6 +40,15 @@ const nextConfig = {
       ],
     },
     {
+      // RFC 8288 Link header on the home response, pointing agents/crawlers to
+      // the machine-readable site description. Only references a resource that
+      // actually exists (public/llms.txt).
+      source: "/",
+      headers: [
+        { key: "Link", value: "</llms.txt>; rel=\"describedby\"; type=\"text/plain\"" },
+      ],
+    },
+    {
       source: "/fonts/(.*)",
       headers: [
         { key: "Cache-Control", value: "public, max-age=31536000, immutable" },

@@ -1,0 +1,47 @@
+# Neurovia Systems
+
+> Agencia de desarrollo de software y automatización con inteligencia
+> artificial en Villahermosa, Tabasco, México. Fundada por Jesús. Construimos
+> software a la medida, agentes de IA e infraestructura TI para empresas, y
+> desarrollamos productos SaaS propios. Atendemos Villahermosa, Monterrey y
+> Guadalajara (y el resto de México en remoto).
+
+## Servicios
+
+- Software a la medida: plataformas, dashboards y sistemas de gestión (Laravel/Livewire/Filament, Node.js/React). https://neuroviasystems.com.mx/desarrollo-de-software-a-medida-villahermosa
+- Agentes de inteligencia artificial: asistentes que atienden WhatsApp y correo 24/7, procesan documentos y califican prospectos. https://neuroviasystems.com.mx/agentes-de-inteligencia-artificial
+- Automatización de procesos con IA: integración de APIs, workflows y reportes automáticos. https://neuroviasystems.com.mx/automatizacion-con-ia-tabasco
+- Infraestructura TI, redes y hardware: armado de equipos, redes Ubiquiti, mantenimiento y soporte.
+- Consultoría TI: diagnóstico, recomendación de stack y acompañamiento a decisiones técnicas.
+
+## Productos SaaS propios
+
+- Tomín POS: punto de venta con facturación CFDI para negocios locales.
+- Núcleo SGI: gestión HSE y cumplimiento para contratistas del sector petrolero.
+- Huella: sistema de gestión para clínicas veterinarias.
+- FlotaOps: control y rastreo de flotas vehiculares.
+
+## Stack tecnológico
+
+Laravel, Livewire, Filament, Node.js, React, Next.js, TypeScript, Tailwind CSS,
+PostgreSQL, Supabase, Docker, Python/FastAPI. Integraciones: CFDI 4.0,
+WhatsApp (Twilio / API de Meta) y modelos de IA para voz, texto y documentos.
+
+## Ubicación y presencia
+
+- Base: Villahermosa, Tabasco, México.
+- Presencia de proyectos: Villahermosa, Monterrey (Nuevo León) y Guadalajara (Jalisco).
+
+## Contacto
+
+- Sitio web: https://neuroviasystems.com.mx
+- Agenda una llamada: https://neuroviasystems.com.mx/agenda
+- WhatsApp: +52 993 722 6350
+- Correo: soporte@neuroviasystems.com.mx
+
+## Enlaces útiles
+
+- Inicio: https://neuroviasystems.com.mx
+- Catálogo de sistemas: https://neuroviasystems.com.mx/sistemas
+- Aviso de privacidad: https://neuroviasystems.com.mx/aviso-de-privacidad
+- Versión en inglés: https://neuroviasystems.com.mx/en
