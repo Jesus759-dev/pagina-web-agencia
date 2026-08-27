@@ -85,6 +85,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       },
     },
+    {
+      url: `${BASE}/nosotros`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: {
+        languages: {
+          es: `${BASE}/nosotros`,
+          en: `${BASE}/en/nosotros`,
+        },
+      },
+    },
+    {
+      url: `${BASE}/en/nosotros`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+      alternates: {
+        languages: {
+          es: `${BASE}/nosotros`,
+          en: `${BASE}/en/nosotros`,
+        },
+      },
+    },
+    {
+      url: `${BASE}/agenda`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
     ...servicePages,
   ];
 }

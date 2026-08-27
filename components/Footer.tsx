@@ -8,7 +8,7 @@ export default function Footer({ lang = "es" }: { lang?: Locale }) {
   const links = [
     { href: `${base}/#servicios`, label: t.nav.servicios },
     { href: `${base}/#proyectos`, label: t.nav.proyectos },
-    { href: `${base}/#proceso`, label: t.nav.proceso },
+    { href: `${base}/nosotros`, label: t.nav.nosotros },
     { href: `${base}/#contacto`, label: t.nav.contacto },
   ];
 

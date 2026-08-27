@@ -20,7 +20,7 @@ export default function Navbar({ lang = "es" }: { lang?: Locale }) {
     { href: `${base}/#proyectos`, label: t.nav.proyectos },
     { href: `${base}/#mapa-clientes`, label: t.nav.dondeOperamos },
     { href: `${base}/#proceso`, label: t.nav.proceso },
-    { href: `${base}/#nosotros`, label: t.nav.nosotros },
+    { href: `${base}/nosotros`, label: t.nav.nosotros },
     { href: `${base}/#contacto`, label: t.nav.contacto },
   ];
   const otherHome = lang === "en" ? "/" : "/en";

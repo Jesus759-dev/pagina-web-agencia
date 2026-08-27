@@ -165,6 +165,21 @@ const structuredData = {
       "@id": `${SITE_URL}/#organization`,
       name: SITE_NAME,
       legalName: "Neurovia Systems",
+      alternateName: ["Neurovia", "Neurovia Systems Villahermosa"],
+      // Entity disambiguation: several unrelated companies share the "Neurovia"
+      // name. This pins THIS entity to the Mexican software agency.
+      disambiguatingDescription:
+        "Agencia mexicana de desarrollo de software y automatización con inteligencia artificial con sede en Villahermosa, Tabasco. No relacionada con otras empresas que comparten el nombre Neurovia.",
+      slogan: "Un solo equipo para todo tu stack tecnológico.",
+      knowsAbout: [
+        "Desarrollo de software a medida",
+        "Inteligencia artificial para empresas",
+        "Automatización de procesos",
+        "Agentes de inteligencia artificial",
+        "ERP a medida",
+        "Sistemas de punto de venta",
+        "Infraestructura IT y redes",
+      ],
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
@@ -175,6 +190,10 @@ const structuredData = {
       image: OG_IMAGE,
       description: SITE_DESCRIPTION,
       foundingDate: "2024",
+      foundingLocation: {
+        "@type": "Place",
+        name: "Villahermosa, Tabasco, México",
+      },
       address: {
         "@type": "PostalAddress",
         addressLocality: "Villahermosa",
