@@ -39,6 +39,18 @@ const SITE_DESCRIPTION =
   "Desarrollo de software a medida, IA y automatización empresarial en Villahermosa, Tabasco. Creamos plataformas web y dashboards. Agenda tu consulta gratuita.";
 const OG_IMAGE = `${SITE_URL}/images/og-robotic-hand.jpg`;
 
+/**
+ * Revalidate the HTML every 5 minutes (ISR) instead of leaving pages fully
+ * static. A fully static page ships `Cache-Control: s-maxage=31536000` (one
+ * year), which made the Hostinger CDN serve stale HTML pointing at hashed
+ * `/_next/static` chunks from an older build (→ 404 → unstyled/broken pages
+ * on mobile). With ISR, Next emits `s-maxage=300, stale-while-revalidate=...`,
+ * so the CDN refreshes the HTML within minutes of a redeploy. Hashed assets
+ * under /_next/static keep their own immutable 1-year cache (unaffected).
+ * Applies site-wide as the default for every route under this root layout.
+ */
+export const revalidate = 300;
+
 /** Google Analytics 4 — measurement ID (público, viaja en el HTML). */
 const GA_MEASUREMENT_ID = "G-PBY374Y0E3";
 
