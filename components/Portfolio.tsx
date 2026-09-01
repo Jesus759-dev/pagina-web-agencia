@@ -77,8 +77,13 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
         {t.ctaSystems} <span aria-hidden="true">→</span>
       </a>
 
-      {/* Featured — full width */}
-      <div className="proj-card mt-[52px] grid grid-cols-1 overflow-hidden rounded-2xl border border-line bg-white md:grid-cols-[1.3fr_1fr]">
+      {/* Featured — full width (enlace al portal del cliente) */}
+      <a
+        href="https://chemiservis.cloud"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="proj-card mt-[52px] grid grid-cols-1 overflow-hidden rounded-2xl border border-line bg-white no-underline md:grid-cols-[1.3fr_1fr]"
+      >
         <div className="relative min-h-[340px] overflow-hidden" style={{ background: "#0a1530" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -97,8 +102,11 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
           </h3>
           <p className="mt-3.5 text-[15px] leading-[1.6] text-muted">{t.featured.desc}</p>
           <Stack items={["Next.js", "PostgreSQL", "TailwindCSS", "TypeScript"]} />
+          <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold" style={{ color: "var(--accent)" }}>
+            {t.tapToVisit} <span aria-hidden="true">→</span>
+          </span>
         </div>
-      </div>
+      </a>
 
       {/* 2×2 cards */}
       <div className="mt-[22px] grid grid-cols-1 gap-[22px] md:grid-cols-2">
