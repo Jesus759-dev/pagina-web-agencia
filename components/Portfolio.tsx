@@ -110,16 +110,20 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
 
       {/* 2×2 cards */}
       <div className="mt-[22px] grid grid-cols-1 gap-[22px] md:grid-cols-2">
-        {/* CAPOSA — cliente, sistema a la medida (gestión operativa) */}
-        <article className="proj-card overflow-hidden rounded-2xl border border-line bg-white">
-          <div
-            className="relative flex aspect-video flex-col items-center justify-center gap-1.5 overflow-hidden"
-            style={{ background: "linear-gradient(150deg, #34414f, #182029)" }}
-          >
-            <span className="font-heading text-[34px] font-bold tracking-[0.04em] text-white">CAPOSA</span>
-            <span className="font-code text-[10px] uppercase tracking-[0.16em]" style={{ color: "#9db4c9" }}>
-              Sistema a la medida
-            </span>
+        {/* CAPOSA — cliente, CRM a la medida (captura real + enlace) */}
+        <a
+          href="https://caposa-crm.neuroviasystems.cloud"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="proj-card block overflow-hidden rounded-2xl border border-line bg-white no-underline"
+        >
+          <div className="relative aspect-video overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/projects/caposa-login.png"
+              alt={t.caposa.alt}
+              className="block h-full w-full object-cover"
+            />
           </div>
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
@@ -129,9 +133,15 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
             <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
               {t.caposa.title}
             </h3>
-            <p className="mt-[11px] text-sm leading-[1.6] text-muted">{t.caposa.desc}</p>
+            <p className="mt-[11px] text-sm leading-[1.6] text-muted">
+              {t.caposa.descPrefix}
+              <span className="font-semibold" style={{ color: "var(--accent)" }}>
+                {t.tapToVisit}
+              </span>
+              .
+            </p>
           </div>
-        </article>
+        </a>
 
         {/* ASC Motores — cliente, sistema de taller (captura real + enlace) */}
         <a

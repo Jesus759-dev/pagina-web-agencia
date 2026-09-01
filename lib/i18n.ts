@@ -160,7 +160,8 @@ const es = {
     caposa: {
       cat: "CRM a la medida · 24 módulos",
       title: "CAPOSA",
-      desc: "CRM a la medida con 24 módulos para digitalizar y controlar toda la operación de CAPOSA, proveedor que da servicio a grandes empresas industriales del sur de México.",
+      descPrefix: "CRM a la medida con 24 módulos para la comercializadora CAPOSA (Villahermosa, Tabasco): inventario multi-almacén, facturación CFDI 4.0 y reportes con IA — ",
+      alt: "CAPOSA — Sistema de Gestión ERP (pantalla de inicio de sesión)",
     },
     ascMotores: {
       cat: "Sistema de taller · App móvil e iOS",
@@ -519,7 +520,8 @@ const en: typeof es = {
     caposa: {
       cat: "Custom CRM · 24 modules",
       title: "CAPOSA",
-      desc: "A custom CRM with 24 modules to digitize and control CAPOSA's entire operation — a supplier serving large industrial companies across southern Mexico.",
+      descPrefix: "A custom 24-module CRM for CAPOSA, a distributor in Villahermosa, Tabasco: multi-warehouse inventory, CFDI 4.0 invoicing and AI business reports — ",
+      alt: "CAPOSA — ERP management system (login screen)",
     },
     ascMotores: {
       cat: "Workshop system · Mobile & iOS app",
