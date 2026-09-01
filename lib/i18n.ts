@@ -157,6 +157,16 @@ const es = {
       title: "Mantenimiento Vehicular",
       desc: "Órdenes de trabajo, alertas por kilometraje, control de costos e historial completo de la flota — cada componente bajo control.",
     },
+    caposa: {
+      cat: "CRM a la medida · 24 módulos",
+      title: "CAPOSA",
+      desc: "CRM a la medida con 24 módulos para digitalizar y controlar toda la operación de CAPOSA, proveedor que da servicio a grandes empresas industriales del sur de México.",
+    },
+    ascMotores: {
+      cat: "Sistema de taller · App móvil e iOS",
+      title: "ASC Motores",
+      desc: "Sistema de taller a la medida con 18 módulos, más app móvil (Android) y app para iOS, para operar el taller de ASC Motores desde cualquier lugar.",
+    },
     hidraulica: {
       cat: "Software técnico",
       title: "Cliente petrolero — Hidráulica v1.3",
@@ -504,6 +514,16 @@ const en: typeof es = {
       cat: "System · Fleet management",
       title: "Fleet Maintenance",
       desc: "Work orders, mileage alerts, cost control and a complete fleet history — every component under control.",
+    },
+    caposa: {
+      cat: "Custom CRM · 24 modules",
+      title: "CAPOSA",
+      desc: "A custom CRM with 24 modules to digitize and control CAPOSA's entire operation — a supplier serving large industrial companies across southern Mexico.",
+    },
+    ascMotores: {
+      cat: "Workshop system · Mobile & iOS app",
+      title: "ASC Motores",
+      desc: "A custom workshop system with 18 modules, plus an Android and iOS app, to run ASC Motores' shop from anywhere.",
     },
     hidraulica: {
       cat: "Technical software",

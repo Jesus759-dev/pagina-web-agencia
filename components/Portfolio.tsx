@@ -102,6 +102,52 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
 
       {/* 2×2 cards */}
       <div className="mt-[22px] grid grid-cols-1 gap-[22px] md:grid-cols-2">
+        {/* CAPOSA — cliente, sistema a la medida (gestión operativa) */}
+        <article className="proj-card overflow-hidden rounded-2xl border border-line bg-white">
+          <div
+            className="relative flex aspect-video flex-col items-center justify-center gap-1.5 overflow-hidden"
+            style={{ background: "linear-gradient(150deg, #34414f, #182029)" }}
+          >
+            <span className="font-heading text-[34px] font-bold tracking-[0.04em] text-white">CAPOSA</span>
+            <span className="font-code text-[10px] uppercase tracking-[0.16em]" style={{ color: "#9db4c9" }}>
+              Sistema a la medida
+            </span>
+          </div>
+          <div className="p-[26px]">
+            <div className="mb-[11px] flex items-center gap-2.5">
+              <Pill label={t.inProduction} />
+              <span className="text-[13px] text-[#7a838f]">{t.caposa.cat}</span>
+            </div>
+            <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
+              {t.caposa.title}
+            </h3>
+            <p className="mt-[11px] text-sm leading-[1.6] text-muted">{t.caposa.desc}</p>
+          </div>
+        </article>
+
+        {/* ASC Motores — cliente, sistema a la medida (taller / operación) */}
+        <article className="proj-card overflow-hidden rounded-2xl border border-line bg-white">
+          <div
+            className="relative flex aspect-video flex-col items-center justify-center gap-1.5 overflow-hidden"
+            style={{ background: "linear-gradient(150deg, #3a2f26, #1b1410)" }}
+          >
+            <span className="font-heading text-[30px] font-bold tracking-[0.01em] text-white">ASC Motores</span>
+            <span className="font-code text-[10px] uppercase tracking-[0.16em]" style={{ color: "#e0a45c" }}>
+              Sistema a la medida
+            </span>
+          </div>
+          <div className="p-[26px]">
+            <div className="mb-[11px] flex items-center gap-2.5">
+              <Pill label={t.inProduction} />
+              <span className="text-[13px] text-[#7a838f]">{t.ascMotores.cat}</span>
+            </div>
+            <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
+              {t.ascMotores.title}
+            </h3>
+            <p className="mt-[11px] text-sm leading-[1.6] text-muted">{t.ascMotores.desc}</p>
+          </div>
+        </article>
+
         {/* Neurovía SGI — nuevo producto propio (gestión integral) */}
         <a
           href="https://sgi.neuroviasystems.cloud"
