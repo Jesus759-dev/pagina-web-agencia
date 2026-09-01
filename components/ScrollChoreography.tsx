@@ -5,10 +5,12 @@ import { useEffect } from "react";
 /**
  * Scroll choreography for the "Neurovia Landing Pro" design.
  *
- * Reveals are handled by an IntersectionObserver (fire once, then unobserve) —
- * no per-frame layout reads. Parallax is driven by a scroll/resize listener
- * that schedules a single rAF and then goes idle, so nothing runs while the
- * page is still. It mutates only wrapper-level classes / inline transforms.
+ * Reveals are driven by the scroll/resize listener (throttled through a single
+ * rAF that idles when the page is still) plus one pass on load — this is the
+ * proven approach: every element reliably reveals once it enters the viewport,
+ * and revealed elements are dropped from the tracked list so nothing is re-read
+ * on later frames. Parallax rides the same update pass. It mutates only
+ * wrapper-level classes / inline transforms.
  */
 export default function ScrollChoreography() {
   useEffect(() => {
@@ -47,29 +49,18 @@ export default function ScrollChoreography() {
       c.classList.add("reveal-img");
       img.style.height = "118%";
       img.style.willChange = "transform";
+      // Safety net: if the image fails to load, reveal its wrapper anyway so
+      // the card never shows an empty clipped box.
       img.addEventListener("error", () => c.classList.add("in"));
       parImgs.push(img);
     });
 
-    // 2) Observe every reveal target — add `.in` once when it enters, then stop
-    //    watching it. Off the main thread, no forced layout.
-    const revealEls = document.querySelectorAll(
-      ".reveal, .reveal-title, .reveal-img"
+    // 2) Track every reveal target; reveal once in view, then drop it.
+    let revealEls = Array.from(
+      document.querySelectorAll<HTMLElement>(".reveal, .reveal-title, .reveal-img")
     );
-    const io = new IntersectionObserver(
-      (entries, obs) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in");
-            obs.unobserve(entry.target);
-          }
-        }
-      },
-      { rootMargin: "0px 0px -10% 0px", threshold: 0.05 }
-    );
-    revealEls.forEach((el) => io.observe(el));
 
-    // 3) Parallax — only compute during scroll/resize, then idle.
+    // 3) Parallax — only recompute during scroll/resize, then idle.
     const parEls = Array.from(
       document.querySelectorAll<HTMLElement>("[data-parallax]")
     );
@@ -83,6 +74,19 @@ export default function ScrollChoreography() {
       ticking = false;
       const vh = window.innerHeight || document.documentElement.clientHeight;
 
+      // Reveals: add `.in` when the element enters the viewport, once.
+      if (revealEls.length) {
+        const still: HTMLElement[] = [];
+        for (let i = 0; i < revealEls.length; i++) {
+          const el = revealEls[i];
+          const r = el.getBoundingClientRect();
+          if (r.top < vh * 0.92 && r.bottom > 0) el.classList.add("in");
+          else still.push(el);
+        }
+        revealEls = still;
+      }
+
+      // Parallax on project images.
       for (let i = 0; i < parImgs.length; i++) {
         const img = parImgs[i];
         const parent = img.parentElement;
@@ -94,6 +98,7 @@ export default function ScrollChoreography() {
         img.style.transform = "translateY(" + ty + "%)";
       }
 
+      // Generic [data-parallax] drift.
       for (let i = 0; i < parEls.length; i++) {
         const el = parEls[i];
         const r = el.getBoundingClientRect();
@@ -106,18 +111,18 @@ export default function ScrollChoreography() {
         el.style.transform = "translate3d(0," + ty + "%,0)";
       }
     };
+
     const onScroll = () => {
       if (ticking) return;
       ticking = true;
       raf = requestAnimationFrame(update);
     };
 
-    update(); // initial position
+    update(); // reveal whatever is already in view + initial parallax
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
 
     return () => {
-      io.disconnect();
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
       cancelAnimationFrame(raf);

@@ -22,28 +22,6 @@ function Pill({ label }: { label: string }) {
   );
 }
 
-/* Overlay de censura para capturas con datos sensibles del cliente. */
-function Confidencial({ label }: { label: string }) {
-  return (
-    <div className="absolute inset-0 z-[3] flex items-center justify-center">
-      <div
-        className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.1em] text-white"
-        style={{
-          background: "rgba(12,18,32,.55)",
-          backdropFilter: "blur(2px)",
-          WebkitBackdropFilter: "blur(2px)",
-        }}
-      >
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="3" y="11" width="18" height="11" rx="2" />
-          <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-        </svg>
-        {label}
-      </div>
-    </div>
-  );
-}
-
 function Stack({ items }: { items: string[] }) {
   return (
     <div className="mt-[22px] flex flex-wrap gap-2">
@@ -107,9 +85,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
             src="/projects/chemiservis-portal.png"
             alt={t.alts.portal}
             className="block h-full w-full object-cover"
-            style={{ filter: "blur(18px)", transform: "scale(1.1)" }}
           />
-          <Confidencial label={t.confidential} />
         </div>
         <div className="p-10">
           <div className="mb-3.5 flex items-center gap-2.5">
@@ -247,9 +223,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
               src="/projects/mantenimiento-vehicular-login.png"
               alt={t.alts.mantenimiento}
               className="block h-full w-full object-cover"
-              style={{ filter: "blur(18px)", transform: "scale(1.1)" }}
             />
-            <Confidencial label={t.confidential} />
           </div>
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
@@ -271,9 +245,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
               src="/projects/chemiservis-offshore.png"
               alt={t.alts.hidraulica}
               className="block h-full w-full object-cover"
-              style={{ filter: "blur(18px)", transform: "scale(1.1)" }}
             />
-            <Confidencial label={t.confidential} />
           </div>
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
