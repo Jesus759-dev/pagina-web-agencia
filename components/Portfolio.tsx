@@ -125,16 +125,20 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
           </div>
         </article>
 
-        {/* ASC Motores — cliente, sistema a la medida (taller / operación) */}
-        <article className="proj-card overflow-hidden rounded-2xl border border-line bg-white">
-          <div
-            className="relative flex aspect-video flex-col items-center justify-center gap-1.5 overflow-hidden"
-            style={{ background: "linear-gradient(150deg, #3a2f26, #1b1410)" }}
-          >
-            <span className="font-heading text-[30px] font-bold tracking-[0.01em] text-white">ASC Motores</span>
-            <span className="font-code text-[10px] uppercase tracking-[0.16em]" style={{ color: "#e0a45c" }}>
-              Sistema a la medida
-            </span>
+        {/* ASC Motores — cliente, sistema de taller (captura real + enlace) */}
+        <a
+          href="https://asc.neuroviasystems.cloud"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="proj-card block overflow-hidden rounded-2xl border border-line bg-white no-underline"
+        >
+          <div className="relative aspect-video overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/projects/asc-motores-login.png"
+              alt={t.ascMotores.alt}
+              className="block h-full w-full object-cover"
+            />
           </div>
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
@@ -144,9 +148,15 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
             <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
               {t.ascMotores.title}
             </h3>
-            <p className="mt-[11px] text-sm leading-[1.6] text-muted">{t.ascMotores.desc}</p>
+            <p className="mt-[11px] text-sm leading-[1.6] text-muted">
+              {t.ascMotores.descPrefix}
+              <span className="font-semibold" style={{ color: "var(--accent)" }}>
+                {t.tapToVisit}
+              </span>
+              .
+            </p>
           </div>
-        </article>
+        </a>
 
         {/* Neurovía SGI — nuevo producto propio (gestión integral) */}
         <a

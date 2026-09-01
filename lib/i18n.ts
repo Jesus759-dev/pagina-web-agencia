@@ -165,7 +165,8 @@ const es = {
     ascMotores: {
       cat: "Sistema de taller · App móvil e iOS",
       title: "ASC Motores",
-      desc: "Sistema de taller a la medida con 18 módulos, más app móvil (Android) y app para iOS, para operar el taller de ASC Motores desde cualquier lugar.",
+      descPrefix: "Sistema de taller a la medida con 18 módulos, más app móvil (Android) y app para iOS, para operar el taller desde cualquier lugar — ",
+      alt: "ASC Motores — Sistema de Taller (pantalla de inicio de sesión)",
     },
     hidraulica: {
       cat: "Software técnico",
@@ -523,7 +524,8 @@ const en: typeof es = {
     ascMotores: {
       cat: "Workshop system · Mobile & iOS app",
       title: "ASC Motores",
-      desc: "A custom workshop system with 18 modules, plus an Android and iOS app, to run ASC Motores' shop from anywhere.",
+      descPrefix: "A custom workshop system with 18 modules, plus Android and iOS apps, to run the shop from anywhere — ",
+      alt: "ASC Motores — Workshop System (login screen)",
     },
     hidraulica: {
       cat: "Technical software",
