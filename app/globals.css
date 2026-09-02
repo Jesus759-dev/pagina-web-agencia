@@ -6,41 +6,42 @@
  * -------------------------------------------------------------------------- */
 
 @theme inline {
-  /* Surfaces — warm ivory / sand palette (más humano) */
+  /* Surfaces — light ground with pale-sky blocks (reference: --ink / --ink-2) */
   --color-canvas: #fdfbf7;
-  --color-surface: #f4efe6;
-  --color-surface-2: #faf6ef;
-  --color-hero: #efe8dc;
+  --color-surface: #eef6fd;
+  --color-surface-2: #f5faff;
+  --color-hero: #eef6fd;
 
-  /* Borders — warm neutrals */
-  --color-line: #e8e0d2;
-  --color-line-soft: #efe8db;
-  --color-line-2: #e1d8c8;
+  /* Borders — navy at low alpha (reference: --mist-10) */
+  --color-line: rgba(15, 42, 68, 0.12);
+  --color-line-soft: rgba(15, 42, 68, 0.08);
+  --color-line-2: rgba(15, 42, 68, 0.18);
 
-  /* Text — warm charcoal instead of cold near-black */
-  --color-ink: #201d17;
-  --color-ink-2: #3a352b;
-  --color-muted: #6a6256;
-  --color-faint: #9a9184;
+  /* Text — deep navy scale (reference: --mist, --mist-60, --mist-30) */
+  --color-ink: #0f2a44;
+  --color-ink-2: #2b4460;
+  --color-muted: rgba(15, 42, 68, 0.62);
+  --color-faint: rgba(15, 42, 68, 0.38);
 
-  /* Accent — deep, sober petrol/navy (más señor) */
-  --color-accent: #284a5e;
+  /* Accent — sky blue (reference: --phos); celeste only as a soft secondary */
+  --color-accent: #2f8fe8;
+  --color-accent-2: #9ad6f7;
 
   /* Logo gradient stops (brand mark kept intact) */
   --color-brand-cyan: #22d3ee;
   --color-brand-blue: #3b82f6;
   --color-brand-violet: #6847e5;
 
-  --font-heading: var(--font-lora);
-  --font-body: var(--font-inter);
-  --font-code: var(--font-jetbrains-mono);
+  --font-heading: var(--font-instrument);
+  --font-body: var(--font-manrope);
+  --font-code: var(--font-manrope);
 }
 
 /* Accent theme — single source of truth, swap these three to recolor the site */
 :root {
-  --accent: #284a5e;
-  --accent-soft: rgba(40, 74, 94, 0.1);
-  --accent-glow: rgba(40, 74, 94, 0.26);
+  --accent: #2f8fe8;
+  --accent-soft: rgba(47, 143, 232, 0.1);
+  --accent-glow: rgba(47, 143, 232, 0.26);
 }
 
 * {
@@ -54,60 +55,76 @@ html {
 body {
   margin: 0;
   background: #fdfbf7;
-  color: #201d17;
-  font-family: var(--font-body), "Inter", system-ui, sans-serif;
+  color: #0f2a44;
+  font-family: var(--font-body), "Manrope", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading), "Lora", Georgia, "Times New Roman", serif;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+/* Instrument Serif ships a single weight: force 400 everywhere the heading
+   face is used so utility classes like font-bold never trigger faux-bold. */
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading), "Instrument Serif", Georgia, serif;
+  font-weight: 400 !important;
+  letter-spacing: -0.02em;
 }
 
 code, pre {
-  font-family: var(--font-code), "JetBrains Mono", monospace;
+  font-family: var(--font-code), "Manrope", monospace;
+}
+
+/* Solid block for dense content sitting on the particle canvas
+   (forms, tables, long text). No backdrop-filter on mobile. */
+.surface {
+  background: rgba(255, 255, 255, 0.9);
+}
+@media (min-width: 768px) {
+  .surface {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
 }
 
 /* --------------------------------------------------------------------------
  * Interactive element styles (ported from the design)
  * -------------------------------------------------------------------------- */
 .navlink {
-  color: #54606f;
+  color: rgba(15, 42, 68, 0.7);
   text-decoration: none;
   transition: color 0.2s ease;
   font-weight: 500;
 }
-.navlink:hover { color: #0c1220; }
+.navlink:hover { color: #0f2a44; }
 
 .pill-link {
-  color: #374151;
+  color: rgba(15, 42, 68, 0.72);
   font-weight: 500;
   text-decoration: none;
   transition: color 0.2s ease;
 }
-.pill-link:hover { color: #0c1220; }
+.pill-link:hover { color: #0f2a44; }
 
+/* Reference .btn: sky-blue pill that turns navy on hover */
 .btn-primary {
-  background: var(--accent, #2563eb);
+  background: var(--accent, #2f8fe8);
   color: #fff;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, filter 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.25s ease;
 }
 .btn-primary:hover {
+  background: #0f2a44;
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px var(--accent-glow, rgba(37, 99, 235, 0.3));
-  filter: brightness(1.05);
+  box-shadow: 0 14px 30px rgba(15, 42, 68, 0.22);
 }
 /* Press feedback — the button visibly "hears" the tap (also the only feedback on touch, where :hover never fires). */
 .btn-primary:active { transform: scale(0.97); transition-duration: 0.12s; }
 
 .btn-ghost {
   background: #fff;
-  color: #0c1220;
-  border: 1px solid #e2e5ea;
+  color: #0f2a44;
+  border: 1px solid rgba(15, 42, 68, 0.12);
   transition: border-color 0.2s ease, background 0.2s ease, transform 0.12s ease-out;
 }
-.btn-ghost:hover { border-color: #c7ccd4; background: #f7f8fb; }
+.btn-ghost:hover { border-color: rgba(15, 42, 68, 0.25); background: #eef6fd; }
 .btn-ghost:active { transform: scale(0.97); }
 
 .cta-outline {
@@ -161,8 +178,8 @@ code, pre {
 /* Wordmark for the Neurovia logotype — solid warm ink for a more sober,
    distinguished feel (the colorful logo mark carries the brand color). */
 .brand-text {
-  color: var(--color-ink, #201d17);
-  letter-spacing: -0.005em;
+  color: var(--color-ink, #0f2a44);
+  letter-spacing: -0.01em;
 }
 
 /* --------------------------------------------------------------------------
@@ -251,12 +268,12 @@ code, pre {
 
 /* Selection + scrollbar — light theme */
 ::selection {
-  background: var(--accent-soft, rgba(37, 99, 235, 0.18));
-  color: #0c1220;
+  background: rgba(154, 214, 247, 0.5);
+  color: #0f2a44;
 }
 ::-webkit-scrollbar { width: 9px; }
-::-webkit-scrollbar-track { background: #f0f1f4; }
-::-webkit-scrollbar-thumb { background: #cbd2dc; border-radius: 5px; }
+::-webkit-scrollbar-track { background: #f3f7fb; }
+::-webkit-scrollbar-thumb { background: #c5d3df; border-radius: 5px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent, #2563eb); }
 
 /* --------------------------------------------------------------------------

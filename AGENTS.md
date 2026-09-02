@@ -54,7 +54,20 @@ for "desarrollo de software a medida Villahermosa". Breaking these invariants co
 - Colors, fonts and surfaces are **design tokens** in `app/globals.css`
   (`@theme` block + `:root { --accent … }`). **Recoloring the whole site = change those tokens**,
   not each component.
-- The heading font is loaded in `app/layout.tsx` with `next/font/google`.
+- Palette (Sept 2026 redesign): light ground `#fdfbf7`, navy text `#0f2a44`, sky-blue accent
+  `#2f8fe8`, celeste `#9ad6f7` only as a soft secondary. **No greens or oranges** in the UI
+  (tech-stack brand dots and the WhatsApp button are the only exceptions).
+- Fonts via `next/font/google` in `app/layout.tsx`: **Instrument Serif** (headings, single
+  weight 400, tracking -0.02em; `.font-heading`/`h1-h6` force `font-weight: 400 !important`
+  because the face has no bold) and **Manrope** (everything else, incl. `font-code`).
+- **Global WebGL background:** `components/ParticleField.tsx` (shader ported verbatim from
+  `docs/reference/neurovia-landing.html`, `three` ESM, `NormalBlending`) is mounted through
+  `components/ParticleFieldLoader.tsx` (`next/dynamic`, `ssr:false`) as the first child of
+  `<body>` at `z-index: 0`. All page content lives inside the `relative z-[1]` wrapper in the
+  layout — keep it, or content renders under the canvas. Canvas opacity is scroll-linked
+  (`1 → 0.18`) and written to the DOM directly, never through React state. The hero has no
+  background of its own so the canvas shows through.
+- `.surface` = white 0.9 block for dense content on top of the canvas.
 
 ## Sections that must survive a redesign
 

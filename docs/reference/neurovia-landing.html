@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neurovia Systems — Software a medida y automatización con IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#FDFBF7;          /* fondo del sitio actual */
+    --ink-2:#EEF6FD;        /* celeste muy pálido para bloques */
+    --mist:#0F2A44;         /* texto azul marino profundo */
+    --mist-60:rgba(15,42,68,.62);
+    --mist-30:rgba(15,42,68,.38);
+    --mist-10:rgba(15,42,68,.12);
+    --phos:#2F8FE8;         /* azul cielo (acento) */
+    --ember:#7CC8F5;        /* celeste (secundario) */
+    --serif:'Instrument Serif',Georgia,serif;
+    --sans:'Manrope',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--mist);font-family:var(--sans);font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  :focus-visible{outline:2px solid var(--phos);outline-offset:3px;border-radius:2px}
+
+  /* NAV */
+  nav{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:22px clamp(20px,4vw,56px)}
+  .logo{font-family:var(--serif);font-size:24px;letter-spacing:-.01em}
+  .logo i{color:var(--phos);font-style:normal}
+  nav ul{display:flex;gap:32px;list-style:none;font-size:14px;font-weight:500}
+  nav ul a{opacity:.7;transition:opacity .2s}
+  nav ul a:hover{opacity:1}
+  @media(max-width:720px){nav ul{display:none}}
+
+  /* HERO */
+  .hero{position:relative;height:100svh;min-height:640px;display:flex;align-items:flex-end;padding:0 clamp(20px,4vw,56px) clamp(48px,7vh,88px)}
+  #field{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(to top,var(--ink) 15%,transparent);pointer-events:none}
+  .hero-inner{position:relative;z-index:2;max-width:1200px;width:100%;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(46px,7.2vw,112px);line-height:.98;letter-spacing:-.02em;max-width:12ch}
+  h1 em{font-style:italic;color:var(--phos)}
+  .hero-aside{max-width:34ch;font-size:15px;color:var(--mist-60);padding-bottom:10px}
+  .hero-aside strong{display:block;color:var(--mist);font-weight:500;margin-bottom:6px}
+  .scroll-hint{position:absolute;right:clamp(20px,4vw,56px);top:50%;transform:translateY(-50%) rotate(90deg);transform-origin:right center;font-size:11px;letter-spacing:.2em;color:var(--mist-30);z-index:2}
+  @media(max-width:900px){.hero-inner{grid-template-columns:1fr}.scroll-hint{display:none}}
+
+  /* LAYOUT */
+  section{padding:clamp(80px,12vh,160px) clamp(20px,4vw,56px)}
+  .wrap{max-width:1200px;margin:0 auto}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.4vw,60px);line-height:1.05;letter-spacing:-.015em;max-width:18ch}
+  .lede{font-size:17px;color:var(--mist-60);max-width:52ch;margin-top:20px}
+
+  /* CAPABILITIES */
+  .caps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--mist-10);margin-top:64px}
+  .cap{background:var(--ink);padding:36px 32px 40px;position:relative;transition:background .3s}
+  .cap:hover{background:var(--ink-2)}
+  .cap h3{font-family:var(--serif);font-size:30px;font-weight:400;margin-bottom:14px}
+  .cap p{font-size:15px;color:var(--mist-60);max-width:32ch}
+  .cap .stack{margin-top:26px;font-size:12px;color:var(--mist-30);letter-spacing:.02em}
+  .cap svg{width:36px;height:36px;margin-bottom:28px;stroke:var(--phos);fill:none;stroke-width:1.2}
+  @media(max-width:860px){.caps{grid-template-columns:1fr}}
+
+  /* PRODUCTS */
+  .products{background:var(--ink-2)}
+  .prod-list{margin-top:56px;border-top:1px solid var(--mist-10)}
+  .prod{display:grid;grid-template-columns:200px 1fr auto;gap:32px;align-items:baseline;padding:28px 0;border-bottom:1px solid var(--mist-10);transition:padding-left .3s}
+  .prod:hover{padding-left:12px}
+  .prod .name{font-family:var(--serif);font-size:32px}
+  .prod .desc{font-size:15px;color:var(--mist-60);max-width:56ch}
+  .prod .sector{font-size:13px;color:var(--phos);white-space:nowrap}
+  @media(max-width:760px){.prod{grid-template-columns:1fr;gap:8px}}
+
+  /* PROCESS (is a sequence, numbering is earned) */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:48px 32px;margin-top:64px;counter-reset:step}
+  .step{position:relative;padding-top:24px;border-top:1px solid var(--mist-10)}
+  .step::before{counter-increment:step;content:counter(step);font-family:var(--serif);font-size:44px;color:var(--phos);line-height:1;display:block;margin-bottom:18px}
+  .step h4{font-weight:500;font-size:17px;margin-bottom:8px}
+  .step p{font-size:14px;color:var(--mist-60)}
+  @media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.steps{grid-template-columns:1fr}}
+
+  /* CTA */
+  .cta{position:relative;text-align:center;padding:clamp(100px,16vh,200px) clamp(20px,4vw,56px);overflow:hidden}
+  .cta::before{content:"";position:absolute;left:50%;top:50%;width:min(80vw,900px);aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(124,200,245,.35),transparent 60%);pointer-events:none}
+  .cta h2{margin:0 auto;max-width:16ch}
+  .cta p{margin:24px auto 40px;color:var(--mist-60);max-width:44ch;font-size:17px;position:relative}
+  .btn{display:inline-flex;align-items:center;gap:12px;background:var(--phos);color:#fff;padding:18px 30px;border-radius:999px;font-weight:600;font-size:15px;position:relative;transition:transform .2s,background .2s}
+  .btn:hover{background:var(--mist);transform:translateY(-2px)}
+  .btn span{width:8px;height:8px;border-radius:50%;background:#fff}
+  .cta small{display:block;margin-top:20px;font-size:13px;color:var(--mist-30);position:relative}
+
+  footer{border-top:1px solid var(--mist-10);padding:36px clamp(20px,4vw,56px);display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--mist-30)}
+  footer a:hover{color:var(--mist)}
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .btn,.cap,.prod{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#">Neurovia<i>.</i></a>
+  <ul>
+    <li><a href="#que-hacemos">Qué hacemos</a></li>
+    <li><a href="#productos">Productos</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="scroll-hint">DESLIZA</div>
+  <div class="hero-inner">
+    <h1>Software que entiende <em>tu operación</em>, no una plantilla.</h1>
+    <div class="hero-aside">
+      <strong>Neurovia Systems</strong>
+      Desarrollo a medida y automatización con IA para empresas que operan en campo: petróleo, construcción, talleres, clínicas y retail. Villahermosa · Monterrey · Guadalajara.
+    </div>
+  </div>
+</header>
+
+<section id="que-hacemos">
+  <div class="wrap">
+    <h2>Tres formas de trabajar contigo.</h2>
+    <p class="lede">Cada proyecto empieza por entender cómo fluye el trabajo real en tu empresa. Después construimos justo lo que falta.</p>
+    <div class="caps">
+      <article class="cap">
+        <svg viewBox="0 0 36 36"><path d="M5 9h26v18H5zM5 15h26M12 9v18"/></svg>
+        <h3>Sistemas a medida</h3>
+        <p>ERP, CRM, inventarios, flotillas y control de obra. Construidos sobre tus procesos, con las integraciones que ya usas.</p>
+        <div class="stack">Laravel · Livewire · Filament · Node.js · React</div>
+      </article>
+      <article class="cap">
+        <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="12"/><path d="M18 6v24M6 18h24M9.5 9.5l17 17M26.5 9.5l-17 17"/></svg>
+        <h3>Automatización con IA</h3>
+        <p>Agentes que califican prospectos, redactan seguimientos, leen documentos y reportan cada mañana. Trabajo repetitivo fuera de tu agenda.</p>
+        <div class="stack">Claude · n8n · Telegram · WhatsApp</div>
+      </article>
+      <article class="cap">
+        <svg viewBox="0 0 36 36"><path d="M6 26l12-16 12 16zM12 26v4M24 26v4M18 10V6"/></svg>
+        <h3>Productos SaaS</h3>
+        <p>Plataformas listas para operar desde el primer día, con facturación CFDI 4.0 incluida y soporte en español.</p>
+        <div class="stack">Multi-tenant · CFDI · Reportes</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="productos">
+  <div class="wrap">
+    <h2>Productos que ya están en producción.</h2>
+    <p class="lede">Cada uno nació resolviendo un problema concreto de un cliente real.</p>
+    <div class="prod-list">
+      <a class="prod" href="#contacto">
+        <div class="name">Núcleo SGI</div>
+        <div class="desc">Gestión HSE y cumplimiento para contratistas petroleros: auditorías PEMEX, DC-3, ISO 9001/14001/45001 y evidencia fotográfica georreferenciada.</div>
+        <div class="sector">Petróleo</div>
+      </a>
+      <a class="prod" href="#contacto">
+        <div class="name">Huella</div>
+        <div class="desc">Administración de clínicas veterinarias con recordatorios automáticos de vacunación por WhatsApp.</div>
+        <div class="sector">Veterinaria</div>
+      </a>
+      <a class="prod" href="#contacto">
+        <div class="name">Tomín POS</div>
+        <div class="desc">Punto de venta con facturación CFDI 4.0, impresión térmica y lector de códigos de barras.</div>
+        <div class="sector">Retail</div>
+      </a>
+      <a class="prod" href="#contacto">
+        <div class="name">FlotaOps</div>
+        <div class="desc">Rastreo de flotillas en tiempo real con soporte para rutas remotas vía GPS híbrido satelital.</div>
+        <div class="sector">Logística</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="proceso">
+  <div class="wrap">
+    <h2>Del primer mensaje al sistema en uso.</h2>
+    <div class="steps">
+      <div class="step"><h4>Diagnóstico</h4><p>Una llamada de 30 minutos para entender tu operación y dónde se pierde tiempo o dinero.</p></div>
+      <div class="step"><h4>Mockup gratis</h4><p>Te entregamos una maqueta navegable de la solución antes de que decidas nada.</p></div>
+      <div class="step"><h4>Construcción por sprints</h4><p>Entregas cada dos semanas. Ves el sistema crecer y lo corregimos sobre la marcha.</p></div>
+      <div class="step"><h4>Puesta en marcha</h4><p>Capacitación a tu equipo, migración de datos y soporte directo con quien lo construyó.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contacto">
+  <h2>Cuéntanos qué te quita tiempo. Te mandamos un mockup sin costo.</h2>
+  <p>Sin compromiso, sin presentaciones largas. Solo una maqueta de cómo se vería resuelto.</p>
+  <a class="btn" href="mailto:hola@neuroviasystems.com.mx"><span></span>Pedir mi mockup gratis</a>
+  <small>Respuesta en menos de 24 horas hábiles.</small>
+</section>
+
+<footer>
+  <div>© 2026 Neurovia Systems · Villahermosa, Tabasco</div>
+  <div><a href="#">Aviso de privacidad</a> &nbsp;·&nbsp; <a href="mailto:hola@neuroviasystems.com.mx">hola@neuroviasystems.com.mx</a></div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const canvas = document.getElementById('field');
+  const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(50, 1, .1, 100);
+  camera.position.set(0, 5.5, 9);
+  camera.lookAt(0, 0, -1);
+
+  const W = 180, H = 110, SP = 0.11;
+  const count = W*H;
+  const pos = new Float32Array(count*3);
+  let i = 0;
+  for(let y=0;y<H;y++) for(let x=0;x<W;x++){
+    pos[i++] = (x - W/2) * SP;
+    pos[i++] = 0;
+    pos[i++] = (y - H/2) * SP;
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+
+  const uniforms = {
+    uTime:{value:0},
+    uMouse:{value:new THREE.Vector2(0,0)},
+    uPhos:{value:new THREE.Color('#2F8FE8')},
+    uEmber:{value:new THREE.Color('#9AD6F7')},
+    uMist:{value:new THREE.Color('#0F2A44')},
+    uPR:{value:renderer.getPixelRatio()}
+  };
+
+  const vert = `
+    uniform float uTime; uniform vec2 uMouse; uniform float uPR;
+    varying float vH; varying float vD;
+    vec3 mod289(vec3 x){return x-floor(x*(1./289.))*289.;}
+    vec4 mod289(vec4 x){return x-floor(x*(1./289.))*289.;}
+    vec4 permute(vec4 x){return mod289(((x*34.)+1.)*x);}
+    vec4 taylorInvSqrt(vec4 r){return 1.79284291400159-0.85373472095314*r;}
+    float snoise(vec3 v){
+      const vec2 C=vec2(1./6.,1./3.); const vec4 D=vec4(0.,.5,1.,2.);
+      vec3 i=floor(v+dot(v,C.yyy)); vec3 x0=v-i+dot(i,C.xxx);
+      vec3 g=step(x0.yzx,x0.xyz); vec3 l=1.-g; vec3 i1=min(g.xyz,l.zxy); vec3 i2=max(g.xyz,l.zxy);
+      vec3 x1=x0-i1+C.xxx; vec3 x2=x0-i2+C.yyy; vec3 x3=x0-D.yyy;
+      i=mod289(i);
+      vec4 p=permute(permute(permute(i.z+vec4(0.,i1.z,i2.z,1.))+i.y+vec4(0.,i1.y,i2.y,1.))+i.x+vec4(0.,i1.x,i2.x,1.));
+      float n_=.142857142857; vec3 ns=n_*D.wyz-D.xzx;
+      vec4 j=p-49.*floor(p*ns.z*ns.z); vec4 x_=floor(j*ns.z); vec4 y_=floor(j-7.*x_);
+      vec4 x=x_*ns.x+ns.yyyy; vec4 y=y_*ns.x+ns.yyyy; vec4 h=1.-abs(x)-abs(y);
+      vec4 b0=vec4(x.xy,y.xy); vec4 b1=vec4(x.zw,y.zw);
+      vec4 s0=floor(b0)*2.+1.; vec4 s1=floor(b1)*2.+1.; vec4 sh=-step(h,vec4(0.));
+      vec4 a0=b0.xzyw+s0.xzyw*sh.xxyy; vec4 a1=b1.xzyw+s1.xzyw*sh.zzww;
+      vec3 p0=vec3(a0.xy,h.x); vec3 p1=vec3(a0.zw,h.y); vec3 p2=vec3(a1.xy,h.z); vec3 p3=vec3(a1.zw,h.w);
+      vec4 norm=taylorInvSqrt(vec4(dot(p0,p0),dot(p1,p1),dot(p2,p2),dot(p3,p3)));
+      p0*=norm.x;p1*=norm.y;p2*=norm.z;p3*=norm.w;
+      vec4 m=max(.6-vec4(dot(x0,x0),dot(x1,x1),dot(x2,x2),dot(x3,x3)),0.); m=m*m;
+      return 42.*dot(m*m,vec4(dot(p0,x0),dot(p1,x1),dot(p2,x2),dot(p3,x3)));
+    }
+    void main(){
+      vec3 p=position;
+      float t=uTime*.18;
+      float n=snoise(vec3(p.x*.28,p.z*.28,t))*.9 + snoise(vec3(p.x*.9,p.z*.9,t*1.7))*.22;
+      vec2 m=uMouse*vec2(10.,6.);
+      float d=distance(p.xz,m);
+      float ripple=exp(-d*.55)*sin(d*3.-uTime*3.)*.9;
+      p.y=n+ripple;
+      vH=p.y; vD=exp(-d*.4);
+      vec4 mv=modelViewMatrix*vec4(p,1.);
+      gl_PointSize=(2.2+vD*2.4)*uPR*(6./-mv.z);
+      gl_Position=projectionMatrix*mv;
+    }`;
+  const frag = `
+    uniform vec3 uPhos,uEmber,uMist; varying float vH; varying float vD;
+    void main(){
+      vec2 c=gl_PointCoord-.5; if(dot(c,c)>.25) discard;
+      float h=clamp(vH*.5+.5,0.,1.);
+      vec3 col=mix(uEmber,uPhos,h);
+      col=mix(col,uMist,vD*.55);
+      float a=.28+h*.5+vD*.3;
+      gl_FragColor=vec4(col,a);
+    }`;
+  const mat = new THREE.ShaderMaterial({uniforms, vertexShader:vert, fragmentShader:frag, transparent:true, depthWrite:false, blending:THREE.NormalBlending});
+  scene.add(new THREE.Points(geo, mat));
+
+  const target = new THREE.Vector2(0,0);
+  addEventListener('pointermove', e => {
+    target.set((e.clientX/innerWidth-.5), -(e.clientY/innerHeight-.5));
+  }, {passive:true});
+
+  function resize(){
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w/h; camera.updateProjectionMatrix();
+  }
+  addEventListener('resize', resize); resize();
+
+  const clock = new THREE.Clock();
+  function tick(){
+    uniforms.uTime.value = reduce ? 4 : clock.getElapsedTime();
+    uniforms.uMouse.value.lerp(target, .06);
+    renderer.render(scene, camera);
+    if(!reduce || uniforms.uMouse.value.distanceTo(target) > .001) requestAnimationFrame(tick);
+  }
+  tick();
+  if(reduce) addEventListener('pointermove', () => requestAnimationFrame(tick), {passive:true});
+})();
+</script>
+</body>
+</html>

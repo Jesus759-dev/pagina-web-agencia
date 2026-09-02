@@ -66,7 +66,7 @@ export default function Navbar({ lang = "es" }: { lang?: Locale }) {
           </span>
         </a>
 
-        <span className="hidden h-5 w-px md:block" style={{ background: "rgba(12,18,32,.12)" }} />
+        <span className="hidden h-5 w-px md:block" style={{ background: "rgba(15,42,68,.12)" }} />
 
         <div className="hidden items-center gap-[26px] px-[18px] md:flex">
           {links.map((l) => (
@@ -87,7 +87,7 @@ export default function Navbar({ lang = "es" }: { lang?: Locale }) {
         {/* Language switch — desktop only in the bar; on mobile it lives in the sheet */}
         <a
           href={otherHome}
-          className="hidden rounded-full border border-[rgba(12,18,32,.14)] px-3 py-[7px] font-code text-[11px] font-semibold uppercase tracking-[0.08em] text-ink-2 no-underline transition-colors hover:text-ink md:inline-flex"
+          className="hidden rounded-full border border-[rgba(15,42,68,.14)] px-3 py-[7px] font-code text-[11px] font-semibold uppercase tracking-[0.08em] text-ink-2 no-underline transition-colors hover:text-ink md:inline-flex"
           aria-label={t.nav.switchLabel}
         >
           {t.nav.switchLabel}
@@ -109,7 +109,7 @@ export default function Navbar({ lang = "es" }: { lang?: Locale }) {
           onClick={() => setOpen(true)}
           aria-label={t.nav.menuLabel}
           aria-expanded={open}
-          className="flex h-10 w-10 flex-none items-center justify-center rounded-full border border-[rgba(12,18,32,.12)] bg-white/60 text-ink transition-transform active:scale-90 md:hidden"
+          className="flex h-10 w-10 flex-none items-center justify-center rounded-full border border-[rgba(15,42,68,.12)] bg-white/60 text-ink transition-transform active:scale-90 md:hidden"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
             <path d="M4 7h16M4 12h16M4 17h16" />
@@ -123,7 +123,7 @@ export default function Navbar({ lang = "es" }: { lang?: Locale }) {
           <div
             onClick={() => setOpen(false)}
             className="absolute inset-0 transition-opacity duration-200"
-            style={{ background: "rgba(12,18,32,.5)", opacity: show ? 1 : 0 }}
+            style={{ background: "rgba(15,42,68,.5)", opacity: show ? 1 : 0 }}
           />
           <div
             className="absolute left-1/2 top-3 w-[calc(100%-24px)] max-w-[420px] -translate-x-1/2 rounded-3xl border p-4 transition-all duration-200 ease-out"

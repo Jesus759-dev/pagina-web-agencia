@@ -33,7 +33,7 @@ export default function PuntoDeVenta({ lang = "es" }: { lang?: Locale }) {
 
             <div className="mt-[22px] flex flex-col gap-2.5">
               {t.features.map((it) => (
-                <div key={it} className="flex items-start gap-[11px] text-sm text-[#3a4452]">
+                <div key={it} className="flex items-start gap-[11px] text-sm text-[#2b4460]">
                   <span className="font-semibold" style={{ color: "var(--accent)" }}>
                     →
                   </span>

@@ -226,18 +226,18 @@ const CSS = `
 .nv-wrap{
   /* Brand-cohesive dark palette: petrol + warm gold (matches --accent #284a5e),
      not the original cold cyan/navy, so the map sings in tune with the site. */
-  --nv-bg-deep:#0a141b;
-  --nv-bg-panel:#0f1e27ee;
-  --nv-state-fill:#15272f;
-  --nv-state-fill-hover:#1d3742;
-  --nv-state-fill-active:#274c5c;
-  --nv-state-stroke:#31505c;
-  --nv-accent:#6fb0c6;
-  --nv-accent-dim:#6fb0c655;
-  --nv-accent2:#e0a45c;
-  --nv-text-primary:#eef4f2;
-  --nv-text-muted:#8a9aa0;
-  --nv-border-soft:#284049;
+  --nv-bg-deep:#0f2a44;
+  --nv-bg-panel:#143552ee;
+  --nv-state-fill:#1a3b5c;
+  --nv-state-fill-hover:#224a75;
+  --nv-state-fill-active:#2f6aa8;
+  --nv-state-stroke:#2c5578;
+  --nv-accent:#9ad6f7;
+  --nv-accent-dim:#9ad6f755;
+  --nv-accent2:#ffffff;
+  --nv-text-primary:#eef6fd;
+  --nv-text-muted:#9fb6cc;
+  --nv-border-soft:#2a4d70;
   position:relative;
   font-family:'Inter',system-ui,sans-serif;
   color:var(--nv-text-primary);
@@ -284,7 +284,7 @@ const CSS = `
   transform:translate(-50%,-50%); background:var(--nv-accent);
   box-shadow:0 0 10px 3px var(--nv-accent-dim);
 }
-.nv-pin-base .nv-dot{ background:var(--nv-accent2); box-shadow:0 0 10px 3px #ffb45466; }
+.nv-pin-base .nv-dot{ background:var(--nv-accent2); box-shadow:0 0 10px 3px #ffffff55; }
 .nv-taglabel{
   position:absolute; top:14px; left:50%; transform:translateX(-50%);
   font-family:'JetBrains Mono',monospace; font-size:9.5px; color:var(--nv-text-muted);

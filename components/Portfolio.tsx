@@ -95,7 +95,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
         <div className="p-10">
           <div className="mb-3.5 flex items-center gap-2.5">
             <Pill label={t.inProduction} />
-            <span className="text-[13px] text-[#7a838f]">{t.featured.cat}</span>
+            <span className="text-[13px] text-[#69798a]">{t.featured.cat}</span>
           </div>
           <h3 className="m-0 font-heading text-[27px] font-semibold leading-[1.16] tracking-[-0.02em] text-ink">
             {t.featured.title}
@@ -128,7 +128,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
               <Pill label={t.inProduction} />
-              <span className="text-[13px] text-[#7a838f]">{t.caposa.cat}</span>
+              <span className="text-[13px] text-[#69798a]">{t.caposa.cat}</span>
             </div>
             <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
               {t.caposa.title}
@@ -161,7 +161,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
               <Pill label={t.inProduction} />
-              <span className="text-[13px] text-[#7a838f]">{t.ascMotores.cat}</span>
+              <span className="text-[13px] text-[#69798a]">{t.ascMotores.cat}</span>
             </div>
             <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
               {t.ascMotores.title}
@@ -201,7 +201,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
               >
                 {t.sgi.badge}
               </span>
-              <span className="text-[13px] text-[#7a838f]">{t.sgi.cat}</span>
+              <span className="text-[13px] text-[#69798a]">{t.sgi.cat}</span>
             </div>
             <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
               {t.sgi.title}
@@ -225,7 +225,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
         >
           <div
             className="relative flex aspect-video flex-col items-center justify-center gap-1.5 overflow-hidden"
-            style={{ background: "linear-gradient(150deg, #0f8378, #0b655d)" }}
+            style={{ background: "linear-gradient(150deg, #2f8fe8, #0f2a44)" }}
           >
             <span className="text-[40px] leading-none" aria-hidden="true">🐾</span>
             <span className="font-heading text-[30px] font-bold tracking-[-0.02em] text-white">Huella</span>
@@ -241,7 +241,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
               >
                 {t.huella.badge}
               </span>
-              <span className="text-[13px] text-[#7a838f]">{t.huella.cat}</span>
+              <span className="text-[13px] text-[#69798a]">{t.huella.cat}</span>
             </div>
             <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
               {t.huella.title}
@@ -274,7 +274,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
               <Pill label={t.inProduction} />
-              <span className="text-[13px] text-[#7a838f]">{t.sotop.cat}</span>
+              <span className="text-[13px] text-[#69798a]">{t.sotop.cat}</span>
             </div>
             <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
               {t.sotop.title}
@@ -302,7 +302,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
               <Pill label={t.inProduction} />
-              <span className="text-[13px] text-[#7a838f]">{t.mantenimiento.cat}</span>
+              <span className="text-[13px] text-[#69798a]">{t.mantenimiento.cat}</span>
             </div>
             <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
               {t.mantenimiento.title}
@@ -324,7 +324,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
               <Pill label={t.inProduction} />
-              <span className="text-[13px] text-[#7a838f]">{t.hidraulica.cat}</span>
+              <span className="text-[13px] text-[#69798a]">{t.hidraulica.cat}</span>
             </div>
             <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
               {t.hidraulica.title}
@@ -356,7 +356,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
               }}
               className="absolute right-3 top-3 z-[4] inline-flex items-center gap-[7px] rounded-full border-0 px-3 py-1.5 text-xs font-semibold text-white"
               style={{
-                background: "rgba(12,18,32,.62)",
+                background: "rgba(15,42,68,.62)",
                 backdropFilter: "blur(6px)",
                 WebkitBackdropFilter: "blur(6px)",
               }}
@@ -371,7 +371,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
               <Pill label={t.inProduction} />
-              <span className="text-[13px] text-[#7a838f]">{t.royers.cat}</span>
+              <span className="text-[13px] text-[#69798a]">{t.royers.cat}</span>
             </div>
             <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
               {t.royers.title}
@@ -404,7 +404,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
               <Pill label={t.inProduction} />
-              <span className="text-[13px] text-[#7a838f]">{t.alphamobil.cat}</span>
+              <span className="text-[13px] text-[#69798a]">{t.alphamobil.cat}</span>
             </div>
             <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
               {t.alphamobil.title}
@@ -431,7 +431,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
               <Pill label={t.inProduction} />
-              <span className="text-[13px] text-[#7a838f]">{t.provalsa.cat}</span>
+              <span className="text-[13px] text-[#69798a]">{t.provalsa.cat}</span>
             </div>
             <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
               {t.provalsa.title}
@@ -461,7 +461,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">
               <Pill label={t.inProduction} />
-              <span className="text-[13px] text-[#7a838f]">{t.tacef.cat}</span>
+              <span className="text-[13px] text-[#69798a]">{t.tacef.cat}</span>
             </div>
             <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
               {t.tacef.title}
@@ -478,12 +478,12 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
       </div>
 
       {/* Próximamente */}
-      <div className="coming-soon relative mt-[22px] flex flex-wrap items-center gap-8 overflow-hidden rounded-2xl border border-dashed border-[#c7ccd6] bg-surface px-10 py-11">
+      <div className="coming-soon relative mt-[22px] flex flex-wrap items-center gap-8 overflow-hidden rounded-2xl border border-dashed border-[#d2d7db] bg-surface px-10 py-11">
         <div
           className="flex h-16 w-16 flex-none items-center justify-center rounded-2xl"
           style={{
-            background: "linear-gradient(150deg, #3b82f6, #2563eb)",
-            boxShadow: "0 10px 24px rgba(37,99,235,.28)",
+            background: "linear-gradient(150deg, #2f8fe8, #0f2a44)",
+            boxShadow: "0 10px 24px rgba(47,143,232,.28)",
           }}
         >
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -577,7 +577,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
               src={ROYERS_GALLERY[lbIdx]}
               alt={t.lightbox.imgAlt}
               className="max-h-[74vh] max-w-full rounded-xl object-contain"
-              style={{ background: "#0c1220", boxShadow: "0 20px 60px rgba(0,0,0,.5)" }}
+              style={{ background: "#0f2a44", boxShadow: "0 20px 60px rgba(0,0,0,.5)" }}
             />
             <button
               onClick={(e) => {

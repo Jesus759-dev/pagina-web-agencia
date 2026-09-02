@@ -4,11 +4,11 @@ type Tech = { name: string; dot: string };
 
 // Two rows scrolling in opposite directions (see globals.css → marqueeA / marqueeB).
 const ROW_A: Tech[] = [
-  { name: "Next.js 15", dot: "#0c1220" },
+  { name: "Next.js 15", dot: "#0f2a44" },
   { name: "React 19", dot: "#38bdf8" },
   { name: "TypeScript", dot: "#2563eb" },
   { name: "Tailwind CSS", dot: "#06b6d4" },
-  { name: "Vercel", dot: "#0c1220" },
+  { name: "Vercel", dot: "#0f2a44" },
   { name: "Supabase", dot: "#14936A" },
 ];
 

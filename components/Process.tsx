@@ -18,7 +18,7 @@ export default function Process({ lang = "es" }: { lang?: Locale }) {
             className="pt-[22px]"
             style={{ borderTop: `2px solid ${i === 0 ? "var(--accent)" : "#e2e5ea"}` }}
           >
-            <div className="font-code text-sm" style={{ color: i === 0 ? "var(--accent)" : "#9aa3af" }}>
+            <div className="font-code text-sm" style={{ color: i === 0 ? "var(--accent)" : "#a3acb3" }}>
               {String(i + 1).padStart(2, "0")}
             </div>
             <h3 className="mt-3.5 font-heading text-[22px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">

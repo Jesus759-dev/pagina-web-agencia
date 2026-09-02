@@ -1,30 +1,26 @@
 import type { Metadata } from "next";
-import { Lora, Inter, JetBrains_Mono } from "next/font/google";
+import { Instrument_Serif, Manrope } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollChoreography from "@/components/ScrollChoreography";
 import WebMcpTools from "@/components/WebMcpTools";
+import ParticleFieldLoader from "@/components/ParticleFieldLoader";
 
-// Warm editorial serif for headings — distinguished and human, with classic
-// (non-quirky) letterforms. Variable font (weight axis) via next/font.
-const lora = Lora({
-  variable: "--font-lora",
+// Editorial serif for headings (single weight 400, tight tracking) and a
+// clean geometric sans for everything else — the reference design pairing.
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument",
   subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
   display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  weight: ["400", "500"],
   display: "swap",
 });
 
@@ -403,7 +399,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${lora.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
+      className={`${instrumentSerif.variable} ${manrope.variable} antialiased`}
     >
       <head>
         {/* Connection hints for third-party origins (fonts + video CDN) */}
@@ -429,6 +425,9 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-canvas text-ink">
+        {/* Global WebGL particle field — fixed, z-0, behind every page */}
+        <ParticleFieldLoader />
+        <div className="relative z-[1]">
         {/* Crawler-friendly fallback. Renders only when JS is disabled
             (search-engine crawlers already execute JS, but this provides
             a readable sentence on first byte for simpler bots). */}
@@ -438,7 +437,7 @@ export default function RootLayout({
               padding: "2rem 1rem",
               textAlign: "center",
               background: "#ffffff",
-              color: "#0c1220",
+              color: "#0F2A44",
             }}
           >
             {/* Not an <h1>: the real <h1> lives in each page (Hero / service
@@ -455,6 +454,7 @@ export default function RootLayout({
           </div>
         </noscript>
         {children}
+        </div>
         {/* Reversible scroll reveal/parallax choreography (design parity) */}
         <ScrollChoreography />
         {/* WebMCP tools for in-browser AI agents (experimental, feature-detected) */}
