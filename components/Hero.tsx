@@ -37,7 +37,7 @@ export default function Hero({ lang = "es" }: { lang?: Locale }) {
       </div>
 
       <div className="relative z-[2] flex flex-1 items-end px-6 pb-14 sm:px-10 sm:pb-[72px] lg:px-14">
-        <div className="mx-auto grid w-full max-w-[1200px] grid-cols-1 items-end gap-10 md:grid-cols-[1fr_auto]">
+        <div className="mx-auto grid w-full max-w-[1200px] xl:max-w-[1520px] 2xl:max-w-[1680px] grid-cols-1 items-end gap-10 md:grid-cols-[1fr_auto]">
           <div>
             <a
               href="#proyectos"

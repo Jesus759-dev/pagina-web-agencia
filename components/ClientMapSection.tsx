@@ -11,7 +11,7 @@ export default function ClientMapSection({ lang = "es" }: { lang?: Locale }) {
 
   return (
     <section id="mapa-clientes" className="bg-[#0f2a44] py-20 sm:py-24">
-      <div className="mx-auto max-w-[1240px] px-5 sm:px-10">
+      <div className="mx-auto max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] px-5 sm:px-10">
         <div
           className="mb-3 text-center font-code text-[13px] uppercase tracking-[0.12em]"
           style={{ color: "#9ad6f7" }}

@@ -14,7 +14,7 @@ export default function Footer({ lang = "es" }: { lang?: Locale }) {
 
   return (
     <footer className="border-t border-line-soft bg-surface-2 px-5 py-[50px] sm:px-10">
-      <div className="mx-auto flex max-w-[1240px] flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
+      <div className="mx-auto flex max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
         <div className="max-w-[380px]">
           <div className="flex items-center gap-[11px]">
             <NeuroviaLogo size={26} id="nvFoot" />
@@ -45,7 +45,7 @@ export default function Footer({ lang = "es" }: { lang?: Locale }) {
         </div>
       </div>
 
-      <div className="mx-auto mt-9 flex max-w-[1240px] flex-wrap items-center justify-between gap-4 border-t border-line-soft pt-5 text-xs text-faint">
+      <div className="mx-auto mt-9 flex max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] flex-wrap items-center justify-between gap-4 border-t border-line-soft pt-5 text-xs text-faint">
         <span>{t.footer.copyright}</span>
         <div className="flex flex-wrap gap-x-6 gap-y-2">
           <a href={`${base}/agenda`} className="navlink">

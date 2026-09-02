@@ -10,7 +10,7 @@ const PROFILES = [
 export default function Testimonials({ lang = "es" }: { lang?: Locale }) {
   const t = getDict(lang).testimonials;
   return (
-    <section className="mx-auto max-w-[1240px] px-5 pb-10 pt-[120px] sm:px-10">
+    <section className="mx-auto max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] px-5 pb-10 pt-[120px] sm:px-10">
       <div className="mb-[18px] font-code text-[13px] uppercase tracking-[0.12em]" style={{ color: "var(--accent)" }}>
         {t.eyebrow}
       </div>

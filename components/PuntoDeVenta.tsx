@@ -6,7 +6,7 @@ export default function PuntoDeVenta({ lang = "es" }: { lang?: Locale }) {
   const base = localeBase(lang);
 
   return (
-    <section id="punto-de-venta" className="mx-auto max-w-[1240px] px-5 pb-10 pt-[120px] sm:px-10">
+    <section id="punto-de-venta" className="mx-auto max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] px-5 pb-10 pt-[120px] sm:px-10">
       <div
         className="overflow-hidden rounded-2xl border-2 bg-white p-[38px] sm:p-[52px]"
         style={{

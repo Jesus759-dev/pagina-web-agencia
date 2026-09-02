@@ -31,7 +31,7 @@ export default function Services({ lang = "es" }: { lang?: Locale }) {
   const base = localeBase(lang);
 
   return (
-    <section id="servicios" className="mx-auto max-w-[1240px] px-5 pb-10 pt-[120px] sm:px-10">
+    <section id="servicios" className="mx-auto max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] px-5 pb-10 pt-[120px] sm:px-10">
       <div className="mb-[18px] font-code text-[13px] uppercase tracking-[0.12em]" style={{ color: "var(--accent)" }}>
         {t.eyebrow}
       </div>
@@ -40,7 +40,7 @@ export default function Services({ lang = "es" }: { lang?: Locale }) {
       </h2>
       <p className="m-0 mt-5 max-w-[600px] text-lg leading-[1.6] text-muted">{t.lead}</p>
 
-      <div className="mt-[52px] grid grid-cols-1 gap-[22px] md:grid-cols-2">
+      <div className="mt-[52px] grid grid-cols-1 gap-[22px] md:grid-cols-2 xl:grid-cols-3">
         {t.cards.map((s, i) => {
           const href = CARD_HREFS[i];
           const media = CARD_MEDIA[i];

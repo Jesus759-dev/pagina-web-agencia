@@ -32,7 +32,7 @@ export default function ServicePage({
       <main>
         {/* Hero — single <h1> with the local keyword */}
         <section className="bg-hero">
-          <div className="mx-auto max-w-[1240px] px-5 pb-16 pt-[150px] sm:px-10 sm:pt-[180px]">
+          <div className="mx-auto max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] px-5 pb-16 pt-[150px] sm:px-10 sm:pt-[180px]">
             <div className="mb-[18px] font-code text-[13px] uppercase tracking-[0.12em]" style={{ color: "var(--accent)" }}>
               {data.eyebrow}
             </div>
@@ -67,7 +67,7 @@ export default function ServicePage({
         ))}
 
         {/* Benefits */}
-        <section className="mx-auto max-w-[1240px] px-5 pt-[100px] sm:px-10">
+        <section className="mx-auto max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] px-5 pt-[100px] sm:px-10">
           <div className="mb-[18px] font-code text-[13px] uppercase tracking-[0.12em]" style={{ color: "var(--accent)" }}>
             {ui.benefitsEyebrow}
           </div>
@@ -128,7 +128,7 @@ export default function ServicePage({
         </section>
 
         {/* Internal links to sibling service pages */}
-        <section className="mx-auto max-w-[1240px] px-5 pt-[100px] sm:px-10">
+        <section className="mx-auto max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] px-5 pt-[100px] sm:px-10">
           <div className="mb-[18px] font-code text-[13px] uppercase tracking-[0.12em]" style={{ color: "var(--accent)" }}>
             {ui.relatedEyebrow}
           </div>

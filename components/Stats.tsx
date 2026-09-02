@@ -4,7 +4,7 @@ export default function Stats({ lang = "es" }: { lang?: Locale }) {
   const stats = getDict(lang).stats;
   return (
     <section className="border-b border-line-soft bg-surface">
-      <div className="stats-grid mx-auto grid max-w-[1240px] grid-cols-2 md:grid-cols-4">
+      <div className="stats-grid mx-auto grid max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] grid-cols-2 md:grid-cols-4">
         {stats.map((s, i) => (
           <div
             key={s.value}

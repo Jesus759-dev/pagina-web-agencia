@@ -17,7 +17,7 @@ export default function SistemasPage({ lang = "es" }: { lang?: Locale }) {
 
       <main>
         <section className="bg-hero">
-          <div className="mx-auto max-w-[1240px] px-5 pb-16 pt-[150px] sm:px-10 sm:pt-[180px]">
+          <div className="mx-auto max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] px-5 pb-16 pt-[150px] sm:px-10 sm:pt-[180px]">
             <div className="mb-[18px] font-code text-[13px] uppercase tracking-[0.12em]" style={{ color: "var(--accent)" }}>
               {t.eyebrow}
             </div>
@@ -28,7 +28,7 @@ export default function SistemasPage({ lang = "es" }: { lang?: Locale }) {
           </div>
         </section>
 
-        <section className="mx-auto max-w-[1240px] px-5 pt-[64px] sm:px-10">
+        <section className="mx-auto max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] px-5 pt-[64px] sm:px-10">
           <div className="grid grid-cols-1 gap-[22px] md:grid-cols-2">
             {SISTEMAS.map((s, i) => (
               <a

@@ -9,7 +9,7 @@ export default function Contact({ lang = "es" }: { lang?: Locale }) {
 
   return (
     <section id="contacto" className="mt-20">
-      <div className="mx-auto max-w-[1100px] px-5 pb-[100px] sm:px-10">
+      <div className="mx-auto max-w-[1100px] xl:max-w-[1400px] px-5 pb-[100px] sm:px-10">
         <div
           className="relative overflow-hidden rounded-3xl px-6 py-20 text-center sm:px-12"
           style={{ background: "var(--accent)" }}
