@@ -65,7 +65,7 @@ for "desarrollo de software a medida Villahermosa". Breaking these invariants co
   `components/ParticleFieldLoader.tsx` (`next/dynamic`, `ssr:false`) as the first child of
   `<body>` at `z-index: 0`. All page content lives inside the `relative z-[1]` wrapper in the
   layout — keep it, or content renders under the canvas. Canvas opacity is scroll-linked
-  (`1 → 0.18`) and written to the DOM directly, never through React state. The hero has no
+  (`1 → 0.42`) and written to the DOM directly, never through React state. The hero has no
   background of its own so the canvas shows through.
 - `.surface` = white 0.9 block for dense content on top of the canvas.
 

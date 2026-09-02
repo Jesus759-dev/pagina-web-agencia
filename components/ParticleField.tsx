@@ -72,7 +72,7 @@ const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v
 
 /**
  * Global WebGL particle field. One fixed canvas behind every page: full
- * intensity over the hero, fading linearly with scroll down to 0.18.
+ * intensity over the hero, fading linearly with scroll down to 0.42.
  */
 export default function ParticleField() {
   const ref = useRef<HTMLCanvasElement>(null);
@@ -172,7 +172,7 @@ export default function ParticleField() {
 
     // Scroll-linked opacity written straight to the DOM (no React state, no re-renders).
     const onScroll = () => {
-      const o = clamp(1 - window.scrollY / (window.innerHeight * 0.9), 0.18, 1);
+      const o = clamp(1 - window.scrollY / (window.innerHeight * 0.9), 0.42, 1);
       canvas.style.opacity = o.toFixed(3);
     };
 

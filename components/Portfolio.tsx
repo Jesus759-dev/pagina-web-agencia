@@ -445,7 +445,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
           href="https://calm-entremet-3d7138.netlify.app/tacef%20aceros.dc"
           target="_blank"
           rel="noopener noreferrer"
-          className="proj-card block overflow-hidden rounded-2xl border border-line bg-white no-underline"
+          className="proj-card block overflow-hidden rounded-2xl border border-line bg-white no-underline md:col-span-2 md:grid md:grid-cols-2 md:items-stretch"
         >
           <div
             className="relative flex aspect-video items-center justify-center overflow-hidden"

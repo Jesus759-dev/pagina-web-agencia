@@ -364,3 +364,15 @@ button:focus-visible {
   outline: 2px solid #fff;
   outline-offset: 3px;
 }
+
+/* Cards sit on the particle canvas: translucent white so the field shows
+   through faintly. Blur only from md up (cheap on mobile). */
+.svc-card, .proj-card, .testi-grid > div, .why-grid > div {
+  background: rgba(255, 255, 255, 0.88);
+}
+@media (min-width: 768px) {
+  .svc-card, .proj-card, .testi-grid > div, .why-grid > div {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+}

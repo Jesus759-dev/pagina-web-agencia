@@ -44,10 +44,18 @@ export default function Services({ lang = "es" }: { lang?: Locale }) {
         {t.cards.map((s, i) => {
           const href = CARD_HREFS[i];
           const media = CARD_MEDIA[i];
+          // With an odd number of cards, the last one spans the full row as a
+          // horizontal card (reel left, text right) instead of sitting orphaned.
+          const wide = i === t.cards.length - 1 && t.cards.length % 2 === 1;
           return (
-            <div key={s.title} className="svc-card flex flex-col overflow-hidden rounded-2xl border border-line bg-white">
+            <div
+              key={s.title}
+              className={`svc-card flex flex-col overflow-hidden rounded-2xl border border-line bg-white ${
+                wide ? "md:col-span-2 md:flex-row" : ""
+              }`}
+            >
               {media && (
-                <div className="flex items-center justify-center bg-hero px-5 pb-3 pt-6">
+                <div className={`flex items-center justify-center bg-hero px-5 pb-3 pt-6 ${wide ? "md:w-[42%] md:shrink-0 md:py-8" : ""}`}>
                   <ServiceReel
                     preview={media.preview}
                     poster={media.poster}
