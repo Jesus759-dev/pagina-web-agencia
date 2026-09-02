@@ -21,10 +21,11 @@ export default function Hero({ lang = "es" }: { lang?: Locale }) {
       className="relative flex min-h-[max(640px,100svh)] flex-col overflow-hidden"
     >
       {/* Fade the canvas into the page ground */}
+      {/* Taller on mobile: the copy sits lower over the densest part of the field */}
       <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[45%]"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[68%] md:h-[45%]"
         aria-hidden="true"
-        style={{ background: "linear-gradient(to top, #fdfbf7 15%, transparent)" }}
+        style={{ background: "linear-gradient(to top, #fdfbf7 22%, rgba(253,251,247,.75) 55%, transparent)" }}
       />
 
       {/* Rotated scroll hint (reference) */}
