@@ -413,39 +413,12 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
           </div>
         </a>
 
-        {/* Provalsa */}
-        <a
-          href="https://provalsa.com.mx/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="proj-card block overflow-hidden rounded-2xl border border-line bg-white no-underline"
-        >
-          <div className="relative aspect-video overflow-hidden">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/projects/provalsa.jpg"
-              alt={t.alts.provalsa}
-              className="block h-full w-full object-cover"
-            />
-          </div>
-          <div className="p-[26px]">
-            <div className="mb-[11px] flex items-center gap-2.5">
-              <Pill label={t.inProduction} />
-              <span className="text-[13px] text-[#69798a]">{t.provalsa.cat}</span>
-            </div>
-            <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
-              {t.provalsa.title}
-            </h3>
-            <p className="mt-[11px] text-sm leading-[1.6] text-muted">{t.provalsa.desc}</p>
-          </div>
-        </a>
-
         {/* TACEF Aceros */}
         <a
           href="https://calm-entremet-3d7138.netlify.app/tacef%20aceros.dc"
           target="_blank"
           rel="noopener noreferrer"
-          className="proj-card block overflow-hidden rounded-2xl border border-line bg-white no-underline md:col-span-2 md:grid md:grid-cols-2 md:items-stretch"
+          className="proj-card block overflow-hidden rounded-2xl border border-line bg-white no-underline"
         >
           <div
             className="relative flex aspect-video items-center justify-center overflow-hidden"
@@ -473,6 +446,34 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
               </span>
               .
             </p>
+          </div>
+        </a>
+
+
+        {/* Provalsa */}
+        <a
+          href="https://provalsa.com.mx/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="proj-card block overflow-hidden rounded-2xl border border-line bg-white no-underline md:col-span-2 md:flex md:flex-row md:items-stretch"
+        >
+          <div className="relative aspect-video overflow-hidden md:aspect-auto md:min-h-[300px] md:w-[55%] md:shrink-0" style={{ background: "#fff" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/projects/provalsa.jpg"
+              alt={t.alts.provalsa}
+              className="block h-full w-full object-cover md:object-contain"
+            />
+          </div>
+          <div className="p-[26px] md:flex md:flex-1 md:flex-col md:justify-center">
+            <div className="mb-[11px] flex items-center gap-2.5">
+              <Pill label={t.inProduction} />
+              <span className="text-[13px] text-[#69798a]">{t.provalsa.cat}</span>
+            </div>
+            <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
+              {t.provalsa.title}
+            </h3>
+            <p className="mt-[11px] text-sm leading-[1.6] text-muted">{t.provalsa.desc}</p>
           </div>
         </a>
       </div>

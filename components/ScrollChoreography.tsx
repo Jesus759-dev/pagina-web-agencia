@@ -47,6 +47,11 @@ export default function ScrollChoreography() {
       const c = img.parentElement;
       if (!c) return;
       c.classList.add("reveal-img");
+      // Logos rendered with object-contain keep their natural size (no stretch, no drift).
+      if ((" " + img.className + " ").includes(" object-contain ") || (" " + img.className + " ").includes(" md:object-contain ")) {
+        img.addEventListener("error", () => c.classList.add("in"));
+        return;
+      }
       img.style.height = "118%";
       img.style.willChange = "transform";
       // Safety net: if the image fails to load, reveal its wrapper anyway so
