@@ -6,6 +6,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollChoreography from "@/components/ScrollChoreography";
 import WebMcpTools from "@/components/WebMcpTools";
 import ParticleFieldLoader from "@/components/ParticleFieldLoader";
+import MetaPixel from "@/components/MetaPixel";
 
 // Editorial serif for headings (single weight 400, tight tracking) and a
 // clean geometric sans for everything else — the reference design pairing.
@@ -461,6 +462,9 @@ export default function RootLayout({
         <WebMcpTools />
         {/* Floating WhatsApp CTA — kept from the previous build */}
         <WhatsAppButton />
+
+        {/* Meta Pixel (Facebook/Instagram Ads) — no-op until META_PIXEL_ID is set */}
+        <MetaPixel />
 
         {/* Google Analytics 4 — loaded after the page is interactive so it
             never blocks first paint / LCP. Tracks all routes automatically. */}

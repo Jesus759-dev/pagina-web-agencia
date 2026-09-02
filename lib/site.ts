@@ -4,6 +4,14 @@
  */
 export const WHATSAPP_NUMBER = "529937226350";
 
+/**
+ * Meta (Facebook/Instagram) Pixel ID — used by components/MetaPixel.tsx.
+ * TODO (Jesús): pega aquí tu ID de píxel (Administrador de eventos → tu píxel →
+ * "ID del conjunto de datos", 15-16 dígitos). Mientras esté vacío no se carga nada.
+ * También puede venir de la variable de entorno NEXT_PUBLIC_META_PIXEL_ID.
+ */
+export const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "";
+
 /** Build a wa.me link with a prefilled (URL-encoded) message. */
 export function waLink(message: string): string {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
