@@ -54,6 +54,8 @@ export const NOSOTROS_CONTENT: Record<Locale, NosotrosContent> = {
     proofTitle: "En quién confían",
     proof: [
       "Suite ERP para un cliente del sector petrolero (requisiciones, mantenimiento vehicular e inventario en 23 áreas operativas).",
+      "CAPOSA — comercializadora en Villahermosa: CRM a la medida con 24 módulos (inventario multi-almacén, facturación CFDI 4.0 y reportes con IA).",
+      "ASC Motores — sistema de taller con 18 módulos, más app móvil (Android) y app para iOS.",
       "Royers — constructora con más de 35 años y 500+ obras.",
       "Provalsa — válvulas y equipo industrial.",
       "Alpha Mobil — mobiliario corporativo.",
@@ -94,6 +96,8 @@ export const NOSOTROS_CONTENT: Record<Locale, NosotrosContent> = {
     proofTitle: "Who trusts us",
     proof: [
       "ERP suite for an oil-sector client (requisitions, vehicle maintenance and inventory across 23 operational areas).",
+      "CAPOSA — a distributor in Villahermosa: custom 24-module CRM (multi-warehouse inventory, CFDI 4.0 invoicing and AI reports).",
+      "ASC Motores — workshop system with 18 modules, plus Android and iOS apps.",
       "Royers — a construction firm with 35+ years and 500+ projects.",
       "Provalsa — industrial valves and equipment.",
       "Alpha Mobil — corporate furniture.",
