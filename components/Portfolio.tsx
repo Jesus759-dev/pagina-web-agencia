@@ -87,9 +87,11 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
         <div className="relative min-h-[340px] overflow-hidden" style={{ background: "#0a1530" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/projects/chemiservis-portal.png"
+            src="/projects/chemiservis-portal.webp"
             alt={t.alts.portal}
             className="block h-full w-full object-cover"
+              loading="lazy"
+              decoding="async"
           />
         </div>
         <div className="p-10">
@@ -120,9 +122,11 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
           <div className="relative aspect-video overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/projects/caposa-login.png"
+              src="/projects/caposa-login.webp"
               alt={t.caposa.alt}
               className="block h-full w-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="p-[26px]">
@@ -153,9 +157,11 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
           <div className="relative aspect-video overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/projects/asc-motores-login.png"
+              src="/projects/asc-motores-login.webp"
               alt={t.ascMotores.alt}
               className="block h-full w-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="p-[26px]">
@@ -269,6 +275,8 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
               src="/projects/sotop.jpg"
               alt={t.alts.sotop}
               className="h-[84%] w-auto object-contain"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="p-[26px]">
@@ -294,9 +302,11 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
           <div className="relative aspect-video overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/projects/mantenimiento-vehicular-login.png"
+              src="/projects/mantenimiento-vehicular-login.webp"
               alt={t.alts.mantenimiento}
               className="block h-full w-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="p-[26px]">
@@ -319,6 +329,8 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
               src="/projects/chemiservis-offshore.png"
               alt={t.alts.hidraulica}
               className="block h-full w-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="p-[26px]">
@@ -346,6 +358,8 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
               src="/assets/royers-4.jpeg"
               alt={t.alts.royers}
               className="block h-full w-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
             <button
               type="button"
@@ -399,6 +413,8 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
               src="/assets/alphamobil-escritorio.webp"
               alt={t.alts.alphamobil}
               className="block h-full w-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="p-[26px]">
@@ -463,6 +479,8 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
               src="/projects/provalsa.jpg"
               alt={t.alts.provalsa}
               className="block h-full w-full object-cover md:object-contain"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="p-[26px] md:flex md:flex-1 md:flex-col md:justify-center">

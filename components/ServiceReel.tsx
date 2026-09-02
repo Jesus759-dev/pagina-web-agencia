@@ -141,10 +141,10 @@ export default function ServiceReel({
         <video
           ref={previewRef}
           className="h-[260px] w-auto rounded-xl"
-          autoPlay
           loop
           muted
           playsInline
+          preload="metadata"
           poster={poster}
           style={{ boxShadow: "0 12px 28px -14px rgba(60,48,30,.45)" }}
         >
