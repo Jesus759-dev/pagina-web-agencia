@@ -1,8 +1,7 @@
 "use client";
 
-import { WA_DEFAULT } from "@/lib/site";
 import { getDict, type Locale } from "@/lib/i18n";
-import { trackLead } from "@/lib/analytics";
+import WaLink from "@/components/WaLink";
 
 /**
  * Hero over the global particle canvas (components/ParticleField.tsx).
@@ -59,16 +58,14 @@ export default function Hero({ lang = "es" }: { lang?: Locale }) {
             <strong className="mb-1.5 block text-[15px] font-medium text-ink">Neurovia Systems</strong>
             <p className="m-0 text-[15px] leading-[1.6] text-muted">{t.lead}</p>
 
-            <a
-              href={WA_DEFAULT}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackLead("whatsapp")}
+            <WaLink
+              context="general"
+              lang={lang}
               className="btn-primary mt-6 inline-flex items-center gap-3 rounded-full px-7 py-4 text-[15px] font-semibold no-underline"
             >
               <span className="h-2 w-2 rounded-full bg-white" aria-hidden="true" />
               {t.cta}
-            </a>
+            </WaLink>
 
             <div className="mt-7 border-t border-line pt-5">
               <div className="mb-2.5 text-[11px] uppercase tracking-[0.14em] text-faint">{t.trustLabel}</div>

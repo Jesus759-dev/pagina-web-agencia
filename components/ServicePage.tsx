@@ -4,7 +4,7 @@ import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WaConsultaButton from "@/components/WaConsultaButton";
-import { waLink } from "@/lib/site";
+
 import { getDict, localeBase, type Locale } from "@/lib/i18n";
 import { buildServiceJsonLd, type ServicePageData } from "@/lib/serviceContent";
 
@@ -22,7 +22,6 @@ export default function ServicePage({
 }) {
   const ui = getDict(lang).service;
   const base = localeBase(lang);
-  const wa = waLink(data.waMessage);
   const jsonLd = buildServiceJsonLd(data, lang);
 
   return (
@@ -41,7 +40,7 @@ export default function ServicePage({
             </h1>
             <p className="m-0 mt-6 max-w-[640px] text-lg leading-[1.6] text-muted">{data.heroLead}</p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
-              <WaConsultaButton href={wa} lang={lang} />
+              <WaConsultaButton message={data.waMessage} lang={lang} />
               <a
                 href={`${base}/`}
                 className="cta-outline inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold no-underline"

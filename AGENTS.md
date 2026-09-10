@@ -45,8 +45,10 @@ for "desarrollo de software a medida Villahermosa". Breaking these invariants co
 ## Analytics (do not drop)
 
 - GA4 is loaded in `app/layout.tsx` via `next/script`.
-- **Every WhatsApp link** carries `onClick={() => window.gtag?.("event", "contacto_whatsapp")}`,
-  and the `mailto:` carries `clic_correo`. These are the Google Ads conversions.
+- **Every WhatsApp link renders through `components/WaLink.tsx`** (prefilled message per
+  `WaContext` + locale from `WA_MESSAGES` in `lib/site.ts`; wa.me on phones, web.whatsapp.com
+  on desktop after mount; fires `trackLead("whatsapp")`). The `mailto:` fires `trackLead("email")`.
+  These are the Google Ads conversions.
 - `global.d.ts` types `window.gtag`. Components that need `onClick` are `"use client"`.
 - **Meta Pixel:** `components/MetaPixel.tsx`, gated on `META_PIXEL_ID` in `lib/site.ts` (env
   `NEXT_PUBLIC_META_PIXEL_ID`). All conversions go through `trackLead(source)` in `lib/analytics.ts`

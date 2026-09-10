@@ -1,8 +1,8 @@
 "use client";
 
-import { WA_DEFAULT } from "@/lib/site";
 import { getDict, type Locale } from "@/lib/i18n";
 import { trackLead } from "@/lib/analytics";
+import WaLink from "@/components/WaLink";
 
 export default function Contact({ lang = "es" }: { lang?: Locale }) {
   const t = getDict(lang).contact;
@@ -34,11 +34,9 @@ export default function Contact({ lang = "es" }: { lang?: Locale }) {
               {t.lead}
             </p>
             <div className="mt-9">
-              <a
-                href={WA_DEFAULT}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackLead("whatsapp")}
+              <WaLink
+                context="general"
+                lang={lang}
                 className="inline-flex items-center gap-3 rounded-full bg-white px-10 py-[18px] text-[17px] font-bold no-underline"
                 style={{ color: "var(--accent)", boxShadow: "0 14px 30px rgba(0,0,0,.18)" }}
               >
@@ -46,7 +44,7 @@ export default function Contact({ lang = "es" }: { lang?: Locale }) {
                   <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.8 14.16c-.24.68-1.42 1.31-1.95 1.36-.5.05-1.13.07-1.83-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.37-.14-.19-1.18-1.57-1.18-2.99s.75-2.12 1.01-2.41c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.83 2.03.9 2.18.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.93 1.93 1.22 2.21 1.36.28.14.44.12.6-.07.17-.19.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.87.9.28.14.46.21.53.32.07.12.07.66-.17 1.34z" />
                 </svg>
                 {t.phoneCta}
-              </a>
+              </WaLink>
             </div>
             <p className="mt-5 text-[15px] text-white/[0.88]">
               {t.emailPrefix}{" "}

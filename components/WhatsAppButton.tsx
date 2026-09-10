@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { trackLead } from "@/lib/analytics";
+import WaLink from "@/components/WaLink";
+import { WHATSAPP_DISPLAY } from "@/lib/site";
+import type { Locale } from "@/lib/i18n";
 
 // ---------------------------------------------------------------------------
 // WhatsApp SVG icon (official brand color #25D366)
@@ -25,14 +28,16 @@ function WhatsAppIcon({ size = 28 }: { size?: number }) {
 }
 
 // ---------------------------------------------------------------------------
-// WhatsAppButton
+// WhatsAppButton — floating CTA (context "float"). Mounted once in the root
+// layout, so it derives the locale from the URL. The tooltip shows the visible
+// number so desktop visitors without WhatsApp Web can copy it.
 // ---------------------------------------------------------------------------
-
-const WA_HREF =
-  "https://wa.me/529937226350?text=Hola%20Neurovia%20Systems%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20sus%20servicios";
 
 export default function WhatsAppButton() {
   const [hovered, setHovered] = useState(false);
+  const pathname = usePathname() ?? "/";
+  const lang: Locale = pathname === "/en" || pathname.startsWith("/en/") ? "en" : "es";
+  const tooltip = lang === "en" ? "Chat with us" : "Chatea con nosotros";
 
   return (
     <div
@@ -52,22 +57,20 @@ export default function WhatsAppButton() {
             role="tooltip"
             id="whatsapp-tooltip"
           >
-            Chatea con nosotros
+            {tooltip} · <span className="font-code text-[13px] text-muted">{WHATSAPP_DISPLAY}</span>
           </motion.span>
         )}
       </AnimatePresence>
 
       {/* Button */}
-      <a
-        href={WA_HREF}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={() => trackLead("whatsapp")}
+      <WaLink
+        context="float"
+        lang={lang}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         onFocus={() => setHovered(true)}
         onBlur={() => setHovered(false)}
-        aria-label="Chatea con nosotros en WhatsApp"
+        aria-label={lang === "en" ? "Chat with us on WhatsApp" : "Chatea con nosotros en WhatsApp"}
         aria-describedby={hovered ? "whatsapp-tooltip" : undefined}
         className="relative flex h-14 w-14 items-center justify-center rounded-full transition-transform duration-200 hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
         style={{
@@ -88,28 +91,7 @@ export default function WhatsAppButton() {
           aria-hidden="true"
         />
         <WhatsAppIcon size={28} />
-      </a>
+      </WaLink>
     </div>
   );
 }
-
-/*
- * ---------------------------------------------------------------------------
- * Usage example:
- * ---------------------------------------------------------------------------
- *
- * import WhatsAppButton from "@/components/WhatsAppButton";
- *
- * // In layout.tsx or page.tsx – renders as a fixed overlay element:
- * export default function RootLayout({ children }) {
- *   return (
- *     <html>
- *       <body>
- *         {children}
- *         <WhatsAppButton />
- *       </body>
- *     </html>
- *   );
- * }
- * ---------------------------------------------------------------------------
- */

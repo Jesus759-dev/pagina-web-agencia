@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 import SubscribeForm from "@/components/SubscribeForm";
 import WaConsultaButton from "@/components/WaConsultaButton";
-import { waLink } from "@/lib/site";
+import { waMessage } from "@/lib/site";
 import { getDict } from "@/lib/i18n";
 
 const SITE_URL = "https://neuroviasystems.com.mx";
@@ -23,9 +23,7 @@ export const metadata: Metadata = {
   },
 };
 
-const WA_AGENDA = waLink(
-  "Hola Neurovia, quiero agendar 20 minutos para ver un proceso que traigo atorado"
-);
+const WA_AGENDA = waMessage("agenda", "es");
 
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
@@ -72,7 +70,7 @@ export default function AgendaPage() {
               Mándame un mensaje por WhatsApp o un correo y lo vemos por ahí.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-              <WaConsultaButton href={WA_AGENDA} lang="es" />
+              <WaConsultaButton message={WA_AGENDA} lang="es" />
               <a
                 href="mailto:soporte@neuroviasystems.com.mx"
                 className="cta-outline inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold no-underline"

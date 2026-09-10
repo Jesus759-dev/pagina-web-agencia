@@ -2,9 +2,8 @@
 
 import { useEffect, useState } from "react";
 import NeuroviaLogo from "@/components/NeuroviaLogo";
-import { WA_DEFAULT } from "@/lib/site";
+import WaLink from "@/components/WaLink";
 import { getDict, localeBase, type Locale } from "@/lib/i18n";
-import { trackLead } from "@/lib/analytics";
 
 export default function Navbar({ lang = "es" }: { lang?: Locale }) {
   const t = getDict(lang);
@@ -93,15 +92,13 @@ export default function Navbar({ lang = "es" }: { lang?: Locale }) {
           {t.nav.switchLabel}
         </a>
 
-        <a
-          href={WA_DEFAULT}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => trackLead("whatsapp")}
+        <WaLink
+          context="general"
+          lang={lang}
           className="btn-primary rounded-full px-4 py-2.5 text-[13px] font-semibold no-underline sm:px-5 sm:text-sm"
         >
           {t.nav.cta}
-        </a>
+        </WaLink>
 
         {/* Hamburger — mobile only */}
         <button
@@ -126,7 +123,7 @@ export default function Navbar({ lang = "es" }: { lang?: Locale }) {
             style={{ background: "rgba(15,42,68,.5)", opacity: show ? 1 : 0 }}
           />
           <div
-            className="absolute left-1/2 top-3 w-[calc(100%-24px)] max-w-[420px] -translate-x-1/2 rounded-3xl border p-4 transition-all duration-200 ease-out"
+            className="absolute left-1/2 top-3 w-[calc(100%-24px)] max-w-[420px] rounded-3xl border p-4 transition-all duration-200 ease-out"
             style={{
               background: "rgba(253,251,247,.96)",
               backdropFilter: "blur(20px)",
@@ -184,18 +181,14 @@ export default function Navbar({ lang = "es" }: { lang?: Locale }) {
               >
                 {t.nav.switchLabel}
               </a>
-              <a
-                href={WA_DEFAULT}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => {
-                  trackLead("whatsapp");
-                  setOpen(false);
-                }}
+              <WaLink
+                context="general"
+                lang={lang}
+                onAfterClick={() => setOpen(false)}
                 className="btn-primary flex-1 rounded-full px-4 py-2.5 text-center text-sm font-semibold no-underline"
               >
                 {t.nav.cta}
-              </a>
+              </WaLink>
             </div>
           </div>
         </div>

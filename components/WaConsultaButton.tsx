@@ -1,29 +1,27 @@
 "use client";
 
 import { getDict, type Locale } from "@/lib/i18n";
-import { trackLead } from "@/lib/analytics";
+import WaLink from "@/components/WaLink";
 
 /**
- * WhatsApp CTA usado en las páginas de servicio. Cliente para poder disparar
- * el evento de conversión de GA4 en el clic sin convertir a ServicePage.
+ * WhatsApp CTA usado en las páginas de servicio. Recibe el mensaje prellenado
+ * de la página (lib/serviceContent.ts) y delega URL, escritorio y tracking a WaLink.
  */
 export default function WaConsultaButton({
-  href,
+  message,
   lang = "es",
 }: {
-  href: string;
+  message: string;
   lang?: Locale;
 }) {
   const label = getDict(lang).service.ctaConsulta;
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      onClick={() => trackLead("whatsapp")}
+    <WaLink
+      message={message}
+      lang={lang}
       className="btn-primary inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold no-underline"
     >
       {label} <span aria-hidden="true">→</span>
-    </a>
+    </WaLink>
   );
 }
