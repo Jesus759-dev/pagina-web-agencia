@@ -49,8 +49,9 @@ for "desarrollo de software a medida Villahermosa". Breaking these invariants co
   and the `mailto:` carries `clic_correo`. These are the Google Ads conversions.
 - `global.d.ts` types `window.gtag`. Components that need `onClick` are `"use client"`.
 - **Meta Pixel:** `components/MetaPixel.tsx`, gated on `META_PIXEL_ID` in `lib/site.ts` (env
-  `NEXT_PUBLIC_META_PIXEL_ID`). `lib/analytics.ts` also fires `fbq` `Contact` (WhatsApp/email)
-  and `Lead` (`trackLead`, newsletter). Keep GA4 + Ads + Pixel firing together from that file.
+  `NEXT_PUBLIC_META_PIXEL_ID`). All conversions go through `trackLead(source)` in `lib/analytics.ts`
+  (GA4 event + Google Ads conversion for whatsapp/email + Meta `Lead`). `MetaPixelPageView`
+  fires PageView on SPA route changes (Suspense-wrapped, uses useSearchParams).
 
 ## Design system
 

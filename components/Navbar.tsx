@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import NeuroviaLogo from "@/components/NeuroviaLogo";
 import { WA_DEFAULT } from "@/lib/site";
 import { getDict, localeBase, type Locale } from "@/lib/i18n";
-import { trackContact } from "@/lib/analytics";
+import { trackLead } from "@/lib/analytics";
 
 export default function Navbar({ lang = "es" }: { lang?: Locale }) {
   const t = getDict(lang);
@@ -97,7 +97,7 @@ export default function Navbar({ lang = "es" }: { lang?: Locale }) {
           href={WA_DEFAULT}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={trackContact}
+          onClick={() => trackLead("whatsapp")}
           className="btn-primary rounded-full px-4 py-2.5 text-[13px] font-semibold no-underline sm:px-5 sm:text-sm"
         >
           {t.nav.cta}
@@ -189,7 +189,7 @@ export default function Navbar({ lang = "es" }: { lang?: Locale }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => {
-                  trackContact();
+                  trackLead("whatsapp");
                   setOpen(false);
                 }}
                 className="btn-primary flex-1 rounded-full px-4 py-2.5 text-center text-sm font-semibold no-underline"

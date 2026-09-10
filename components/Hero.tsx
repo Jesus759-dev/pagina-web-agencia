@@ -2,7 +2,7 @@
 
 import { WA_DEFAULT } from "@/lib/site";
 import { getDict, type Locale } from "@/lib/i18n";
-import { trackContact } from "@/lib/analytics";
+import { trackLead } from "@/lib/analytics";
 
 /**
  * Hero over the global particle canvas (components/ParticleField.tsx).
@@ -63,7 +63,7 @@ export default function Hero({ lang = "es" }: { lang?: Locale }) {
               href={WA_DEFAULT}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={trackContact}
+              onClick={() => trackLead("whatsapp")}
               className="btn-primary mt-6 inline-flex items-center gap-3 rounded-full px-7 py-4 text-[15px] font-semibold no-underline"
             >
               <span className="h-2 w-2 rounded-full bg-white" aria-hidden="true" />

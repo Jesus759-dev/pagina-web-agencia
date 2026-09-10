@@ -1,11 +1,18 @@
+import { Suspense } from "react";
 import Script from "next/script";
 import { META_PIXEL_ID } from "@/lib/site";
+import MetaPixelPageView from "@/components/MetaPixelPageView";
 
 /**
- * Meta (Facebook/Instagram) Pixel. Renders nothing until META_PIXEL_ID is set
- * (lib/site.ts). Loads after the page is interactive so it never delays LCP,
- * fires PageView on every route, and the standard events (Contact, Lead) are
- * sent from lib/analytics.ts on the actual user actions.
+ * Meta (Facebook/Instagram) Pixel.
+ *
+ * - Renders nothing unless NEXT_PUBLIC_META_PIXEL_ID is set (see lib/site.ts),
+ *   so local dev and builds without the variable are unaffected.
+ * - Loads fbevents.js after the page is interactive so it never delays LCP,
+ *   and fires the initial PageView (+ <noscript> fallback).
+ * - MetaPixelPageView fires PageView on client-side route changes; it uses
+ *   useSearchParams(), hence the Suspense boundary.
+ * - Conversion events ("Lead") are fired from lib/analytics.ts on user actions.
  */
 export default function MetaPixel() {
   if (!META_PIXEL_ID) return null;
@@ -29,6 +36,9 @@ fbq('init','${META_PIXEL_ID}');fbq('track','PageView');`}
           src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
         />
       </noscript>
+      <Suspense fallback={null}>
+        <MetaPixelPageView />
+      </Suspense>
     </>
   );
 }

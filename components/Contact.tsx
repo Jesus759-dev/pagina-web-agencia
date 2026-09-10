@@ -2,7 +2,7 @@
 
 import { WA_DEFAULT } from "@/lib/site";
 import { getDict, type Locale } from "@/lib/i18n";
-import { trackContact, trackEmail } from "@/lib/analytics";
+import { trackLead } from "@/lib/analytics";
 
 export default function Contact({ lang = "es" }: { lang?: Locale }) {
   const t = getDict(lang).contact;
@@ -38,7 +38,7 @@ export default function Contact({ lang = "es" }: { lang?: Locale }) {
                 href={WA_DEFAULT}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={trackContact}
+                onClick={() => trackLead("whatsapp")}
                 className="inline-flex items-center gap-3 rounded-full bg-white px-10 py-[18px] text-[17px] font-bold no-underline"
                 style={{ color: "var(--accent)", boxShadow: "0 14px 30px rgba(0,0,0,.18)" }}
               >
@@ -52,7 +52,7 @@ export default function Contact({ lang = "es" }: { lang?: Locale }) {
               {t.emailPrefix}{" "}
               <a
                 href="mailto:soporte@neuroviasystems.com.mx"
-                onClick={trackEmail}
+                onClick={() => trackLead("email")}
                 className="font-semibold text-white underline decoration-white/40 underline-offset-4 transition-colors hover:decoration-white"
               >
                 soporte@neuroviasystems.com.mx

@@ -5,10 +5,9 @@
 export const WHATSAPP_NUMBER = "529937226350";
 
 /**
- * Meta (Facebook/Instagram) Pixel ID — used by components/MetaPixel.tsx.
- * TODO (Jesús): pega aquí tu ID de píxel (Administrador de eventos → tu píxel →
- * "ID del conjunto de datos", 15-16 dígitos). Mientras esté vacío no se carga nada.
- * También puede venir de la variable de entorno NEXT_PUBLIC_META_PIXEL_ID.
+ * Meta (Facebook/Instagram) Pixel ID, read from NEXT_PUBLIC_META_PIXEL_ID
+ * (.env.local for dev, .env.production for the Hostinger build). Never hardcode it
+ * here: when the variable is missing the pixel simply is not rendered.
  */
 export const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "";
 
