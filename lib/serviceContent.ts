@@ -49,7 +49,7 @@ const es: Record<string, ServicePageData> = {
     heroLead:
       "En Neurovia Systems hacemos desarrollo de software a medida en Villahermosa para empresas de Tabasco que ya no quieren adaptarse a programas genéricos. Construimos sistemas, plataformas web y dashboards diseñados exactamente para tu operación.",
     ogAlt: "Desarrollo de software a medida en Villahermosa — Neurovia Systems",
-    waMessage: "Hola, necesito un sistema a la medida para mi empresa en Villahermosa. ¿Podemos agendar una llamada?",
+    waMessage: "Hola, necesito un sistema a la medida para mi empresa en Villahermosa. ¿Podemos agendar una llamada esta semana?",
     serviceType: "Desarrollo de software a medida",
     sections: [
       {
@@ -165,7 +165,7 @@ const es: Record<string, ServicePageData> = {
     heroLead:
       "Nuestro sistema de punto de venta en Villahermosa está pensado para los negocios de Tabasco: registra tus ventas, controla el inventario y consulta reportes en tiempo real desde cualquier dispositivo, sin complicaciones.",
     ogAlt: "Sistema de punto de venta en Villahermosa — Neurovia Systems",
-    waMessage: "Hola, me interesa Tomín POS para mi negocio. ¿Me pueden dar más información?",
+    waMessage: "Hola, quiero cotizar Tomín POS para mi negocio. ¿Cuánto cuesta?",
     serviceType: "Sistema de punto de venta (POS)",
     sections: [
       {
@@ -280,7 +280,7 @@ const es: Record<string, ServicePageData> = {
     heroLead:
       "Hacemos desarrollo de aplicaciones web a medida en Tabasco: plataformas y sistemas en la nube a los que tu equipo entra desde el navegador, sin instalar nada. Herramientas creadas para resolver problemas concretos de tu empresa.",
     ogAlt: "Desarrollo de aplicaciones web a medida en Tabasco — Neurovia Systems",
-    waMessage: "Hola, necesito una aplicación web a la medida para mi empresa. ¿Podemos agendar una llamada?",
+    waMessage: "Hola, necesito una aplicación web a la medida para mi empresa. ¿Podemos agendar una llamada esta semana?",
     serviceType: "Desarrollo de aplicaciones web a medida",
     sections: [
       {
@@ -396,7 +396,7 @@ const es: Record<string, ServicePageData> = {
     heroLead:
       "Desarrollamos software a medida para empresas de Monterrey y Nuevo León: sistemas de gestión, plataformas web y automatización con inteligencia artificial. Trabajamos de forma remota con el mismo estándar técnico, sin que la distancia sea un problema.",
     ogAlt: "Desarrollo de software a medida en Monterrey — Neurovia Systems",
-    waMessage: "Hola, necesito un sistema a la medida para mi empresa en Monterrey. ¿Podemos agendar una llamada?",
+    waMessage: "Hola, necesito un sistema a la medida para mi empresa en Monterrey. ¿Podemos agendar una llamada esta semana?",
     serviceType: "Desarrollo de software a medida",
     sections: [
       {
@@ -454,7 +454,7 @@ const es: Record<string, ServicePageData> = {
     heroLead:
       "Desarrollamos software a medida para empresas de Guadalajara y Jalisco: sistemas de gestión, plataformas web y automatización con inteligencia artificial. Trabajamos en remoto con el mismo estándar técnico, sin que la ubicación sea un límite.",
     ogAlt: "Desarrollo de software a medida en Guadalajara — Neurovia Systems",
-    waMessage: "Hola, necesito un sistema a la medida para mi empresa en Guadalajara. ¿Podemos agendar una llamada?",
+    waMessage: "Hola, necesito un sistema a la medida para mi empresa en Guadalajara. ¿Podemos agendar una llamada esta semana?",
     serviceType: "Desarrollo de software a medida",
     sections: [
       {
@@ -516,7 +516,7 @@ const en: Record<string, ServicePageData> = {
     heroLead:
       "At Neurovia Systems we build custom software in Villahermosa for companies in Tabasco that are tired of adapting to generic programs. We build systems, web platforms and dashboards designed exactly for how your business runs.",
     ogAlt: "Custom software development in Villahermosa — Neurovia Systems",
-    waMessage: "Hi, I need a custom system for my company in Villahermosa. Can we schedule a call?",
+    waMessage: "Hi, I need a custom system for my company in Villahermosa. Can we schedule a call this week?",
     serviceType: "Custom software development",
     sections: [
       {
@@ -632,7 +632,7 @@ const en: Record<string, ServicePageData> = {
     heroLead:
       "Our point of sale system in Villahermosa is built for businesses in Tabasco: record your sales, control inventory and check real-time reports from any device, hassle-free.",
     ogAlt: "Point of sale system in Villahermosa — Neurovia Systems",
-    waMessage: "Hi, I'm interested in Tomín POS for my business. Can you give me more information?",
+    waMessage: "Hi, I'd like a quote for Tomín POS for my business. How much does it cost?",
     serviceType: "Point of sale (POS) system",
     sections: [
       {
@@ -747,7 +747,7 @@ const en: Record<string, ServicePageData> = {
     heroLead:
       "We do custom web app development in Tabasco: cloud platforms and systems your team opens right from the browser, with nothing to install. Tools built to solve concrete problems in your company.",
     ogAlt: "Custom web app development in Tabasco — Neurovia Systems",
-    waMessage: "Hi, I need a custom web app for my company. Can we schedule a call?",
+    waMessage: "Hi, I need a custom web app for my company. Can we schedule a call this week?",
     serviceType: "Custom web application development",
     sections: [
       {
@@ -863,7 +863,7 @@ const en: Record<string, ServicePageData> = {
     heroLead:
       "We build custom software for companies in Monterrey and Nuevo León: management systems, web platforms and AI automation. We work remotely to the same technical standard — distance is not a problem.",
     ogAlt: "Custom software development in Monterrey — Neurovia Systems",
-    waMessage: "Hi, I need a custom system for my company in Monterrey. Can we schedule a call?",
+    waMessage: "Hi, I need a custom system for my company in Monterrey. Can we schedule a call this week?",
     serviceType: "Custom software development",
     sections: [
       {
@@ -921,7 +921,7 @@ const en: Record<string, ServicePageData> = {
     heroLead:
       "We build custom software for companies in Guadalajara and Jalisco: management systems, web platforms and AI automation. We work remotely to the same technical standard — location is not a limit.",
     ogAlt: "Custom software development in Guadalajara — Neurovia Systems",
-    waMessage: "Hi, I need a custom system for my company in Guadalajara. Can we schedule a call?",
+    waMessage: "Hi, I need a custom system for my company in Guadalajara. Can we schedule a call this week?",
     serviceType: "Custom software development",
     sections: [
       {

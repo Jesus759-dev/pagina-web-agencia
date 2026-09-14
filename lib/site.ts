@@ -24,20 +24,20 @@ export type WaContext = "general" | "float" | "pos" | "custom" | "inventario" | 
 
 export const WA_MESSAGES: Record<Locale, Record<WaContext, string>> = {
   es: {
-    general: "Hola, vengo de su sitio web. Me interesa saber más sobre sus servicios de desarrollo.",
-    float: "Hola, vengo de su sitio web y quiero más información.",
-    pos: "Hola, me interesa Tomín POS para mi negocio. ¿Me pueden dar más información?",
-    custom: "Hola, necesito un sistema a la medida para mi empresa. ¿Podemos agendar una llamada?",
-    inventario: "Hola, me interesa el Sistema de Inventario (pago único o membresía). ¿Me pueden dar más información?",
-    agenda: "Hola, quiero agendar 20 minutos para ver un proceso que traigo atorado.",
+    general: "Hola, quiero cotizar un sistema para mi negocio. ¿Me pueden dar informes?",
+    float: "Hola, quiero cotizar un sistema para mi negocio. ¿Me pueden dar informes?",
+    pos: "Hola, quiero cotizar Tomín POS para mi negocio. ¿Cuánto cuesta?",
+    custom: "Hola, necesito un sistema a la medida para mi empresa. ¿Podemos agendar una llamada esta semana?",
+    inventario: "Hola, quiero cotizar un sistema de inventario. ¿Me pueden dar informes?",
+    agenda: "Hola, quiero agendar una llamada para platicar de un proyecto. ¿Qué horarios tienen?",
   },
   en: {
-    general: "Hi, I'm coming from your website. I'd like to know more about your development services.",
-    float: "Hi, I'm coming from your website and I'd like more information.",
-    pos: "Hi, I'm interested in Tomín POS for my business. Can you give me more information?",
-    custom: "Hi, I need a custom system for my company. Can we schedule a call?",
-    inventario: "Hi, I'm interested in the Inventory System (one-time payment or membership). Can you give me more information?",
-    agenda: "Hi, I'd like to book 20 minutes to look at a process that's stuck.",
+    general: "Hi, I'd like a quote for a system for my business. Can you send me details?",
+    float: "Hi, I'd like a quote for a system for my business. Can you send me details?",
+    pos: "Hi, I'd like a quote for Tomín POS for my business. How much does it cost?",
+    custom: "Hi, I need a custom system for my company. Can we schedule a call this week?",
+    inventario: "Hi, I'd like a quote for an inventory system. Can you send me details?",
+    agenda: "Hi, I'd like to book a call to talk about a project. What times do you have available?",
   },
 };
 
