@@ -3,8 +3,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 import SubscribeForm from "@/components/SubscribeForm";
-import WaConsultaButton from "@/components/WaConsultaButton";
-import { waMessage } from "@/lib/site";
 import { getDict } from "@/lib/i18n";
 
 const SITE_URL = "https://neuroviasystems.com.mx";
@@ -22,8 +20,6 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-
-const WA_AGENDA = waMessage("agenda", "es");
 
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
@@ -57,28 +53,9 @@ export default function AgendaPage() {
           </div>
         </section>
 
-        {/* Scheduling widget (isolated placeholder) */}
+        {/* Booking: Calendly when configured, otherwise WhatsApp booking flow */}
         <section className="mx-auto max-w-[820px] px-5 pt-12 sm:px-10">
-          <CalendlyEmbed />
-
-          {/* Contact alternative */}
-          <div className="mt-10 rounded-2xl border border-line bg-white p-7 text-center sm:p-9">
-            <p className="m-0 font-heading text-[19px] font-semibold text-ink">
-              ¿Prefieres escribir directo?
-            </p>
-            <p className="mx-auto mt-2 max-w-[440px] text-[15px] leading-[1.6] text-muted">
-              Mándame un mensaje por WhatsApp o un correo y lo vemos por ahí.
-            </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-              <WaConsultaButton message={WA_AGENDA} lang="es" />
-              <a
-                href="mailto:soporte@neuroviasystems.com.mx"
-                className="cta-outline inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold no-underline"
-              >
-                soporte@neuroviasystems.com.mx
-              </a>
-            </div>
-          </div>
+          <CalendlyEmbed lang="es" />
         </section>
 
         {/* Subscriber capture */}

@@ -17,6 +17,13 @@ export const WHATSAPP_DISPLAY = "+52 993 722 6350";
 export const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "";
 
 /**
+ * Calendly (or Cal.com/TidyCal) event URL for /agenda, e.g.
+ * https://calendly.com/neurovia/20min. Empty = the page offers WhatsApp booking
+ * instead (components/CalendlyEmbed.tsx). Set NEXT_PUBLIC_CALENDLY_URL in .env.production.
+ */
+export const CALENDLY_URL = process.env.NEXT_PUBLIC_CALENDLY_URL ?? "";
+
+/**
  * Where a WhatsApp CTA lives. The prefilled message depends on it so the
  * visitor never lands on an empty chat box.
  */
