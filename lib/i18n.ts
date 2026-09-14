@@ -38,11 +38,12 @@ const es = {
   hero: {
     sectionAria: "Sección principal",
     badge: "Sistemas en producción en México",
-    h1: "Construimos el futuro digital de tu empresa.",
-    lead: "Software que te devuelve tiempo: plataformas, automatización con IA y sistemas a la medida de tu negocio.",
-    cta: "Agenda una consulta gratuita",
+    h1: "Sistemas hechos para cómo trabaja tu empresa.",
+    lead: "Punto de venta, sistemas de gestión y automatización con IA. Desarrollo a la medida desde Villahermosa, Tabasco.",
+    ctaPrimary: "Escríbenos por WhatsApp",
+    ctaSecondary: "Agenda una consulta gratuita",
     trustLabel: "Empresas que ya confían",
-    companies: ["Cliente petrolero", "Royers", "Alpha Mobil", "Provalsa"],
+    companies: ["CAPOSA", "ASC Motores", "Royers", "Alpha Mobil", "Provalsa"],
     scroll: "Scroll",
   },
   stats: [
@@ -398,11 +399,12 @@ const en: typeof es = {
   hero: {
     sectionAria: "Main section",
     badge: "Systems live in production in Mexico",
-    h1: "We build your company's digital future.",
-    lead: "Software that gives you time back: platforms, AI automation and systems built for your business.",
-    cta: "Book a free consultation",
+    h1: "Systems built for the way your company works.",
+    lead: "Point of sale, management systems and AI automation. Custom development from Villahermosa, Tabasco.",
+    ctaPrimary: "Message us on WhatsApp",
+    ctaSecondary: "Book a free consultation",
     trustLabel: "Companies that already trust us",
-    companies: ["Oil & gas client", "Royers", "Alpha Mobil", "Provalsa"],
+    companies: ["CAPOSA", "ASC Motores", "Royers", "Alpha Mobil", "Provalsa"],
     scroll: "Scroll",
   },
   stats: [
