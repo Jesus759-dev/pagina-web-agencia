@@ -217,6 +217,7 @@ const structuredData = {
       areaServed: [
         { "@type": "City", name: "Villahermosa" },
         { "@type": "City", name: "Monterrey" },
+        { "@type": "City", name: "Santa Catarina" },
         { "@type": "City", name: "Guadalajara" },
         { "@type": "State", name: "Tabasco" },
         { "@type": "Country", name: "México" },
@@ -299,6 +300,7 @@ const structuredData = {
       areaServed: [
         { "@type": "City", name: "Villahermosa" },
         { "@type": "City", name: "Monterrey" },
+        { "@type": "City", name: "Santa Catarina" },
         { "@type": "City", name: "Guadalajara" },
         { "@type": "State", name: "Tabasco" },
         { "@type": "Country", name: "México" },
