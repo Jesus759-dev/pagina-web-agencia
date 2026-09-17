@@ -336,6 +336,7 @@ const es = {
     relatedTitle: "Más soluciones para tu empresa en Villahermosa y Tabasco",
     backHome: "Volver al inicio",
     ctaConsulta: "Agenda una consulta gratuita",
+    priceHint: "Precio de referencia. Cotización sin costo.",
   },
   sistemas: {
     eyebrow: "Plataforma de sistemas",
@@ -697,6 +698,7 @@ const en: typeof es = {
     relatedTitle: "More solutions for your business in Villahermosa & Tabasco",
     backHome: "Back to home",
     ctaConsulta: "Book a free consultation",
+    priceHint: "Reference price. Free quote.",
   },
   sistemas: {
     eyebrow: "Systems platform",

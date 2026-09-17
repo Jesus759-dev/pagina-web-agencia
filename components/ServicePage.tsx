@@ -39,7 +39,13 @@ export default function ServicePage({
               {data.h1}
             </h1>
             <p className="m-0 mt-6 max-w-[640px] text-lg leading-[1.6] text-muted">{data.heroLead}</p>
-            <div className="mt-9 flex flex-wrap items-center gap-3">
+            {data.priceNote && (
+              <p className="m-0 mt-6 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-[15px] leading-[1.4]">
+                <span className="font-semibold text-ink">{data.priceNote}</span>
+                <span className="text-faint">{ui.priceHint}</span>
+              </p>
+            )}
+            <div className={`${data.priceNote ? "mt-4" : "mt-9"} flex flex-wrap items-center gap-3`}>
               <WaConsultaButton message={data.waMessage} lang={lang} />
               <a
                 href={`${base}/`}

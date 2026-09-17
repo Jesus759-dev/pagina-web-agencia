@@ -24,6 +24,8 @@ export type ServicePageData = {
   heroLead: string;
   ogAlt: string;
   waMessage: string;
+  /** Reference price shown next to the hero CTA (e.g. "Desde $25,000 MXN + IVA"). */
+  priceNote?: string;
   serviceType: string;
   sections: { h2: string; body: string[] }[];
   benefitsTitle: string;
@@ -50,6 +52,7 @@ const es: Record<string, ServicePageData> = {
       "En Neurovia Systems hacemos desarrollo de software a medida en Villahermosa para empresas de Tabasco que ya no quieren adaptarse a programas genéricos. Construimos sistemas, plataformas web y dashboards diseñados exactamente para tu operación.",
     ogAlt: "Desarrollo de software a medida en Villahermosa — Neurovia Systems",
     waMessage: "Hola, necesito un sistema a la medida para mi empresa en Villahermosa. ¿Podemos agendar una llamada esta semana?",
+    priceNote: "Proyectos desde $65,000 MXN + IVA",
     serviceType: "Desarrollo de software a medida",
     sections: [
       {
@@ -108,6 +111,7 @@ const es: Record<string, ServicePageData> = {
       "Ayudamos a empresas de Tabasco a recuperar horas de trabajo con automatización e inteligencia artificial. Identificamos las tareas repetitivas que consumen a tu equipo y las convertimos en flujos automáticos que trabajan solos.",
     ogAlt: "Automatización con inteligencia artificial en Tabasco — Neurovia Systems",
     waMessage: "Hola Neurovia Systems, me interesa la automatización con inteligencia artificial en Tabasco",
+    priceNote: "Desde $25,000 MXN + IVA",
     serviceType: "Automatización de procesos con inteligencia artificial",
     sections: [
       {
@@ -281,6 +285,7 @@ const es: Record<string, ServicePageData> = {
       "Hacemos desarrollo de aplicaciones web a medida en Tabasco: plataformas y sistemas en la nube a los que tu equipo entra desde el navegador, sin instalar nada. Herramientas creadas para resolver problemas concretos de tu empresa.",
     ogAlt: "Desarrollo de aplicaciones web a medida en Tabasco — Neurovia Systems",
     waMessage: "Hola, necesito una aplicación web a la medida para mi empresa. ¿Podemos agendar una llamada esta semana?",
+    priceNote: "Desde $32,000 MXN + IVA",
     serviceType: "Desarrollo de aplicaciones web a medida",
     sections: [
       {
@@ -339,6 +344,7 @@ const es: Record<string, ServicePageData> = {
       "En Neurovia Systems desarrollamos agentes de inteligencia artificial que trabajan para tu empresa: responden a tus clientes, automatizan procesos y ejecutan tareas por ti, las 24 horas. No un chatbot genérico — un agente entrenado con tu información y conectado a tus sistemas.",
     ogAlt: "Agentes de inteligencia artificial a medida — Neurovia Systems",
     waMessage: "Hola Neurovia Systems, me interesa un agente de inteligencia artificial a medida",
+    priceNote: "Desde $25,000 MXN + IVA",
     serviceType: "Desarrollo de agentes de inteligencia artificial",
     sections: [
       {
@@ -397,6 +403,7 @@ const es: Record<string, ServicePageData> = {
       "Desarrollamos software a medida para empresas de Monterrey y Nuevo León: sistemas de gestión, plataformas web y automatización con inteligencia artificial. Trabajamos de forma remota con el mismo estándar técnico, sin que la distancia sea un problema.",
     ogAlt: "Desarrollo de software a medida en Monterrey — Neurovia Systems",
     waMessage: "Hola, necesito un sistema a la medida para mi empresa en Monterrey. ¿Podemos agendar una llamada esta semana?",
+    priceNote: "Proyectos desde $65,000 MXN + IVA",
     serviceType: "Desarrollo de software a medida",
     sections: [
       {
@@ -455,6 +462,7 @@ const es: Record<string, ServicePageData> = {
       "Desarrollamos software a medida para empresas de Guadalajara y Jalisco: sistemas de gestión, plataformas web y automatización con inteligencia artificial. Trabajamos en remoto con el mismo estándar técnico, sin que la ubicación sea un límite.",
     ogAlt: "Desarrollo de software a medida en Guadalajara — Neurovia Systems",
     waMessage: "Hola, necesito un sistema a la medida para mi empresa en Guadalajara. ¿Podemos agendar una llamada esta semana?",
+    priceNote: "Proyectos desde $65,000 MXN + IVA",
     serviceType: "Desarrollo de software a medida",
     sections: [
       {
@@ -517,6 +525,7 @@ const en: Record<string, ServicePageData> = {
       "At Neurovia Systems we build custom software in Villahermosa for companies in Tabasco that are tired of adapting to generic programs. We build systems, web platforms and dashboards designed exactly for how your business runs.",
     ogAlt: "Custom software development in Villahermosa — Neurovia Systems",
     waMessage: "Hi, I need a custom system for my company in Villahermosa. Can we schedule a call this week?",
+    priceNote: "Projects from MXN $65,000 + VAT",
     serviceType: "Custom software development",
     sections: [
       {
@@ -575,6 +584,7 @@ const en: Record<string, ServicePageData> = {
       "We help companies in Tabasco win back hours with automation and artificial intelligence. We spot the repetitive tasks that drain your team and turn them into automatic flows that run on their own.",
     ogAlt: "Automation with artificial intelligence in Tabasco — Neurovia Systems",
     waMessage: "Hi Neurovia Systems, I'm interested in AI automation in Tabasco",
+    priceNote: "From MXN $25,000 + VAT",
     serviceType: "Process automation with artificial intelligence",
     sections: [
       {
@@ -748,6 +758,7 @@ const en: Record<string, ServicePageData> = {
       "We do custom web app development in Tabasco: cloud platforms and systems your team opens right from the browser, with nothing to install. Tools built to solve concrete problems in your company.",
     ogAlt: "Custom web app development in Tabasco — Neurovia Systems",
     waMessage: "Hi, I need a custom web app for my company. Can we schedule a call this week?",
+    priceNote: "From MXN $32,000 + VAT",
     serviceType: "Custom web application development",
     sections: [
       {
@@ -806,6 +817,7 @@ const en: Record<string, ServicePageData> = {
       "At Neurovia Systems we build AI agents that work for your company: they answer your customers, automate processes and run tasks for you, around the clock. Not a generic chatbot — an agent trained on your information and connected to your systems.",
     ogAlt: "Custom artificial intelligence agents — Neurovia Systems",
     waMessage: "Hi Neurovia Systems, I'm interested in a custom AI agent",
+    priceNote: "From MXN $25,000 + VAT",
     serviceType: "Artificial intelligence agent development",
     sections: [
       {
@@ -864,6 +876,7 @@ const en: Record<string, ServicePageData> = {
       "We build custom software for companies in Monterrey and Nuevo León: management systems, web platforms and AI automation. We work remotely to the same technical standard — distance is not a problem.",
     ogAlt: "Custom software development in Monterrey — Neurovia Systems",
     waMessage: "Hi, I need a custom system for my company in Monterrey. Can we schedule a call this week?",
+    priceNote: "Projects from MXN $65,000 + VAT",
     serviceType: "Custom software development",
     sections: [
       {
@@ -922,6 +935,7 @@ const en: Record<string, ServicePageData> = {
       "We build custom software for companies in Guadalajara and Jalisco: management systems, web platforms and AI automation. We work remotely to the same technical standard — location is not a limit.",
     ogAlt: "Custom software development in Guadalajara — Neurovia Systems",
     waMessage: "Hi, I need a custom system for my company in Guadalajara. Can we schedule a call this week?",
+    priceNote: "Projects from MXN $65,000 + VAT",
     serviceType: "Custom software development",
     sections: [
       {
