@@ -99,6 +99,23 @@ type Body = { sessionId?: unknown; lang?: unknown; page?: unknown; messages?: un
 const clean = (v: unknown, max = 300) => (typeof v === "string" ? v.trim().slice(0, max) : "");
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+/**
+ * Tool inputs are model output: never trust them as-is. Observed in testing:
+ * an empty field came back with leaked tool-call markup. Strip markup, and
+ * keep contact fields only when they actually look like contact data.
+ */
+function sanitizeField(key: string, value: string): string {
+  let v = value;
+  if (/<\/?[a-z_]+|parameter name=|antml/i.test(v)) v = v.replace(/<[^>]*>?/g, "").replace(/parameter name=\S*/gi, "").trim();
+  if (/[<>]/.test(v)) v = v.replace(/[<>]/g, "").trim();
+  if (key === "correo") return EMAIL_RE.test(v) ? v : "";
+  if (key === "telefono") {
+    const phone = v.replace(/[^\d+\s()-]/g, "").trim();
+    return phone.replace(/\D/g, "").length >= 8 ? phone : "";
+  }
+  return v;
+}
+
 function transcriptOf(turns: ChatTurn[]): string {
   return turns
     .slice(-12)
@@ -211,7 +228,7 @@ export async function POST(request: Request) {
       for (const tu of toolUses) {
         const input = (tu.input ?? {}) as Record<string, unknown>;
         const data: Record<string, string> = {};
-        for (const [k, v] of Object.entries(input)) data[k] = clean(v, 500);
+        for (const [k, v] of Object.entries(input)) data[k] = sanitizeField(k, clean(v, 500));
         const hasContact = (data.telefono || "").replace(/\D/g, "").length >= 8 || EMAIL_RE.test(data.correo || "");
 
         if (!data.nombre || !hasContact || (tu.name === "solicitar_cita" && !data.dia_hora)) {
