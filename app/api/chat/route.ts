@@ -2,6 +2,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { NextResponse } from "next/server";
 import { CHAT_SYSTEM_PROMPT } from "@/lib/chat/knowledge";
 import { notifyConfigured, notifyOwner } from "@/lib/chat/notify";
+import { getDict } from "@/lib/i18n";
 
 /**
  * /api/chat — site assistant.
@@ -39,6 +40,7 @@ export function GET() {
 const hits = new Map<string, number[]>();
 const startedSessions = new Map<string, number>(); // sessionId -> ts
 const leadSessions = new Set<string>();
+const liteSessions = new Set<string>();
 
 function rateLimited(ip: string): boolean {
   const now = Date.now();
@@ -92,7 +94,7 @@ const TOOLS: Anthropic.Beta.BetaTool[] = [
 ];
 
 type ChatTurn = { role: "user" | "assistant"; text: string };
-type Body = { sessionId?: unknown; lang?: unknown; page?: unknown; messages?: unknown };
+type Body = { sessionId?: unknown; lang?: unknown; page?: unknown; messages?: unknown; liteChoice?: unknown };
 
 const clean = (v: unknown, max = 300) => (typeof v === "string" ? v.trim().slice(0, max) : "");
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -105,8 +107,6 @@ function transcriptOf(turns: ChatTurn[]): string {
 }
 
 export async function POST(request: Request) {
-  if (!enabled()) return NextResponse.json({ ok: false, error: "disabled" }, { status: 503 });
-
   const ip = (request.headers.get("x-forwarded-for") || "").split(",")[0].trim() || "local";
   if (rateLimited(ip)) return NextResponse.json({ ok: false, error: "rate_limited" }, { status: 429 });
 
@@ -116,6 +116,25 @@ export async function POST(request: Request) {
   } catch {
     return NextResponse.json({ ok: false, error: "invalid_json" }, { status: 400 });
   }
+
+  // Lite mode (no API key yet): a visitor picked a quick option and went to
+  // WhatsApp. Only an option index is accepted, never free text, so this
+  // channel can't be used to spam the owner. Once per session.
+  if (typeof body.liteChoice === "number") {
+    if (!notifyConfigured()) return NextResponse.json({ ok: true, notified: false });
+    const sid = clean(body.sessionId, 64);
+    const options = [...getDict("es").chat.chips, getDict("es").chat.liteOther];
+    const choice = options[body.liteChoice];
+    if (!sid || !choice) return NextResponse.json({ ok: false, error: "invalid_choice" }, { status: 422 });
+    if (!liteSessions.has(sid)) {
+      liteSessions.add(sid);
+      if (liteSessions.size > 5000) liteSessions.clear();
+      await notifyOwner({ kind: "lite_choice", page: clean(body.page, 200) || "/", lang: body.lang === "en" ? "en" : "es", choice });
+    }
+    return NextResponse.json({ ok: true, notified: true });
+  }
+
+  if (!enabled()) return NextResponse.json({ ok: false, error: "disabled" }, { status: 503 });
 
   const sessionId = clean(body.sessionId, 64);
   const lang = body.lang === "en" ? "en" : "es";
@@ -144,7 +163,10 @@ export async function POST(request: Request) {
     void notifyOwner({ kind: "chat_started", page, lang, firstMessage: turns[turns.length - 1].text });
   }
 
-  const client = new Anthropic();
+  // Organization-level keys (not scoped to a workspace) must name the workspace
+  // explicitly; workspace-scoped keys don't need ANTHROPIC_WORKSPACE_ID.
+  const workspace = process.env.ANTHROPIC_WORKSPACE_ID;
+  const client = new Anthropic(workspace ? { defaultHeaders: { "anthropic-workspace-id": workspace } } : {});
   const messages: Anthropic.Beta.BetaMessageParam[] = turns.map((t) => ({ role: t.role, content: t.text }));
   const events: string[] = [];
   let handoff = "";

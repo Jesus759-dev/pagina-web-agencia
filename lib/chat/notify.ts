@@ -11,6 +11,7 @@
 
 export type ChatEvent =
   | { kind: "chat_started"; page: string; lang: string; firstMessage: string }
+  | { kind: "lite_choice"; page: string; lang: string; choice: string }
   | { kind: "lead"; page: string; lang: string; data: Record<string, string>; transcript: string }
   | { kind: "appointment"; page: string; lang: string; data: Record<string, string>; transcript: string };
 
@@ -43,6 +44,7 @@ const LABELS: Record<string, string> = {
 
 function headline(e: ChatEvent): string {
   if (e.kind === "chat_started") return "💬 Alguien está hablando con el asistente";
+  if (e.kind === "lite_choice") return "👉 Alguien usó el chat y se fue a WhatsApp";
   if (e.kind === "lead") return "✅ Nuevo contacto desde el chat";
   return "📅 Solicitud de cita desde el chat";
 }
@@ -51,6 +53,8 @@ function plainText(e: ChatEvent): string {
   const lines = [headline(e), `Página: ${e.page} (${e.lang})`];
   if (e.kind === "chat_started") {
     lines.push("", `Primer mensaje: ${e.firstMessage}`);
+  } else if (e.kind === "lite_choice") {
+    lines.push("", `Eligió: ${e.choice}`, "Revisa tu WhatsApp: le abrimos el chat con ese mensaje ya escrito.");
   } else {
     lines.push("");
     for (const [k, v] of Object.entries(e.data)) if (v) lines.push(`${LABELS[k] ?? k}: ${v}`);
@@ -101,9 +105,9 @@ export async function notifyOwner(e: ChatEvent): Promise<void> {
   const text = plainText(e);
   const tasks: Promise<void>[] = [];
   if (telegramConfigured()) tasks.push(sendTelegram(text));
-  // Email only for leads and appointments; "someone is chatting" is Telegram-only to avoid inbox noise.
-  if (emailConfigured() && e.kind !== "chat_started") tasks.push(sendEmail(headline(e).replace(/^\S+\s/, ""), text));
+  // Email only for leads and appointments; chat activity is Telegram-only to avoid inbox noise.
+  if (emailConfigured() && (e.kind === "lead" || e.kind === "appointment")) tasks.push(sendEmail(headline(e).replace(/^\S+\s/, ""), text));
   const results = await Promise.allSettled(tasks);
   for (const r of results) if (r.status === "rejected") console.error("[chat-notify]", String(r.reason));
-  if (e.kind !== "chat_started") console.log("[chat-notify]", e.kind, JSON.stringify(e.data));
+  if (e.kind === "lead" || e.kind === "appointment") console.log("[chat-notify]", e.kind, JSON.stringify(e.data));
 }

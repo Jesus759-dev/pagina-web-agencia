@@ -200,6 +200,15 @@ export default function ChatWidget() {
                     key={c}
                     message={i < t.chips.length ? `${t.liteMessagePrefix} ${c}` : t.liteMessagePrefix}
                     lang={lang}
+                    onAfterClick={() => {
+                      // Tell the owner (Telegram) which option was picked; index only, never free text.
+                      fetch("/api/chat", {
+                        method: "POST",
+                        keepalive: true,
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ liteChoice: i, sessionId: state.sessionId, lang, page: pathname }),
+                      }).catch(() => {});
+                    }}
                     className={`${i === 0 ? "btn-primary" : "cta-outline"} inline-flex w-full items-center justify-between gap-2 rounded-full px-5 py-3 text-left text-[14px] font-semibold no-underline`}
                   >
                     <span>{c}</span>
