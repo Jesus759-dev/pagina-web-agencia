@@ -3,6 +3,7 @@ import { Instrument_Serif, Manrope } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ChatWidget from "@/components/ChatWidget";
 import ScrollChoreography from "@/components/ScrollChoreography";
 import WebMcpTools from "@/components/WebMcpTools";
 import ParticleFieldLoader from "@/components/ParticleFieldLoader";
@@ -464,6 +465,7 @@ export default function RootLayout({
         <WebMcpTools />
         {/* Floating WhatsApp CTA — kept from the previous build */}
         <WhatsAppButton />
+        <ChatWidget />
 
         {/* Meta Pixel (Facebook/Instagram Ads) — no-op until META_PIXEL_ID is set */}
         <MetaPixel />

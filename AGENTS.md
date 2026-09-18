@@ -54,6 +54,12 @@ for "desarrollo de software a medida Villahermosa". Breaking these invariants co
   `NEXT_PUBLIC_META_PIXEL_ID`). All conversions go through `trackLead(source)` in `lib/analytics.ts`
   (GA4 event + Google Ads conversion for whatsapp/email + Meta `Lead`). `MetaPixelPageView`
   fires PageView on SPA route changes (Suspense-wrapped, uses useSearchParams).
+- **Chatbot:** `components/ChatWidget.tsx` (mounted in the layout above the WhatsApp button) +
+  `app/api/chat/route.ts` (Claude via `@anthropic-ai/sdk`, tools `guardar_contacto` / `solicitar_cita`)
+  + `lib/chat/knowledge.ts` (system prompt built from serviceContent/nosotros; keep it deterministic
+  for prompt caching) + `lib/chat/notify.ts` (Telegram / Resend). Hidden unless `ANTHROPIC_API_KEY`
+  and a notify channel are set as server env vars. Chat conversions fire `trackLead("chat")` once
+  per conversation.
 
 ## Design system
 

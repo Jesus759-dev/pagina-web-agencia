@@ -6,7 +6,7 @@
 // click (here), never on page load. Meta's standard "Lead" event is what the
 // Meta Ads campaigns optimize for.
 
-export type LeadSource = "whatsapp" | "email" | "newsletter" | "agenda";
+export type LeadSource = "whatsapp" | "email" | "newsletter" | "agenda" | "chat";
 
 /** GA4 event name per source (kept stable: reports and Ads conversions depend on them). */
 const GA4_EVENT: Record<LeadSource, string> = {
@@ -14,6 +14,7 @@ const GA4_EVENT: Record<LeadSource, string> = {
   email: "clic_correo",
   newsletter: "generate_lead",
   agenda: "generate_lead",
+  chat: "chat_lead",
 };
 
 /** Sources that count as a Google Ads "Contacto" click conversion. */
@@ -44,6 +45,11 @@ export function trackLead(source: LeadSource): void {
     gtag("event", "ads_conversion_Contacto_1");
   }
   fbq("track", "Lead", { content_name: source });
+}
+
+/** Chatbot engagement (GA4 only; not a conversion). */
+export function trackChatEvent(name: "chat_open" | "chat_message"): void {
+  gtag("event", name);
 }
 
 /** Meta Pixel PageView — used by the client-side route listener (SPA navigations). */
