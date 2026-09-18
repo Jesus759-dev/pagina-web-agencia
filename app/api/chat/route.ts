@@ -1,3 +1,4 @@
+import "@/lib/chat/serverEnv"; // must stay first: fills process.env before the modules below read it
 import Anthropic from "@anthropic-ai/sdk";
 import { NextResponse } from "next/server";
 import { CHAT_SYSTEM_PROMPT } from "@/lib/chat/knowledge";
