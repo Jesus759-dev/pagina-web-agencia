@@ -354,6 +354,10 @@ const es = {
     handoffCta: "Seguir por WhatsApp",
     privacyPrefix: "Al escribir aceptas el",
     privacyLink: "aviso de privacidad",
+    liteSubtitle: "Respuesta en menos de 24 h",
+    liteGreeting: "Hola. ¿Qué te gustaría resolver en tu negocio? Elige una opción y te atendemos por WhatsApp.",
+    liteMessagePrefix: "Hola, vengo del sitio web.",
+    liteOther: "Tengo otra pregunta",
   },
   sistemas: {
     eyebrow: "Plataforma de sistemas",
@@ -733,6 +737,10 @@ const en: typeof es = {
     handoffCta: "Continue on WhatsApp",
     privacyPrefix: "By typing you accept the",
     privacyLink: "privacy notice",
+    liteSubtitle: "Reply in under 24 h",
+    liteGreeting: "Hi. What would you like to solve in your business? Pick an option and we'll help you on WhatsApp.",
+    liteMessagePrefix: "Hi, I'm coming from your website.",
+    liteOther: "I have another question",
   },
   sistemas: {
     eyebrow: "Systems platform",

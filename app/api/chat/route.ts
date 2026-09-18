@@ -25,8 +25,14 @@ function enabled(): boolean {
   return Boolean(process.env.ANTHROPIC_API_KEY) && notifyConfigured();
 }
 
+/**
+ * mode "ai"   → full assistant (key + notify channel configured).
+ * mode "lite" → no credentials yet: the widget still shows, but hands off to
+ *               WhatsApp with a prefilled message instead of answering.
+ */
 export function GET() {
-  return NextResponse.json({ enabled: enabled() });
+  const ai = enabled();
+  return NextResponse.json({ enabled: ai, mode: ai ? "ai" : "lite" });
 }
 
 /* ---------------- light in-memory guards (single Node process) ---------------- */

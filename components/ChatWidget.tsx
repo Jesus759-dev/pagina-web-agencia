@@ -8,8 +8,9 @@ import WaLink from "@/components/WaLink";
 
 /**
  * Floating site assistant (mounted once in the root layout, above the WhatsApp
- * button). Renders nothing unless GET /api/chat reports the bot is enabled
- * (API key + at least one owner-notification channel configured).
+ * button). GET /api/chat decides the mode: "ai" (API key + owner-notification
+ * channel configured) runs the Claude assistant; "lite" (no credentials yet)
+ * shows the same bubble with quick options that open WhatsApp prefilled.
  *
  * The conversation is kept in sessionStorage (per tab) so it survives page
  * navigations; only plain text turns are sent to the server.
@@ -57,7 +58,7 @@ export default function ChatWidget() {
   const lang: Locale = pathname === "/en" || pathname.startsWith("/en/") ? "en" : "es";
   const t = getDict(lang).chat;
 
-  const [enabled, setEnabled] = useState(false);
+  const [mode, setMode] = useState<"off" | "ai" | "lite">("off");
   const [open, setOpen] = useState(false);
   const [state, setState] = useState<Stored>({ sessionId: "", turns: [], handoff: "" });
   const [draft, setDraft] = useState("");
@@ -71,7 +72,10 @@ export default function ChatWidget() {
     let alive = true;
     fetch("/api/chat", { cache: "no-store" })
       .then((r) => (r.ok ? r.json() : { enabled: false }))
-      .then((d: { enabled?: boolean }) => alive && setEnabled(Boolean(d.enabled)))
+      .then((d: { enabled?: boolean; mode?: string }) => {
+        if (!alive) return;
+        setMode(d.enabled ? "ai" : d.mode === "lite" ? "lite" : "off");
+      })
       .catch(() => {});
     return () => {
       alive = false;
@@ -98,7 +102,8 @@ export default function ChatWidget() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  if (!enabled) return null;
+  if (mode === "off") return null;
+  const lite = mode === "lite";
 
   async function send(text: string) {
     const clean = text.trim();
@@ -171,7 +176,9 @@ export default function ChatWidget() {
           id="nv-chat-panel"
           role="dialog"
           aria-label={t.title}
-          className="fixed inset-x-3 bottom-[160px] top-[84px] z-[9998] flex flex-col overflow-hidden rounded-3xl border border-line bg-white sm:inset-x-auto sm:right-6 sm:top-auto sm:h-[min(600px,calc(100dvh-190px))] sm:w-[380px]"
+          className={`fixed inset-x-3 bottom-[160px] z-[9998] flex flex-col overflow-hidden rounded-3xl border border-line bg-white sm:inset-x-auto sm:right-6 sm:top-auto sm:w-[380px] ${
+            lite ? "max-h-[calc(100dvh-190px)]" : "top-[84px] sm:h-[min(600px,calc(100dvh-190px))]"
+          }`}
           style={{ boxShadow: "0 30px 80px -24px rgba(15,42,68,.45)" }}
         >
           <header className="flex items-center gap-3 border-b border-line px-5 py-4">
@@ -180,12 +187,27 @@ export default function ChatWidget() {
             </span>
             <div className="min-w-0">
               <p className="m-0 truncate text-[15px] font-semibold text-ink">{t.title}</p>
-              <p className="m-0 truncate text-[12.5px] text-muted">{t.subtitle}</p>
+              <p className="m-0 truncate text-[12.5px] text-muted">{lite ? t.liteSubtitle : t.subtitle}</p>
             </div>
           </header>
 
           <div ref={listRef} className="flex-1 space-y-3 overflow-y-auto px-4 py-4" aria-live="polite">
-            <Bubble role="assistant" text={t.greeting} />
+            <Bubble role="assistant" text={lite ? t.liteGreeting : t.greeting} />
+            {lite && (
+              <div className="flex flex-col gap-2 pt-1">
+                {[...t.chips, t.liteOther].map((c, i) => (
+                  <WaLink
+                    key={c}
+                    message={i < t.chips.length ? `${t.liteMessagePrefix} ${c}` : t.liteMessagePrefix}
+                    lang={lang}
+                    className={`${i === 0 ? "btn-primary" : "cta-outline"} inline-flex w-full items-center justify-between gap-2 rounded-full px-5 py-3 text-left text-[14px] font-semibold no-underline`}
+                  >
+                    <span>{c}</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </WaLink>
+                ))}
+              </div>
+            )}
             {state.turns.map((m, i) => (
               <Bubble key={i} role={m.role} text={m.text} />
             ))}
@@ -218,7 +240,7 @@ export default function ChatWidget() {
             )}
           </div>
 
-          {showChips && (
+          {!lite && showChips && (
             <div className="flex gap-2 overflow-x-auto px-4 pb-2">
               {t.chips.map((c) => (
                 <button
@@ -233,6 +255,7 @@ export default function ChatWidget() {
             </div>
           )}
 
+          {!lite && (
           <form
             className="border-t border-line p-3"
             onSubmit={(e) => {
@@ -277,6 +300,7 @@ export default function ChatWidget() {
               .
             </p>
           </form>
+          )}
         </div>
       )}
     </>
