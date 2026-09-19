@@ -208,7 +208,7 @@ const es = {
     },
     sgi: {
       cat: "Producto propio · Gestión integral",
-      title: "Neurovía SGI",
+      title: "Núcleo SGI",
       descPrefix: "Sistema de Gestión Integral: administra toda tu operación en una sola plataforma — ",
       badge: "Nuevo",
     },
@@ -408,6 +408,17 @@ const es = {
     eyebrow: "Cobertura",
     h2: "Dónde estamos operando",
     lead: "Ciudades donde Neurovia Systems ya tiene sistemas y proyectos en producción.",
+    statClients: "Clientes",
+    statCities: "Ciudades",
+    statStates: "Estados",
+    baseLabel: "Base de operaciones",
+    baseShort: "BASE",
+    back: "Volver al mapa",
+    clientsWord: "clientes",
+    cityOne: "ciudad",
+    cityMany: "ciudades",
+    empty: "Todavía no tenemos proyectos aquí.",
+    ownTag: "Producto propio",
   },
 };
 
@@ -604,7 +615,7 @@ const en: typeof es = {
     },
     sgi: {
       cat: "Own product · Business management",
-      title: "Neurovía SGI",
+      title: "Núcleo SGI",
       descPrefix: "Integral Management System: run your whole operation from a single platform — ",
       badge: "New",
     },
@@ -804,6 +815,17 @@ const en: typeof es = {
     eyebrow: "Coverage",
     h2: "Where we're operating",
     lead: "Cities where Neurovia Systems already has systems and projects in production.",
+    statClients: "Clients",
+    statCities: "Cities",
+    statStates: "States",
+    baseLabel: "Headquarters",
+    baseShort: "HQ",
+    back: "Back to map",
+    clientsWord: "clients",
+    cityOne: "city",
+    cityMany: "cities",
+    empty: "No projects here yet.",
+    ownTag: "Own product",
   },
 };
 

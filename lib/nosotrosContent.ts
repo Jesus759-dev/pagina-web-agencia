@@ -49,7 +49,7 @@ export const NOSOTROS_CONTENT: Record<Locale, NosotrosContent> = {
     cities: [
       { name: "Villahermosa, Tabasco", role: "Nuestra sede. Donde nació la empresa y donde está la mayoría de nuestros proyectos." },
       { name: "Monterrey, Nuevo León", role: "Atendemos empresas regiomontanas de forma remota, con el mismo estándar técnico." },
-      { name: "Guadalajara, Jalisco", role: "Trabajamos con empresas tapatías en remoto, sin que la distancia sea un límite." },
+      { name: "Guadalajara, Jalisco", role: "Atendemos empresas tapatías en remoto, sin que la distancia sea un límite." },
     ],
     proofTitle: "En quién confían",
     proof: [
@@ -91,7 +91,7 @@ export const NOSOTROS_CONTENT: Record<Locale, NosotrosContent> = {
     cities: [
       { name: "Villahermosa, Tabasco", role: "Our home base. Where the company was born and where most of our projects live." },
       { name: "Monterrey, Nuevo León", role: "We serve Monterrey companies remotely, to the same technical standard." },
-      { name: "Guadalajara, Jalisco", role: "We work with Guadalajara companies remotely — distance is never a limit." },
+      { name: "Guadalajara, Jalisco", role: "We serve Guadalajara companies remotely — distance is never a limit." },
     ],
     proofTitle: "Who trusts us",
     proof: [

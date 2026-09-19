@@ -182,7 +182,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
           </div>
         </a>
 
-        {/* Neurovía SGI — nuevo producto propio (gestión integral) */}
+        {/* Núcleo SGI — nuevo producto propio (gestión integral) */}
         <a
           href="https://sgi.neuroviasystems.cloud"
           target="_blank"
@@ -194,7 +194,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
             style={{ background: "linear-gradient(150deg, #263043, #131a26)" }}
           >
             <span className="font-heading text-[36px] font-bold tracking-[0.05em] text-white">SGI</span>
-            <span className="font-heading text-[14px] font-semibold text-white/85">Neurovía SGI</span>
+            <span className="font-heading text-[14px] font-semibold text-white/85">Núcleo SGI</span>
             <span className="font-code text-[10px] uppercase tracking-[0.16em]" style={{ color: "#7ea2f0" }}>
               Gestión integral
             </span>

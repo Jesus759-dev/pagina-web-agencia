@@ -26,7 +26,7 @@ export default function ClientMapSection({ lang = "es" }: { lang?: Locale }) {
         </p>
 
         <div className="mt-12">
-          <NeuroviaClientMap />
+          <NeuroviaClientMap lang={lang} />
         </div>
       </div>
     </section>
