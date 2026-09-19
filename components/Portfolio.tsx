@@ -496,6 +496,52 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
         </a>
       </div>
 
+      {/* Propuestas de diseño web — CAPOSA (3 sitios en vivo) */}
+      <div className="mt-[72px]">
+        <div className="mb-3 font-code text-[13px] uppercase tracking-[0.12em]" style={{ color: "var(--accent)" }}>
+          {t.proposals.eyebrow}
+        </div>
+        <h3 className="m-0 font-heading text-[28px] leading-[1.1] tracking-[-0.02em] text-ink sm:text-[34px]">
+          {t.proposals.title}
+        </h3>
+        <p className="m-0 mt-3 max-w-[640px] text-base leading-[1.6] text-muted">{t.proposals.lead}</p>
+        <div className="mt-8 grid grid-cols-1 gap-[22px] md:grid-cols-3">
+          {t.proposals.items.map((item, i) => (
+            <a
+              key={item.name}
+              href={`https://caposa-propuesta-${i + 1}.vercel.app/`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="proj-card block overflow-hidden rounded-2xl border border-line bg-white no-underline"
+            >
+              <div className="relative aspect-video overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`/projects/caposa-propuesta-${i + 1}.webp`}
+                  alt={`${t.proposals.alt} (${item.name})`}
+                  className="block h-full w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="p-[26px]">
+                <div className="mb-[11px] flex items-center gap-2.5">
+                  <Pill label={t.proposals.badge} />
+                  <span className="text-[13px] text-[#69798a]">{t.proposals.cat}</span>
+                </div>
+                <h4 className="m-0 font-heading text-[21px] leading-[1.18] tracking-[-0.02em] text-ink">{item.name}</h4>
+                <p className="mt-[11px] text-sm leading-[1.6] text-muted">
+                  {item.desc}{" "}
+                  <span className="font-semibold" style={{ color: "var(--accent)" }}>
+                    {t.tapToVisit}
+                  </span>
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
       {/* Próximamente */}
       <div className="coming-soon relative mt-[22px] flex flex-wrap items-center gap-8 overflow-hidden rounded-2xl border border-dashed border-[#d2d7db] bg-surface px-10 py-11">
         <div

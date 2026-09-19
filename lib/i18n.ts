@@ -212,6 +212,19 @@ const es = {
       descPrefix: "Sistema de Gestión Integral: administra toda tu operación en una sola plataforma — ",
       badge: "Nuevo",
     },
+    proposals: {
+      eyebrow: "Propuestas de diseño web",
+      title: "Tres direcciones visuales para CAPOSA",
+      lead: "Antes de construir, presentamos varias propuestas para que el cliente elija con el sitio funcionando, no con un PDF.",
+      badge: "Propuesta",
+      cat: "Sitio web · Distribución",
+      alt: "Portada de la propuesta de sitio web para CAPOSA",
+      items: [
+        { name: "Propuesta 1 · Operación", desc: "Bodega y flota como protagonistas, tono corporativo." },
+        { name: "Propuesta 2 · Fuerza", desc: "Fondo oscuro y el elefante de la marca al centro." },
+        { name: "Propuesta 3 · Anaquel", desc: "Clara y cercana, con los productos y la gente de Tabasco." },
+      ],
+    },
     comingSoon: {
       badge: "En desarrollo · Próximamente",
       title: "Sistema de Inventario",
@@ -594,6 +607,19 @@ const en: typeof es = {
       title: "Neurovía SGI",
       descPrefix: "Integral Management System: run your whole operation from a single platform — ",
       badge: "New",
+    },
+    proposals: {
+      eyebrow: "Website design proposals",
+      title: "Three visual directions for CAPOSA",
+      lead: "Before building, we present several proposals so the client chooses from a working site, not a PDF.",
+      badge: "Proposal",
+      cat: "Website · Distribution",
+      alt: "Homepage of the website proposal for CAPOSA",
+      items: [
+        { name: "Proposal 1 · Operations", desc: "Warehouse and fleet up front, corporate tone." },
+        { name: "Proposal 2 · Strength", desc: "Dark backdrop with the brand's elephant at the center." },
+        { name: "Proposal 3 · On the shelf", desc: "Bright and approachable, featuring Tabasco's products and people." },
+      ],
     },
     comingSoon: {
       badge: "In development · Coming soon",
