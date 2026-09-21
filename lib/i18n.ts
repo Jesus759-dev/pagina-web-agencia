@@ -420,6 +420,14 @@ const es = {
     empty: "Todavía no tenemos proyectos aquí.",
     ownTag: "Producto propio",
   },
+  notFound: {
+    code: "Error 404",
+    h1: "Esta página no existe.",
+    lead: "Puede que la dirección esté mal escrita o que la página se haya movido. Esto es lo que probablemente buscabas:",
+    home: "Ir al inicio",
+    portfolio: "Ver proyectos",
+    whatsapp: "Escríbenos por WhatsApp",
+  },
 };
 
 /* -------------------------------------------------------------------------- */
@@ -826,6 +834,14 @@ const en: typeof es = {
     cityMany: "cities",
     empty: "No projects here yet.",
     ownTag: "Own product",
+  },
+  notFound: {
+    code: "Error 404",
+    h1: "This page doesn't exist.",
+    lead: "The address may be mistyped or the page may have moved. Here's what you were probably looking for:",
+    home: "Go to home",
+    portfolio: "See projects",
+    whatsapp: "Message us on WhatsApp",
   },
 };
 

@@ -30,6 +30,16 @@ const nextConfig = {
     // Cache optimized images for 30 days to keep LCP fast on repeat visits
     minimumCacheTTL: 60 * 60 * 24 * 30,
   },
+  // Direcciones que la gente escribe de memoria: el portafolio es una sección de la
+  // home (#proyectos), no una página propia. Redirigir en vez de mostrar un 404.
+  redirects: async () => [
+    { source: "/portafolio", destination: "/#proyectos", permanent: true },
+    { source: "/portfolio", destination: "/#proyectos", permanent: true },
+    { source: "/proyectos", destination: "/#proyectos", permanent: true },
+    { source: "/en/portfolio", destination: "/en#proyectos", permanent: true },
+    { source: "/en/portafolio", destination: "/en#proyectos", permanent: true },
+    { source: "/en/projects", destination: "/en#proyectos", permanent: true },
+  ],
   headers: async () => [
     {
       source: "/(.*)",
