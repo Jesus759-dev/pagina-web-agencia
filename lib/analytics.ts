@@ -53,6 +53,12 @@ export function trackChatEvent(name: "chat_open" | "chat_message"): void {
 }
 
 /** Meta Pixel PageView — used by the client-side route listener (SPA navigations). */
+/** Campaña de evento: clic en el aviso del inicio o en la página /expo. */
+export function trackExpo(name: "expo_banner_click" | "expo_page_view"): void {
+  if (typeof window === "undefined" || typeof window.gtag !== "function") return;
+  window.gtag("event", name);
+}
+
 export function trackPageView(): void {
   fbq("track", "PageView");
 }

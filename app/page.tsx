@@ -1,3 +1,5 @@
+import ExpoBanner from "@/components/ExpoBanner";
+import { isExpoActive } from "@/lib/expo";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
@@ -31,6 +33,7 @@ export default function Home() {
         <Testimonials />
         <Contact />
       </main>
+      {isExpoActive() && <ExpoBanner />}
       <Footer />
     </>
   );

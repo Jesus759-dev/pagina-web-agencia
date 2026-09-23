@@ -428,6 +428,51 @@ const es = {
     portfolio: "Ver proyectos",
     whatsapp: "Escríbenos por WhatsApp",
   },
+  expo: {
+    bannerEyebrow: "Expo Construcción Villahermosa",
+    bannerTitle: "¿Nos viste en la expo?",
+    bannerText: "Mira aquí los sistemas que le estamos haciendo a constructoras y contratistas.",
+    bannerCta: "Ver los sistemas",
+    bannerClose: "Cerrar aviso",
+    h1: "¿Nos viste en la Expo Construcción Villahermosa?",
+    lead: "Esto es lo que te mostramos en el stand: sistemas que hoy están operando en constructoras, contratistas y empresas de servicios del sureste. Todo lo que ves aquí está en producción, no son maquetas.",
+    ctaPrimary: "Quiero que me expliquen mi caso",
+    ctaSecondary: "Ver todos los proyectos",
+    note: "Te respondemos el mismo día. Sin compromiso: primero vemos si tiene sentido para tu operación.",
+    cardsTitle: "Lo que le hacemos al sector construcción",
+    cards: [
+      {
+        title: "Sitio web que sí vende y sirve para licitar",
+        body: "Tu obra terminada, presentada como la presentarías en junta: renders, fichas y contacto directo. Como el de Royers, constructora con 35 años y más de 500 obras.",
+        proof: "royers.mx",
+        href: "https://royers.mx",
+      },
+      {
+        title: "Requisiciones, compras e inventario de obra",
+        body: "Lo que hoy llevas en Excel y WhatsApp: qué se pidió, quién lo autorizó, qué llegó y cuánto costó. Es el mismo sistema que opera un cliente del sector petrolero en 23 áreas.",
+        proof: "En producción · cliente confidencial",
+        href: "",
+      },
+      {
+        title: "Cumplimiento y expediente de auditoría",
+        body: "Para contratistas que responden ante Pemex o la ASEA: documentos vigentes, hallazgos, DC-3 y evidencias en un solo lugar, listos cuando llega la auditoría.",
+        proof: "Núcleo SGI",
+        href: "https://sgi.neuroviasystems.cloud",
+      },
+      {
+        title: "Control de personal, flota y mantenimiento",
+        body: "Órdenes de trabajo, alertas por kilometraje, costos e historial de cada unidad. Menos paros y menos gastos que aparecen de la nada.",
+        proof: "En producción",
+        href: "",
+      },
+    ],
+    stepsTitle: "Cómo seguimos",
+    steps: [
+      "Nos escribes por WhatsApp y nos cuentas cómo trabajas hoy.",
+      "Vemos juntos, en 20 minutos, qué parte conviene sistematizar primero.",
+      "Te pasamos propuesta con alcance, precio y tiempo. Sin letras chiquitas.",
+    ],
+  },
 };
 
 /* -------------------------------------------------------------------------- */
@@ -842,6 +887,51 @@ const en: typeof es = {
     home: "Go to home",
     portfolio: "See projects",
     whatsapp: "Message us on WhatsApp",
+  },
+  expo: {
+    bannerEyebrow: "Expo Construcción Villahermosa",
+    bannerTitle: "Did you see us at the expo?",
+    bannerText: "Here are the systems we build for construction companies and contractors.",
+    bannerCta: "See the systems",
+    bannerClose: "Close notice",
+    h1: "Did you see us at the Expo Construcción in Villahermosa?",
+    lead: "This is what we showed at the booth: systems running today in construction companies, contractors and service firms in southeast Mexico. Everything here is in production — no mockups.",
+    ctaPrimary: "Walk me through my case",
+    ctaSecondary: "See all projects",
+    note: "We reply the same day. No commitment: first we check whether it makes sense for your operation.",
+    cardsTitle: "What we build for construction",
+    cards: [
+      {
+        title: "A website that sells and holds up in a bid",
+        body: "Your finished work, presented the way you would in a meeting: renders, project sheets and direct contact. Like Royers, a builder with 35 years and 500+ projects.",
+        proof: "royers.mx",
+        href: "https://royers.mx",
+      },
+      {
+        title: "Requisitions, purchasing and site inventory",
+        body: "What lives in Excel and WhatsApp today: what was ordered, who approved it, what arrived and what it cost. The same system runs 23 operating areas for an oil & gas client.",
+        proof: "In production · confidential client",
+        href: "",
+      },
+      {
+        title: "Compliance and the audit file",
+        body: "For contractors answering to Pemex or ASEA: current documents, findings, DC-3 certificates and evidence in one place, ready when the audit arrives.",
+        proof: "Núcleo SGI",
+        href: "https://sgi.neuroviasystems.cloud",
+      },
+      {
+        title: "Crew, fleet and maintenance control",
+        body: "Work orders, mileage alerts, costs and full history per unit. Fewer breakdowns and fewer surprise expenses.",
+        proof: "In production",
+        href: "",
+      },
+    ],
+    stepsTitle: "What happens next",
+    steps: [
+      "You message us on WhatsApp and tell us how you work today.",
+      "In 20 minutes we look at which part is worth systematizing first.",
+      "We send a proposal with scope, price and timeline. No fine print.",
+    ],
   },
 };
 

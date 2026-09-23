@@ -1,3 +1,5 @@
+import ExpoBanner from "@/components/ExpoBanner";
+import { isExpoActive } from "@/lib/expo";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -66,6 +68,7 @@ export default function HomeEn() {
         <Testimonials lang="en" />
         <Contact lang="en" />
       </main>
+      {isExpoActive() && <ExpoBanner lang="en" />}
       <Footer lang="en" />
     </div>
   );

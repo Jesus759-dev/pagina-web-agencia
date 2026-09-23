@@ -376,3 +376,13 @@ button:focus-visible {
     -webkit-backdrop-filter: blur(6px);
   }
 }
+
+/* Brillo que recorre el aviso de la expo (components/ExpoBanner.tsx). */
+@keyframes expo-shine {
+  0% { transform: translateX(0); }
+  55%, 100% { transform: translateX(520%); }
+}
+.expo-shine { animation: expo-shine 3.6s cubic-bezier(0.22, 1, 0.36, 1) infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .expo-shine { animation: none; opacity: 0; }
+}
