@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
+import LeadForm from "@/components/LeadForm";
 import SubscribeForm from "@/components/SubscribeForm";
 import { getDict } from "@/lib/i18n";
 
@@ -53,7 +54,20 @@ export default function AgendaPage() {
           </div>
         </section>
 
-        {/* Booking: Calendly when configured, otherwise WhatsApp booking flow */}
+        {/* Captura de prospecto: es la conversión que sí se puede medir */}
+        <section className="mx-auto max-w-[820px] px-5 pt-10 sm:px-10">
+          <div className="surface rounded-3xl p-7 sm:p-10">
+            <h2 className="m-0 font-heading text-[26px] font-bold leading-[1.15] tracking-[-0.02em] text-ink sm:text-[32px]">
+              {getDict("es").leadForm.title}
+            </h2>
+            <p className="mb-7 mt-3 max-w-[540px] text-[15.5px] leading-[1.6] text-muted">
+              {getDict("es").leadForm.lead}
+            </p>
+            <LeadForm lang="es" />
+          </div>
+        </section>
+
+        {/* Alternativa: agendar por WhatsApp (Calendly cuando esté configurado) */}
         <section className="mx-auto max-w-[820px] px-5 pt-12 sm:px-10">
           <CalendlyEmbed lang="es" />
         </section>

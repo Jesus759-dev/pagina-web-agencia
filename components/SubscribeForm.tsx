@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { getDict, localeBase, type Locale } from "@/lib/i18n";
-import { trackLead } from "@/lib/analytics";
+import { trackNewsletter } from "@/lib/analytics";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -48,7 +48,7 @@ export default function SubscribeForm({
         body: JSON.stringify({ name: name.trim(), email: email.trim(), consent }),
       });
       if (!res.ok) throw new Error("request failed");
-      trackLead("newsletter");
+      trackNewsletter();
       setStatus("success");
       setName("");
       setEmail("");

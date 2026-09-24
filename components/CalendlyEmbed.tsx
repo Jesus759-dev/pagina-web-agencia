@@ -62,10 +62,10 @@ export default function CalendlyEmbed({ lang = "es" }: { lang?: Locale }) {
           {es ? "Agendar por WhatsApp" : "Book on WhatsApp"}
         </WaLink>
         <a
-          href="mailto:soporte@neuroviasystems.com.mx"
+          href="mailto:ventas@neuroviasystems.com.mx"
           className="cta-outline inline-flex items-center justify-center gap-2 rounded-full px-6 py-4 text-[15px] font-semibold no-underline"
         >
-          soporte@neuroviasystems.com.mx
+          ventas@neuroviasystems.com.mx
         </a>
       </div>
       <p className="mb-0 mt-5 text-[13px] text-faint">

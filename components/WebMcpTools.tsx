@@ -32,7 +32,7 @@ export default function WebMcpTools() {
                     text: [
                       "Neurovia Systems — Villahermosa, Tabasco, México",
                       "WhatsApp: +52 993 722 6350",
-                      "Correo: soporte@neuroviasystems.com.mx",
+                      "Correo: ventas@neuroviasystems.com.mx",
                       "Agenda una llamada: https://neuroviasystems.com.mx/agenda",
                     ].join("\n"),
                   },

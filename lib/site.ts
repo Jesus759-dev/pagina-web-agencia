@@ -54,24 +54,20 @@ export function waMessage(context: WaContext, lang: Locale = "es"): string {
   return WA_MESSAGES[lang][context];
 }
 
-export type WaTarget = "mobile" | "desktop";
-
 /**
- * Build the WhatsApp URL for a raw message.
- * - mobile  → https://wa.me/<num>?text=…  (deep-links into the app)
- * - desktop → https://web.whatsapp.com/send?phone=<num>&text=…  (opens WhatsApp Web
- *   directly instead of wa.me's interstitial, which is where desktop visitors drop off)
+ * URL de WhatsApp para un mensaje ya escrito.
+ *
+ * Siempre wa.me: funciona igual en celular (abre la app) y en computadora
+ * (abre WhatsApp Web o la app de escritorio), y es el formato que Google y Meta
+ * reconocen en los informes. Antes se mandaba a web.whatsapp.com en escritorio.
  */
-export function waLinkText(message: string, target: WaTarget = "mobile"): string {
-  const text = encodeURIComponent(message);
-  return target === "desktop"
-    ? `https://web.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${text}`
-    : `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+export function waLinkText(message: string): string {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
-/** Build the WhatsApp URL for a CTA context in the given language. */
-export function waLink(context: WaContext, lang: Locale = "es", target: WaTarget = "mobile"): string {
-  return waLinkText(waMessage(context, lang), target);
+/** URL de WhatsApp para un CTA concreto, en el idioma de la página. */
+export function waLink(context: WaContext, lang: Locale = "es"): string {
+  return waLinkText(waMessage(context, lang));
 }
 
 /**

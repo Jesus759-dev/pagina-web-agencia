@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { getDict, type Locale } from "@/lib/i18n";
-import { trackChatEvent, trackLead } from "@/lib/analytics";
+import { trackChatEvent, trackFormLead } from "@/lib/analytics";
 import WaLink from "@/components/WaLink";
 
 /**
@@ -134,8 +134,10 @@ export default function ChatWidget() {
         setError(data.error === "session_limit" || data.error === "rate_limited" ? t.errorLimit : t.errorGeneric);
         return;
       }
-      // One conversion per conversation (a contact followed by an appointment is still one lead).
-      if (data.events?.length && !state.handoff) trackLead("chat");
+      // Una conversión por conversación: un contacto seguido de una cita sigue
+      // siendo un solo prospecto. El lead ya se entregó en el servidor (Telegram
+      // y correo) desde app/api/chat/route.ts.
+      if (data.events?.length && !state.handoff) trackFormLead("chatbot");
       setState((s) => ({
         ...s,
         turns: [...turns, { role: "assistant", text: data.reply as string }],
@@ -155,10 +157,8 @@ export default function ChatWidget() {
       {/* Launcher — sits above the WhatsApp button (bottom-6 right-6, 56px) */}
       <button
         type="button"
-        onClick={() => {
-          setOpen((o) => !o);
-          if (!open) trackChatEvent("chat_open");
-        }}
+        // Abrir el chat no es una señal de interés medible: no se dispara nada.
+        onClick={() => setOpen((o) => !o)}
         aria-label={open ? t.close : t.open}
         aria-expanded={open}
         aria-controls="nv-chat-panel"

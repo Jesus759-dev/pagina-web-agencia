@@ -3,6 +3,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { NextResponse } from "next/server";
 import { CHAT_SYSTEM_PROMPT } from "@/lib/chat/knowledge";
 import { notifyConfigured, notifyOwner } from "@/lib/chat/notify";
+import { notifyLead } from "@/lib/leadDelivery";
 import { getDict } from "@/lib/i18n";
 
 /**
@@ -246,6 +247,19 @@ export async function POST(request: Request) {
           if (!leadSessions.has(sessionId)) {
             leadSessions.add(sessionId);
             await notifyOwner({ kind: "lead", page, lang, data, transcript });
+            // Mismo buzón de prospectos que el formulario (ventas@), con el
+            // mismo formato, para no llevar dos listas distintas.
+            void notifyLead({
+              name: data.nombre,
+              phone: (data.telefono || "").replace(/\D/g, "").slice(-10),
+              email: data.correo || "",
+              company: data.empresa || "",
+              need: "",
+              message: [data.necesidad, data.giro, data.presupuesto].filter(Boolean).join(" · "),
+              source: "chatbot",
+              page,
+              attribution: {},
+            }).catch((err) => console.error("[chat] lead a ventas@ falló", String(err)));
           }
           events.push("lead");
           handoff = `Hola, soy ${data.nombre}. Hablé con el asistente del sitio sobre: ${data.necesidad || "un proyecto"}.`;

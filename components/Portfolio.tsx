@@ -442,7 +442,7 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://calm-entremet-3d7138.netlify.app/assets/logo.jpg"
+              src="/projects/tacef-logo.webp"
               alt={t.alts.tacef}
               className="max-h-[60%] max-w-[68%] object-contain"
             />

@@ -2,31 +2,49 @@
 
 import { useEffect, useState } from "react";
 import { trackExpo } from "@/lib/analytics";
+import { captureAttribution, isGoogleAdsVisitor } from "@/lib/leadTracking";
 import { EXPO } from "@/lib/expo";
 import { getDict, localeBase, type Locale } from "@/lib/i18n";
 
 /**
- * Aviso flotante para quien nos conoció en la expo. Se monta solo mientras la
- * campaña está vigente (lo decide isExpoActive() en la página) y el visitante
- * puede cerrarlo: la decisión se guarda en el navegador.
+ * Aviso flotante para quien nos conoció en la expo.
+ *
+ * Solo se muestra a quien viene del evento: URL con ?ref=expo o visitante que
+ * ya pasó por /expo en esta sesión. Nunca se muestra a quien llega de un
+ * anuncio de Google (gclid/utm_source=google): ese tráfico se paga y merece el
+ * mensaje de la campaña, no un aviso de un evento al que no fue.
+ *
+ * Además solo se monta mientras la campaña está vigente (isExpoActive() en la
+ * página) y el visitante puede cerrarlo: la decisión se guarda en el navegador.
  *
  * Va arriba de los botones flotantes de WhatsApp y chat (abajo a la derecha),
  * para no taparlos ni tapar los botones del hero.
  */
 const KEY = `nv-expo-${EXPO.end.slice(0, 10)}`;
+const SEEN_KEY = "nv-expo-visita";
 
 export default function ExpoBanner({ lang = "es" }: { lang?: Locale }) {
   const t = getDict(lang).expo;
   const [show, setShow] = useState(false);
 
   useEffect(() => {
+    captureAttribution();
+
     let dismissed = false;
+    let fromExpo = false;
     try {
       dismissed = window.localStorage.getItem(KEY) === "1";
+      const fromUrl = new URL(window.location.href).searchParams.get("ref") === "expo";
+      if (fromUrl) window.sessionStorage.setItem(SEEN_KEY, "1");
+      fromExpo =
+        fromUrl ||
+        window.sessionStorage.getItem(SEEN_KEY) === "1" ||
+        document.referrer.includes(`${window.location.host}${EXPO.path}`);
     } catch {
-      /* navegador sin almacenamiento: mostramos el aviso igual */
+      /* navegador sin almacenamiento: nos quedamos con lo que diga la URL */
     }
-    if (!dismissed) {
+
+    if (!dismissed && fromExpo && !isGoogleAdsVisitor()) {
       const id = window.setTimeout(() => setShow(true), 900); // deja ver el hero primero
       return () => window.clearTimeout(id);
     }

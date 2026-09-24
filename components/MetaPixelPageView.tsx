@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { trackPageView } from "@/lib/analytics";
+import { captureAttribution } from "@/lib/leadTracking";
 
 /**
  * Fires a Meta Pixel PageView on every client-side route change.
@@ -10,6 +11,9 @@ import { trackPageView } from "@/lib/analytics";
  * The inline pixel snippet already tracks the initial PageView on full page
  * load, so the first render is skipped to avoid a duplicate. Must be rendered
  * inside <Suspense> because useSearchParams() requires it.
+ *
+ * Aprovecha el mismo punto para guardar de dónde llegó el visitante
+ * (gclid/gbraid/wbraid/utm_*), que después viaja con el prospecto.
  */
 export default function MetaPixelPageView() {
   const pathname = usePathname();
@@ -17,6 +21,7 @@ export default function MetaPixelPageView() {
   const isFirstRender = useRef(true);
 
   useEffect(() => {
+    captureAttribution();
     if (isFirstRender.current) {
       isFirstRender.current = false;
       return;

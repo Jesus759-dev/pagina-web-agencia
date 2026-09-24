@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WaLink from "@/components/WaLink";
 import ExpoDemoLink from "@/components/ExpoDemoLink";
+import ExpoVisitMark from "@/components/ExpoVisitMark";
 import { getDict } from "@/lib/i18n";
 import { EXPO } from "@/lib/expo";
 
@@ -19,6 +20,7 @@ export default function ExpoPage() {
   return (
     <>
       <Navbar />
+      <ExpoVisitMark />
       <main className="mx-auto max-w-[1240px] px-5 pt-[132px] pb-24 sm:px-10">
         <section className="surface rounded-3xl px-6 py-12 sm:px-12 sm:py-14">
           <div className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 font-code text-[11.5px] uppercase tracking-[0.12em]" style={{ background: "var(--accent-soft)", color: "var(--accent)" }}>

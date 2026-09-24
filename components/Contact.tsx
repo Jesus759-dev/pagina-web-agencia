@@ -1,8 +1,9 @@
 "use client";
 
 import { getDict, type Locale } from "@/lib/i18n";
-import { trackLead } from "@/lib/analytics";
+import { trackEmailClick } from "@/lib/analytics";
 import WaLink from "@/components/WaLink";
+import LeadForm from "@/components/LeadForm";
 
 export default function Contact({ lang = "es" }: { lang?: Locale }) {
   const t = getDict(lang).contact;
@@ -33,9 +34,14 @@ export default function Contact({ lang = "es" }: { lang?: Locale }) {
             <p className="mx-auto mt-5 max-w-[560px] text-lg leading-[1.6] text-white/[0.88]">
               {t.lead}
             </p>
+            <div className="mx-auto mt-10 max-w-[620px] rounded-3xl bg-white/10 p-6 text-left backdrop-blur-sm sm:p-8">
+              <LeadForm lang={lang} variant="onAccent" />
+            </div>
+
             <div className="mt-9">
               <WaLink
                 context="general"
+                location="contacto"
                 lang={lang}
                 className="inline-flex items-center gap-3 rounded-full bg-white px-10 py-[18px] text-[17px] font-bold no-underline"
                 style={{ color: "var(--accent)", boxShadow: "0 14px 30px rgba(0,0,0,.18)" }}
@@ -49,11 +55,11 @@ export default function Contact({ lang = "es" }: { lang?: Locale }) {
             <p className="mt-5 text-[15px] text-white/[0.88]">
               {t.emailPrefix}{" "}
               <a
-                href="mailto:soporte@neuroviasystems.com.mx"
-                onClick={() => trackLead("email")}
+                href="mailto:ventas@neuroviasystems.com.mx"
+                onClick={() => trackEmailClick("contacto")}
                 className="font-semibold text-white underline decoration-white/40 underline-offset-4 transition-colors hover:decoration-white"
               >
-                soporte@neuroviasystems.com.mx
+                ventas@neuroviasystems.com.mx
               </a>
             </p>
             <div className="mt-[46px] flex flex-wrap justify-center gap-11">
