@@ -37,7 +37,12 @@ export default function WhatsAppButton() {
   const [hovered, setHovered] = useState(false);
   const pathname = usePathname() ?? "/";
   const lang: Locale = pathname === "/en" || pathname.startsWith("/en/") ? "en" : "es";
+  // En la página de campaña (/expo) no van botones flotantes: ahí los CTAs ya están
+  // en el contenido y en pantallas chicas estos tapaban el botón principal.
+  const isExpo = pathname === "/expo" || pathname.startsWith("/expo/");
   const tooltip = lang === "en" ? "Chat with us" : "Chatea con nosotros";
+
+  if (isExpo) return null;
 
   return (
     <div

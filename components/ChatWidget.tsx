@@ -56,6 +56,9 @@ function ChatIcon() {
 export default function ChatWidget() {
   const pathname = usePathname() ?? "/";
   const lang: Locale = pathname === "/en" || pathname.startsWith("/en/") ? "en" : "es";
+  // En la página de campaña (/expo) no van botones flotantes: ahí los CTAs ya están
+  // en el contenido y en pantallas chicas estos tapaban el botón principal.
+  const isExpo = pathname === "/expo" || pathname.startsWith("/expo/");
   const t = getDict(lang).chat;
 
   const [mode, setMode] = useState<"off" | "ai" | "lite">("off");
@@ -102,7 +105,7 @@ export default function ChatWidget() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  if (mode === "off") return null;
+  if (mode === "off" || isExpo) return null;
   const lite = mode === "lite";
 
   async function send(text: string) {

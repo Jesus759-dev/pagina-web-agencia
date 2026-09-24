@@ -73,7 +73,7 @@ export default function ExpoPage() {
               <p className="mt-3 text-[15.5px] leading-[1.65] text-muted">{c.body}</p>
               <div className="mt-auto pt-5">
                 {c.href ? (
-                  <a href={c.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm font-semibold no-underline" style={{ color: "var(--accent)" }}>
+                  <a href={c.href} target="_blank" rel="noopener noreferrer" className="-my-2 inline-flex min-h-[44px] items-center gap-1.5 py-2 text-sm font-semibold no-underline" style={{ color: "var(--accent)" }}>
                     {c.proof} <span aria-hidden="true">↗</span>
                   </a>
                 ) : (
