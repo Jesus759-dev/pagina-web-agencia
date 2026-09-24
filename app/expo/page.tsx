@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WaLink from "@/components/WaLink";
+import ExpoDemoLink from "@/components/ExpoDemoLink";
 import { getDict } from "@/lib/i18n";
 import { EXPO } from "@/lib/expo";
 
@@ -31,14 +32,35 @@ export default function ExpoPage() {
           <p className="m-0 mt-5 max-w-[68ch] text-lg leading-[1.6] text-muted">{t.lead}</p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <WaLink context="expo" className="btn-primary inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold no-underline">
-              {t.ctaPrimary} <span aria-hidden="true">→</span>
+            <ExpoDemoLink className="btn-primary inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold no-underline">
+              {t.ctaDemo} <span aria-hidden="true">↗</span>
+            </ExpoDemoLink>
+            <WaLink context="expo" className="cta-outline inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold no-underline">
+              {t.ctaPrimary}
             </WaLink>
-            <a href="/#proyectos" className="cta-outline inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold no-underline">
+            <a href="/#proyectos" className="inline-flex items-center gap-2 px-2 py-3.5 text-sm font-semibold no-underline text-muted hover:text-ink">
               {t.ctaSecondary}
             </a>
           </div>
           <p className="m-0 mt-5 font-code text-[12.5px] text-muted">{t.note}</p>
+        </section>
+
+        <section className="mt-12 overflow-hidden rounded-3xl px-6 py-11 text-white sm:px-12" style={{ background: "linear-gradient(135deg, #0f2a44, #1b4a74)" }}>
+          <div className="font-code text-[11.5px] uppercase tracking-[0.14em]" style={{ color: "#9ad6f7" }}>
+            Neurovia Build · control de obra
+          </div>
+          <h2 className="m-0 mt-4 max-w-[18ch] font-heading text-[30px] font-bold leading-[1.08] tracking-[-0.03em] sm:text-[42px]">
+            {t.demoTitle}
+          </h2>
+          <p className="m-0 mt-4 max-w-[62ch] text-[16.5px] leading-[1.6] text-white/75">{t.demoBody}</p>
+          <p className="m-0 mt-3 max-w-[62ch] text-[15px] leading-[1.6] text-white/60">{t.demoRoles}</p>
+          <div className="mt-7 flex flex-wrap items-center gap-3">
+            <ExpoDemoLink className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-[#0f2a44] no-underline transition-transform duration-200 hover:scale-[1.03] active:scale-95">
+              {t.ctaDemo} <span aria-hidden="true">↗</span>
+            </ExpoDemoLink>
+            <span className="font-code text-[12px] text-white/55">construccion.neuroviasystems.cloud</span>
+          </div>
+          <p className="m-0 mt-6 max-w-[62ch] font-code text-[11.5px] leading-[1.6] text-white/45">{t.demoNote}</p>
         </section>
 
         <h2 className="m-0 mt-16 font-heading text-[28px] font-bold leading-[1.1] tracking-[-0.03em] text-ink sm:text-[38px]">

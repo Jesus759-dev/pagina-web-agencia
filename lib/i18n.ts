@@ -436,8 +436,13 @@ const es = {
     bannerClose: "Cerrar aviso",
     h1: "¿Nos viste en la Expo Construcción Villahermosa?",
     lead: "Esto es lo que te mostramos en el stand: sistemas que hoy están operando en constructoras, contratistas y empresas de servicios del sureste. Todo lo que ves aquí está en producción, no son maquetas.",
+    ctaDemo: "Entrar al sistema de obra (demo)",
     ctaPrimary: "Quiero que me expliquen mi caso",
     ctaSecondary: "Ver todos los proyectos",
+    demoTitle: "Pruébalo ahora, no te lo contamos",
+    demoBody: "Neurovia Build es el sistema de control de obra: requisiciones, compras, inventario y costo real por proyecto. Entra con un clic —sin contraseña— y muévete como si fuera tu empresa.",
+    demoRoles: "Entras con el rol que quieras: Dirección, Gerente de Proyecto, Residente de Obra, Compras, Almacén o Administrador.",
+    demoNote: "Ambiente de demostración con datos ficticios. Ninguna empresa, cliente o proveedor que veas ahí es real.",
     note: "Te respondemos el mismo día. Sin compromiso: primero vemos si tiene sentido para tu operación.",
     cardsTitle: "Lo que le hacemos al sector construcción",
     cards: [
@@ -450,8 +455,8 @@ const es = {
       {
         title: "Requisiciones, compras e inventario de obra",
         body: "Lo que hoy llevas en Excel y WhatsApp: qué se pidió, quién lo autorizó, qué llegó y cuánto costó. Es el mismo sistema que opera un cliente del sector petrolero en 23 áreas.",
-        proof: "En producción · cliente confidencial",
-        href: "",
+        proof: "Entrar a la demo",
+        href: "https://construccion.neuroviasystems.cloud/login",
       },
       {
         title: "Cumplimiento y expediente de auditoría",
@@ -896,8 +901,13 @@ const en: typeof es = {
     bannerClose: "Close notice",
     h1: "Did you see us at the Expo Construcción in Villahermosa?",
     lead: "This is what we showed at the booth: systems running today in construction companies, contractors and service firms in southeast Mexico. Everything here is in production — no mockups.",
+    ctaDemo: "Open the construction system (demo)",
     ctaPrimary: "Walk me through my case",
     ctaSecondary: "See all projects",
+    demoTitle: "Try it yourself, we won't just describe it",
+    demoBody: "Neurovia Build is the site-control system: requisitions, purchasing, inventory and real cost per project. Enter with one click — no password — and move around as if it were your company.",
+    demoRoles: "Pick any role: Management, Project Manager, Site Supervisor, Purchasing, Warehouse or Administrator.",
+    demoNote: "Demo environment with fictional data. No company, client or supplier shown there is real.",
     note: "We reply the same day. No commitment: first we check whether it makes sense for your operation.",
     cardsTitle: "What we build for construction",
     cards: [
@@ -910,8 +920,8 @@ const en: typeof es = {
       {
         title: "Requisitions, purchasing and site inventory",
         body: "What lives in Excel and WhatsApp today: what was ordered, who approved it, what arrived and what it cost. The same system runs 23 operating areas for an oil & gas client.",
-        proof: "In production · confidential client",
-        href: "",
+        proof: "Open the demo",
+        href: "https://construccion.neuroviasystems.cloud/login",
       },
       {
         title: "Compliance and the audit file",
