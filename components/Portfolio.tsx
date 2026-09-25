@@ -70,12 +70,22 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
       <p className="m-0 mt-5 max-w-[640px] text-lg leading-[1.6] text-muted">{t.lead}</p>
 
       {/* Enlace al catálogo de sistemas (página /sistemas del propio sitio) */}
-      <a
-        href={`${base}/sistemas`}
-        className="btn-primary mt-7 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold no-underline"
-      >
-        {t.ctaSystems} <span aria-hidden="true">→</span>
-      </a>
+      <div className="mt-7 flex flex-wrap items-center gap-3">
+        <a
+          href={`${base}/sistemas`}
+          className="btn-primary inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold no-underline"
+        >
+          {t.ctaSystems} <span aria-hidden="true">→</span>
+        </a>
+        {/* Los casos de éxito cuentan el problema y el resultado de cada uno
+            de estos proyectos; las tarjetas de abajo solo muestran la captura. */}
+        <a
+          href={`${base}/casos-de-exito`}
+          className="cta-outline inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold no-underline"
+        >
+          {t.ctaCases} <span aria-hidden="true">→</span>
+        </a>
+      </div>
 
       {/* Featured — full width (enlace al portal del cliente) */}
       <a

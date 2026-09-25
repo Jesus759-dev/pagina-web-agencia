@@ -14,10 +14,20 @@ import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { webPageJsonLd, jsonLdProps } from "@/lib/seo";
+
+const jsonLd = webPageJsonLd({
+  path: "/",
+  name: "Desarrollo de software, IA y automatización en Villahermosa, Tabasco",
+  description:
+    "Neurovia Systems desarrolla software a la medida, sistemas empresariales (ERP, CRM, inventario), automatización con inteligencia artificial y sitios web para empresas de Villahermosa, Tabasco y el resto de México.",
+  lang: "es",
+});
 
 export default function Home() {
   return (
     <>
+      <script {...jsonLdProps(jsonLd)} />
       <Navbar />
       <main>
         <Hero />

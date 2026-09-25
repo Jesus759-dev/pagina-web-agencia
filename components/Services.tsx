@@ -24,6 +24,11 @@ const CARD_MEDIA: ({ preview: string; poster: string; full: string } | null)[] =
 const MORE_HREFS = [
   "/desarrollo-de-aplicaciones-web-tabasco",
   "/sistema-punto-de-venta-villahermosa",
+  "/erp-a-medida-villahermosa",
+  "/crm-a-medida-villahermosa",
+  "/wms-villahermosa",
+  "/sistemas-empresariales-tabasco",
+  "/desarrollo-de-software-tabasco",
 ];
 
 export default function Services({ lang = "es" }: { lang?: Locale }) {

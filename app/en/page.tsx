@@ -15,11 +15,12 @@ import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { webPageJsonLd, jsonLdProps } from "@/lib/seo";
 
 const SITE_URL = "https://neuroviasystems.com.mx";
 
 export const metadata: Metadata = {
-  title: "Custom Software, AI & Automation in Villahermosa",
+  title: "Custom Software & AI in Villahermosa",
   description:
     "Custom software development, AI and business automation in Villahermosa, Tabasco. We build platforms, dashboards and web apps. Book a free consultation.",
   alternates: {
@@ -50,9 +51,18 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = webPageJsonLd({
+  path: "/en",
+  name: "Custom software, AI and automation in Villahermosa, Tabasco",
+  description:
+    "Neurovia Systems builds custom software, business systems (ERP, CRM, inventory), AI automation and websites for companies in Villahermosa, Tabasco and the rest of Mexico.",
+  lang: "en",
+});
+
 export default function HomeEn() {
   return (
     <div lang="en">
+      <script {...jsonLdProps(jsonLd)} />
       <Navbar lang="en" />
       <main>
         <Hero lang="en" />

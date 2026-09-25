@@ -11,6 +11,22 @@ export default function Footer({ lang = "es" }: { lang?: Locale }) {
     { href: `${base}/nosotros`, label: t.nav.nosotros },
     { href: `${base}/#contacto`, label: t.nav.contacto },
   ];
+  // Enlaces a las páginas de servicio. Además de servirle al visitante que
+  // llega al pie buscando algo concreto, son los enlaces internos que le dicen
+  // a Google qué páginas son las importantes del sitio.
+  const services = [
+    { href: "/desarrollo-de-software-a-medida-villahermosa", label: t.services.cards[2].title },
+    { href: "/sistemas-empresariales-tabasco", label: lang === "en" ? "Business systems" : "Sistemas empresariales" },
+    { href: "/erp-a-medida-villahermosa", label: lang === "en" ? "Custom ERP" : "ERP a la medida" },
+    { href: "/crm-a-medida-villahermosa", label: lang === "en" ? "Custom CRM" : "CRM a la medida" },
+    { href: "/wms-villahermosa", label: lang === "en" ? "WMS and inventory" : "WMS e inventario" },
+    { href: "/automatizacion-con-ia-tabasco", label: lang === "en" ? "AI automation" : "Automatización con IA" },
+    { href: "/agentes-de-inteligencia-artificial", label: lang === "en" ? "AI agents" : "Agentes de IA" },
+    { href: "/diseno-de-paginas-web-villahermosa", label: lang === "en" ? "Web design" : "Páginas web" },
+    { href: "/sistema-punto-de-venta-villahermosa", label: lang === "en" ? "Point of sale" : "Punto de venta" },
+    { href: `${base}/casos-de-exito`, label: t.footer.cases, absolute: true },
+  ];
+
   // Ciudades con página propia (SEO local). El orden es el de cercanía real.
   const cities = [
     { slug: "villahermosa", label: "Villahermosa" },
@@ -54,8 +70,18 @@ export default function Footer({ lang = "es" }: { lang?: Locale }) {
         </div>
       </div>
 
-      {/* SEO local: enlaces a las páginas por ciudad */}
+      {/* Enlaces internos a los servicios */}
       <div className="mx-auto mt-10 flex max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] flex-wrap items-baseline gap-x-5 gap-y-2 border-t border-line-soft pt-5 text-[13px] text-faint">
+        <span>{t.footer.services}:</span>
+        {services.map((sv) => (
+          <a key={sv.href} href={sv.absolute ? sv.href : `${base}${sv.href}`} className="navlink">
+            {sv.label}
+          </a>
+        ))}
+      </div>
+
+      {/* SEO local: enlaces a las páginas por ciudad */}
+      <div className="mx-auto mt-5 flex max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] flex-wrap items-baseline gap-x-5 gap-y-2 text-[13px] text-faint">
         <span>{t.footer.cities}:</span>
         {cities.map((c) => (
           <a key={c.slug} href={`${base}/desarrollo-de-software-a-medida-${c.slug}`} className="navlink">

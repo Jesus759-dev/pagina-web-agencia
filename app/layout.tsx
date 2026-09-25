@@ -33,10 +33,11 @@ const manrope = Manrope({
  * -------------------------------------------------------------------------- */
 const SITE_URL = "https://neuroviasystems.com.mx";
 const SITE_NAME = "Neurovia Systems";
-const SITE_TITLE =
-  "Neurovia Systems | Desarrollo de Software, IA y Automatización en Villahermosa";
+// Orden a propósito: servicio + ciudad primero, marca al final. Y por debajo
+// de ~65 caracteres, que es lo que Google alcanza a mostrar.
+const SITE_TITLE = "Desarrollo de Software e IA en Villahermosa | Neurovia Systems";
 const SITE_DESCRIPTION =
-  "Desarrollo de software a medida, IA y automatización empresarial en Villahermosa, Tabasco. Creamos plataformas web y dashboards. Agenda tu consulta gratuita.";
+  "Desarrollo de software a medida, sistemas empresariales, IA y automatización en Villahermosa, Tabasco. Consulta gratuita con quien construye.";
 const OG_IMAGE = `${SITE_URL}/images/og-robotic-hand.jpg`;
 
 /**
@@ -173,7 +174,10 @@ const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      // Un solo nodo para el negocio: Organization (la entidad) y
+      // ProfessionalService (el negocio local que presta servicios). Antes
+      // eran dos nodos con los mismos datos y dos @id distintos.
+      "@type": ["Organization", "ProfessionalService"],
       "@id": `${SITE_URL}/#organization`,
       name: SITE_NAME,
       legalName: "Neurovia Systems",
@@ -240,6 +244,114 @@ const structuredData = {
           availableLanguage: ["Spanish", "English"],
         },
       ],
+      telephone: "+52-993-722-6350",
+      priceRange: "$$",
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Servicios de Neurovia Systems",
+        // Cada servicio apunta a su propia página: así Google (y los motores de
+        // respuesta) enlazan la entidad del servicio con la URL que lo explica.
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Desarrollo de software a medida",
+              url: `${SITE_URL}/desarrollo-de-software-a-medida-villahermosa`,
+              description:
+                "Sistemas, plataformas web y dashboards construidos alrededor de la operación de cada empresa.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "ERP a la medida",
+              url: `${SITE_URL}/erp-a-medida-villahermosa`,
+              description:
+                "Requisiciones y compras, inventario, mantenimiento y costo por proyecto, implementados por etapas.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "CRM a la medida",
+              url: `${SITE_URL}/crm-a-medida-villahermosa`,
+              description:
+                "Prospectos, cotizaciones y seguimiento conectados a WhatsApp, al inventario y a la facturación.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Sistema de almacén (WMS) y control de inventario",
+              url: `${SITE_URL}/wms-villahermosa`,
+              description:
+                "Multi-almacén, lotes y caducidades, códigos de barras, conteos cíclicos y kardex que cuadra.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Automatización de procesos con inteligencia artificial",
+              url: `${SITE_URL}/automatizacion-con-ia-tabasco`,
+              description:
+                "Lectura automática de documentos, integraciones entre sistemas y reportes que se generan solos.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Agentes de inteligencia artificial",
+              url: `${SITE_URL}/agentes-de-inteligencia-artificial`,
+              description:
+                "Asistentes que atienden WhatsApp y correo, califican prospectos y se conectan al CRM del cliente.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Desarrollo de páginas web",
+              url: `${SITE_URL}/diseno-de-paginas-web-villahermosa`,
+              description:
+                "Sitios corporativos y landing pages rápidas, optimizadas para buscadores y para convertir.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Sistema de punto de venta",
+              url: `${SITE_URL}/sistema-punto-de-venta-villahermosa`,
+              description:
+                "Punto de venta con inventario y facturación CFDI para negocios de mostrador y varias sucursales.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Infraestructura IT, redes y hardware",
+              description:
+                "Armado de equipos, redes Ubiquiti, mantenimiento preventivo y correctivo, y soporte técnico.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Consultoría IT",
+              description:
+                "Diagnóstico de infraestructura y procesos, elección de stack y acompañamiento a decisiones técnicas.",
+            },
+          },
+        ],
+      },
       owns: [
         { "@id": `${SITE_URL}/#tomin-pos` },
         { "@id": `${SITE_URL}/#nucleo-sgi` },
@@ -257,17 +369,6 @@ const structuredData = {
       inLanguage: "es-MX",
     },
     {
-      "@type": "WebPage",
-      "@id": `${SITE_URL}/#webpage`,
-      url: SITE_URL,
-      name: SITE_TITLE,
-      description: SITE_DESCRIPTION,
-      isPartOf: { "@id": `${SITE_URL}/#website` },
-      about: { "@id": `${SITE_URL}/#organization` },
-      inLanguage: "es-MX",
-      primaryImageOfPage: OG_IMAGE,
-    },
-    {
       "@type": "VideoObject",
       "@id": `${SITE_URL}/#hero-video`,
       name: "Neurovia Systems — Presentación institucional",
@@ -279,78 +380,6 @@ const structuredData = {
       embedUrl: `${SITE_URL}/#video-showcase`,
       publisher: { "@id": `${SITE_URL}/#organization` },
       inLanguage: "es",
-    },
-    {
-      "@type": "ProfessionalService",
-      "@id": `${SITE_URL}/#service`,
-      name: SITE_NAME,
-      image: OG_IMAGE,
-      url: SITE_URL,
-      telephone: "+52-993-722-6350",
-      priceRange: "$$",
-      description: SITE_DESCRIPTION,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Villahermosa",
-        addressRegion: "Tabasco",
-        addressCountry: "MX",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 17.9892,
-        longitude: -92.9281,
-      },
-      areaServed: [
-        { "@type": "City", name: "Villahermosa" },
-        { "@type": "City", name: "Monterrey" },
-        { "@type": "City", name: "Santa Catarina" },
-        { "@type": "City", name: "Guadalajara" },
-        { "@type": "State", name: "Tabasco" },
-        { "@type": "Country", name: "México" },
-        { "@type": "Place", name: "Latinoamérica" },
-      ],
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: "Servicios de Neurovia Systems",
-        itemListElement: [
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Desarrollo de software a medida",
-              description:
-                "Plataformas web, dashboards corporativos y sistemas empresariales con Next.js, React y Node.js.",
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Inteligencia artificial para empresas",
-              description:
-                "Modelos de IA, asistentes virtuales, procesamiento de documentos y analítica predictiva con Claude y GPT.",
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Automatización empresarial",
-              description:
-                "Workflows con n8n, integración de APIs y automatización de procesos repetitivos.",
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Infraestructura IT y hardware",
-              description:
-                "Armado de PCs y workstations, configuración de routers, APs y redes Ubiquiti, mantenimiento.",
-            },
-          },
-        ],
-      },
     },
     {
       "@type": "SoftwareApplication",

@@ -110,10 +110,64 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
+      url: `${BASE}/casos-de-exito`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+      alternates: {
+        languages: {
+          es: `${BASE}/casos-de-exito`,
+          en: `${BASE}/en/casos-de-exito`,
+        },
+      },
+    },
+    {
+      url: `${BASE}/en/casos-de-exito`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: {
+        languages: {
+          es: `${BASE}/casos-de-exito`,
+          en: `${BASE}/en/casos-de-exito`,
+        },
+      },
+    },
+    {
+      url: `${BASE}/sistemas`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+      alternates: {
+        languages: {
+          es: `${BASE}/sistemas`,
+          en: `${BASE}/en/sistemas`,
+        },
+      },
+    },
+    {
+      url: `${BASE}/en/sistemas`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.5,
+      alternates: {
+        languages: {
+          es: `${BASE}/sistemas`,
+          en: `${BASE}/en/sistemas`,
+        },
+      },
+    },
+    {
       url: `${BASE}/agenda`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.6,
+    },
+    {
+      url: `${BASE}/aviso-de-privacidad`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.2,
     },
     ...servicePages,
   ];

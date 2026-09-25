@@ -39,6 +39,26 @@ const nextConfig = {
     { source: "/en/portfolio", destination: "/en#proyectos", permanent: true },
     { source: "/en/portafolio", destination: "/en#proyectos", permanent: true },
     { source: "/en/projects", destination: "/en#proyectos", permanent: true },
+
+    // Variantes que la gente teclea o enlaza y que apuntan a la MISMA
+    // intención que una página existente. Se redirigen en vez de crear
+    // páginas gemelas que competirían entre sí en Google.
+    { source: "/desarrollo-de-software-villahermosa", destination: "/desarrollo-de-software-a-medida-villahermosa", permanent: true },
+    { source: "/software-a-medida-villahermosa", destination: "/desarrollo-de-software-a-medida-villahermosa", permanent: true },
+    { source: "/empresa-de-software-villahermosa", destination: "/desarrollo-de-software-a-medida-villahermosa", permanent: true },
+    { source: "/software-a-medida-tabasco", destination: "/desarrollo-de-software-tabasco", permanent: true },
+    { source: "/desarrollo-de-sistemas-tabasco", destination: "/sistemas-empresariales-tabasco", permanent: true },
+    { source: "/sistemas-a-medida-villahermosa", destination: "/sistemas-empresariales-tabasco", permanent: true },
+    { source: "/automatizacion-ia-villahermosa", destination: "/automatizacion-con-ia-tabasco", permanent: true },
+    { source: "/inteligencia-artificial-empresas-tabasco", destination: "/automatizacion-con-ia-tabasco", permanent: true },
+    { source: "/inteligencia-artificial-villahermosa", destination: "/automatizacion-con-ia-tabasco", permanent: true },
+    { source: "/erp-villahermosa", destination: "/erp-a-medida-villahermosa", permanent: true },
+    { source: "/crm-villahermosa", destination: "/crm-a-medida-villahermosa", permanent: true },
+    { source: "/sistema-de-inventario-villahermosa", destination: "/wms-villahermosa", permanent: true },
+    { source: "/desarrollo-web-villahermosa", destination: "/diseno-de-paginas-web-villahermosa", permanent: true },
+    { source: "/paginas-web-villahermosa", destination: "/diseno-de-paginas-web-villahermosa", permanent: true },
+    { source: "/paginas-web-tabasco", destination: "/desarrollo-de-aplicaciones-web-tabasco", permanent: true },
+    { source: "/casos-de-exito/:slug", destination: "/casos-de-exito#:slug", permanent: true },
   ],
   headers: async () => [
     {

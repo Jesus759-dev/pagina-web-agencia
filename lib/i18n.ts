@@ -38,8 +38,8 @@ const es = {
   hero: {
     sectionAria: "Sección principal",
     badge: "Sistemas en producción en México",
-    h1: "Sistemas hechos para cómo trabaja tu empresa.",
-    lead: "Punto de venta, sistemas de gestión y automatización con IA. Desarrollo a la medida desde Villahermosa, Tabasco.",
+    h1: "Desarrollo de software e inteligencia artificial en Villahermosa.",
+    lead: "Software a la medida, sistemas empresariales y automatización con IA para empresas de Villahermosa, Tabasco y el resto de México. Sistemas en producción, no promesas.",
     ctaPrimary: "Escríbenos por WhatsApp",
     ctaSecondary: "Agenda una consulta gratuita",
     trustLabel: "Empresas que ya confían",
@@ -57,7 +57,7 @@ const es = {
   },
   services: {
     eyebrow: "Servicios",
-    h2: "Cuatro maneras de transformar tu negocio.",
+    h2: "Cinco maneras de transformar tu negocio.",
     lead: "Software con IA, sitios web, automatizaciones e infraestructura IT. Un solo equipo para todo tu stack tecnológico.",
     watchVideo: "Ver video",
     closeVideo: "Cerrar",
@@ -121,6 +121,11 @@ const es = {
     morePages: [
       "Desarrollo de aplicaciones web a medida en Tabasco",
       "Sistema de punto de venta en Villahermosa",
+      "ERP a la medida en Villahermosa",
+      "CRM a la medida en Villahermosa",
+      "WMS y control de inventario",
+      "Sistemas empresariales en Tabasco",
+      "Desarrollo de software en Tabasco",
     ],
   },
   pos: {
@@ -142,6 +147,7 @@ const es = {
     h2: "Evidencia real de sistemas en vivo.",
     lead: "Estas no son maquetas. Son plataformas y sitios que hoy operan en petróleo, construcción, mobiliario corporativo e ingeniería.",
     ctaSystems: "Ver los sistemas en vivo",
+    ctaCases: "Leer los casos de éxito",
     crmBadge: "Nuevo producto",
     crmDesc: "Gestión de clientes, contactos, oportunidades y seguimiento de ventas en un solo lugar.",
     crmCta: "Abrir el CRM",
@@ -323,6 +329,8 @@ const es = {
     privacy: "Aviso de privacidad",
     agenda: "Agenda una llamada",
     cities: "Atendemos en",
+    services: "Servicios",
+    cases: "Casos de éxito",
   },
   subscribe: {
     title: "Recibe ideas para automatizar tu negocio",
@@ -343,6 +351,8 @@ const es = {
     errConsent: "Necesitas aceptar el aviso de privacidad.",
   },
   service: {
+    breadcrumbAria: "Ruta de navegación",
+    home: "Inicio",
     benefitsEyebrow: "Beneficios",
     faqEyebrow: "Preguntas frecuentes",
     faqTitle: "Resolvemos tus dudas",
@@ -380,6 +390,8 @@ const es = {
     note: "Algunos sistemas requieren credenciales de acceso proporcionadas por Neurovia Systems. ¿Necesitas acceso o quieres un sistema a la medida de tu empresa? Escríbenos.",
     enter: "Entrar al sistema",
     newBadge: "Nuevo",
+    relatedTitle: "¿Quieres uno así para tu empresa?",
+    relatedLead: "Cada sistema de este catálogo nació de un proyecto real. Si tu operación se parece, estas son las páginas donde explicamos cómo lo construimos:",
     systems: [
       { name: "CRM", desc: "Gestión de clientes, contactos, oportunidades y seguimiento de ventas en un solo lugar." },
       { name: "Sistema de Requisiciones", desc: "Órdenes de compra, cuentas por pagar, proveedores y reporte dinámico." },
@@ -543,8 +555,8 @@ const en: typeof es = {
   hero: {
     sectionAria: "Main section",
     badge: "Systems live in production in Mexico",
-    h1: "Systems built for the way your company works.",
-    lead: "Point of sale, management systems and AI automation. Custom development from Villahermosa, Tabasco.",
+    h1: "Custom software and artificial intelligence in Villahermosa.",
+    lead: "Custom software, business systems and AI automation for companies in Villahermosa, Tabasco and the rest of Mexico. Systems in production, not promises.",
     ctaPrimary: "Message us on WhatsApp",
     ctaSecondary: "Book a free consultation",
     trustLabel: "Companies that already trust us",
@@ -562,7 +574,7 @@ const en: typeof es = {
   },
   services: {
     eyebrow: "Services",
-    h2: "Four ways to transform your business.",
+    h2: "Five ways to transform your business.",
     lead: "AI software, websites, automation and IT infrastructure. One team for your entire tech stack.",
     watchVideo: "Watch video",
     closeVideo: "Close",
@@ -626,6 +638,11 @@ const en: typeof es = {
     morePages: [
       "Custom web app development in Tabasco",
       "Point of sale system in Villahermosa",
+      "Custom ERP in Villahermosa",
+      "Custom CRM in Villahermosa",
+      "WMS and inventory control",
+      "Business systems in Tabasco",
+      "Software development in Tabasco",
     ],
   },
   pos: {
@@ -647,6 +664,7 @@ const en: typeof es = {
     h2: "Real evidence of live systems.",
     lead: "These aren't mockups. They're platforms and sites running today in oil & gas, construction, corporate furniture and engineering.",
     ctaSystems: "See the systems live",
+    ctaCases: "Read the case studies",
     crmBadge: "New product",
     crmDesc: "Customer management, contacts, opportunities and sales tracking in one place.",
     crmCta: "Open the CRM",
@@ -828,6 +846,8 @@ const en: typeof es = {
     privacy: "Privacy notice",
     agenda: "Book a call",
     cities: "We work in",
+    services: "Services",
+    cases: "Case studies",
   },
   subscribe: {
     title: "Get ideas to automate your business",
@@ -848,6 +868,8 @@ const en: typeof es = {
     errConsent: "You need to accept the privacy notice.",
   },
   service: {
+    breadcrumbAria: "Breadcrumb",
+    home: "Home",
     benefitsEyebrow: "Benefits",
     faqEyebrow: "FAQ",
     faqTitle: "We answer your questions",
@@ -885,6 +907,8 @@ const en: typeof es = {
     note: "Some systems require access credentials provided by Neurovia Systems. Need access or a system tailored to your business? Get in touch.",
     enter: "Enter system",
     newBadge: "New",
+    relatedTitle: "Want one of these for your company?",
+    relatedLead: "Every system in this catalog came from a real project. If your operation looks similar, these pages explain how we build them:",
     systems: [
       { name: "CRM", desc: "Customer management, contacts, opportunities and sales tracking in one place." },
       { name: "Requisitions System", desc: "Purchase orders, accounts payable, suppliers and dynamic reporting." },

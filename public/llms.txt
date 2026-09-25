@@ -2,23 +2,43 @@
 
 > Agencia de desarrollo de software y automatización con inteligencia
 > artificial en Villahermosa, Tabasco, México. Fundada por Jesús. Construimos
-> software a la medida, agentes de IA e infraestructura TI para empresas, y
-> desarrollamos productos SaaS propios. Atendemos Villahermosa, Monterrey y
-> Guadalajara (y el resto de México en remoto).
+> software a la medida, sistemas empresariales (ERP, CRM, inventario), agentes
+> de IA e infraestructura TI para empresas, y desarrollamos productos SaaS
+> propios. Base en Villahermosa; atendemos todo Tabasco y, en remoto, el resto
+> de México (proyectos en Monterrey y Guadalajara).
 
 ## Servicios
 
-- Software a la medida: plataformas, dashboards y sistemas de gestión (Laravel/Livewire/Filament, Node.js/React). https://neuroviasystems.com.mx/desarrollo-de-software-a-medida-villahermosa
-- Agentes de inteligencia artificial: asistentes que atienden WhatsApp y correo 24/7, procesan documentos y califican prospectos. https://neuroviasystems.com.mx/agentes-de-inteligencia-artificial
-- Automatización de procesos con IA: integración de APIs, workflows y reportes automáticos. https://neuroviasystems.com.mx/automatizacion-con-ia-tabasco
+- Desarrollo de software a la medida en Villahermosa: sistemas de gestión, plataformas y dashboards construidos alrededor de la operación del cliente. https://neuroviasystems.com.mx/desarrollo-de-software-a-medida-villahermosa
+- Desarrollo de software en Tabasco (estatal: Villahermosa, Cárdenas, Comalcalco, Paraíso, Macuspana). https://neuroviasystems.com.mx/desarrollo-de-software-tabasco
+- Sistemas empresariales a la medida (ERP + CRM + inventario + automatización, por etapas). https://neuroviasystems.com.mx/sistemas-empresariales-tabasco
+- ERP a la medida: requisiciones y compras con autorizaciones, inventario, mantenimiento, costo por proyecto. https://neuroviasystems.com.mx/erp-a-medida-villahermosa
+- CRM a la medida: prospectos, cotizaciones que se vuelven pedido, WhatsApp, conectado a inventario y facturación. https://neuroviasystems.com.mx/crm-a-medida-villahermosa
+- WMS y control de inventario: multi-almacén, lotes y caducidades, códigos de barras, conteos cíclicos, kardex. https://neuroviasystems.com.mx/wms-villahermosa
+- Automatización de procesos con IA: lectura de documentos, integración de APIs, reportes automáticos. https://neuroviasystems.com.mx/automatizacion-con-ia-tabasco
+- Agentes de inteligencia artificial: asistentes que atienden WhatsApp y correo 24/7 y califican prospectos. https://neuroviasystems.com.mx/agentes-de-inteligencia-artificial
+- Diseño y desarrollo de páginas web en Villahermosa. https://neuroviasystems.com.mx/diseno-de-paginas-web-villahermosa
+- Desarrollo de aplicaciones web a la medida en Tabasco. https://neuroviasystems.com.mx/desarrollo-de-aplicaciones-web-tabasco
+- Sistema de punto de venta en Villahermosa. https://neuroviasystems.com.mx/sistema-punto-de-venta-villahermosa
 - Infraestructura TI, redes y hardware: armado de equipos, redes Ubiquiti, mantenimiento y soporte.
 - Consultoría TI: diagnóstico, recomendación de stack y acompañamiento a decisiones técnicas.
 
+## Casos y experiencia (verificables en el sitio)
+
+Página con el detalle de cada caso: https://neuroviasystems.com.mx/casos-de-exito
+
+- Cliente del sector petrolero (confidencial): suite ERP con requisiciones y compras, mantenimiento vehicular e inventario sobre 23 áreas operativas.
+- CAPOSA (Villahermosa): sistema de gestión a la medida de 24 módulos con inventario multi-almacén, facturación CFDI 4.0 y reportes con IA.
+- ASC Motores (Villahermosa): sistema de taller de 18 módulos con app Android e iOS.
+- SOTOP, Gobierno de Tabasco: sistema web de dictamen de equipos de soporte.
+- Royers S.A. de C.V.: sitio corporativo de constructora con más de 35 años y 500+ obras.
+- Alpha Mobil, Provalsa y TACEF Aceros: sitios corporativos con catálogo y contacto directo.
+
 ## Productos SaaS propios
 
-- Tomín POS: punto de venta con facturación CFDI para negocios locales.
-- Núcleo SGI: gestión HSE y cumplimiento para contratistas del sector petrolero.
-- Huella: sistema de gestión para clínicas veterinarias.
+- Tomín POS: punto de venta con facturación CFDI para negocios locales. https://puntodeventa.neuroviasystems.cloud
+- Núcleo SGI: gestión integral y cumplimiento para contratistas del sector petrolero. https://sgi.neuroviasystems.cloud
+- Huella: sistema de gestión para clínicas veterinarias. https://huellapp.neuroviasystems.cloud
 - FlotaOps: control y rastreo de flotas vehiculares.
 
 ## Stack tecnológico
@@ -27,21 +47,31 @@ Laravel, Livewire, Filament, Node.js, React, Next.js, TypeScript, Tailwind CSS,
 PostgreSQL, Supabase, Docker, Python/FastAPI. Integraciones: CFDI 4.0,
 WhatsApp (Twilio / API de Meta) y modelos de IA para voz, texto y documentos.
 
-## Ubicación y presencia
+## Ubicación y cobertura
 
 - Base: Villahermosa, Tabasco, México.
-- Presencia de proyectos: Villahermosa, Monterrey (Nuevo León) y Guadalajara (Jalisco).
+- Tabasco: Villahermosa, Cárdenas, Comalcalco, Paraíso, Macuspana, Cunduacán, Huimanguillo.
+- Otras plazas con página propia: Campeche y Ciudad del Carmen, Mérida, Veracruz, Monterrey, Guadalajara.
+- Resto de México y Latinoamérica: trabajo remoto.
+
+## Precios de referencia
+
+- Proyectos de software a la medida: desde $65,000 MXN + IVA, construidos por módulos.
+- Automatización de procesos: desde $25,000 MXN + IVA.
+- Análisis inicial y estimado: sin costo.
 
 ## Contacto
 
 - Sitio web: https://neuroviasystems.com.mx
-- Agenda una llamada: https://neuroviasystems.com.mx/agenda
+- Agenda una llamada de 20 minutos: https://neuroviasystems.com.mx/agenda
 - WhatsApp: +52 993 722 6350
 - Correo: soporte@neuroviasystems.com.mx
 
 ## Enlaces útiles
 
 - Inicio: https://neuroviasystems.com.mx
+- Casos de éxito: https://neuroviasystems.com.mx/casos-de-exito
+- Quiénes somos: https://neuroviasystems.com.mx/nosotros
 - Catálogo de sistemas: https://neuroviasystems.com.mx/sistemas
 - Aviso de privacidad: https://neuroviasystems.com.mx/aviso-de-privacidad
 - Versión en inglés: https://neuroviasystems.com.mx/en

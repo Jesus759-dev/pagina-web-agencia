@@ -13,6 +13,29 @@ import { buildServiceJsonLd, type ServicePageData } from "@/lib/serviceContent";
  * bilingual: it renders the Spanish tree with lang="es" and the English tree
  * with lang="en". All copy ships in the initial HTML for crawlers.
  */
+/**
+ * El contenido marca con **asteriscos** la etiqueta con que arranca un párrafo
+ * ("**Requisiciones y compras.** Solicitud, autorización…"). Aquí se convierte
+ * en <strong> real: se lee mejor de un vistazo y para un lector de pantalla o
+ * un motor de respuesta es el subtítulo del párrafo, no adorno.
+ */
+function RichText({ text }: { text: string }) {
+  const parts = text.split(/\*\*(.+?)\*\*/g);
+  return (
+    <>
+      {parts.map((part, i) =>
+        i % 2 === 1 ? (
+          <strong key={i} className="font-semibold text-ink">
+            {part}
+          </strong>
+        ) : (
+          part
+        )
+      )}
+    </>
+  );
+}
+
 export default function ServicePage({
   data,
   lang = "es",
@@ -32,6 +55,17 @@ export default function ServicePage({
         {/* Hero — single <h1> with the local keyword */}
         <section className="bg-hero">
           <div className="mx-auto max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] px-5 pb-16 pt-[150px] sm:px-10 sm:pt-[180px]">
+            {/* Miga de pan: orienta al visitante y le da a Google la jerarquía
+                (el BreadcrumbList equivalente va en el JSON-LD). */}
+            <nav aria-label={ui.breadcrumbAria} className="mb-4 text-[13px] text-faint">
+              <a href={`${base}/`} className="navlink">
+                {ui.home}
+              </a>
+              <span className="mx-2" aria-hidden="true">
+                ›
+              </span>
+              <span aria-current="page">{data.eyebrow}</span>
+            </nav>
             <div className="mb-[18px] font-code text-[13px] uppercase tracking-[0.12em]" style={{ color: "var(--accent)" }}>
               {data.eyebrow}
             </div>
@@ -65,7 +99,7 @@ export default function ServicePage({
             </h2>
             {s.body.map((p, i) => (
               <p key={i} className="mt-5 text-[17px] leading-[1.7] text-muted">
-                {p}
+                <RichText text={p} />
               </p>
             ))}
           </section>

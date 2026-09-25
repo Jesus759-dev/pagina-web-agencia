@@ -25,7 +25,7 @@ export const NOSOTROS_CONTENT: Record<Locale, NosotrosContent> = {
   es: {
     metaTitle: "Nosotros — Quién es Neurovia Systems",
     metaDescription:
-      "Neurovia Systems es una agencia mexicana de desarrollo de software y automatización con IA con sede en Villahermosa, Tabasco. Conoce quiénes somos, qué hacemos y dónde operamos.",
+      "Agencia mexicana de desarrollo de software y automatización con IA, con sede en Villahermosa, Tabasco. Quiénes somos, qué hacemos y dónde operamos.",
     eyebrow: "Nosotros",
     h1: "Quién es Neurovia Systems",
     lead: "Neurovia Systems es una agencia mexicana de desarrollo de software, inteligencia artificial y automatización, con sede en Villahermosa, Tabasco. Construimos software a la medida y productos propios para empresas que quieren dejar atrás las hojas de cálculo y los procesos manuales.",

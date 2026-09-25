@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { localeBase, type Locale } from "./i18n";
+import { breadcrumbJsonLd } from "./seo";
 
 /* --------------------------------------------------------------------------
  * Service landing pages — local SEO content (single source of truth), ES + EN.
@@ -27,6 +28,8 @@ export type ServicePageData = {
   /** Reference price shown next to the hero CTA (e.g. "Desde $25,000 MXN + IVA"). */
   priceNote?: string;
   serviceType: string;
+  /** Zona que cubre la página; por defecto Villahermosa / Tabasco / México. */
+  areaServed?: { type: "City" | "State" | "Country"; name: string }[];
   sections: { h2: string; body: string[] }[];
   benefitsTitle: string;
   benefits: { title: string; desc: string }[];
@@ -69,6 +72,15 @@ const es: Record<string, ServicePageData> = {
           "Además, integramos inteligencia artificial donde aporta valor real: procesamiento automático de documentos, asistentes internos, búsqueda inteligente y analítica que te ayuda a tomar mejores decisiones con los datos que tu empresa ya genera.",
         ],
       },
+      {
+        h2: "Los sectores que más nos buscan en Villahermosa",
+        body: [
+          "**Petróleo y servicios petroleros.** Es la operación más exigente de la región y la que más papel mueve. Desarrollamos para un cliente del sector una suite con requisiciones y compras, mantenimiento vehicular e inventario sobre 23 áreas operativas, y creamos Núcleo SGI para los contratistas que deben demostrar cumplimiento ante su cliente y ante la autoridad.",
+          "**Comercio y distribución.** Almacenes que no cuadran, listas de precios por cliente y pedidos que entran por WhatsApp. Para la comercializadora CAPOSA construimos un sistema de 24 módulos con inventario multi-almacén, facturación CFDI 4.0 y reportes con inteligencia artificial.",
+          "**Talleres y servicio técnico.** El trabajo ocurre lejos del escritorio: para ASC Motores desarrollamos un sistema de 18 módulos con app Android e iOS para abrir y cerrar órdenes desde donde está el técnico.",
+          "**Construcción y gobierno.** Requisiciones por frente de obra, costo real por proyecto y expedientes que resisten revisión; también desarrollamos el sistema de dictamen de equipos de la SOTOP, del Gobierno de Tabasco.",
+        ],
+      },
     ],
     benefitsTitle: "Por qué elegir Neurovia para tu software a medida",
     benefits: [
@@ -93,15 +105,16 @@ const es: Record<string, ServicePageData> = {
       { q: "¿Atienden solo en Villahermosa?", a: "Estamos en Villahermosa, Tabasco, y atendemos a toda la región. También trabajamos de forma remota con empresas del resto de México y Latinoamérica." },
     ],
     related: [
-      { href: "/desarrollo-de-aplicaciones-web-tabasco", label: "Desarrollo de aplicaciones web a medida en Tabasco" },
+      { href: "/erp-a-medida-villahermosa", label: "ERP a la medida en Villahermosa" },
+      { href: "/crm-a-medida-villahermosa", label: "CRM a la medida en Villahermosa" },
       { href: "/automatizacion-con-ia-tabasco", label: "Automatización con inteligencia artificial en Tabasco" },
-      { href: "/sistema-punto-de-venta-villahermosa", label: "Sistema de punto de venta en Villahermosa" },
+      { href: "/casos-de-exito", label: "Casos de éxito: sistemas en producción" },
     ],
   },
 
   "automatizacion-con-ia-tabasco": {
     slug: "automatizacion-con-ia-tabasco",
-    metaTitle: "Automatización con Inteligencia Artificial en Tabasco",
+    metaTitle: "Automatización con IA para Empresas en Tabasco",
     metaDescription:
       "Automatización con inteligencia artificial en Tabasco: integramos IA y flujos que eliminan tareas repetitivas en tu empresa. Agenda tu consulta gratuita.",
     keyword: "automatización con inteligencia artificial Tabasco",
@@ -128,6 +141,16 @@ const es: Record<string, ServicePageData> = {
           "Construimos los flujos con herramientas como n8n e integraciones por API, de modo que la automatización quede robusta, monitoreada y fácil de ajustar conforme tu negocio cambia.",
         ],
       },
+      {
+        h2: "Qué automatizamos en las empresas de Villahermosa",
+        body: [
+          "**Facturas y documentos que alguien captura a mano.** La IA lee el PDF o la foto, saca los datos y los deja en tu sistema o en tu hoja de control. Es la automatización que más rápido se paga sola en áreas administrativas.",
+          "**La atención que llega por WhatsApp fuera de horario.** Un agente contesta las preguntas de siempre, pide los datos que necesitas para cotizar y te pasa el prospecto ya calificado, en lugar de que el mensaje se quede sin responder hasta el lunes.",
+          "**Reportes que se arman cada semana.** Si los datos ya viven en tu sistema, el reporte puede salir solo, a la hora que quieras y en el formato en que lo lees.",
+          "**Doble captura entre sistemas.** Cuando la misma información se teclea en el sistema de ventas y otra vez en el de facturación, una integración la mueve sola y se acaban las diferencias.",
+          "**Avisos que hoy dependen de que alguien se acuerde.** Vencimientos de certificados, mínimos de inventario, mantenimientos por kilometraje o cotizaciones sin movimiento.",
+        ],
+      },
     ],
     benefitsTitle: "Por qué automatizar con Neurovia",
     benefits: [
@@ -152,9 +175,9 @@ const es: Record<string, ServicePageData> = {
       { q: "¿Cómo empezamos?", a: "Con una consulta gratuita por WhatsApp en la que revisamos tus procesos actuales y te proponemos un primer flujo de automatización con un estimado claro." },
     ],
     related: [
+      { href: "/agentes-de-inteligencia-artificial", label: "Agentes de IA que atienden WhatsApp y correo" },
       { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a medida en Villahermosa" },
-      { href: "/desarrollo-de-aplicaciones-web-tabasco", label: "Desarrollo de aplicaciones web a medida en Tabasco" },
-      { href: "/sistema-punto-de-venta-villahermosa", label: "Sistema de punto de venta en Villahermosa" },
+      { href: "/sistemas-empresariales-tabasco", label: "Sistemas empresariales: ERP, CRM e inventario" },
     ],
   },
 
@@ -391,6 +414,379 @@ const es: Record<string, ServicePageData> = {
     ],
   },
 
+  "desarrollo-de-software-tabasco": {
+    slug: "desarrollo-de-software-tabasco",
+    metaTitle: "Desarrollo de Software en Tabasco",
+    metaDescription:
+      "Empresa de desarrollo de software en Tabasco: sistemas de gestión, ERP, CRM e inteligencia artificial para empresas de Villahermosa, Cárdenas, Comalcalco y Paraíso.",
+    keyword: "desarrollo de software Tabasco",
+    eyebrow: "Software en Tabasco",
+    h1: "Desarrollo de Software en Tabasco",
+    heroLead:
+      "Somos una empresa de desarrollo de software con base en Villahermosa que trabaja con empresas de todo Tabasco. Construimos sistemas de gestión, ERP, CRM e integraciones con inteligencia artificial, y los entregamos funcionando por etapas.",
+    ogAlt: "Desarrollo de software en Tabasco — Neurovia Systems",
+    waMessage: "Hola, soy de Tabasco y necesito desarrollar un sistema para mi empresa. ¿Podemos platicarlo?",
+    priceNote: "Proyectos desde $65,000 MXN + IVA",
+    serviceType: "Desarrollo de software empresarial",
+    areaServed: [
+      { type: "City", name: "Villahermosa" },
+      { type: "City", name: "Cárdenas" },
+      { type: "City", name: "Comalcalco" },
+      { type: "City", name: "Paraíso" },
+      { type: "State", name: "Tabasco" },
+      { type: "Country", name: "México" },
+    ],
+    sections: [
+      {
+        h2: "Una empresa de software que sí está en el estado",
+        body: [
+          "Buscar desarrollo de software en Tabasco casi siempre termina en dos caminos: un proveedor de otra ciudad que nunca pisa tu empresa, o alguien que cobra barato, entrega a medias y desaparece. Nosotros operamos desde Villahermosa y trabajamos con empresas de Cárdenas, Comalcalco, Paraíso, Macuspana, Cunduacán, Huimanguillo y el resto del estado.",
+          "Eso cambia cosas concretas: podemos sentarnos con tu gente de almacén, ver cómo capturan una requisición, acompañar el arranque en sitio y volver cuando algo no cuadra. Casi todo el trabajo es remoto —así avanza más rápido— pero la visita existe cuando el proyecto la necesita, no como promesa de venta.",
+          "También conocemos el contexto: cómo factura una comercializadora aquí, qué le pide Pemex a un contratista, cómo se mueve una obra en temporada de lluvias y por qué la conectividad en campo obliga a diseñar pantallas que funcionen con señal mala.",
+        ],
+      },
+      {
+        h2: "Qué desarrollamos para las empresas del estado",
+        body: [
+          "Sistemas de gestión y ERP a la medida para ordenar la operación: requisiciones y compras, inventario multi-almacén, mantenimiento de equipos y flota, control de obra o de servicio, y los reportes que dirección pide cada semana.",
+          "CRM y seguimiento comercial para que las cotizaciones no se queden en el celular de un vendedor; sistemas de almacén; portales para clientes o proveedores; apps móviles cuando el trabajo ocurre fuera de la oficina; e integraciones con lo que ya usas: facturación CFDI 4.0, bancos, tiendas en línea o el sistema contable que ya pagaste.",
+          "Y donde ahorra horas de verdad, inteligencia artificial: lectura automática de facturas y documentos, resúmenes de operación, asistentes que contestan WhatsApp fuera de horario y calificación de prospectos.",
+        ],
+      },
+      {
+        h2: "Los sectores que mueven Tabasco",
+        body: [
+          "**Petróleo y servicios petroleros.** Operamos una suite ERP para un cliente del sector con módulos de requisiciones y compras, mantenimiento vehicular e inventario sobre 23 áreas operativas, además de Núcleo SGI, nuestro sistema de gestión integral para contratistas que deben demostrar cumplimiento y evidencia.",
+          "**Construcción y obra pública.** Desarrollamos el sistema de dictamen de equipos para la SOTOP, del Gobierno de Tabasco, y el sitio de Royers, constructora con más de 35 años y 500 obras entregadas.",
+          "**Comercio y distribución.** Para CAPOSA, comercializadora de Villahermosa, construimos un CRM a la medida de 24 módulos con inventario multi-almacén, facturación CFDI 4.0 y reportes con IA.",
+          "**Talleres y servicios.** Para ASC Motores desarrollamos un sistema de taller de 18 módulos con app Android e iOS, para operar desde donde esté el técnico.",
+        ],
+      },
+    ],
+    benefitsTitle: "Por qué desarrollar tu software con Neurovia",
+    benefits: [
+      { title: "Estamos aquí", desc: "Villahermosa, Tabasco. Mismo horario, mismo contexto y visita en sitio cuando el proyecto lo pide." },
+      { title: "Sistemas en producción, no demos", desc: "Petróleo, gobierno, construcción, comercio y talleres: hay sistemas nuestros operando hoy en el estado." },
+      { title: "Entrega por etapas", desc: "Primera versión útil en semanas; la usas mientras seguimos construyendo el resto." },
+      { title: "El código es tuyo", desc: "Documentado y sin licencias por usuario: puedes cambiar de proveedor cuando quieras." },
+    ],
+    audienceTitle: "¿Para quién es?",
+    audienceLead:
+      "Para empresas de Tabasco que ya crecieron más de lo que aguanta el Excel compartido:",
+    audience: [
+      "Contratistas y empresas de servicios petroleros que deben documentar todo lo que hacen.",
+      "Constructoras y empresas de obra con requisiciones, avances y costos por proyecto.",
+      "Distribuidoras y comercializadoras con varios almacenes y pedidos por WhatsApp.",
+      "Talleres y empresas de mantenimiento que necesitan órdenes de trabajo e historial.",
+      "Proveedores de gobierno que requieren expedientes ordenados y trazabilidad.",
+    ],
+    faq: [
+      { q: "¿Atienden fuera de Villahermosa?", a: "Sí. Trabajamos con empresas de Cárdenas, Comalcalco, Paraíso, Macuspana y el resto del estado, casi siempre de forma remota, con visitas cuando el proyecto las necesita." },
+      { q: "¿Cuánto cuesta desarrollar un sistema?", a: "Los proyectos arrancan en $65,000 MXN + IVA y se construyen por módulos, así que puedes empezar por lo esencial. El análisis inicial y el estimado son gratis." },
+      { q: "¿Emiten factura?", a: "Sí, somos empresa formal y facturamos con CFDI 4.0. También integramos facturación dentro de los sistemas que desarrollamos." },
+      { q: "¿Qué pasa si ya tengo un sistema a medias?", a: "Lo revisamos antes de proponer nada. A veces conviene retomarlo y a veces rehacer la parte que falla; te decimos cuál de las dos y por qué." },
+    ],
+    related: [
+      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a medida en Villahermosa" },
+      { href: "/sistemas-empresariales-tabasco", label: "Sistemas empresariales: ERP, CRM e inventario" },
+      { href: "/casos-de-exito", label: "Casos de éxito: sistemas en producción" },
+    ],
+  },
+
+  "sistemas-empresariales-tabasco": {
+    slug: "sistemas-empresariales-tabasco",
+    metaTitle: "Sistemas Empresariales a la Medida en Tabasco",
+    metaDescription:
+      "Sistemas empresariales a la medida en Tabasco: ERP, CRM, control de inventario y automatización con IA para empresas de Villahermosa. Diagnóstico gratuito.",
+    keyword: "sistemas empresariales Tabasco",
+    eyebrow: "Sistemas empresariales",
+    h1: "Sistemas Empresariales a la Medida en Tabasco",
+    heroLead:
+      "ERP, CRM, control de inventario y automatización, construidos alrededor de cómo ya trabaja tu empresa. Empezamos por el área que más duele y conectamos el resto por etapas, sin detener la operación.",
+    ogAlt: "Sistemas empresariales a la medida en Tabasco — Neurovia Systems",
+    waMessage: "Hola, quiero ordenar la operación de mi empresa con un sistema empresarial. ¿Podemos platicarlo?",
+    priceNote: "Proyectos desde $65,000 MXN + IVA",
+    serviceType: "Sistemas empresariales a la medida",
+    areaServed: [
+      { type: "City", name: "Villahermosa" },
+      { type: "State", name: "Tabasco" },
+      { type: "Country", name: "México" },
+    ],
+    sections: [
+      {
+        h2: "El problema casi nunca es un solo sistema",
+        body: [
+          "La escena se repite en las empresas de Villahermosa: ventas lleva su control en un Excel, almacén en otro, compras en un cuaderno, la facturación en un programa aparte y el dueño pidiendo por WhatsApp un reporte que alguien arma a mano cada lunes. Nadie está haciendo mal su trabajo; lo que falta es que la información viaje sola entre las áreas.",
+          "Un sistema empresarial a la medida no es comprar un software gigante y obligar a todos a usarlo. Es construir, pieza por pieza, el flujo real de tu empresa: lo que entra, lo que sale, quién autoriza, qué se cobra y qué se quedó parado.",
+        ],
+      },
+      {
+        h2: "Los cuatro bloques que solemos construir",
+        body: [
+          "**Operación (ERP).** Requisiciones y compras con autorizaciones, órdenes de trabajo, costos por proyecto u obra, mantenimiento de equipos y flota. Es la columna vertebral: lo que ordena el día a día.",
+          "**Ventas (CRM).** Prospectos, cotizaciones que se convierten en pedido, seguimiento que no depende de la memoria del vendedor y reportes de embudo reales.",
+          "**Almacén (inventario o WMS).** Entradas, salidas, traspasos entre almacenes, lotes y caducidades, mínimos con alertas y conteos que sí cuadran contra el kardex.",
+          "**Automatización e IA.** Lo que hoy alguien captura dos veces, la lectura de facturas y documentos, los reportes automáticos y los asistentes que contestan WhatsApp fuera de horario.",
+        ],
+      },
+      {
+        h2: "Por dónde empezar sin parar la operación",
+        body: [
+          "Primero un diagnóstico: revisamos los procesos como están hoy, incluyendo los formatos y las mañas que ya funcionan, y detectamos dónde se pierde más tiempo y dinero. De ahí sale un orden de construcción, no una lista de deseos.",
+          "Después se construye por etapas. La primera versión útil suele estar lista en semanas y tu equipo la empieza a usar mientras seguimos con el siguiente módulo. Los datos que ya tienes en Excel o en el sistema anterior se migran; no se empieza de cero a capturar todo otra vez.",
+          "Al final el sistema queda a nombre de tu empresa, documentado, sin licencias por usuario y listo para crecer con otro módulo cuando haga falta.",
+        ],
+      },
+    ],
+    benefitsTitle: "Qué cambia cuando la operación vive en un solo sistema",
+    benefits: [
+      { title: "Una sola versión de la verdad", desc: "Se acaba el 'según mi Excel': todas las áreas leen y escriben en el mismo lugar." },
+      { title: "Autorizaciones con rastro", desc: "Quién pidió, quién autorizó y cuándo. Útil cuando llega la auditoría o el cliente pregunta." },
+      { title: "Reportes que ya no se arman a mano", desc: "Lo que hoy toma horas cada semana sale solo, con los datos que tu operación ya genera." },
+      { title: "Crece por módulos", desc: "Empiezas por un área y agregas las demás sin rehacer lo anterior." },
+    ],
+    audienceTitle: "¿Para quién tiene sentido?",
+    audienceLead:
+      "Para empresas ya establecidas donde el problema no es vender más, sino que la operación deje de depender de personas concretas:",
+    audience: [
+      "Empresas de 10 o más empleados con varias áreas que no se hablan entre sí.",
+      "Negocios con dos o más sucursales o almacenes.",
+      "Empresas que facturan CFDI y llevan el control por fuera del sistema de facturación.",
+      "Operaciones con obra, proyecto o servicio donde hay que costear cada trabajo.",
+      "Empresas que compraron un sistema enlatado y terminaron usando el 20%.",
+    ],
+    faq: [
+      { q: "¿Es mejor un sistema hecho a la medida o uno de suscripción?", a: "Depende del proceso. Si tu operación es estándar, un sistema comercial puede bastar y te lo decimos sin problema. Cuando el proceso es tu ventaja —o cuando ya pagas licencias por usuario que no usas— el desarrollo a la medida sale mejor a mediano plazo." },
+      { q: "¿Tengo que cambiar mi sistema de facturación?", a: "No necesariamente. Integramos CFDI 4.0 y los sistemas contables o de facturación que ya usas, siempre que permitan conexión. Revisamos antes de prometer." },
+      { q: "¿Cuánto tarda la primera etapa?", a: "Una primera versión funcional suele estar lista en semanas. Preferimos que la uses temprano y la ajustemos contra la operación real." },
+      { q: "¿Qué pasa con la información que ya tengo?", a: "Se migra. Sacamos los datos de Excel o del sistema anterior, se limpian y entran al nuevo. Nadie vuelve a capturar el catálogo entero a mano." },
+    ],
+    related: [
+      { href: "/erp-a-medida-villahermosa", label: "ERP a la medida en Villahermosa" },
+      { href: "/crm-a-medida-villahermosa", label: "CRM a la medida en Villahermosa" },
+      { href: "/wms-villahermosa", label: "WMS y control de inventario en Villahermosa" },
+    ],
+  },
+
+  "erp-a-medida-villahermosa": {
+    slug: "erp-a-medida-villahermosa",
+    metaTitle: "ERP a la Medida en Villahermosa",
+    metaDescription:
+      "Desarrollo de ERP a la medida en Villahermosa: requisiciones, compras, inventario, mantenimiento y costos por proyecto. Se implementa por etapas, sin parar tu operación.",
+    keyword: "ERP a medida Villahermosa",
+    eyebrow: "ERP a la medida",
+    h1: "ERP a la Medida en Villahermosa",
+    heroLead:
+      "Desarrollamos ERP a la medida para empresas de Villahermosa y Tabasco: requisiciones y compras con autorizaciones, inventario, mantenimiento, costos por proyecto y los reportes que dirección necesita. Módulo por módulo, sin detener la operación.",
+    ogAlt: "Desarrollo de ERP a la medida en Villahermosa — Neurovia Systems",
+    waMessage: "Hola, me interesa un ERP a la medida para mi empresa en Villahermosa. ¿Podemos agendar una llamada?",
+    priceNote: "Proyectos desde $65,000 MXN + IVA",
+    serviceType: "Desarrollo de ERP a la medida",
+    sections: [
+      {
+        h2: "Cuando el ERP de caja ya no te queda",
+        body: [
+          "Los ERP comerciales resuelven bien lo estándar: contabilidad, facturación, nómina. El problema aparece en lo que hace distinta a tu empresa —cómo autorizas una requisición, cómo costeas una obra, qué necesitas demostrarle a tu cliente— porque ahí el sistema te obliga a inventar campos, llevar un Excel paralelo o pagar una personalización que nunca termina.",
+          "Un ERP a la medida invierte el orden: primero entendemos cómo trabaja tu operación y después construimos el sistema alrededor. No pagas módulos que no usas ni licencias por cada usuario que se conecta una vez al mes.",
+          "No siempre es la mejor opción y te lo decimos de frente: si tu proceso es estándar, a veces conviene más un sistema comercial bien configurado. Cuando el proceso es tu ventaja competitiva, el desarrollo a la medida es lo que la protege.",
+        ],
+      },
+      {
+        h2: "Los módulos que más nos piden",
+        body: [
+          "**Requisiciones y compras.** Solicitud, autorización por nivel, orden de compra, recepción y comparativo de proveedores, con historial de quién pidió qué y cuándo.",
+          "**Inventario y almacenes.** Entradas, salidas, traspasos, mínimos con alerta, lotes o series cuando aplica y kardex que cuadra.",
+          "**Mantenimiento de equipos y flota.** Órdenes de trabajo, alertas por kilometraje u horas, costos por unidad e historial completo de cada componente.",
+          "**Proyectos y obra.** Presupuesto contra gasto real, avances, requisiciones por frente de trabajo y costo por proyecto en tiempo real.",
+          "**Dirección.** Tableros con los indicadores que hoy alguien arma a mano cada lunes, con el detalle a un clic de distancia.",
+          "Esto no es teoría: operamos una suite ERP para un cliente del sector petrolero con requisiciones y compras, mantenimiento vehicular e inventario sobre 23 áreas operativas, un sistema de 24 módulos para la comercializadora CAPOSA y uno de 18 módulos con app móvil para ASC Motores.",
+        ],
+      },
+      {
+        h2: "Cómo se implementa sin parar la empresa",
+        body: [
+          "Por etapas. Elegimos el módulo que más duele —casi siempre compras o inventario—, lo ponemos a funcionar en semanas y tu equipo lo usa mientras construimos el siguiente. Nunca hay un día de 'apagamos todo y cambiamos de sistema'.",
+          "Los datos se migran: catálogos, proveedores, existencias e historial salen de tus Excel o del sistema anterior. Y la capacitación se hace con la gente que va a usarlo, no con un manual de 80 páginas que nadie abre.",
+          "El sistema queda a nombre de tu empresa, documentado, y crece cuando tú decidas: otro módulo, otra sucursal o una integración nueva.",
+        ],
+      },
+    ],
+    benefitsTitle: "Por qué un ERP a la medida con Neurovia",
+    benefits: [
+      { title: "Sin licencias por usuario", desc: "Pagas el desarrollo una vez; después puedes dar de alta a toda la empresa sin que suba la cuenta cada mes." },
+      { title: "Experiencia en operación pesada", desc: "Requisiciones, mantenimiento e inventario funcionando hoy en un cliente del sector petrolero, sobre 23 áreas." },
+      { title: "Integra lo que ya pagaste", desc: "Conectamos facturación CFDI 4.0, bancos y el sistema contable que ya usas, en vez de obligarte a tirarlo." },
+      { title: "Entrega por módulos", desc: "Presupuesto y calendario por etapa: sabes qué recibes y cuándo, sin proyectos eternos." },
+    ],
+    audienceTitle: "¿Para quién es un ERP a la medida?",
+    audienceLead:
+      "Para empresas de Villahermosa cuya operación ya no cabe en hojas de cálculo:",
+    audience: [
+      "Empresas industriales y de servicios petroleros con requisiciones, equipos y almacén.",
+      "Constructoras que necesitan costo real por obra y control de compras por frente.",
+      "Distribuidoras con varios almacenes, precios por cliente y cobranza.",
+      "Talleres y empresas de mantenimiento con órdenes de trabajo e historial por unidad.",
+      "Empresas que ya tienen un ERP comercial y llevan media operación en Excel paralelos.",
+    ],
+    faq: [
+      { q: "¿Cuánto tarda implementar un ERP a la medida?", a: "La primera etapa útil suele estar lista en semanas y el sistema completo se construye por módulos a lo largo de varios meses, según el alcance. Empiezas a usarlo desde la primera entrega." },
+      { q: "¿Migran la información que ya tengo?", a: "Sí. Catálogos, proveedores, existencias e historial se migran desde Excel o desde el sistema anterior, siempre que se pueda exportar." },
+      { q: "¿Se conecta con mi facturación CFDI 4.0?", a: "Sí, integramos timbrado CFDI 4.0 y los sistemas de facturación o contabilidad que ya usas, si permiten conexión. Lo validamos antes de comprometerlo." },
+      { q: "¿El ERP queda a nombre de mi empresa?", a: "Sí, con su código y documentación. No quedas amarrado a nosotros: puedes llevártelo a otro proveedor o a tu propio equipo." },
+    ],
+    related: [
+      { href: "/wms-villahermosa", label: "WMS y control de inventario en Villahermosa" },
+      { href: "/crm-a-medida-villahermosa", label: "CRM a la medida en Villahermosa" },
+      { href: "/casos-de-exito", label: "Casos de éxito: sistemas en producción" },
+    ],
+  },
+
+  "crm-a-medida-villahermosa": {
+    slug: "crm-a-medida-villahermosa",
+    metaTitle: "CRM a la Medida en Villahermosa",
+    metaDescription:
+      "Desarrollo de CRM a la medida en Villahermosa: prospectos, cotizaciones, seguimiento y WhatsApp en un solo lugar, conectado a tu inventario y tu facturación.",
+    keyword: "CRM a medida Villahermosa",
+    eyebrow: "CRM a la medida",
+    h1: "CRM a la Medida en Villahermosa",
+    heroLead:
+      "Un CRM hecho para cómo vende tu empresa: prospectos que entran por WhatsApp, cotizaciones que se vuelven pedido y seguimiento que no depende de la memoria del vendedor. Conectado a tu inventario y a tu facturación.",
+    ogAlt: "Desarrollo de CRM a la medida en Villahermosa — Neurovia Systems",
+    waMessage: "Hola, quiero un CRM a la medida para mi equipo de ventas en Villahermosa. ¿Podemos platicarlo?",
+    priceNote: "Proyectos desde $65,000 MXN + IVA",
+    serviceType: "Desarrollo de CRM a la medida",
+    sections: [
+      {
+        h2: "El CRM que sí usa tu equipo",
+        body: [
+          "Casi todas las empresas que nos buscan ya intentaron un CRM de suscripción. La historia termina igual: se llenó dos semanas, el vendedor siguió cotizando por WhatsApp desde su celular y hoy nadie sabe cuántas cotizaciones están vivas. El problema rara vez es el vendedor; es que el sistema le pide capturar cosas que a él no le sirven.",
+          "Un CRM a la medida se diseña al revés: arranca del proceso real —cómo llega el prospecto, quién lo atiende, qué necesita para cotizar y cuándo se cierra— y solo pide los datos que sí mueven la venta. Si tu negocio cotiza por lista de precios con descuento por volumen, el sistema cotiza así; no te obliga a traducir tu operación a un embudo genérico.",
+        ],
+      },
+      {
+        h2: "Lo que conectamos alrededor de la venta",
+        body: [
+          "**WhatsApp.** Es el canal por el que entra la mayoría de los prospectos en Villahermosa. Lo conectamos para que la conversación quede en el expediente del cliente y no se pierda en un celular.",
+          "**Cotizaciones y pedidos.** La cotización se arma desde el catálogo con tus precios y condiciones, se envía en PDF y, cuando el cliente acepta, se convierte en pedido sin volver a capturarla.",
+          "**Inventario y facturación.** El vendedor ve existencias reales antes de prometer entrega, y el pedido cerrado pasa a facturación CFDI 4.0 sin doble captura.",
+          "**Seguimiento y recordatorios.** Tareas, próximos contactos y avisos de cotizaciones que llevan días sin movimiento.",
+          "**Reportes de verdad.** Embudo por vendedor, motivos de cierre perdido y qué producto se cotiza mucho pero se vende poco.",
+          "Tenemos CRM propio en producción —el de Neurovia— y desarrollamos uno de 24 módulos para la comercializadora CAPOSA, con inventario multi-almacén, facturación CFDI 4.0 y reportes con IA.",
+        ],
+      },
+      {
+        h2: "CRM propio contra plataforma por suscripción",
+        body: [
+          "Una plataforma comercial se paga por usuario y por mes, y cada función seria suele estar en el plan de arriba. Si tienes ocho vendedores, la cuenta crece todos los años aunque tu proceso siga igual.",
+          "Un CRM a la medida se paga una vez, corre en tu propia infraestructura, da de alta a todo el equipo sin costo adicional por usuario y guarda la base de clientes bajo tu control, no en una cuenta que puede cancelarse.",
+          "Tampoco es para todos: si vendes con un proceso estándar y pocos usuarios, una herramienta comercial puede ser suficiente y te lo diremos. La ventaja del desarrollo a la medida aparece cuando el CRM tiene que hablar con tu inventario, tu facturación o tu operación.",
+        ],
+      },
+    ],
+    benefitsTitle: "Qué cambia con un CRM hecho a tu medida",
+    benefits: [
+      { title: "Nada se queda en un celular", desc: "Prospectos, conversaciones y cotizaciones viven en la empresa, no en el teléfono de quien atendió." },
+      { title: "Cotizar deja de ser pesado", desc: "Catálogo, precios y condiciones ya cargados: la cotización se arma en minutos y se convierte en pedido." },
+      { title: "Sin costo por usuario", desc: "Das de alta a todo el equipo, incluida el área administrativa, sin que suba la mensualidad." },
+      { title: "Conectado a tu operación", desc: "Ve existencias, genera el pedido y pasa a facturación sin capturar lo mismo tres veces." },
+    ],
+    audienceTitle: "¿Para quién es?",
+    audienceLead:
+      "Para empresas de Villahermosa donde la venta ya no cabe en una libreta ni en el chat:",
+    audience: [
+      "Distribuidoras y comercializadoras que cotizan por WhatsApp todo el día.",
+      "Empresas industriales con cotizaciones técnicas y varios responsables por cuenta.",
+      "Constructoras y proveedores que participan en concursos y licitaciones.",
+      "Inmobiliarias con leads de portales que nadie alcanza a contestar a tiempo.",
+      "Equipos de ventas de tres o más personas sin visibilidad del embudo real.",
+    ],
+    faq: [
+      { q: "¿Se puede conectar con WhatsApp?", a: "Sí. Integramos WhatsApp mediante la API oficial de Meta o Twilio, para que las conversaciones queden en el expediente del cliente y, si lo quieres, un agente de IA conteste fuera de horario." },
+      { q: "¿Cuánto cuesta comparado con una suscripción?", a: "Es una inversión inicial en lugar de una renta por usuario. Conviene cuando el equipo crece o cuando el CRM debe conectarse a tu inventario y facturación; si tu caso es sencillo, te lo decimos." },
+      { q: "¿Migran mis contactos actuales?", a: "Sí, desde Excel, Google Contacts o el CRM que uses hoy, siempre que se pueda exportar." },
+      { q: "¿Lo puede usar alguien que no es técnico?", a: "Está diseñado para eso. Definimos juntos las pantallas con tus vendedores y capacitamos al equipo en el sistema real, no con un manual." },
+    ],
+    related: [
+      { href: "/agentes-de-inteligencia-artificial", label: "Agentes de IA que atienden WhatsApp" },
+      { href: "/erp-a-medida-villahermosa", label: "ERP a la medida en Villahermosa" },
+      { href: "/sistemas-empresariales-tabasco", label: "Sistemas empresariales en Tabasco" },
+    ],
+  },
+
+  "wms-villahermosa": {
+    slug: "wms-villahermosa",
+    metaTitle: "WMS y Control de Inventario en Villahermosa",
+    metaDescription:
+      "Sistema WMS y control de inventario a la medida en Villahermosa: multi-almacén, lotes, códigos de barras, conteos y kardex que cuadra. Conectado a tu facturación.",
+    keyword: "WMS Villahermosa",
+    eyebrow: "WMS e inventario",
+    h1: "Sistema WMS y Control de Inventario en Villahermosa",
+    heroLead:
+      "Un sistema de almacén hecho para tu operación: entradas, salidas, traspasos entre almacenes, lotes y caducidades, conteos cíclicos y códigos de barras. Para que el inventario del sistema y el del piso sean el mismo.",
+    ogAlt: "Sistema WMS y control de inventario en Villahermosa — Neurovia Systems",
+    waMessage: "Hola, necesito un sistema de inventario o WMS para mi almacén en Villahermosa. ¿Podemos platicarlo?",
+    priceNote: "Proyectos desde $65,000 MXN + IVA",
+    serviceType: "Sistema de gestión de almacén (WMS) a la medida",
+    sections: [
+      {
+        h2: "El almacén que nunca cuadra",
+        body: [
+          "La señal es siempre la misma: el sistema dice que hay doce, el piso tiene nueve y nadie sabe en qué momento se fueron tres. Detrás casi nunca hay robo; hay salidas que se anotaron en un cuaderno, un traspaso entre sucursales que no se registró, material entregado a un técnico sin vale y conteos hechos a mano cada seis meses.",
+          "Cuando el inventario no cuadra, el costo no es solo la merma: se compra de más por miedo a quedarse corto, se promete entrega de algo que no existe y cada cierre de mes se convierte en una discusión entre almacén, compras y contabilidad.",
+          "Un WMS a la medida ataca eso donde ocurre: en el movimiento. Cada entrada, salida y traspaso queda registrado por quién, cuándo y con qué documento de respaldo.",
+        ],
+      },
+      {
+        h2: "Qué incluye un WMS hecho a la medida",
+        body: [
+          "**Multi-almacén y ubicaciones.** Varias bodegas o sucursales, con existencias por ubicación y traspasos con acuse, para que nadie 'mueva' mercancía sin rastro.",
+          "**Lotes, caducidades y series.** Indispensable en alimentos, farmacia, químicos y refacciones con número de serie: sabes qué lote entró, a qué cliente salió y qué está por vencer.",
+          "**Códigos de barras.** Recepción y surtido escaneando con lector o con la cámara del celular, que es donde se acaban de verdad los errores de captura.",
+          "**Conteos cíclicos.** En lugar de parar el almacén dos días al año, cuentas por zonas durante el mes y corriges diferencias con evidencia.",
+          "**Mínimos y alertas.** El sistema avisa cuándo reordenar en lugar de enterarte cuando ya no hay.",
+          "**Kardex y costos.** Historial completo por artículo y valor real del inventario, listo para contabilidad.",
+          "Ya operamos el módulo de inventario de la suite ERP de un cliente del sector petrolero y el inventario multi-almacén de CAPOSA; además desarrollamos nuestro propio Sistema de Inventario como producto.",
+        ],
+      },
+      {
+        h2: "Del Excel al WMS sin parar el almacén",
+        body: [
+          "Arrancamos con un inventario inicial bien hecho: se cuenta, se carga y a partir de ahí el sistema es la fuente. Los catálogos y existencias se migran desde tus Excel o desde el sistema anterior.",
+          "Después conectamos lo que ya existe alrededor: compras, para que la recepción descargue la orden; ventas o punto de venta, para que la salida descuente solo; y facturación CFDI 4.0, para no capturar lo mismo dos veces. Si vendes en mostrador, Tomín POS —nuestro punto de venta— se conecta al mismo inventario.",
+          "La capacitación es con la gente de almacén y en el piso, no en una sala de juntas: son ellos quienes van a escanear, recibir y surtir todos los días.",
+        ],
+      },
+    ],
+    benefitsTitle: "Por qué un WMS a la medida",
+    benefits: [
+      { title: "El inventario cuadra", desc: "Cada movimiento con responsable, fecha y documento: las diferencias se explican, no se adivinan." },
+      { title: "Menos compras de pánico", desc: "Mínimos, alertas y consumo histórico para comprar por dato y no por susto." },
+      { title: "Funciona en el piso", desc: "Pantallas pensadas para escanear desde el celular en la bodega, no solo para la computadora de oficina." },
+      { title: "Conectado a compras y ventas", desc: "Una sola captura: lo que entra por compras y sale por venta descuenta solo." },
+    ],
+    audienceTitle: "¿Para quién es?",
+    audienceLead:
+      "Para empresas de Villahermosa y Tabasco donde el almacén ya es parte del problema:",
+    audience: [
+      "Distribuidoras y comercializadoras con dos o más almacenes o sucursales.",
+      "Ferreterías, refaccionarias y materiales para construcción con miles de claves.",
+      "Empresas industriales y de servicios que entregan material a técnicos en campo.",
+      "Negocios con productos perecederos o con lote y caducidad obligatoria.",
+      "Empresas que hacen inventario físico una vez al año y siempre sale diferencia.",
+    ],
+    faq: [
+      { q: "¿Funciona con lector de código de barras?", a: "Sí, con lector USB o inalámbrico y también con la cámara del celular, que suele ser suficiente para empezar sin comprar equipo." },
+      { q: "¿Sirve para varias sucursales?", a: "Sí. Maneja varios almacenes con existencias independientes, traspasos con acuse y una vista consolidada para dirección." },
+      { q: "¿Se conecta con mi facturación?", a: "Sí, integramos CFDI 4.0 y los sistemas de facturación o contabilidad que ya uses, siempre que permitan conexión." },
+      { q: "¿Cómo empezamos si hoy todo está en Excel?", a: "Con un inventario inicial y la migración de catálogos y existencias. A partir de esa fecha el sistema es la fuente y el Excel deja de usarse." },
+    ],
+    related: [
+      { href: "/sistema-punto-de-venta-villahermosa", label: "Sistema de punto de venta en Villahermosa" },
+      { href: "/erp-a-medida-villahermosa", label: "ERP a la medida en Villahermosa" },
+      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a medida en Villahermosa" },
+    ],
+  },
+
   "desarrollo-de-software-a-medida-monterrey": {
     slug: "desarrollo-de-software-a-medida-monterrey",
     metaTitle: "Desarrollo de Software a Medida en Monterrey",
@@ -405,6 +801,11 @@ const es: Record<string, ServicePageData> = {
     waMessage: "Hola, necesito un sistema a la medida para mi empresa en Monterrey. ¿Podemos agendar una llamada esta semana?",
     priceNote: "Proyectos desde $65,000 MXN + IVA",
     serviceType: "Desarrollo de software a medida",
+    areaServed: [
+      { type: "City", name: "Monterrey" },
+      { type: "State", name: "Nuevo León" },
+      { type: "Country", name: "México" },
+    ],
     sections: [
       {
         h2: "Software para el ritmo industrial de Monterrey",
@@ -464,6 +865,11 @@ const es: Record<string, ServicePageData> = {
     waMessage: "Hola, necesito un sistema a la medida para mi empresa en Mérida. ¿Podemos agendar una llamada esta semana?",
     priceNote: "Proyectos desde $65,000 MXN + IVA",
     serviceType: "Desarrollo de software a medida",
+    areaServed: [
+      { type: "City", name: "Mérida" },
+      { type: "State", name: "Yucatán" },
+      { type: "Country", name: "México" },
+    ],
     sections: [
       {
         h2: "Software para la economía de servicios de Mérida",
@@ -531,6 +937,11 @@ const es: Record<string, ServicePageData> = {
     waMessage: "Hola, necesito un sistema a la medida para mi empresa en Veracruz. ¿Podemos agendar una llamada esta semana?",
     priceNote: "Proyectos desde $65,000 MXN + IVA",
     serviceType: "Desarrollo de software a medida",
+    areaServed: [
+      { type: "City", name: "Veracruz" },
+      { type: "State", name: "Veracruz" },
+      { type: "Country", name: "México" },
+    ],
     sections: [
       {
         h2: "Software para una economía que se mueve por el puerto",
@@ -598,6 +1009,12 @@ const es: Record<string, ServicePageData> = {
     waMessage: "Hola, necesito un sistema a la medida para mi empresa en Campeche. ¿Podemos agendar una llamada esta semana?",
     priceNote: "Proyectos desde $65,000 MXN + IVA",
     serviceType: "Desarrollo de software a medida",
+    areaServed: [
+      { type: "City", name: "Campeche" },
+      { type: "City", name: "Ciudad del Carmen" },
+      { type: "State", name: "Campeche" },
+      { type: "Country", name: "México" },
+    ],
     sections: [
       {
         h2: "Software para contratistas y empresas de la sonda",
@@ -665,6 +1082,11 @@ const es: Record<string, ServicePageData> = {
     waMessage: "Hola, necesito un sistema a la medida para mi empresa en Guadalajara. ¿Podemos agendar una llamada esta semana?",
     priceNote: "Proyectos desde $65,000 MXN + IVA",
     serviceType: "Desarrollo de software a medida",
+    areaServed: [
+      { type: "City", name: "Guadalajara" },
+      { type: "State", name: "Jalisco" },
+      { type: "Country", name: "México" },
+    ],
     sections: [
       {
         h2: "Software para el ecosistema de Guadalajara",
@@ -743,6 +1165,15 @@ const en: Record<string, ServicePageData> = {
           "We also add artificial intelligence where it delivers real value: automatic document processing, internal assistants, smart search and analytics that help you make better decisions with the data your company already generates.",
         ],
       },
+      {
+        h2: "The sectors that look for us in Villahermosa",
+        body: [
+          "**Oil and oilfield services.** The most demanding operation in the region and the one that moves the most paperwork. For a client in the sector we built a suite covering purchase requests and buying, vehicle maintenance and inventory across 23 operating areas, and we created Núcleo SGI for contractors who must prove compliance to their client and to the authority.",
+          "**Trade and distribution.** Warehouses that never reconcile, price lists per customer and orders arriving over WhatsApp. For the distributor CAPOSA we built a 24-module system with multi-warehouse inventory, CFDI 4.0 invoicing and AI-assisted reports.",
+          "**Workshops and field service.** The work happens away from a desk: for ASC Motores we built an 18-module system with Android and iOS apps so orders can be opened and closed wherever the technician is.",
+          "**Construction and government.** Purchase requests per work front, real cost per project and records that survive review; we also built the equipment assessment system for SOTOP, Tabasco's public works ministry.",
+        ],
+      },
     ],
     benefitsTitle: "Why choose Neurovia for your custom software",
     benefits: [
@@ -767,9 +1198,10 @@ const en: Record<string, ServicePageData> = {
       { q: "Do you only serve Villahermosa?", a: "We're in Villahermosa, Tabasco, and serve the whole region. We also work remotely with companies across Mexico and Latin America." },
     ],
     related: [
-      { href: "/desarrollo-de-aplicaciones-web-tabasco", label: "Custom web app development in Tabasco" },
+      { href: "/erp-a-medida-villahermosa", label: "Custom ERP in Villahermosa" },
+      { href: "/crm-a-medida-villahermosa", label: "Custom CRM in Villahermosa" },
       { href: "/automatizacion-con-ia-tabasco", label: "AI automation in Tabasco" },
-      { href: "/sistema-punto-de-venta-villahermosa", label: "Point of sale system in Villahermosa" },
+      { href: "/casos-de-exito", label: "Case studies: systems in production" },
     ],
   },
 
@@ -802,6 +1234,16 @@ const en: Record<string, ServicePageData> = {
           "We build the flows with tools like n8n and API integrations, so the automation is robust, monitored and easy to adjust as your business changes.",
         ],
       },
+      {
+        h2: "What we automate for companies in Villahermosa",
+        body: [
+          "**Invoices and documents somebody types by hand.** AI reads the PDF or the photo, pulls out the data and drops it into your system or your control sheet. It is the automation that pays for itself fastest in admin teams.",
+          "**The WhatsApp messages that arrive after hours.** An agent answers the usual questions, collects what you need to quote and hands you a qualified lead, instead of the message sitting unanswered until Monday.",
+          "**Reports rebuilt every week.** If the data already lives in your system, the report can write itself, at the hour you want and in the format you actually read.",
+          "**Double entry between systems.** When the same information is typed into sales and again into invoicing, an integration moves it and the differences disappear.",
+          "**Alerts that depend on someone remembering.** Certificate expiry, stock minimums, maintenance by mileage or quotes that have gone quiet.",
+        ],
+      },
     ],
     benefitsTitle: "Why automate with Neurovia",
     benefits: [
@@ -826,9 +1268,9 @@ const en: Record<string, ServicePageData> = {
       { q: "How do we start?", a: "With a free WhatsApp consultation where we review your current processes and propose a first automation flow with a clear estimate." },
     ],
     related: [
+      { href: "/agentes-de-inteligencia-artificial", label: "AI agents for WhatsApp and email" },
       { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Custom software development in Villahermosa" },
-      { href: "/desarrollo-de-aplicaciones-web-tabasco", label: "Custom web app development in Tabasco" },
-      { href: "/sistema-punto-de-venta-villahermosa", label: "Point of sale system in Villahermosa" },
+      { href: "/sistemas-empresariales-tabasco", label: "Business systems: ERP, CRM and inventory" },
     ],
   },
 
@@ -1065,6 +1507,374 @@ const en: Record<string, ServicePageData> = {
     ],
   },
 
+  "desarrollo-de-software-tabasco": {
+    slug: "desarrollo-de-software-tabasco",
+    metaTitle: "Software Development in Tabasco, Mexico",
+    metaDescription:
+      "Software development company in Tabasco: management systems, ERP, CRM and AI for companies in Villahermosa, Cárdenas, Comalcalco and Paraíso.",
+    keyword: "software development Tabasco",
+    eyebrow: "Software in Tabasco",
+    h1: "Software Development in Tabasco",
+    heroLead:
+      "We are a software company based in Villahermosa working with companies across Tabasco. We build management systems, ERP, CRM and AI integrations, and deliver them working, in stages.",
+    ogAlt: "Software development in Tabasco — Neurovia Systems",
+    waMessage: "Hi, I'm in Tabasco and need a system built for my company. Can we talk?",
+    priceNote: "Projects from MXN $65,000 + VAT",
+    serviceType: "Business software development",
+    areaServed: [
+      { type: "City", name: "Villahermosa" },
+      { type: "City", name: "Cárdenas" },
+      { type: "City", name: "Comalcalco" },
+      { type: "City", name: "Paraíso" },
+      { type: "State", name: "Tabasco" },
+      { type: "Country", name: "México" },
+    ],
+    sections: [
+      {
+        h2: "A software company that is actually in the state",
+        body: [
+          "Looking for software development in Tabasco usually ends one of two ways: a vendor from another city who never sets foot in your company, or someone cheap who delivers half a system and disappears. We work out of Villahermosa with companies in Cárdenas, Comalcalco, Paraíso, Macuspana, Cunduacán and the rest of the state.",
+          "That changes concrete things: we can sit with your warehouse staff, watch how a purchase request is actually filed, be there for go-live and come back when something does not add up. Most of the work is remote because it moves faster, but the site visit is real when the project needs it.",
+          "We also know the context: how a distributor here invoices, what an operator demands from a contractor, and why field connectivity forces you to design screens that work on a bad signal.",
+        ],
+      },
+      {
+        h2: "What we build for companies in the state",
+        body: [
+          "Management systems and custom ERP to put the operation in order: purchase requests and buying, multi-warehouse inventory, equipment and fleet maintenance, project or service tracking, and the reports management asks for every week.",
+          "CRM and sales follow-up so quotes stop living in one salesperson's phone; warehouse systems; customer or supplier portals; mobile apps when the work happens outside the office; and integrations with what you already run: CFDI 4.0 invoicing, banks, online stores or the accounting system you already paid for.",
+          "And where it saves real hours, AI: automatic reading of invoices and documents, operations summaries, assistants that answer WhatsApp after hours and lead qualification.",
+        ],
+      },
+      {
+        h2: "The sectors that move Tabasco",
+        body: [
+          "**Oil and oilfield services.** We run an ERP suite for a client in the sector covering purchase requests, vehicle maintenance and inventory across 23 operating areas, plus Núcleo SGI, our integrated management system for contractors who must prove compliance.",
+          "**Construction and public works.** We built the equipment assessment system for SOTOP, Tabasco's public works ministry, and the site for Royers, a builder with 35+ years and 500+ projects delivered.",
+          "**Trade and distribution.** For CAPOSA, a Villahermosa distributor, we built a 24-module custom CRM with multi-warehouse inventory, CFDI 4.0 invoicing and AI reports.",
+          "**Workshops and services.** For ASC Motores we built an 18-module workshop system with Android and iOS apps.",
+        ],
+      },
+    ],
+    benefitsTitle: "Why build your software with Neurovia",
+    benefits: [
+      { title: "We are here", desc: "Villahermosa, Tabasco. Same time zone, same context, on-site visits when the project calls for it." },
+      { title: "Systems in production, not demos", desc: "Oil, government, construction, retail and workshops: our systems run in the state today." },
+      { title: "Staged delivery", desc: "First useful version in weeks; you use it while we keep building the rest." },
+      { title: "The code is yours", desc: "Documented, with no per-user licences: you can change provider whenever you want." },
+    ],
+    audienceTitle: "Who is this for?",
+    audienceLead: "For companies in Tabasco that have outgrown the shared spreadsheet:",
+    audience: [
+      "Contractors and oilfield service companies that must document everything they do.",
+      "Builders tracking purchase requests, progress and cost per project.",
+      "Distributors with several warehouses and orders arriving over WhatsApp.",
+      "Workshops and maintenance companies needing work orders and history.",
+      "Government suppliers that need orderly records and traceability.",
+    ],
+    faq: [
+      { q: "Do you work outside Villahermosa?", a: "Yes. We work with companies in Cárdenas, Comalcalco, Paraíso, Macuspana and the rest of the state, mostly remotely, with visits when the project needs them." },
+      { q: "How much does a system cost?", a: "Projects start at MXN $65,000 + VAT and are built module by module, so you can start with the essentials. The initial analysis and estimate are free." },
+      { q: "Do you issue invoices?", a: "Yes, we are a formal company and invoice with CFDI 4.0. We also build invoicing into the systems we develop." },
+      { q: "What if I already have a half-finished system?", a: "We review it before proposing anything. Sometimes it is worth continuing and sometimes rebuilding the failing part; we tell you which and why." },
+    ],
+    related: [
+      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Custom software development in Villahermosa" },
+      { href: "/sistemas-empresariales-tabasco", label: "Business systems: ERP, CRM and inventory" },
+      { href: "/casos-de-exito", label: "Case studies: systems in production" },
+    ],
+  },
+
+  "sistemas-empresariales-tabasco": {
+    slug: "sistemas-empresariales-tabasco",
+    metaTitle: "Custom Business Systems in Tabasco",
+    metaDescription:
+      "Custom business systems in Tabasco: ERP, CRM, inventory control and AI automation for companies in Villahermosa. Free diagnosis.",
+    keyword: "business systems Tabasco",
+    eyebrow: "Business systems",
+    h1: "Custom Business Systems in Tabasco",
+    heroLead:
+      "ERP, CRM, inventory control and automation, built around how your company already works. We start with the area that hurts most and connect the rest in stages, without stopping the operation.",
+    ogAlt: "Custom business systems in Tabasco — Neurovia Systems",
+    waMessage: "Hi, I want to put my company's operation in order with a business system. Can we talk?",
+    priceNote: "Projects from MXN $65,000 + VAT",
+    serviceType: "Custom business systems",
+    areaServed: [
+      { type: "City", name: "Villahermosa" },
+      { type: "State", name: "Tabasco" },
+      { type: "Country", name: "México" },
+    ],
+    sections: [
+      {
+        h2: "The problem is rarely one single system",
+        body: [
+          "The scene repeats itself in Villahermosa companies: sales keeps a spreadsheet, the warehouse another, purchasing a notebook, invoicing lives in separate software, and the owner asks over WhatsApp for a report someone assembles by hand every Monday. Nobody is doing their job badly; what is missing is information moving between areas on its own.",
+          "A custom business system is not buying one giant piece of software and forcing everyone into it. It is building, piece by piece, your company's real flow: what comes in, what goes out, who authorises, what gets charged and what is stuck.",
+        ],
+      },
+      {
+        h2: "The four blocks we usually build",
+        body: [
+          "**Operations (ERP).** Purchase requests with authorisation levels, work orders, cost per project, equipment and fleet maintenance. The backbone of the day.",
+          "**Sales (CRM).** Leads, quotes that become orders, follow-up that does not depend on memory, and a real pipeline report.",
+          "**Warehouse (inventory / WMS).** Receipts, issues, transfers, lots and expiry dates, minimums with alerts and counts that reconcile against the ledger.",
+          "**Automation and AI.** What someone types twice today, invoice and document reading, automatic reports and assistants that answer WhatsApp after hours.",
+        ],
+      },
+      {
+        h2: "Where to start without stopping the company",
+        body: [
+          "A diagnosis first: we review the processes as they are today, including the formats and habits that already work, and find where time and money leak. That produces a build order, not a wish list.",
+          "Then we build in stages. The first useful version is usually ready in weeks and your team starts using it while we move to the next module. Data already in spreadsheets or in the old system is migrated; nobody retypes the catalogue.",
+          "The system ends up owned by your company, documented, with no per-user licences and ready to grow with another module when you need it.",
+        ],
+      },
+    ],
+    benefitsTitle: "What changes when the operation lives in one system",
+    benefits: [
+      { title: "One version of the truth", desc: "No more 'according to my spreadsheet': every area reads and writes in the same place." },
+      { title: "Authorisations with a trail", desc: "Who asked, who approved and when — useful when an audit or a client question arrives." },
+      { title: "Reports that build themselves", desc: "What takes hours every week comes out on its own, from data your operation already produces." },
+      { title: "Grows by modules", desc: "Start with one area and add the others without rebuilding what exists." },
+    ],
+    audienceTitle: "Who is it for?",
+    audienceLead: "For established companies where the issue is not selling more, but making the operation independent of specific people:",
+    audience: [
+      "Companies with 10+ employees and several areas that do not talk to each other.",
+      "Businesses with two or more branches or warehouses.",
+      "Companies invoicing CFDI while tracking everything outside the invoicing system.",
+      "Project or service operations where each job has to be costed.",
+      "Companies that bought off-the-shelf software and ended up using 20% of it.",
+    ],
+    faq: [
+      { q: "Custom or subscription software?", a: "It depends on the process. If your operation is standard, commercial software may be enough and we will say so. When the process is your advantage — or you pay per-user licences you do not use — custom development pays off over time." },
+      { q: "Do I have to change my invoicing system?", a: "Not necessarily. We integrate CFDI 4.0 and the accounting or invoicing systems you already use, as long as they allow a connection." },
+      { q: "How long is the first stage?", a: "A first working version is usually ready in weeks. We would rather you use it early and we adjust it against the real operation." },
+      { q: "What happens to the data I already have?", a: "It is migrated from spreadsheets or the previous system, cleaned and loaded into the new one." },
+    ],
+    related: [
+      { href: "/erp-a-medida-villahermosa", label: "Custom ERP in Villahermosa" },
+      { href: "/crm-a-medida-villahermosa", label: "Custom CRM in Villahermosa" },
+      { href: "/wms-villahermosa", label: "WMS and inventory control in Villahermosa" },
+    ],
+  },
+
+  "erp-a-medida-villahermosa": {
+    slug: "erp-a-medida-villahermosa",
+    metaTitle: "Custom ERP Development in Villahermosa",
+    metaDescription:
+      "Custom ERP development in Villahermosa: purchase requests, buying, inventory, maintenance and cost per project. Implemented in stages, without stopping your operation.",
+    keyword: "custom ERP Villahermosa",
+    eyebrow: "Custom ERP",
+    h1: "Custom ERP Development in Villahermosa",
+    heroLead:
+      "We build custom ERP systems for companies in Villahermosa and Tabasco: purchase requests and buying with approvals, inventory, maintenance, cost per project and the reports management needs. Module by module, without stopping the operation.",
+    ogAlt: "Custom ERP development in Villahermosa — Neurovia Systems",
+    waMessage: "Hi, I'm interested in a custom ERP for my company in Villahermosa. Can we set up a call?",
+    priceNote: "Projects from MXN $65,000 + VAT",
+    serviceType: "Custom ERP development",
+    sections: [
+      {
+        h2: "When the off-the-shelf ERP stops fitting",
+        body: [
+          "Commercial ERPs handle the standard well: accounting, invoicing, payroll. The trouble starts with whatever makes your company different — how you authorise a purchase request, how you cost a project, what you must prove to your client — because there the system forces you to invent fields, keep a parallel spreadsheet or pay for a customisation that never ends.",
+          "A custom ERP reverses the order: we understand how your operation works and build the system around it. You do not pay for modules you never open or per-user licences for people who log in once a month.",
+          "It is not always the right call, and we say so: if your process is standard, well-configured commercial software can be the better buy. When the process is your competitive edge, custom development is what protects it.",
+        ],
+      },
+      {
+        h2: "The modules companies ask us for most",
+        body: [
+          "**Purchase requests and buying.** Request, approval by level, purchase order, goods receipt and supplier comparison, with a history of who asked for what and when.",
+          "**Inventory and warehouses.** Receipts, issues, transfers, minimums with alerts, lots or serial numbers where they apply, and a ledger that reconciles.",
+          "**Equipment and fleet maintenance.** Work orders, alerts by mileage or hours, cost per unit and full history of every component.",
+          "**Projects and site work.** Budget against real spend, progress, purchase requests per work front and live cost per project.",
+          "**Management.** Dashboards with the indicators someone assembles by hand every Monday, with the detail one click away.",
+          "This is not theory: we run an ERP suite for an oil & gas client covering purchase requests, vehicle maintenance and inventory across 23 operating areas, a 24-module system for the distributor CAPOSA and an 18-module system with a mobile app for ASC Motores.",
+        ],
+      },
+      {
+        h2: "How it goes live without stopping the company",
+        body: [
+          "In stages. We pick the module that hurts most — usually buying or inventory — put it to work in weeks, and your team uses it while we build the next one. There is never a day when everything switches over at once.",
+          "Data is migrated: catalogues, suppliers, stock and history come out of your spreadsheets or the old system. Training happens with the people who will actually use it, not with an 80-page manual.",
+          "The system is owned by your company, documented, and grows when you decide: another module, another branch or a new integration.",
+        ],
+      },
+    ],
+    benefitsTitle: "Why build your ERP with Neurovia",
+    benefits: [
+      { title: "No per-user licences", desc: "You pay for the build once; adding the whole company afterwards does not raise a monthly bill." },
+      { title: "Experience in heavy operations", desc: "Purchase requests, maintenance and inventory running today for an oil & gas client across 23 areas." },
+      { title: "Integrates what you already pay for", desc: "We connect CFDI 4.0 invoicing, banks and your accounting system instead of forcing you to drop them." },
+      { title: "Delivered by modules", desc: "Budget and calendar per stage: you know what you get and when, with no endless projects." },
+    ],
+    audienceTitle: "Who is a custom ERP for?",
+    audienceLead: "For companies in Villahermosa whose operation no longer fits in spreadsheets:",
+    audience: [
+      "Industrial and oilfield service companies with purchase requests, equipment and warehouses.",
+      "Builders that need real cost per project and purchasing control per work front.",
+      "Distributors with several warehouses, customer pricing and collections.",
+      "Workshops and maintenance companies with work orders and history per unit.",
+      "Companies that already own a commercial ERP and run half the operation in parallel spreadsheets.",
+    ],
+    faq: [
+      { q: "How long does a custom ERP take?", a: "The first useful stage is usually ready in weeks, and the full system is built module by module over several months depending on scope. You start using it from the first delivery." },
+      { q: "Do you migrate my existing data?", a: "Yes. Catalogues, suppliers, stock and history are migrated from spreadsheets or from the previous system, as long as it can be exported." },
+      { q: "Does it connect to CFDI 4.0 invoicing?", a: "Yes, we integrate CFDI 4.0 stamping and the invoicing or accounting systems you already use, when they allow a connection. We validate it before committing." },
+      { q: "Is the ERP owned by my company?", a: "Yes, with its code and documentation. You are not tied to us: you can take it to another provider or your own team." },
+    ],
+    related: [
+      { href: "/wms-villahermosa", label: "WMS and inventory control in Villahermosa" },
+      { href: "/crm-a-medida-villahermosa", label: "Custom CRM in Villahermosa" },
+      { href: "/casos-de-exito", label: "Case studies: systems in production" },
+    ],
+  },
+
+  "crm-a-medida-villahermosa": {
+    slug: "crm-a-medida-villahermosa",
+    metaTitle: "Custom CRM Development in Villahermosa",
+    metaDescription:
+      "Custom CRM development in Villahermosa: leads, quotes, follow-up and WhatsApp in one place, connected to your inventory and invoicing.",
+    keyword: "custom CRM Villahermosa",
+    eyebrow: "Custom CRM",
+    h1: "Custom CRM Development in Villahermosa",
+    heroLead:
+      "A CRM built for how your company actually sells: leads arriving over WhatsApp, quotes that turn into orders and follow-up that does not depend on a salesperson's memory. Connected to your inventory and invoicing.",
+    ogAlt: "Custom CRM development in Villahermosa — Neurovia Systems",
+    waMessage: "Hi, I want a custom CRM for my sales team in Villahermosa. Can we talk?",
+    priceNote: "Projects from MXN $65,000 + VAT",
+    serviceType: "Custom CRM development",
+    sections: [
+      {
+        h2: "The CRM your team actually uses",
+        body: [
+          "Almost every company that calls us has already tried a subscription CRM. It ends the same way: filled in for two weeks, the salesperson kept quoting over WhatsApp from their phone, and today nobody knows how many quotes are still alive. The problem is rarely the salesperson; the system asks them to type things that do not help them sell.",
+          "A custom CRM is designed the other way round: it starts from the real process — how the lead arrives, who handles it, what they need to quote and when it closes — and only asks for data that moves the sale. If your business quotes from a price list with volume discounts, the system quotes that way instead of forcing your operation into a generic pipeline.",
+        ],
+      },
+      {
+        h2: "What we connect around the sale",
+        body: [
+          "**WhatsApp.** It is how most leads arrive in Villahermosa. We connect it so the conversation lands in the customer's record instead of getting lost in a phone.",
+          "**Quotes and orders.** The quote is built from your catalogue with your prices and terms, sent as a PDF and, once accepted, becomes an order without retyping it.",
+          "**Inventory and invoicing.** The salesperson sees real stock before promising delivery, and the closed order moves to CFDI 4.0 invoicing without double entry.",
+          "**Follow-up and reminders.** Tasks, next contacts and alerts for quotes that have gone quiet.",
+          "**Reports that mean something.** Pipeline per salesperson, lost-deal reasons and which products get quoted a lot but rarely sell.",
+          "We run our own CRM in production and built a 24-module one for the distributor CAPOSA, with multi-warehouse inventory, CFDI 4.0 invoicing and AI reports.",
+        ],
+      },
+      {
+        h2: "Custom CRM versus a subscription platform",
+        body: [
+          "A commercial platform is paid per user per month, and the serious features tend to sit in the higher tier. With eight salespeople the bill grows every year even if your process stays the same.",
+          "A custom CRM is paid once, runs on your own infrastructure, adds the whole team at no extra cost per user and keeps the customer base under your control rather than in an account that can be cancelled.",
+          "It is not for everyone: if you sell with a standard process and few users, a commercial tool may be enough, and we will tell you. The advantage of custom shows up when the CRM has to talk to your inventory, invoicing or operations.",
+        ],
+      },
+    ],
+    benefitsTitle: "What changes with a CRM built for you",
+    benefits: [
+      { title: "Nothing stays in a phone", desc: "Leads, conversations and quotes live in the company, not on the handset of whoever answered." },
+      { title: "Quoting stops being a chore", desc: "Catalogue, prices and terms already loaded: a quote takes minutes and becomes an order." },
+      { title: "No cost per user", desc: "Add the whole team, admin included, without raising a monthly bill." },
+      { title: "Connected to operations", desc: "See stock, raise the order and move to invoicing without typing the same thing three times." },
+    ],
+    audienceTitle: "Who is it for?",
+    audienceLead: "For companies in Villahermosa where sales no longer fit in a notebook or a chat:",
+    audience: [
+      "Distributors quoting over WhatsApp all day long.",
+      "Industrial companies with technical quotes and several people per account.",
+      "Builders and suppliers taking part in tenders.",
+      "Real-estate agencies with portal leads nobody answers in time.",
+      "Sales teams of three or more with no view of the real pipeline.",
+    ],
+    faq: [
+      { q: "Can it connect to WhatsApp?", a: "Yes. We integrate WhatsApp through Meta's official API or Twilio, so conversations land in the customer record and, if you want, an AI agent answers after hours." },
+      { q: "How does the cost compare to a subscription?", a: "It is an upfront investment instead of rent per user. It pays off as the team grows or when the CRM must connect to your inventory and invoicing; if your case is simple, we will say so." },
+      { q: "Do you migrate my current contacts?", a: "Yes, from spreadsheets, Google Contacts or whichever CRM you use today, as long as it can be exported." },
+      { q: "Can non-technical people use it?", a: "That is the point. We define the screens with your salespeople and train the team on the real system, not with a manual." },
+    ],
+    related: [
+      { href: "/agentes-de-inteligencia-artificial", label: "AI agents that answer WhatsApp" },
+      { href: "/erp-a-medida-villahermosa", label: "Custom ERP in Villahermosa" },
+      { href: "/sistemas-empresariales-tabasco", label: "Business systems in Tabasco" },
+    ],
+  },
+
+  "wms-villahermosa": {
+    slug: "wms-villahermosa",
+    metaTitle: "WMS and Inventory Control in Villahermosa",
+    metaDescription:
+      "Custom WMS and inventory control in Villahermosa: multi-warehouse, lots, barcodes, cycle counts and a ledger that reconciles. Connected to your invoicing.",
+    keyword: "WMS Villahermosa",
+    eyebrow: "WMS and inventory",
+    h1: "WMS and Inventory Control in Villahermosa",
+    heroLead:
+      "A warehouse system built for your operation: receipts, issues, transfers between warehouses, lots and expiry dates, cycle counts and barcodes. So the stock in the system and the stock on the floor are the same.",
+    ogAlt: "WMS and inventory control in Villahermosa — Neurovia Systems",
+    waMessage: "Hi, I need an inventory or WMS system for my warehouse in Villahermosa. Can we talk?",
+    priceNote: "Projects from MXN $65,000 + VAT",
+    serviceType: "Custom warehouse management system (WMS)",
+    sections: [
+      {
+        h2: "The warehouse that never reconciles",
+        body: [
+          "The signal is always the same: the system says twelve, the floor has nine, and nobody knows when three walked off. There is rarely theft behind it; there are issues written in a notebook, a branch transfer nobody recorded, material handed to a technician without a slip and counts done by hand twice a year.",
+          "When stock does not reconcile, the cost is not only shrinkage: you overbuy out of fear, you promise delivery of something that does not exist, and every month-end turns into an argument between the warehouse, purchasing and accounting.",
+          "A custom WMS attacks that where it happens: at the movement. Every receipt, issue and transfer is recorded with who, when and against which document.",
+        ],
+      },
+      {
+        h2: "What a custom WMS includes",
+        body: [
+          "**Multi-warehouse and locations.** Several warehouses or branches, stock by location and transfers with acknowledgement, so nothing moves without a trail.",
+          "**Lots, expiry dates and serial numbers.** Essential in food, pharmacy, chemicals and serialised parts: which lot came in, which customer it went to and what is about to expire.",
+          "**Barcodes.** Receiving and picking with a scanner or the phone camera, which is where entry errors really disappear.",
+          "**Cycle counts.** Instead of shutting the warehouse for two days a year, you count by zone through the month and fix differences with evidence.",
+          "**Minimums and alerts.** The system tells you when to reorder instead of you finding out when it is gone.",
+          "**Ledger and costs.** Full history per item and real inventory value, ready for accounting.",
+          "We already run the inventory module of an oil & gas client's ERP suite and CAPOSA's multi-warehouse inventory, and we are building our own Inventory System as a product.",
+        ],
+      },
+      {
+        h2: "From spreadsheets to a WMS without stopping the warehouse",
+        body: [
+          "We start with a proper opening count: count it, load it, and from then on the system is the source of truth. Catalogues and stock are migrated from your spreadsheets or the previous system.",
+          "Then we connect what already exists around it: purchasing, so receiving draws down the order; sales or point of sale, so an issue deducts stock automatically; and CFDI 4.0 invoicing, to avoid double entry. If you sell over a counter, Tomín POS — our point of sale — connects to the same inventory.",
+          "Training happens with the warehouse crew on the floor, not in a meeting room: they are the ones scanning, receiving and picking every day.",
+        ],
+      },
+    ],
+    benefitsTitle: "Why a custom WMS",
+    benefits: [
+      { title: "Stock reconciles", desc: "Every movement with an owner, a date and a document: differences get explained, not guessed." },
+      { title: "Fewer panic purchases", desc: "Minimums, alerts and consumption history, so you buy on data instead of fear." },
+      { title: "Works on the floor", desc: "Screens meant for scanning from a phone in the warehouse, not only for the office computer." },
+      { title: "Connected to buying and selling", desc: "One entry: what comes in through purchasing and out through sales deducts itself." },
+    ],
+    audienceTitle: "Who is it for?",
+    audienceLead: "For companies in Villahermosa and Tabasco where the warehouse has become part of the problem:",
+    audience: [
+      "Distributors with two or more warehouses or branches.",
+      "Hardware stores, parts dealers and building-material suppliers with thousands of SKUs.",
+      "Industrial and service companies issuing material to field technicians.",
+      "Businesses with perishable goods or mandatory lot and expiry tracking.",
+      "Companies that count stock once a year and always find a difference.",
+    ],
+    faq: [
+      { q: "Does it work with a barcode scanner?", a: "Yes, with a USB or wireless scanner and also with a phone camera, which is usually enough to start without buying hardware." },
+      { q: "Does it handle several branches?", a: "Yes. Several warehouses with independent stock, transfers with acknowledgement and a consolidated view for management." },
+      { q: "Does it connect to my invoicing?", a: "Yes, we integrate CFDI 4.0 and the invoicing or accounting systems you already use, when they allow a connection." },
+      { q: "How do we start if everything is in spreadsheets today?", a: "With an opening count and the migration of catalogues and stock. From that date the system is the source and the spreadsheet is retired." },
+    ],
+    related: [
+      { href: "/sistema-punto-de-venta-villahermosa", label: "Point of sale system in Villahermosa" },
+      { href: "/erp-a-medida-villahermosa", label: "Custom ERP in Villahermosa" },
+      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Custom software development in Villahermosa" },
+    ],
+  },
+
   "desarrollo-de-software-a-medida-monterrey": {
     slug: "desarrollo-de-software-a-medida-monterrey",
     metaTitle: "Custom Software Development in Monterrey",
@@ -1079,6 +1889,11 @@ const en: Record<string, ServicePageData> = {
     waMessage: "Hi, I need a custom system for my company in Monterrey. Can we schedule a call this week?",
     priceNote: "Projects from MXN $65,000 + VAT",
     serviceType: "Custom software development",
+    areaServed: [
+      { type: "City", name: "Monterrey" },
+      { type: "State", name: "Nuevo León" },
+      { type: "Country", name: "México" },
+    ],
     sections: [
       {
         h2: "Software for Monterrey's industrial pace",
@@ -1138,6 +1953,11 @@ const en: Record<string, ServicePageData> = {
     waMessage: "Hi, I need a custom system for my company in Mérida. Can we set up a call this week?",
     priceNote: "Projects from MXN $65,000 + VAT",
     serviceType: "Custom software development",
+    areaServed: [
+      { type: "City", name: "Mérida" },
+      { type: "State", name: "Yucatán" },
+      { type: "Country", name: "México" },
+    ],
     sections: [
       {
         h2: "Software for a service-driven city",
@@ -1198,6 +2018,11 @@ const en: Record<string, ServicePageData> = {
     waMessage: "Hi, I need a custom system for my company in Veracruz. Can we set up a call this week?",
     priceNote: "Projects from MXN $65,000 + VAT",
     serviceType: "Custom software development",
+    areaServed: [
+      { type: "City", name: "Veracruz" },
+      { type: "State", name: "Veracruz" },
+      { type: "Country", name: "México" },
+    ],
     sections: [
       {
         h2: "Software for an economy that moves through the port",
@@ -1258,6 +2083,12 @@ const en: Record<string, ServicePageData> = {
     waMessage: "Hi, I need a custom system for my company in Campeche. Can we set up a call this week?",
     priceNote: "Projects from MXN $65,000 + VAT",
     serviceType: "Custom software development",
+    areaServed: [
+      { type: "City", name: "Campeche" },
+      { type: "City", name: "Ciudad del Carmen" },
+      { type: "State", name: "Campeche" },
+      { type: "Country", name: "México" },
+    ],
     sections: [
       {
         h2: "Software for contractors working the sound",
@@ -1318,6 +2149,11 @@ const en: Record<string, ServicePageData> = {
     waMessage: "Hi, I need a custom system for my company in Guadalajara. Can we schedule a call this week?",
     priceNote: "Projects from MXN $65,000 + VAT",
     serviceType: "Custom software development",
+    areaServed: [
+      { type: "City", name: "Guadalajara" },
+      { type: "State", name: "Jalisco" },
+      { type: "Country", name: "México" },
+    ],
     sections: [
       {
         h2: "Software for the Guadalajara ecosystem",
@@ -1419,28 +2255,49 @@ export function buildServiceMetadata(data: ServicePageData, lang: Locale = "es")
 
 /** Service + FAQPage JSON-LD as a single @graph for one service page. */
 export function buildServiceJsonLd(data: ServicePageData, lang: Locale = "es") {
-  const url = `${SITE_URL}${localeBase(lang)}/${data.slug}`;
+  const path = `${localeBase(lang)}/${data.slug}`;
+  const url = `${SITE_URL}${path}`;
+  const inLanguage = lang === "en" ? "en-US" : "es-MX";
+  const bc = breadcrumbJsonLd([{ name: data.eyebrow, path }], lang);
+
   return {
     "@context": "https://schema.org",
     "@graph": [
       {
+        // La página en sí: colgada del WebSite y del negocio por @id, para que
+        // Google no tenga que adivinar de quién es esta URL.
+        "@type": "WebPage",
+        "@id": `${url}#webpage`,
+        url,
+        name: data.metaTitle,
+        description: data.metaDescription,
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        about: { "@id": ORG_ID },
+        mainEntity: { "@id": `${url}#service` },
+        breadcrumb: { "@id": bc["@id"] },
+        primaryImageOfPage: OG_IMAGE,
+        inLanguage,
+      },
+      bc,
+      {
         "@type": "Service",
-        "@id": `${url}/#service`,
+        "@id": `${url}#service`,
         name: data.metaTitle,
         serviceType: data.serviceType,
         url,
         description: data.metaDescription,
         provider: { "@id": ORG_ID },
-        areaServed: [
-          { "@type": "City", name: "Villahermosa" },
-          { "@type": "State", name: "Tabasco" },
-          { "@type": "Country", name: "México" },
-        ],
-        inLanguage: lang === "en" ? "en-US" : "es-MX",
+        areaServed: (data.areaServed ?? [
+          { type: "City", name: "Villahermosa" },
+          { type: "State", name: "Tabasco" },
+          { type: "Country", name: "México" },
+        ]).map((a) => ({ "@type": a.type, name: a.name })),
+        inLanguage,
       },
       {
         "@type": "FAQPage",
-        "@id": `${url}/#faq`,
+        "@id": `${url}#faq`,
+        isPartOf: { "@id": `${url}#webpage` },
         mainEntity: data.faq.map((f) => ({
           "@type": "Question",
           name: f.q,

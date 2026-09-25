@@ -49,7 +49,7 @@ export default function Hero({ lang = "es" }: { lang?: Locale }) {
           </a>
 
           <h1
-            className="hero-rise m-0 max-w-[14ch] font-heading text-[clamp(40px,6.4vw,104px)] leading-[0.98] tracking-[-0.02em] text-ink"
+            className="hero-rise m-0 max-w-[14ch] font-heading text-[clamp(40px,6.4vw,104px)] leading-[0.98] tracking-[-0.02em] text-ink lg:max-w-[17ch]"
             style={{ animationDelay: "0.22s" }}
           >
             {t.h1}

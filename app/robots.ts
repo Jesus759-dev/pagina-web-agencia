@@ -18,7 +18,8 @@ const BASE = "https://neuroviasystems.com.mx";
 // "do not use for Gemini/AI Overviews grounding". Same allow/disallow as `*`,
 // so there is no contradiction.
 const AI_CRAWLERS = [
-  "GPTBot", // OpenAI
+  "GPTBot", // OpenAI (rastreo)
+  "ChatGPT-User", // ChatGPT cuando el usuario pide abrir el sitio
   "OAI-SearchBot", // ChatGPT Search citations
   "ClaudeBot", // Anthropic (Claude)
   "Claude-User", // Claude user-triggered browsing
@@ -38,6 +39,13 @@ const CONTENT_SIGNAL = "ai-train=no, search=yes, ai-input=yes";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
+      {
+        // Buscadores tradicionales, nombrados explícitamente aunque el `*`
+        // ya los cubre: deja la intención por escrito.
+        userAgent: ["Googlebot", "Googlebot-Image", "Bingbot"],
+        allow: "/",
+        disallow: ["/api/"],
+      },
       {
         userAgent: "*",
         allow: "/",
