@@ -37,20 +37,31 @@ export default function ServiceReel({
   const triggerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
 
-  // Pause the card preview while it's off-screen (avoids 5 videos decoding at once).
+  // The preview file is only fetched once the card is actually on screen — five
+  // cards would otherwise pull ~570 KB of video before the page is even read.
+  // On a metered or slow connection the poster is all the visitor gets.
   useEffect(() => {
     const v = previewRef.current;
     if (!v) return;
+
+    type Conn = { saveData?: boolean; effectiveType?: string };
+    const conn = (navigator as Navigator & { connection?: Conn }).connection;
+    if (conn?.saveData || /^(slow-)?2g$/.test(conn?.effectiveType ?? "")) return;
+
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) v.play().catch(() => {});
-        else v.pause();
+        if (entry.isIntersecting) {
+          if (!v.src) v.src = preview; // primera vez: aquí empieza la descarga
+          v.play().catch(() => {});
+        } else {
+          v.pause();
+        }
       },
       { threshold: 0.25 }
     );
     io.observe(v);
     return () => io.disconnect();
-  }, []);
+  }, [preview]);
 
   // Lightbox: animate in, lock scroll, move focus in, restore it on close.
   useEffect(() => {
@@ -144,12 +155,10 @@ export default function ServiceReel({
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="none"
           poster={poster}
           style={{ boxShadow: "0 12px 28px -14px rgba(60,48,30,.45)" }}
-        >
-          <source src={preview} type="video/mp4" />
-        </video>
+        />
         <span
           className="pointer-events-none absolute flex h-14 w-14 items-center justify-center rounded-full text-white transition-transform duration-200 [@media(hover:hover)]:group-hover:scale-110"
           style={{ background: "rgba(40,74,94,.82)", backdropFilter: "blur(2px)" }}
