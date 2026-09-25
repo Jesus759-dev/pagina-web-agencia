@@ -450,6 +450,207 @@ const es: Record<string, ServicePageData> = {
     ],
   },
 
+  "desarrollo-de-software-a-medida-merida": {
+    slug: "desarrollo-de-software-a-medida-merida",
+    metaTitle: "Desarrollo de Software a Medida en Mérida",
+    metaDescription:
+      "Desarrollo de software a medida para empresas de Mérida, Yucatán: sistemas de gestión, inventarios, integraciones y automatización con IA. Consulta gratuita.",
+    keyword: "desarrollo de software a medida Mérida",
+    eyebrow: "Software a medida",
+    h1: "Desarrollo de Software a Medida en Mérida",
+    heroLead:
+      "Desarrollamos sistemas a la medida para empresas de Mérida y la península de Yucatán: control de operación, inventarios, expedientes de clientes y automatización con inteligencia artificial. Trabajamos en remoto, con entregas por etapas y el mismo estándar técnico que usamos en los proyectos del sureste.",
+    ogAlt: "Desarrollo de software a medida en Mérida — Neurovia Systems",
+    waMessage: "Hola, necesito un sistema a la medida para mi empresa en Mérida. ¿Podemos agendar una llamada esta semana?",
+    priceNote: "Proyectos desde $65,000 MXN + IVA",
+    serviceType: "Desarrollo de software a medida",
+    sections: [
+      {
+        h2: "Software para la economía de servicios de Mérida",
+        body: [
+          "Mérida creció rápido y su economía no se parece a la de una ciudad industrial clásica: pesan el turismo y la hotelería, los servicios médicos privados, el comercio, los despachos profesionales, el desarrollo inmobiliario y una agroindustria fuerte alrededor de la miel, los cítricos y la carne de cerdo. Cada giro tiene una operación distinta, y por eso los programas genéricos terminan usándose a medias: se paga la licencia completa y se aprovecha una fracción.",
+          "Nosotros hacemos lo contrario. Partimos de cómo trabaja tu empresa hoy, incluidos los formatos y las costumbres que ya funcionan, y construimos solo lo que hace falta: control de reservaciones y ocupación, expedientes de pacientes, inventarios multi-almacén, seguimiento de obra, cotizaciones que se convierten en órdenes o el tablero que la dirección necesita para decidir sin pedir reportes por WhatsApp.",
+          "El crecimiento inmobiliario y de servicios de la ciudad dejó un efecto claro: muchas empresas duplicaron su operación en pocos años y siguen coordinándose con hojas de cálculo compartidas. Ahí un sistema propio deja de ser un lujo y se vuelve la diferencia entre crecer ordenado o crecer a tropezones.",
+        ],
+      },
+      {
+        h2: "Cómo trabajamos con empresas yucatecas",
+        body: [
+          "Trabajamos 100 por ciento en remoto, con videollamadas cortas y entregas por etapas. La primera versión útil suele estar lista en semanas: la usas mientras seguimos construyendo, y cada entrega se prueba con tu gente, no solo con nosotros.",
+          "Construimos con Next.js, React, Node.js y PostgreSQL, e integramos inteligencia artificial cuando aporta de verdad: lectura de documentos, resúmenes de operación, asistentes que contestan por WhatsApp o clasificación automática de prospectos. Nada de IA por moda.",
+          "El sistema y su código son de tu empresa, documentados. Si mañana decides moverlo a otro proveedor o a tu propio equipo, puedes hacerlo sin pedirnos permiso.",
+        ],
+      },
+      {
+        h2: "Qué puedes resolver con un sistema propio",
+        body: [
+          "Los proyectos que más nos piden en la península son de tres tipos. El primero, ordenar una operación que vive en Excel: inventario, pedidos, clientes y cobranza en un solo lugar, con permisos por usuario y sin versiones distintas del mismo archivo. El segundo, conectar lo que ya usas: punto de venta, facturación CFDI 4.0, tienda en línea y CRM, para no capturar lo mismo tres veces. El tercero, automatizar el trabajo repetitivo: reportes diarios que salen solos, avisos de vencimiento, recordatorios de cobranza o un agente de inteligencia artificial que atiende consultas fuera de horario.",
+          "En todos los casos empezamos por el módulo que más duele y crecemos por etapas, para que la inversión se note desde el primer mes.",
+        ],
+      },
+    ],
+    benefitsTitle: "Por qué desarrollar tu software con Neurovia",
+    benefits: [
+      { title: "Entendemos el sureste", desc: "Operamos desde Villahermosa, con clientes en la región: conocemos los tiempos, los proveedores y la forma de trabajar." },
+      { title: "Primera versión en semanas", desc: "Entregamos por etapas: usas el sistema mientras lo seguimos construyendo, en vez de esperar meses." },
+      { title: "Código propio y documentado", desc: "El sistema es de tu empresa. Sin licencias por usuario ni dependencia de un solo proveedor." },
+      { title: "IA donde sí sirve", desc: "Automatizamos documentos, reportes y atención por WhatsApp cuando ahorra horas reales." },
+    ],
+    audienceTitle: "¿Para quién es este servicio?",
+    audienceLead: "El desarrollo a la medida rinde cuando la empresa ya superó las hojas de cálculo. En Mérida suele ser el caso de:",
+    audience: [
+      "Hoteles, restaurantes y operadores turísticos que necesitan control de reservas, insumos y personal.",
+      "Clínicas y consultorios que quieren expediente, agenda y seguimiento de pacientes en un solo sistema.",
+      "Distribuidoras y comercios con varios almacenes, pedidos por WhatsApp y facturación CFDI.",
+      "Constructoras y desarrolladores inmobiliarios que llevan obra, requisiciones y avances en Excel.",
+      "Despachos y empresas de servicios que quieren dejar de perseguir información entre correos.",
+    ],
+    faq: [
+      { q: "¿Trabajan con empresas de Mérida estando en Villahermosa?", a: "Sí, 100% en remoto y con clientes en varias ciudades. Coordinamos por videollamada y mensajería, con entregas por etapas para que veas avances reales cada semana." },
+      { q: "¿Cuánto cuesta un sistema a la medida?", a: "Depende del alcance. Los proyectos parten de $65,000 MXN + IVA y se construyen por módulos, así que puedes empezar por lo esencial y crecer después. El análisis inicial y el estimado no tienen costo." },
+      { q: "¿Se puede conectar con mi facturación o mi punto de venta?", a: "Sí. Integramos CFDI 4.0, pasarelas de pago, tiendas en línea y sistemas que ya uses, siempre que permitan conexión. Si no la permiten, te lo decimos antes de prometer nada." },
+      { q: "¿Qué pasa si mi negocio crece o cambia?", a: "El sistema se hizo para eso: se agregan módulos y usuarios sin rehacerlo. Al ser código propio y documentado, también puedes llevarlo con otro equipo si algún día lo decides." },
+    ],
+    related: [
+      { href: "/desarrollo-de-software-a-medida-campeche", label: "Desarrollo de software a medida en Campeche" },
+      { href: "/automatizacion-con-ia-tabasco", label: "Automatización con inteligencia artificial" },
+      { href: "/sistema-punto-de-venta-villahermosa", label: "Sistema de punto de venta" },
+    ],
+  },
+  "desarrollo-de-software-a-medida-veracruz": {
+    slug: "desarrollo-de-software-a-medida-veracruz",
+    metaTitle: "Desarrollo de Software a Medida en Veracruz",
+    metaDescription:
+      "Desarrollo de software a medida para empresas de Veracruz: logística portuaria, agroindustria, distribución y servicios. Sistemas, integraciones y automatización con IA.",
+    keyword: "desarrollo de software a medida Veracruz",
+    eyebrow: "Software a medida",
+    h1: "Desarrollo de Software a Medida en Veracruz",
+    heroLead:
+      "Sistemas hechos para cómo opera una empresa veracruzana: movimiento de mercancía, control de embarques, inventarios, costos por operación y automatización con inteligencia artificial. Trabajo remoto, entregas por etapas y código que se queda contigo.",
+    ogAlt: "Desarrollo de software a medida en Veracruz — Neurovia Systems",
+    waMessage: "Hola, necesito un sistema a la medida para mi empresa en Veracruz. ¿Podemos agendar una llamada esta semana?",
+    priceNote: "Proyectos desde $65,000 MXN + IVA",
+    serviceType: "Desarrollo de software a medida",
+    sections: [
+      {
+        h2: "Software para una economía que se mueve por el puerto",
+        body: [
+          "Veracruz vive del movimiento. El puerto marca el ritmo de agencias aduanales, transportistas, almacenes, patios y distribuidoras; alrededor giran la agroindustria del café, la caña y los cítricos, la actividad petroquímica del sur del estado y un comercio que abastece a media región. Todo ese movimiento genera un problema común: la información viaja más lento que la mercancía.",
+          "Cuando un embarque se documenta en un Excel, se confirma por WhatsApp y se factura en otro programa, nadie tiene el dato completo en el momento en que se necesita. Un sistema a la medida junta esas piezas: qué salió, con qué chofer, con qué documentos, cuánto costó realmente y qué falta por cobrar, sin capturar lo mismo tres veces.",
+          "Lo mismo aplica a la agroindustria y a la distribución: control de lotes, mermas, entradas y salidas por almacén, precios por cliente y márgenes por producto. Son datos que ya existen en tu operación; el sistema solo los pone donde sirven para decidir.",
+        ],
+      },
+      {
+        h2: "Integrar antes que reemplazar",
+        body: [
+          "No siempre hay que tirar lo que ya usas. Muchas empresas veracruzanas tienen un sistema contable o de facturación que funciona bien y un montón de procesos alrededor que no. En esos casos construimos la capa que falta y la conectamos: CFDI 4.0, bancos, tiendas en línea, GPS de flotilla o el ERP que ya pagaste.",
+          "Trabajamos con Next.js, React, Node.js y PostgreSQL, y agregamos inteligencia artificial donde ahorra horas: lectura automática de documentos y facturas, reportes que se escriben solos, avisos de vencimiento y agentes que responden por WhatsApp y correo fuera de horario.",
+          "Todo en remoto y por etapas. Empiezas a usar el sistema en semanas y lo afinamos con tu equipo en operación real, no en una sala de juntas.",
+        ],
+      },
+      {
+        h2: "Qué suele resolverse primero",
+        body: [
+          "El orden importa. Normalmente arrancamos por el módulo que está costando dinero hoy: el control de embarques y evidencias, el inventario que no cuadra, las requisiciones que se autorizan por mensaje o la cobranza que se persigue a mano. Con eso funcionando y medido, se decide el siguiente paso.",
+          "Cada entrega incluye capacitación corta a tu gente y documentación. El sistema es de tu empresa, con su código, y puede crecer con módulos nuevos o mudarse a otro equipo cuando lo decidas.",
+        ],
+      },
+    ],
+    benefitsTitle: "Por qué desarrollar tu software con Neurovia",
+    benefits: [
+      { title: "Pensado para operación pesada", desc: "Ya operamos sistemas de requisiciones, inventario y mantenimiento en empresas del sector energético del Golfo." },
+      { title: "Integra lo que ya pagaste", desc: "Conectamos facturación, bancos, GPS y ERPs en vez de obligarte a tirar lo que funciona." },
+      { title: "Entregas por etapas", desc: "Primera versión útil en semanas, mejoras continuas y presupuesto por módulos." },
+      { title: "Código propio y documentado", desc: "Sin licencias por usuario ni dependencia de un proveedor único." },
+    ],
+    audienceTitle: "¿Para quién es este servicio?",
+    audienceLead: "Este servicio es para empresas veracruzanas cuya operación ya no cabe en hojas de cálculo:",
+    audience: [
+      "Agencias aduanales, transportistas y almacenes que documentan embarques y evidencias a mano.",
+      "Distribuidoras y comercializadoras con varios almacenes, listas de precios y cobranza.",
+      "Agroindustria que controla lotes, acopio, mermas y liquidaciones a productores.",
+      "Empresas de servicios industriales que llevan requisiciones, compras y mantenimiento en Excel.",
+      "Negocios con flotilla que necesitan costos, mantenimientos y evidencias por unidad.",
+    ],
+    faq: [
+      { q: "¿Pueden conectar el sistema con mi facturación actual?", a: "Sí. Integramos CFDI 4.0 y los sistemas contables o de facturación que ya uses, siempre que permitan conexión. Lo revisamos antes de comprometer nada." },
+      { q: "¿Trabajan con empresas de Veracruz en remoto?", a: "Sí, 100% remoto, con reuniones cortas y entregas por etapas. Es la misma forma en que trabajamos con clientes de Nuevo León y del sureste." },
+      { q: "¿Cuánto tarda la primera entrega?", a: "Una primera versión funcional suele estar lista en semanas. Preferimos que uses el sistema pronto y lo ajustemos con tu operación real." },
+      { q: "¿Qué pasa con mis datos?", a: "Son tuyos. El sistema se despliega en infraestructura a tu nombre o en la nuestra, según prefieras, y te entregamos respaldos y documentación." },
+    ],
+    related: [
+      { href: "/desarrollo-de-software-a-medida-campeche", label: "Desarrollo de software a medida en Campeche" },
+      { href: "/desarrollo-de-software-a-medida-merida", label: "Desarrollo de software a medida en Mérida" },
+      { href: "/automatizacion-con-ia-tabasco", label: "Automatización con inteligencia artificial" },
+    ],
+  },
+  "desarrollo-de-software-a-medida-campeche": {
+    slug: "desarrollo-de-software-a-medida-campeche",
+    metaTitle: "Desarrollo de Software a Medida en Campeche",
+    metaDescription:
+      "Desarrollo de software a medida en Campeche y Ciudad del Carmen: contratistas del sector energético, pesca, comercio y servicios. Sistemas, cumplimiento y automatización con IA.",
+    keyword: "desarrollo de software a medida Campeche",
+    eyebrow: "Software a medida",
+    h1: "Desarrollo de Software a Medida en Campeche",
+    heroLead:
+      "Sistemas a la medida para empresas de Campeche y Ciudad del Carmen: control de personal y equipo, requisiciones, evidencias de cumplimiento y automatización con inteligencia artificial. Conocemos cómo se trabaja cuando el cliente es del sector energético.",
+    ogAlt: "Desarrollo de software a medida en Campeche — Neurovia Systems",
+    waMessage: "Hola, necesito un sistema a la medida para mi empresa en Campeche. ¿Podemos agendar una llamada esta semana?",
+    priceNote: "Proyectos desde $65,000 MXN + IVA",
+    serviceType: "Desarrollo de software a medida",
+    sections: [
+      {
+        h2: "Software para contratistas y empresas de la sonda",
+        body: [
+          "La economía de Campeche tiene un eje que no se parece a ninguna otra: la actividad petrolera de la sonda y todo lo que vive alrededor en Ciudad del Carmen. Empresas de servicios, transporte de personal, alimentación, mantenimiento, buceo, seguridad industrial y suministro trabajan para un cliente exigente que pide documentación, evidencia y cumplimiento en cada etapa.",
+          "Ese contexto define el software que hace falta. No basta con registrar ventas: hay que demostrar que el personal está certificado, que el equipo tiene su calibración vigente, que el permiso de trabajo se cerró con evidencia y que cada requisición tuvo su autorización. Eso es justo lo que construimos: suites de requisiciones y compras, mantenimiento de flota y equipo, inventario por almacén y gestión de cumplimiento para auditorías.",
+          "Fuera del sector energético, Campeche mueve pesca, comercio, turismo cultural y proveeduría al gobierno estatal y municipal. Ahí los dolores son otros: control de inventario y precios, padrón de clientes, licitaciones y comprobación de gastos. También se resuelven con un sistema propio, pero con otro enfoque.",
+        ],
+      },
+      {
+        h2: "Cumplimiento y evidencia, no solo capturas",
+        body: [
+          "Cuando tu cliente es Pemex o un operador grande, la diferencia entre ganar y perder un contrato suele estar en poder demostrar lo que hiciste. Por eso nuestros sistemas guardan la evidencia con fecha, responsable y respaldo: quién autorizó, qué se entregó, qué constancia estaba vigente y qué se corrigió tras un hallazgo.",
+          "Tenemos un producto propio pensado para eso, Núcleo SGI, que concentra documentos, hallazgos, capacitación DC-3 y evidencias de auditoría. Cuando la empresa necesita algo distinto, lo construimos a la medida sobre la misma base técnica.",
+          "Trabajamos con Next.js, React, Node.js y PostgreSQL, en remoto y con entregas por etapas. Villahermosa está a unas horas de Ciudad del Carmen, así que también coordinamos visitas cuando el proyecto lo amerita.",
+        ],
+      },
+      {
+        h2: "Por dónde empezar",
+        body: [
+          "Arrancamos con una llamada de 20 minutos para entender la operación y decirte con franqueza si conviene un desarrollo a la medida, una automatización más simple o una herramienta que ya existe. Si no tiene sentido invertir, te lo decimos: preferimos perder un proyecto a vender algo que no vas a usar.",
+          "Si sí tiene sentido, te pasamos alcance, precio y tiempos por etapas. Empezamos por el módulo que más duele, lo pones en operación y de ahí crecemos.",
+        ],
+      },
+    ],
+    benefitsTitle: "Por qué desarrollar tu software con Neurovia",
+    benefits: [
+      { title: "Experiencia en el sector energético", desc: "Operamos suites de requisiciones, mantenimiento e inventario para un cliente petrolero, en 23 áreas operativas." },
+      { title: "Evidencia lista para auditoría", desc: "Documentos, hallazgos, DC-3 y constancias con fecha y responsable, exportables cuando llega la revisión." },
+      { title: "Cerca de Ciudad del Carmen", desc: "Operamos desde Villahermosa: mismos tiempos y visitas cuando el proyecto lo pide." },
+      { title: "Código propio y documentado", desc: "El sistema es de tu empresa y crece por módulos según tu presupuesto." },
+    ],
+    audienceTitle: "¿Para quién es este servicio?",
+    audienceLead: "Trabajamos sobre todo con empresas campechanas que tienen que demostrar cómo operan:",
+    audience: [
+      "Contratistas de servicios petroleros que responden ante Pemex o la ASEA.",
+      "Empresas de transporte de personal, alimentación y mantenimiento con operación en campo.",
+      "Comercializadoras y distribuidoras con inventario en varios almacenes.",
+      "Empresas pesqueras y de proceso que controlan lotes, acopio y liquidaciones.",
+      "Proveedores de gobierno que necesitan expedientes y comprobación ordenada.",
+    ],
+    faq: [
+      { q: "¿Atienden Ciudad del Carmen?", a: "Sí. Trabajamos en remoto con toda la zona y, cuando el proyecto lo amerita, coordinamos visitas desde Villahermosa." },
+      { q: "¿Tienen algo listo para cumplimiento y auditorías?", a: "Sí: Núcleo SGI, nuestro sistema de gestión integral, cubre documentos, hallazgos, capacitación DC-3 y evidencias. Si necesitas algo distinto, lo desarrollamos a la medida." },
+      { q: "¿Cuánto cuesta y cuánto tarda?", a: "Los proyectos parten de $65,000 MXN + IVA y se entregan por etapas; la primera versión útil suele estar lista en semanas. El análisis y el estimado son gratuitos." },
+      { q: "¿El sistema queda a nombre de mi empresa?", a: "Sí, con su código y su documentación. Puedes moverlo a otro proveedor o a tu propio equipo cuando quieras." },
+    ],
+    related: [
+      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a medida en Villahermosa" },
+      { href: "/desarrollo-de-software-a-medida-merida", label: "Desarrollo de software a medida en Mérida" },
+      { href: "/agentes-de-inteligencia-artificial", label: "Agentes de inteligencia artificial a medida" },
+    ],
+  },
   "desarrollo-de-software-a-medida-guadalajara": {
     slug: "desarrollo-de-software-a-medida-guadalajara",
     metaTitle: "Desarrollo de Software a Medida en Guadalajara",
@@ -923,6 +1124,186 @@ const en: Record<string, ServicePageData> = {
     ],
   },
 
+  "desarrollo-de-software-a-medida-merida": {
+    slug: "desarrollo-de-software-a-medida-merida",
+    metaTitle: "Custom Software Development in Mérida",
+    metaDescription:
+      "Custom software for companies in Mérida, Yucatán: management systems, inventory, integrations and AI automation. Free consultation.",
+    keyword: "custom software development Mérida",
+    eyebrow: "Custom software",
+    h1: "Custom Software Development in Mérida",
+    heroLead:
+      "We build custom systems for companies in Mérida and the Yucatán peninsula: operations control, inventory, customer records and AI automation. We work remotely, ship in stages and apply the same engineering standard we use across southeast Mexico.",
+    ogAlt: "Custom software development in Mérida — Neurovia Systems",
+    waMessage: "Hi, I need a custom system for my company in Mérida. Can we set up a call this week?",
+    priceNote: "Projects from MXN $65,000 + VAT",
+    serviceType: "Custom software development",
+    sections: [
+      {
+        h2: "Software for a service-driven city",
+        body: [
+          "Mérida's economy is not the classic industrial one: tourism and hospitality, private healthcare, retail, professional firms, real estate development and an agro-industry built around honey, citrus and pork. Each of those runs differently, which is why off-the-shelf software ends up half-used: you pay for the whole licence and use a fraction of it.",
+          "We start from how your company actually works — including the formats and habits that already do their job — and build only what is missing: bookings and occupancy, patient records, multi-warehouse inventory, project tracking, quotes that turn into orders, or the dashboard management needs so it stops asking for reports over WhatsApp.",
+          "The city's growth left a visible mark: many companies doubled their operation in a few years and still coordinate through shared spreadsheets. That is where a system of your own stops being a luxury.",
+        ],
+      },
+      {
+        h2: "How we work with Yucatán companies",
+        body: [
+          "Fully remote, with short video calls and staged delivery. The first useful version is usually ready in weeks: you use it while we keep building, and every release is tested with your team.",
+          "We build with Next.js, React, Node.js and PostgreSQL, and add AI only where it saves real hours: document reading, operations summaries, assistants that answer on WhatsApp, automatic lead qualification.",
+          "The system and its code belong to your company, documented. If you ever move it to another provider or your own team, you can.",
+        ],
+      },
+    ],
+    benefitsTitle: "Why build your software with Neurovia",
+    benefits: [
+      { title: "We know the southeast", desc: "We work from Villahermosa with clients across the region: same timelines, same way of working." },
+      { title: "First version in weeks", desc: "Staged delivery: you use the system while we keep building it." },
+      { title: "Your code, documented", desc: "No per-user licences, no lock-in to a single provider." },
+      { title: "AI where it pays off", desc: "Documents, reports and WhatsApp support automated only when it saves real hours." },
+    ],
+    audienceTitle: "Who is this for?",
+    audienceLead: "Custom development pays off once spreadsheets stop being enough. In Mérida that usually means:",
+    audience: [
+      "Hotels, restaurants and tour operators tracking bookings, supplies and staff.",
+      "Clinics that want records, scheduling and follow-up in one system.",
+      "Distributors and retailers with several warehouses, WhatsApp orders and CFDI invoicing.",
+      "Builders and real-estate developers running projects and purchase requests in Excel.",
+      "Professional firms tired of chasing information across email threads.",
+    ],
+    faq: [
+      { q: "Do you work with companies in Mérida from Villahermosa?", a: "Yes, fully remote and with clients in several cities. We coordinate by video call and messaging, with staged delivery so you see real progress every week." },
+      { q: "How much does a custom system cost?", a: "It depends on scope. Projects start at MXN $65,000 + VAT and are built module by module, so you can start with the essentials. The initial analysis and estimate are free." },
+      { q: "Can it connect to my invoicing or point of sale?", a: "Yes. We integrate CFDI 4.0, payment gateways, online stores and the systems you already use, as long as they allow a connection." },
+      { q: "What if my business grows or changes?", a: "That is the point: modules and users are added without rebuilding. The code is yours and documented." },
+    ],
+    related: [
+      { href: "/desarrollo-de-software-a-medida-campeche", label: "Custom software development in Campeche" },
+      { href: "/automatizacion-con-ia-tabasco", label: "AI automation" },
+      { href: "/sistema-punto-de-venta-villahermosa", label: "Point of sale system" },
+    ],
+  },
+  "desarrollo-de-software-a-medida-veracruz": {
+    slug: "desarrollo-de-software-a-medida-veracruz",
+    metaTitle: "Custom Software Development in Veracruz",
+    metaDescription:
+      "Custom software for companies in Veracruz: port logistics, agro-industry, distribution and services. Systems, integrations and AI automation.",
+    keyword: "custom software development Veracruz",
+    eyebrow: "Custom software",
+    h1: "Custom Software Development in Veracruz",
+    heroLead:
+      "Systems built for how a Veracruz company actually operates: goods on the move, shipment control, inventory, real cost per operation and AI automation. Remote work, staged delivery and code that stays with you.",
+    ogAlt: "Custom software development in Veracruz — Neurovia Systems",
+    waMessage: "Hi, I need a custom system for my company in Veracruz. Can we set up a call this week?",
+    priceNote: "Projects from MXN $65,000 + VAT",
+    serviceType: "Custom software development",
+    sections: [
+      {
+        h2: "Software for an economy that moves through the port",
+        body: [
+          "Veracruz runs on movement. The port sets the pace for customs agencies, carriers, warehouses, yards and distributors, with coffee, sugarcane and citrus agro-industry and the petrochemical activity of the south around it. All that movement creates one shared problem: information travels slower than the cargo.",
+          "When a shipment is logged in a spreadsheet, confirmed over WhatsApp and invoiced somewhere else, nobody has the full picture when it matters. A custom system puts those pieces together: what left, with which driver and documents, what it really cost and what is still to be collected.",
+          "The same applies to agro-industry and distribution: lots, shrinkage, warehouse movements, customer-specific pricing and margin per product.",
+        ],
+      },
+      {
+        h2: "Integrate before replacing",
+        body: [
+          "You do not always have to throw away what works. Many companies here have solid accounting or invoicing software and a mess of processes around it. In those cases we build the missing layer and connect it: CFDI 4.0, banks, online stores, fleet GPS or the ERP you already paid for.",
+          "We build with Next.js, React, Node.js and PostgreSQL, and add AI where it saves hours: automatic document and invoice reading, reports that write themselves, expiry alerts and assistants that answer after hours.",
+          "All remote and staged. You start using the system in weeks and we refine it against real operations.",
+        ],
+      },
+    ],
+    benefitsTitle: "Why build your software with Neurovia",
+    benefits: [
+      { title: "Built for heavy operations", desc: "We already run purchase-request, inventory and maintenance systems for energy-sector companies on the Gulf." },
+      { title: "Integrates what you own", desc: "We connect invoicing, banks, GPS and ERPs instead of forcing a rebuild." },
+      { title: "Staged delivery", desc: "First useful version in weeks, then continuous improvement, budgeted by module." },
+      { title: "Your code, documented", desc: "No per-user licences, no single-provider lock-in." },
+    ],
+    audienceTitle: "Who is this for?",
+    audienceLead: "For Veracruz companies whose operation no longer fits in spreadsheets:",
+    audience: [
+      "Customs agencies, carriers and warehouses documenting shipments by hand.",
+      "Distributors with several warehouses, price lists and collections.",
+      "Agro-industry tracking lots, intake, shrinkage and producer settlements.",
+      "Industrial service companies running purchase requests and maintenance in Excel.",
+      "Fleet operators that need cost, maintenance and evidence per unit.",
+    ],
+    faq: [
+      { q: "Can it connect to my current invoicing?", a: "Yes. We integrate CFDI 4.0 and the accounting or invoicing systems you already use, as long as they allow a connection. We check before promising anything." },
+      { q: "Do you work remotely with Veracruz companies?", a: "Yes, fully remote, with short meetings and staged delivery — the same way we work with clients in Nuevo León and the southeast." },
+      { q: "How long until the first delivery?", a: "A first working version is usually ready in weeks. We would rather have you using it early and adjust against real operations." },
+      { q: "What happens with my data?", a: "It is yours. We deploy on infrastructure in your name or ours, as you prefer, and hand over backups and documentation." },
+    ],
+    related: [
+      { href: "/desarrollo-de-software-a-medida-campeche", label: "Custom software development in Campeche" },
+      { href: "/desarrollo-de-software-a-medida-merida", label: "Custom software development in Mérida" },
+      { href: "/automatizacion-con-ia-tabasco", label: "AI automation" },
+    ],
+  },
+  "desarrollo-de-software-a-medida-campeche": {
+    slug: "desarrollo-de-software-a-medida-campeche",
+    metaTitle: "Custom Software Development in Campeche",
+    metaDescription:
+      "Custom software in Campeche and Ciudad del Carmen: energy-sector contractors, fishing, retail and services. Systems, compliance and AI automation.",
+    keyword: "custom software development Campeche",
+    eyebrow: "Custom software",
+    h1: "Custom Software Development in Campeche",
+    heroLead:
+      "Custom systems for companies in Campeche and Ciudad del Carmen: crew and equipment control, purchase requests, compliance evidence and AI automation. We know how the work looks when your client is in the energy sector.",
+    ogAlt: "Custom software development in Campeche — Neurovia Systems",
+    waMessage: "Hi, I need a custom system for my company in Campeche. Can we set up a call this week?",
+    priceNote: "Projects from MXN $65,000 + VAT",
+    serviceType: "Custom software development",
+    sections: [
+      {
+        h2: "Software for contractors working the sound",
+        body: [
+          "Campeche's economy has an axis no other state shares: offshore oil activity and everything that lives around it in Ciudad del Carmen. Service companies, crew transport, catering, maintenance, diving, industrial safety and supply all work for a demanding client that asks for documentation, evidence and compliance at every step.",
+          "That context defines the software. Recording sales is not enough: you have to prove crews are certified, equipment calibration is current, the work permit was closed with evidence and every purchase request was authorised. That is exactly what we build.",
+          "Outside the energy sector, Campeche moves fishing, retail, cultural tourism and public-sector supply, where the pain is different: inventory and pricing, customer records, tenders and expense reporting.",
+        ],
+      },
+      {
+        h2: "Compliance and evidence, not just data entry",
+        body: [
+          "When your client is Pemex or a large operator, winning or losing a contract often comes down to proving what you did. Our systems store evidence with date, owner and backup: who authorised, what was delivered, which certificate was valid and what was fixed after a finding.",
+          "We have a product built for that, Núcleo SGI, covering documents, findings, DC-3 training records and audit evidence. When a company needs something different, we build it on the same technical base.",
+          "We work with Next.js, React, Node.js and PostgreSQL, remotely and in stages. Villahermosa is a few hours from Ciudad del Carmen, so on-site visits are possible when the project calls for it.",
+        ],
+      },
+    ],
+    benefitsTitle: "Why build your software with Neurovia",
+    benefits: [
+      { title: "Energy-sector experience", desc: "We run purchase-request, maintenance and inventory suites for an oil & gas client across 23 operating areas." },
+      { title: "Audit-ready evidence", desc: "Documents, findings, DC-3 records and certificates with date and owner, exportable when the audit arrives." },
+      { title: "Close to Ciudad del Carmen", desc: "We operate from Villahermosa: same schedule, visits when needed." },
+      { title: "Your code, documented", desc: "The system belongs to your company and grows module by module." },
+    ],
+    audienceTitle: "Who is this for?",
+    audienceLead: "Mostly Campeche companies that have to prove how they operate:",
+    audience: [
+      "Oil-service contractors answering to Pemex or ASEA.",
+      "Crew transport, catering and maintenance companies working in the field.",
+      "Distributors with inventory across several warehouses.",
+      "Fishing and processing companies tracking lots, intake and settlements.",
+      "Public-sector suppliers that need orderly records and expense reporting.",
+    ],
+    faq: [
+      { q: "Do you serve Ciudad del Carmen?", a: "Yes. We work remotely across the area and coordinate visits from Villahermosa when the project calls for it." },
+      { q: "Do you have something ready for compliance and audits?", a: "Yes: Núcleo SGI, our integrated management system, covers documents, findings, DC-3 training and evidence. Anything different, we build custom." },
+      { q: "How much and how long?", a: "Projects start at MXN $65,000 + VAT and ship in stages; the first useful version is usually ready in weeks. Analysis and estimate are free." },
+      { q: "Is the system owned by my company?", a: "Yes, with its code and documentation. You can move it to another provider or your own team whenever you want." },
+    ],
+    related: [
+      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Custom software development in Villahermosa" },
+      { href: "/desarrollo-de-software-a-medida-merida", label: "Custom software development in Mérida" },
+      { href: "/agentes-de-inteligencia-artificial", label: "Custom AI agents" },
+    ],
+  },
   "desarrollo-de-software-a-medida-guadalajara": {
     slug: "desarrollo-de-software-a-medida-guadalajara",
     metaTitle: "Custom Software Development in Guadalajara",

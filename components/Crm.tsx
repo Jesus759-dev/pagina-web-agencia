@@ -72,8 +72,10 @@ export default function Crm({ lang = "es" }: { lang?: Locale }) {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/projects/crm-login.png"
+                src="/projects/crm-login.webp"
                 alt={t.imgAlt}
+                loading="lazy"
+                decoding="async"
                 className="block h-auto w-full object-contain"
               />
             </div>

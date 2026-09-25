@@ -3,11 +3,11 @@ import { Instrument_Serif, Manrope } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import ChatWidget from "@/components/ChatWidget";
+import ChatWidgetLoader from "@/components/ChatWidgetLoader";
 import ScrollChoreography from "@/components/ScrollChoreography";
 import WebMcpTools from "@/components/WebMcpTools";
 import ParticleFieldLoader from "@/components/ParticleFieldLoader";
-import MetaPixel from "@/components/MetaPixel";
+import Analytics from "@/components/Analytics";
 
 // Editorial serif for headings (single weight 400, tight tracking) and a
 // clean geometric sans for everything else — the reference design pairing.
@@ -17,6 +17,7 @@ const instrumentSerif = Instrument_Serif({
   weight: "400",
   style: ["normal", "italic"],
   display: "swap",
+  preload: false, // titulares: no compite con la fuente de texto en la carga
 });
 
 const manrope = Manrope({
@@ -24,6 +25,7 @@ const manrope = Manrope({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
+  preload: true, // la fuente principal del texto: se precarga
 });
 
 /* --------------------------------------------------------------------------
@@ -406,10 +408,9 @@ export default function RootLayout({
       className={`${instrumentSerif.variable} ${manrope.variable} antialiased`}
     >
       <head>
-        {/* Connection hints for third-party origins (fonts + video CDN) */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        {/* next/font self-hosts Instrument Serif and Manrope, so there is no
+            Google Fonts origin left to preconnect to — the hints only cost
+            two idle connections on mobile. */}
 
         {/* Theme color for mobile browser chrome */}
         <meta name="theme-color" content="#fdfbf7" />
@@ -465,25 +466,11 @@ export default function RootLayout({
         <WebMcpTools />
         {/* Floating WhatsApp CTA — kept from the previous build */}
         <WhatsAppButton />
-        <ChatWidget />
+        <ChatWidgetLoader />
 
-        {/* Meta Pixel (Facebook/Instagram Ads) — no-op until META_PIXEL_ID is set */}
-        <MetaPixel />
-
-        {/* Google Analytics 4 — loaded after the page is interactive so it
-            never blocks first paint / LCP. Tracks all routes automatically. */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="ga4-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
-          `}
-        </Script>
+        {/* Medición: solo en el dominio real y respetando el modo interno.
+            components/Analytics.tsx decide si carga GA4 y el píxel de Meta. */}
+        <Analytics gaId={GA_MEASUREMENT_ID} />
       </body>
     </html>
   );

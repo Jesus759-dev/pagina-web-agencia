@@ -322,6 +322,7 @@ const es = {
     copyright: "© 2026 Neurovia Systems — Software, IA e Infraestructura IT",
     privacy: "Aviso de privacidad",
     agenda: "Agenda una llamada",
+    cities: "Atendemos en",
   },
   subscribe: {
     title: "Recibe ideas para automatizar tu negocio",
@@ -826,6 +827,7 @@ const en: typeof es = {
     copyright: "© 2026 Neurovia Systems — Software, AI & IT Infrastructure",
     privacy: "Privacy notice",
     agenda: "Book a call",
+    cities: "We work in",
   },
   subscribe: {
     title: "Get ideas to automate your business",

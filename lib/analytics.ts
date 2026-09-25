@@ -9,15 +9,26 @@
 // - whatsapp_click / email_click / newsletter_signup → secundarios, para ver
 //   qué botones mueven a la gente sin inflar las conversiones.
 
+import { trackingEnabled, warnTrackingOff } from "@/lib/tracking-consent";
+
 export type LeadSource = "form" | "chatbot";
 
+/** Ningún evento sale fuera de neuroviasystems.com.mx (localhost, previews…). */
+function allowed(): boolean {
+  if (trackingEnabled()) return true;
+  warnTrackingOff("no es el dominio de producción");
+  return false;
+}
+
 function gtag(...args: unknown[]): void {
+  if (!allowed()) return;
   if (typeof window !== "undefined" && typeof window.gtag === "function") {
     window.gtag(...args);
   }
 }
 
 function fbq(command: "init" | "track" | "trackCustom", ...args: unknown[]): void {
+  if (!allowed()) return;
   if (typeof window !== "undefined" && typeof window.fbq === "function") {
     window.fbq(command, ...args);
   }

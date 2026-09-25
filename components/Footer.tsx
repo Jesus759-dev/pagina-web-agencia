@@ -11,6 +11,15 @@ export default function Footer({ lang = "es" }: { lang?: Locale }) {
     { href: `${base}/nosotros`, label: t.nav.nosotros },
     { href: `${base}/#contacto`, label: t.nav.contacto },
   ];
+  // Ciudades con página propia (SEO local). El orden es el de cercanía real.
+  const cities = [
+    { slug: "villahermosa", label: "Villahermosa" },
+    { slug: "campeche", label: "Campeche" },
+    { slug: "merida", label: "Mérida" },
+    { slug: "veracruz", label: "Veracruz" },
+    { slug: "monterrey", label: "Monterrey" },
+    { slug: "guadalajara", label: "Guadalajara" },
+  ];
 
   return (
     <footer className="border-t border-line-soft bg-surface-2 px-5 py-[50px] sm:px-10">
@@ -43,6 +52,16 @@ export default function Footer({ lang = "es" }: { lang?: Locale }) {
           <p className="mb-4 mt-2 text-[13px] leading-[1.55] text-faint">{t.subscribe.desc}</p>
           <SubscribeForm lang={lang} />
         </div>
+      </div>
+
+      {/* SEO local: enlaces a las páginas por ciudad */}
+      <div className="mx-auto mt-10 flex max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] flex-wrap items-baseline gap-x-5 gap-y-2 border-t border-line-soft pt-5 text-[13px] text-faint">
+        <span>{t.footer.cities}:</span>
+        {cities.map((c) => (
+          <a key={c.slug} href={`${base}/desarrollo-de-software-a-medida-${c.slug}`} className="navlink">
+            {c.label}
+          </a>
+        ))}
       </div>
 
       <div className="mx-auto mt-9 flex max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] flex-wrap items-center justify-between gap-4 border-t border-line-soft pt-5 text-xs text-faint">
