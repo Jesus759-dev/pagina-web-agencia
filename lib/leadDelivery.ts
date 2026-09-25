@@ -1,3 +1,8 @@
+// Carga los secretos del archivo privado del hosting ANTES de leer process.env.
+// Debe ir primero: sin esto, /api/lead no ve Telegram ni el correo (el archivo
+// solo lo cargaba la ruta del chatbot).
+import "@/lib/chat/serverEnv";
+
 /**
  * Entrega de prospectos (solo servidor).
  *
