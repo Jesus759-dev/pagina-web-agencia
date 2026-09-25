@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { trackExpo } from "@/lib/analytics";
 import { captureAttribution, isGoogleAdsVisitor } from "@/lib/leadTracking";
-import { EXPO } from "@/lib/expo";
+import { EXPO, cameFromExpo, markExpoVisit } from "@/lib/expo";
 import { getDict, localeBase, type Locale } from "@/lib/i18n";
 
 /**
@@ -21,7 +21,6 @@ import { getDict, localeBase, type Locale } from "@/lib/i18n";
  * para no taparlos ni tapar los botones del hero.
  */
 const KEY = `nv-expo-${EXPO.end.slice(0, 10)}`;
-const SEEN_KEY = "nv-expo-visita";
 
 export default function ExpoBanner({ lang = "es" }: { lang?: Locale }) {
   const t = getDict(lang).expo;
@@ -35,11 +34,8 @@ export default function ExpoBanner({ lang = "es" }: { lang?: Locale }) {
     try {
       dismissed = window.localStorage.getItem(KEY) === "1";
       const fromUrl = new URL(window.location.href).searchParams.get("ref") === "expo";
-      if (fromUrl) window.sessionStorage.setItem(SEEN_KEY, "1");
-      fromExpo =
-        fromUrl ||
-        window.sessionStorage.getItem(SEEN_KEY) === "1" ||
-        document.referrer.includes(`${window.location.host}${EXPO.path}`);
+      if (fromUrl) markExpoVisit();
+      fromExpo = fromUrl || cameFromExpo() || document.referrer.includes(`${window.location.host}${EXPO.path}`);
     } catch {
       /* navegador sin almacenamiento: nos quedamos con lo que diga la URL */
     }

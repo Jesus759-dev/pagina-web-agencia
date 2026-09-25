@@ -20,3 +20,32 @@ export const EXPO = {
 export function isExpoActive(now: Date = new Date()): boolean {
   return now.getTime() < new Date(EXPO.end).getTime();
 }
+
+/** Clave y duración de la marca "este visitante viene de la expo". */
+const VISIT_KEY = "nv-expo-visita";
+const VISIT_TTL_MS = 12 * 60 * 60 * 1000;
+
+/** Deja marcado que el visitante pasó por /expo (caduca en 12 h). */
+export function markExpoVisit(): void {
+  try {
+    window.sessionStorage.setItem(VISIT_KEY, String(Date.now()));
+  } catch {
+    /* sin sessionStorage: el aviso simplemente no reaparecerá */
+  }
+}
+
+/** ¿Pasó por /expo hace poco? Una marca vieja ya no cuenta. */
+export function cameFromExpo(): boolean {
+  try {
+    const raw = window.sessionStorage.getItem(VISIT_KEY);
+    if (!raw) return false;
+    const ts = Number(raw);
+    if (!Number.isFinite(ts) || Date.now() - ts > VISIT_TTL_MS) {
+      window.sessionStorage.removeItem(VISIT_KEY);
+      return false;
+    }
+    return true;
+  } catch {
+    return false;
+  }
+}
