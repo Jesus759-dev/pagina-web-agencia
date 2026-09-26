@@ -159,6 +159,71 @@ export default function ProductPage({
           </div>
         </section>
 
+        {/* Planes — solo si el producto publica precios */}
+        {data.planes && (
+          <section id="planes" className="mx-auto max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] scroll-mt-28 px-5 pt-[100px] sm:px-10">
+            <h2 className="m-0 max-w-[760px] font-heading text-[34px] font-bold leading-[1.05] tracking-[-0.03em] text-ink sm:text-5xl">
+              {data.planes.title}
+            </h2>
+            {data.planes.lead && (
+              <p className="m-0 mt-5 max-w-[640px] text-[17px] leading-[1.65] text-muted">{data.planes.lead}</p>
+            )}
+
+            <div className="mt-[44px] grid grid-cols-1 gap-[22px] md:grid-cols-3">
+              {data.planes.items.map((p) => (
+                <div
+                  key={p.nombre}
+                  className={`svc-card flex flex-col rounded-2xl border p-[34px] ${
+                    p.destacado ? "border-transparent" : "border-line bg-white"
+                  }`}
+                  style={p.destacado ? { background: "var(--accent-soft)", borderColor: "var(--accent)" } : undefined}
+                >
+                  <h3 className="m-0 font-heading text-[22px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
+                    {p.nombre}
+                  </h3>
+                  <p className="mt-1.5 text-[14px] leading-[1.5] text-faint">{p.ideal}</p>
+
+                  <div className="mt-5 flex items-baseline gap-1.5">
+                    <span className="font-heading text-[40px] font-bold leading-none tracking-[-0.03em] text-ink">
+                      {p.precio}
+                    </span>
+                    <span className="text-[14px] text-faint">{p.periodo}</span>
+                  </div>
+
+                  <ul className="mt-6 flex flex-1 flex-col gap-2.5">
+                    {p.incluye.map((item) => (
+                      <li key={item} className="flex items-start gap-[10px] text-[15px] leading-[1.5] text-ink-2">
+                        <span className="mt-0.5 font-semibold" style={{ color: "var(--accent)" }} aria-hidden="true">
+                          ✓
+                        </span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {data.demoUrl && (
+                    <a
+                      href={data.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`mt-7 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold no-underline ${
+                        p.destacado ? "btn-primary" : "cta-outline"
+                      }`}
+                    >
+                      {data.planes?.ctaLabel ?? data.demoLabel ?? hub.labels.verDemo}{" "}
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {data.planes.nota && (
+              <p className="mt-6 max-w-[660px] text-sm leading-[1.6] text-faint">{data.planes.nota}</p>
+            )}
+          </section>
+        )}
+
         {/* Para quién es */}
         <section className="mx-auto max-w-[820px] px-5 pt-[100px] sm:px-10">
           <h2 className="m-0 font-heading text-[28px] font-bold leading-[1.12] tracking-[-0.025em] text-ink sm:text-[34px]">

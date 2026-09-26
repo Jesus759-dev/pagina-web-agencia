@@ -193,6 +193,7 @@ const es: Record<string, ServicePageData> = {
       "Nuestro sistema de punto de venta en Villahermosa está pensado para los negocios de Tabasco: registra tus ventas, controla el inventario y consulta reportes en tiempo real desde cualquier dispositivo, sin complicaciones.",
     ogAlt: "Sistema de punto de venta en Villahermosa — Neurovia Systems",
     waMessage: "Hola, quiero cotizar Tomín POS para mi negocio. ¿Cuánto cuesta?",
+    priceNote: "Desde $500 MXN al mes",
     serviceType: "Sistema de punto de venta (POS)",
     sections: [
       {
@@ -232,9 +233,9 @@ const es: Record<string, ServicePageData> = {
       { q: "¿Lo pueden adaptar a mi tipo de negocio?", a: "Sí. Como nosotros lo desarrollamos, lo ajustamos a tu giro: control de mesas, servicios, catálogos específicos y la forma de cobro que uses." },
     ],
     related: [
+      { href: "/productos/software-punto-de-venta", label: "Tomín POS: planes y funciones" },
       { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a medida en Villahermosa" },
-      { href: "/automatizacion-con-ia-tabasco", label: "Automatización con inteligencia artificial en Tabasco" },
-      { href: "/diseno-de-paginas-web-villahermosa", label: "Diseño de páginas web en Villahermosa" },
+      { href: "/wms-villahermosa", label: "WMS y control de inventario" },
     ],
   },
 
@@ -1286,6 +1287,7 @@ const en: Record<string, ServicePageData> = {
       "Our point of sale system in Villahermosa is built for businesses in Tabasco: record your sales, control inventory and check real-time reports from any device, hassle-free.",
     ogAlt: "Point of sale system in Villahermosa — Neurovia Systems",
     waMessage: "Hi, I'd like a quote for Tomín POS for my business. How much does it cost?",
+    priceNote: "From MXN $500 per month",
     serviceType: "Point of sale (POS) system",
     sections: [
       {

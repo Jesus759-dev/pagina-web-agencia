@@ -45,6 +45,24 @@ export type ProductPageData = {
   appCategory: string;
   /** Precio numérico para la oferta del schema; solo si es público y fijo. */
   offer?: { price: string; currency: string; unit: string };
+  /** Planes publicados. Si existen, alimentan la tabla y el AggregateOffer. */
+  planes?: {
+    title: string;
+    lead?: string;
+    nota?: string;
+    /** Texto del botón en cada plan; por defecto, el de la demo. */
+    ctaLabel?: string;
+    items: {
+      nombre: string;
+      precio: string;
+      /** Solo el número, para el schema: "500". */
+      valor: string;
+      periodo: string;
+      ideal: string;
+      incluye: string[];
+      destacado?: boolean;
+    }[];
+  };
   sections: { h2: string; body: string[] }[];
   modulosTitle: string;
   modulos: { title: string; desc: string }[];
@@ -180,19 +198,71 @@ const es: Record<string, ProductPageData> = {
     producto: "Tomín POS",
     metaTitle: "Tomín POS: Punto de Venta con Facturación",
     metaDescription:
-      "Software de punto de venta en la nube para abarrotes, restaurantes y farmacias: ventas, inventario, cortes de caja, varias sucursales y facturación CFDI 4.0.",
+      "Punto de venta en la nube desde $500 al mes: ventas, inventario, cortes de caja, multisucursal, tienda en línea sin comisiones y facturación CFDI 4.0.",
     keyword: "software punto de venta con facturación",
     eyebrow: "Tomín POS",
     h1: "Tomín POS: Software de Punto de Venta con Facturación",
     heroLead:
-      "Cobra rápido, descuenta el inventario solo y cierra la caja cuadrada. Punto de venta en la nube para abarrotes, restaurantes, farmacias y negocios de mostrador, con facturación CFDI 4.0 y varias sucursales desde el mismo panel.",
+      "Cobra rápido, descuenta el inventario solo y cierra la caja cuadrada. Punto de venta en la nube para abarrotes, restaurantes, farmacias y negocios de mostrador, con facturación CFDI 4.0, tienda en línea sin comisiones y varias sucursales desde el mismo panel.",
     ogAlt: "Tomín POS — software de punto de venta con facturación CFDI",
     waMessage: "Hola, quiero información de Tomín POS para mi negocio. ¿Me pueden dar una demo y el precio?",
     demoUrl: "https://puntodeventa.neuroviasystems.cloud",
     demoLabel: "Ver Tomín POS en vivo",
     estado: "En producción",
-    precioNota: "Planes según sucursales y catálogo. Pide tu cotización, la demo es sin costo.",
+    precio: "Desde $500 MXN al mes",
+    precioNota: "Sin tarjeta al registrarte y sin plazos forzosos.",
     appCategory: "BusinessApplication",
+    planes: {
+      title: "Planes de Tomín POS",
+      ctaLabel: "Crear negocio gratis",
+      lead: "Todos incluyen facturación CFDI 4.0, tienda en línea sin comisiones e inventario automático. Cambias de plan o cancelas cuando quieras.",
+      nota: "Precios en pesos mexicanos, por mes. Crear tu negocio no cuesta nada y no se pide tarjeta al registrarte.",
+      items: [
+        {
+          nombre: "Inicial",
+          precio: "$500",
+          valor: "500",
+          periodo: "/ mes",
+          ideal: "Tiendas, abarrotes y locales con una caja",
+          incluye: [
+            "Hasta 3 usuarios (cajeros y gerentes)",
+            "Ventas, productos y reportes sin límite",
+            "Tienda en línea y pedidos sin comisiones",
+            "Corte de caja y arqueo automáticos",
+            "50 facturas CFDI al mes",
+          ],
+          destacado: true,
+        },
+        {
+          nombre: "Pro",
+          precio: "$1,200",
+          valor: "1200",
+          periodo: "/ mes",
+          ideal: "Ferreterías, farmacias y negocios con varios en mostrador",
+          incluye: [
+            "Hasta 8 usuarios (cajeros y gerentes)",
+            "Ventas, productos y reportes sin límite",
+            "Tienda en línea y pedidos sin comisiones",
+            "Corte de caja y arqueo automáticos",
+            "200 facturas CFDI al mes",
+          ],
+        },
+        {
+          nombre: "Empresa",
+          precio: "$2,400",
+          valor: "2400",
+          periodo: "/ mes",
+          ideal: "Multi-sucursal y distribuidoras",
+          incluye: [
+            "Usuarios ilimitados",
+            "Ventas, productos y reportes sin límite",
+            "Tienda en línea y pedidos sin comisiones",
+            "Corte de caja y arqueo automáticos",
+            "Facturación CFDI ilimitada",
+          ],
+        },
+      ],
+    },
     sections: [
       {
         h2: "Cobrar es lo de menos: el problema es saber qué pasó",
@@ -212,7 +282,8 @@ const es: Record<string, ProductPageData> = {
       {
         h2: "Hecho para el negocio local mexicano",
         body: [
-          "Tomín POS no es un sistema traducido: está pensado para cómo se vende aquí. Producto a granel, precios por mayoreo y menudeo, fiado y apartados, propinas, varias formas de pago en un mismo ticket y el corte que el dueño revisa a las once de la noche.",
+          "Tomín POS no es un sistema traducido: está pensado para cómo se vende aquí. Producto a granel, precios por mayoreo y menudeo, crédito, propinas, mesas y cuentas separadas, pago dividido entre efectivo, tarjeta, transferencia y Mercado Pago, y el corte que el dueño revisa a las once de la noche.",
+          "Y la tienda en línea viene incluida en todos los planes, sin comisión por venta: tu catálogo recibe pedidos por internet y descuentan del mismo inventario del mostrador. Es la diferencia con las plataformas que se quedan un porcentaje de cada venta.",
           "El personal lo aprende en minutos, que es lo que realmente decide si un punto de venta se usa o se abandona a la semana. Y si tu negocio tiene una vuelta que ningún sistema cubre, nosotros desarrollamos el producto: se puede ajustar.",
           "Si además necesitas control de almacén serio —lotes, caducidades, traspasos entre bodegas—, se conecta con el mismo inventario del sistema de almacén que construimos a la medida.",
         ],
@@ -220,12 +291,15 @@ const es: Record<string, ProductPageData> = {
     ],
     modulosTitle: "Qué incluye Tomín POS",
     modulos: [
-      { title: "Terminal de ventas", desc: "Cobro rápido con lector de código de barras o búsqueda, varias formas de pago por ticket." },
-      { title: "Inventario en vivo", desc: "Cada venta descuenta existencias; alertas de mínimos para reordenar a tiempo." },
-      { title: "Cortes de caja", desc: "Apertura y cierre por turno y por cajero, con diferencias a la vista." },
-      { title: "Facturación CFDI 4.0", desc: "La factura sale del mismo ticket, sin volver a capturar la venta." },
-      { title: "Varias sucursales", desc: "Cada punto con su caja e inventario, y una vista consolidada para el dueño." },
-      { title: "Reportes", desc: "Ventas por día, producto, categoría, cajero y forma de pago, desde el celular." },
+      { title: "Terminal de ventas", desc: "Cobro rápido con código de barras o búsqueda, variantes, tamaños y modificadores." },
+      { title: "Todas las formas de pago", desc: "Efectivo, tarjeta, transferencia y Mercado Pago, con pago dividido en un mismo ticket." },
+      { title: "Tienda en línea y pedidos", desc: "Tu catálogo vendiendo en internet y recibiendo pedidos, sin comisión por venta." },
+      { title: "Inventario automático", desc: "Cada venta descuenta existencias, con lotes y alertas de agotamiento." },
+      { title: "Facturación CFDI 4.0", desc: "En todos los planes: la factura sale del mismo ticket, sin recapturar la venta." },
+      { title: "Corte y arqueo automáticos", desc: "Cierre por turno y por cajero, con control de usuarios y PIN de gerente." },
+      { title: "Modo restaurante", desc: "Mesas, cuentas separadas, propinas y modificadores para negocios de comida." },
+      { title: "Mayoreo y crédito", desc: "Precios por volumen y ventas a crédito para quien vende a otros negocios." },
+      { title: "Multisucursal en la nube", desc: "Cada punto con su caja e inventario, centralizados en un solo panel." },
     ],
     audienceTitle: "¿Para qué negocios es?",
     audienceLead: "Para el negocio de mostrador que ya vende bien pero no tiene control:",
@@ -237,7 +311,8 @@ const es: Record<string, ProductPageData> = {
       "Negocios con una a tres sucursales que hoy comparan ventas a mano.",
     ],
     faq: [
-      { q: "¿Cuánto cuesta Tomín POS?", a: "El plan depende del número de sucursales, cajas y del tamaño de tu catálogo. Escríbenos por WhatsApp y te damos el precio exacto para tu caso; la demo del sistema no tiene costo." },
+      { q: "¿Cuánto cuesta Tomín POS?", a: "Hay tres planes: Inicial en $500 MXN al mes (hasta 3 usuarios y 50 facturas CFDI), Pro en $1,200 (hasta 8 usuarios y 200 facturas) y Empresa en $2,400 (usuarios y facturación ilimitados). Los tres incluyen tienda en línea sin comisiones. No se pide tarjeta al registrarte y no hay plazos forzosos." },
+      { q: "¿La tienda en línea cobra comisión por venta?", a: "No. La tienda en línea y los pedidos vienen incluidos en los tres planes, sin comisión por cada venta, a diferencia de las plataformas que cobran un porcentaje." },
       { q: "¿Sirve si no tengo internet estable?", a: "Cuéntanos cómo está tu conexión antes de contratar: revisamos tu caso y te decimos con honestidad si te conviene o si primero hay que resolver la red, que también lo hacemos." },
       { q: "¿Necesito comprar equipo especial?", a: "Funciona en la computadora o tableta que ya tengas con un navegador. El lector de código de barras y la impresora de tickets son opcionales y se conectan al equipo." },
       { q: "¿Puedo empezar con una sucursal y crecer después?", a: "Sí. Se agregan sucursales y cajas sin volver a cargar el catálogo ni rehacer la configuración." },
@@ -509,19 +584,71 @@ const en: Record<string, ProductPageData> = {
     producto: "Tomín POS",
     metaTitle: "Tomín POS: Point of Sale with Invoicing",
     metaDescription:
-      "Cloud point of sale software for grocery stores, restaurants and pharmacies: sales, inventory, cash closing, multiple branches and CFDI 4.0 invoicing.",
+      "Cloud point of sale from MXN $500 a month: sales, inventory, cash closing, multi-branch, a commission-free online store and CFDI 4.0 invoicing.",
     keyword: "point of sale software with invoicing",
     eyebrow: "Tomín POS",
     h1: "Tomín POS: Point of Sale Software with Invoicing",
     heroLead:
-      "Charge fast, deduct stock automatically and close the till balanced. Cloud point of sale for grocery stores, restaurants, pharmacies and counter businesses, with CFDI 4.0 invoicing and several branches in one panel.",
+      "Charge fast, deduct stock automatically and close the till balanced. Cloud point of sale for grocery stores, restaurants, pharmacies and counter businesses, with CFDI 4.0 invoicing, a commission-free online store and several branches in one panel.",
     ogAlt: "Tomín POS — point of sale software with CFDI invoicing",
     waMessage: "Hi, I'd like information about Tomín POS for my business. Can I get a demo and pricing?",
     demoUrl: "https://puntodeventa.neuroviasystems.cloud",
     demoLabel: "See Tomín POS live",
     estado: "In production",
-    precioNota: "Plans by branch and catalogue size. Ask for your quote; the demo is free.",
+    precio: "From MXN $500 per month",
+    precioNota: "No card at signup and no lock-in.",
     appCategory: "BusinessApplication",
+    planes: {
+      title: "Tomín POS plans",
+      ctaLabel: "Create your business free",
+      lead: "All of them include CFDI 4.0 invoicing, a commission-free online store and automatic inventory. Change plan or cancel whenever you want.",
+      nota: "Prices in Mexican pesos, per month. Creating your business costs nothing and no card is required at signup.",
+      items: [
+        {
+          nombre: "Inicial",
+          precio: "$500",
+          valor: "500",
+          periodo: "/ month",
+          ideal: "Shops, grocery stores and single-till businesses",
+          incluye: [
+            "Up to 3 users (cashiers and managers)",
+            "Unlimited sales, products and reports",
+            "Online store and orders with no commission",
+            "Automatic cash close and count",
+            "50 CFDI invoices per month",
+          ],
+          destacado: true,
+        },
+        {
+          nombre: "Pro",
+          precio: "$1,200",
+          valor: "1200",
+          periodo: "/ month",
+          ideal: "Hardware stores, pharmacies and busier counters",
+          incluye: [
+            "Up to 8 users (cashiers and managers)",
+            "Unlimited sales, products and reports",
+            "Online store and orders with no commission",
+            "Automatic cash close and count",
+            "200 CFDI invoices per month",
+          ],
+        },
+        {
+          nombre: "Empresa",
+          precio: "$2,400",
+          valor: "2400",
+          periodo: "/ month",
+          ideal: "Multi-branch operations and distributors",
+          incluye: [
+            "Unlimited users",
+            "Unlimited sales, products and reports",
+            "Online store and orders with no commission",
+            "Automatic cash close and count",
+            "Unlimited CFDI invoicing",
+          ],
+        },
+      ],
+    },
     sections: [
       {
         h2: "Charging is the easy part; knowing what happened is not",
@@ -541,7 +668,8 @@ const en: Record<string, ProductPageData> = {
       {
         h2: "Built for the Mexican local business",
         body: [
-          "Tomín POS is not a translated system: it is built for how things are sold here. Loose weight products, wholesale and retail pricing, credit and layaway, tips, several payment methods on one ticket, and the close the owner reviews at eleven at night.",
+          "Tomín POS is not a translated system: it is built for how things are sold here. Loose weight products, wholesale and retail pricing, credit, tips, tables and split bills, payment split across cash, card, transfer and Mercado Pago, and the close the owner reviews at eleven at night.",
+          "The online store is included in every plan with no per-sale commission: your catalogue takes orders online and they deduct from the same counter inventory. That is the difference from platforms that keep a percentage of every sale.",
           "Staff learn it in minutes, which is what really decides whether a POS gets used or abandoned within a week. And if your business has a twist no system covers, we build the product — it can be adjusted.",
           "If you also need serious warehouse control — lots, expiry dates, transfers between warehouses — it connects to the same inventory as the custom warehouse system we build.",
         ],
@@ -549,12 +677,15 @@ const en: Record<string, ProductPageData> = {
     ],
     modulosTitle: "What Tomín POS includes",
     modulos: [
-      { title: "Sales terminal", desc: "Fast checkout with a barcode scanner or search, several payment methods per ticket." },
-      { title: "Live inventory", desc: "Every sale deducts stock; minimum alerts so you reorder in time." },
-      { title: "Cash closing", desc: "Open and close per shift and per cashier, with differences in plain sight." },
-      { title: "CFDI 4.0 invoicing", desc: "The invoice comes from the same ticket, with no re-entry." },
-      { title: "Multiple branches", desc: "Each location with its own till and stock, plus a consolidated view." },
-      { title: "Reports", desc: "Sales by day, product, category, cashier and payment method, from your phone." },
+      { title: "Sales terminal", desc: "Fast checkout by barcode or search, with variants, sizes and modifiers." },
+      { title: "Every payment method", desc: "Cash, card, transfer and Mercado Pago, with split payment on one ticket." },
+      { title: "Online store and orders", desc: "Your catalogue selling online and taking orders, with no commission per sale." },
+      { title: "Automatic inventory", desc: "Every sale deducts stock, with lots and out-of-stock alerts." },
+      { title: "CFDI 4.0 invoicing", desc: "On every plan: the invoice comes from the same ticket, with no re-entry." },
+      { title: "Automatic cash close", desc: "Close per shift and per cashier, with user control and a manager PIN." },
+      { title: "Restaurant mode", desc: "Tables, split bills, tips and modifiers for food businesses." },
+      { title: "Wholesale and credit", desc: "Volume pricing and credit sales for those selling to other businesses." },
+      { title: "Multi-branch in the cloud", desc: "Each location with its own till and stock, centralised in one panel." },
     ],
     audienceTitle: "Which businesses is it for?",
     audienceLead: "For the counter business that sells well but has no control:",
@@ -566,7 +697,8 @@ const en: Record<string, ProductPageData> = {
       "Businesses with one to three branches comparing sales by hand today.",
     ],
     faq: [
-      { q: "How much does Tomín POS cost?", a: "The plan depends on the number of branches, tills and the size of your catalogue. Message us on WhatsApp for exact pricing; the demo is free." },
+      { q: "How much does Tomín POS cost?", a: "There are three plans: Inicial at MXN $500 per month (up to 3 users and 50 CFDI invoices), Pro at $1,200 (up to 8 users and 200 invoices) and Empresa at $2,400 (unlimited users and invoicing). All three include the online store with no commission. No card at signup and no lock-in." },
+      { q: "Does the online store charge a commission per sale?", a: "No. The online store and orders are included in all three plans with no per-sale commission, unlike platforms that keep a percentage." },
       { q: "Does it work if my internet is unstable?", a: "Tell us about your connection before signing up: we review your case and say honestly whether it suits you or whether the network should be fixed first — which we also do." },
       { q: "Do I need special hardware?", a: "It runs on the computer or tablet you already have with a browser. A barcode scanner and ticket printer are optional add-ons." },
       { q: "Can I start with one branch and grow later?", a: "Yes. Branches and tills are added without reloading the catalogue or redoing the setup." },
@@ -804,8 +936,35 @@ export function buildProductJsonLd(data: ProductPageData, lang: Locale = "es") {
     inLanguage: lang === "en" ? "en-US" : "es-MX",
   };
   if (data.demoUrl) app.installUrl = data.demoUrl;
-  // Solo se declara precio cuando es público y fijo: nada de cifras inventadas.
-  if (data.offer) {
+  // Con planes publicados se declara el rango completo; Google entiende
+  // "desde X hasta Y" y puede mostrarlo en el resultado.
+  if (data.planes?.items.length) {
+    const valores = data.planes.items.map((p) => Number(p.valor)).filter((n) => !Number.isNaN(n));
+    app.offers = {
+      "@type": "AggregateOffer",
+      lowPrice: String(Math.min(...valores)),
+      highPrice: String(Math.max(...valores)),
+      priceCurrency: "MXN",
+      offerCount: String(data.planes.items.length),
+      url,
+      seller: { "@id": ORG_ID },
+      offers: data.planes.items.map((p) => ({
+        "@type": "Offer",
+        name: p.nombre,
+        price: p.valor,
+        priceCurrency: "MXN",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: p.valor,
+          priceCurrency: "MXN",
+          unitCode: "MON",
+          billingDuration: 1,
+        },
+        availability: "https://schema.org/InStock",
+        url,
+      })),
+    };
+  } else if (data.offer) {
     app.offers = {
       "@type": "Offer",
       price: data.offer.price,
