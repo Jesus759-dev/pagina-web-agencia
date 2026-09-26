@@ -1,7 +1,14 @@
 import NeuroviaLogo from "@/components/NeuroviaLogo";
 import SubscribeForm from "@/components/SubscribeForm";
 import { getDict, localeBase, type Locale } from "@/lib/i18n";
-import { BUSINESS_ADDRESS_LINE, BUSINESS_ADDRESS, WHATSAPP_DISPLAY, WHATSAPP_NUMBER } from "@/lib/site";
+import {
+  BUSINESS_ADDRESS_LINE,
+  BUSINESS_ADDRESS,
+  WHATSAPP_DISPLAY,
+  WHATSAPP_NUMBER,
+  GOOGLE_BUSINESS_URL,
+  businessHoursText,
+} from "@/lib/site";
 
 export default function Footer({ lang = "es" }: { lang?: Locale }) {
   const t = getDict(lang);
@@ -69,6 +76,7 @@ export default function Footer({ lang = "es" }: { lang?: Locale }) {
             <div className="font-semibold text-ink-2">Neurovia Systems</div>
             <div>{BUSINESS_ADDRESS_LINE}</div>
             <div>{BUSINESS_ADDRESS.countryName}</div>
+            <div className="mt-1.5">{businessHoursText(lang)}</div>
             <div className="mt-1.5">
               <a href={`tel:+${WHATSAPP_NUMBER}`} className="navlink">
                 {WHATSAPP_DISPLAY}
@@ -76,6 +84,11 @@ export default function Footer({ lang = "es" }: { lang?: Locale }) {
               <span className="mx-2" aria-hidden="true">·</span>
               <a href="mailto:ventas@neuroviasystems.com.mx" className="navlink">
                 ventas@neuroviasystems.com.mx
+              </a>
+            </div>
+            <div className="mt-1.5">
+              <a href={GOOGLE_BUSINESS_URL} target="_blank" rel="noopener noreferrer" className="navlink">
+                {t.footer.map}
               </a>
             </div>
           </address>

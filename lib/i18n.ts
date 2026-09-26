@@ -333,6 +333,7 @@ const es = {
     cities: "Atendemos en",
     services: "Servicios",
     products: "Productos",
+    map: "Ver en Google Maps",
     cases: "Casos de éxito",
   },
   subscribe: {
@@ -853,6 +854,7 @@ const en: typeof es = {
     cities: "We work in",
     services: "Services",
     products: "Products",
+    map: "See on Google Maps",
     cases: "Case studies",
   },
   subscribe: {

@@ -8,7 +8,13 @@ import ScrollChoreography from "@/components/ScrollChoreography";
 import WebMcpTools from "@/components/WebMcpTools";
 import ParticleFieldLoader from "@/components/ParticleFieldLoader";
 import Analytics from "@/components/Analytics";
-import { BUSINESS_ADDRESS, BUSINESS_STREET_ADDRESS } from "@/lib/site";
+import {
+  BUSINESS_ADDRESS,
+  BUSINESS_STREET_ADDRESS,
+  BUSINESS_HOURS,
+  GOOGLE_BUSINESS_URL,
+  GOOGLE_KG_URL,
+} from "@/lib/site";
 
 // Editorial serif for headings (single weight 400, tight tracking) and a
 // clean geometric sans for everything else — the reference design pairing.
@@ -225,6 +231,15 @@ const structuredData = {
         latitude: 17.9892,
         longitude: -92.9281,
       },
+      hasMap: GOOGLE_BUSINESS_URL,
+      // Horario real del Perfil de Empresa: es lo que permite que Google
+      // muestre "Abierto ahora" junto al resultado.
+      openingHoursSpecification: BUSINESS_HOURS.map((h) => ({
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: h.days,
+        opens: h.opens,
+        closes: h.closes,
+      })),
       areaServed: [
         { "@type": "City", name: "Villahermosa" },
         { "@type": "City", name: "Monterrey" },
@@ -235,6 +250,8 @@ const structuredData = {
         { "@type": "Place", name: "Latinoamérica" },
       ],
       sameAs: [
+        GOOGLE_BUSINESS_URL,
+        GOOGLE_KG_URL,
         "https://www.linkedin.com/company/neuroviasystems",
         "https://twitter.com/neuroviasystems",
         "https://github.com/neuroviasystems",

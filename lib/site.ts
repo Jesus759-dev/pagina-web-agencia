@@ -34,6 +34,30 @@ export const BUSINESS_ADDRESS_LINE = `${BUSINESS_ADDRESS.street}, ${BUSINESS_ADD
 export const BUSINESS_STREET_ADDRESS = `${BUSINESS_ADDRESS.street}, ${BUSINESS_ADDRESS.neighborhood}`;
 
 /**
+ * Ficha del negocio en Google (Perfil de Empresa). El enlace para compartir es
+ * el mismo que Jesús manda a un cliente; el kgmid es el identificador de la
+ * entidad en el grafo de conocimiento de Google, útil para que no confunda
+ * este negocio con las otras empresas llamadas "Neurovia".
+ */
+export const GOOGLE_BUSINESS_URL = "https://share.google/PD6YaSDHqpFTMijnm";
+export const GOOGLE_KG_URL = "https://www.google.com/search?kgmid=/g/11nr285ngk";
+
+/**
+ * Horario de atención, igual al del Perfil de Empresa. `days` usa los nombres
+ * de Schema.org; el texto visible se arma en cada idioma más abajo.
+ */
+export const BUSINESS_HOURS = [
+  { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "18:00" },
+  { days: ["Saturday", "Sunday"], opens: "09:00", closes: "14:00" },
+] as const;
+
+export function businessHoursText(lang: Locale = "es"): string {
+  return lang === "en"
+    ? "Monday to Friday, 9:00 to 18:00 · Saturday and Sunday, 9:00 to 14:00"
+    : "Lunes a viernes de 9:00 a 18:00 · Sábado y domingo de 9:00 a 14:00";
+}
+
+/**
  * Meta (Facebook/Instagram) Pixel ID, read from NEXT_PUBLIC_META_PIXEL_ID
  * (.env.local for dev, .env.production for the Hostinger build). Never hardcode it
  * here: when the variable is missing the pixel simply is not rendered.
