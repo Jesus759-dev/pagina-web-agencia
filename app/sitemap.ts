@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SERVICE_SLUGS } from "@/lib/serviceContent";
+import { PRODUCT_SLUGS } from "@/lib/productContent";
 
 const BASE = "https://neuroviasystems.com.mx";
 
@@ -36,6 +37,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: now,
         changeFrequency: "monthly" as const,
         priority: 0.8,
+        alternates,
+      },
+    ];
+  });
+
+  // Productos propios: el índice y una ficha por producto, ES + EN.
+  const productPages: MetadataRoute.Sitemap = ["", ...PRODUCT_SLUGS.map((s) => `/${s}`)].flatMap((sub) => {
+    const alternates = {
+      languages: {
+        es: `${BASE}/productos${sub}`,
+        en: `${BASE}/en/productos${sub}`,
+      },
+    };
+    return [
+      {
+        url: `${BASE}/productos${sub}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: sub ? 0.8 : 0.7,
+        alternates,
+      },
+      {
+        url: `${BASE}/en/productos${sub}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: sub ? 0.7 : 0.6,
         alternates,
       },
     ];
@@ -170,5 +197,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.2,
     },
     ...servicePages,
+    ...productPages,
   ];
 }

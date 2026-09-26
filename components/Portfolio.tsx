@@ -85,6 +85,12 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
         >
           {t.ctaCases} <span aria-hidden="true">→</span>
         </a>
+        <a
+          href={`${base}/productos`}
+          className="cta-outline inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold no-underline"
+        >
+          {t.ctaProducts} <span aria-hidden="true">→</span>
+        </a>
       </div>
 
       {/* Featured — full width (enlace al portal del cliente) */}

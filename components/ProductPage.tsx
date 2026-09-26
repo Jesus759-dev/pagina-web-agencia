@@ -1,75 +1,134 @@
 import Navbar from "@/components/Navbar";
-import Process from "@/components/Process";
-import Testimonials from "@/components/Testimonials";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Contact from "@/components/Contact";
+import Testimonials from "@/components/Testimonials";
 import WaConsultaButton from "@/components/WaConsultaButton";
 import RichText from "@/components/RichText";
 
 import { getDict, localeBase, type Locale } from "@/lib/i18n";
-import { buildServiceJsonLd, type ServicePageData } from "@/lib/serviceContent";
+import { buildProductJsonLd, getProductosHub, type ProductPageData } from "@/lib/productContent";
+import { SITE_URL, ORG_ID, WEBSITE_ID, lang2locale, breadcrumbJsonLd, jsonLdProps } from "@/lib/seo";
 
 /**
- * Shared server-rendered template for the local-SEO service landing pages,
- * bilingual: it renders the Spanish tree with lang="es" and the English tree
- * with lang="en". All copy ships in the initial HTML for crawlers.
+ * Plantilla de las páginas de producto (/productos/<slug>).
+ *
+ * Es la parte comercial de un producto cuya app vive en un subdominio .cloud.
+ * Por eso el CTA principal es hablar con nosotros y el secundario es entrar al
+ * sistema: el subdominio sigue siendo la app, no el argumento de venta.
  */
-export default function ServicePage({
+export default function ProductPage({
   data,
   lang = "es",
 }: {
-  data: ServicePageData;
+  data: ProductPageData;
   lang?: Locale;
 }) {
   const ui = getDict(lang).service;
+  const hub = getProductosHub(lang);
   const base = localeBase(lang);
-  const jsonLd = buildServiceJsonLd(data, lang);
+  const path = `${base}/productos/${data.slug}`;
+  const url = `${SITE_URL}${path}`;
+  const bc = breadcrumbJsonLd(
+    [
+      { name: hub.labels.productos, path: `${base}/productos` },
+      { name: data.producto, path },
+    ],
+    lang
+  );
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${url}#webpage`,
+        url,
+        name: data.metaTitle,
+        description: data.metaDescription,
+        isPartOf: { "@id": WEBSITE_ID },
+        about: { "@id": ORG_ID },
+        mainEntity: { "@id": `${url}#app` },
+        breadcrumb: { "@id": bc["@id"] },
+        inLanguage: lang2locale(lang),
+      },
+      bc,
+      buildProductJsonLd(data, lang),
+      {
+        "@type": "FAQPage",
+        "@id": `${url}#faq`,
+        isPartOf: { "@id": `${url}#webpage` },
+        mainEntity: data.faq.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+    ],
+  };
 
   return (
     <div lang={lang}>
+      <script {...jsonLdProps(jsonLd)} />
       <Navbar lang={lang} />
 
       <main>
-        {/* Hero — single <h1> with the local keyword */}
+        {/* Hero */}
         <section className="bg-hero">
           <div className="mx-auto max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] px-5 pb-16 pt-[150px] sm:px-10 sm:pt-[180px]">
-            {/* Miga de pan: orienta al visitante y le da a Google la jerarquía
-                (el BreadcrumbList equivalente va en el JSON-LD). */}
-            <nav aria-label={ui.breadcrumbAria} className="mb-4 text-[13px] text-faint">
+            <nav aria-label={hub.labels.breadcrumbAria} className="mb-4 text-[13px] text-faint">
               <a href={`${base}/`} className="navlink">
-                {ui.home}
+                {hub.labels.home}
               </a>
               <span className="mx-2" aria-hidden="true">
                 ›
               </span>
-              <span aria-current="page">{data.eyebrow}</span>
+              <a href={`${base}/productos`} className="navlink">
+                {hub.labels.productos}
+              </a>
+              <span className="mx-2" aria-hidden="true">
+                ›
+              </span>
+              <span aria-current="page">{data.producto}</span>
             </nav>
-            <div className="mb-[18px] font-code text-[13px] uppercase tracking-[0.12em]" style={{ color: "var(--accent)" }}>
-              {data.eyebrow}
+
+            <div className="mb-[18px] flex flex-wrap items-center gap-3">
+              <span className="font-code text-[13px] uppercase tracking-[0.12em]" style={{ color: "var(--accent)" }}>
+                {data.eyebrow}
+              </span>
+              <span className="rounded-full border border-line px-2.5 py-[3px] text-[11px] text-faint">
+                {data.estado}
+              </span>
             </div>
-            <h1 className="m-0 max-w-[860px] font-heading text-[34px] font-bold leading-[1.06] tracking-[-0.03em] text-ink sm:text-[52px]">
+
+            <h1 className="m-0 max-w-[880px] font-heading text-[34px] font-bold leading-[1.06] tracking-[-0.03em] text-ink sm:text-[52px]">
               {data.h1}
             </h1>
-            <p className="m-0 mt-6 max-w-[640px] text-lg leading-[1.6] text-muted">{data.heroLead}</p>
-            {data.priceNote && (
+            <p className="m-0 mt-6 max-w-[660px] text-lg leading-[1.6] text-muted">{data.heroLead}</p>
+
+            {(data.precio || data.precioNota) && (
               <p className="m-0 mt-6 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-[15px] leading-[1.4]">
-                <span className="font-semibold text-ink">{data.priceNote}</span>
-                <span className="text-faint">{ui.priceHint}</span>
+                {data.precio && <span className="font-semibold text-ink">{data.precio}</span>}
+                {data.precioNota && <span className="text-faint">{data.precioNota}</span>}
               </p>
             )}
-            <div className={`${data.priceNote ? "mt-4" : "mt-9"} flex flex-wrap items-center gap-3`}>
+
+            <div className="mt-6 flex flex-wrap items-center gap-3">
               <WaConsultaButton message={data.waMessage} lang={lang} />
-              <a
-                href={`${base}/`}
-                className="cta-outline inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold no-underline"
-              >
-                <span aria-hidden="true">←</span> {ui.backHome}
-              </a>
+              {data.demoUrl && (
+                <a
+                  href={data.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cta-outline inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold no-underline"
+                >
+                  {data.demoLabel ?? hub.labels.verDemo} <span aria-hidden="true">→</span>
+                </a>
+              )}
             </div>
           </div>
         </section>
 
-        {/* Intro / descriptive sections */}
+        {/* Secciones descriptivas */}
         {data.sections.map((s) => (
           <section key={s.h2} className="mx-auto max-w-[820px] px-5 pt-[88px] sm:px-10">
             <h2 className="m-0 font-heading text-[28px] font-bold leading-[1.12] tracking-[-0.025em] text-ink sm:text-[34px]">
@@ -83,27 +142,24 @@ export default function ServicePage({
           </section>
         ))}
 
-        {/* Benefits */}
+        {/* Módulos */}
         <section className="mx-auto max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] px-5 pt-[100px] sm:px-10">
-          <div className="mb-[18px] font-code text-[13px] uppercase tracking-[0.12em]" style={{ color: "var(--accent)" }}>
-            {ui.benefitsEyebrow}
-          </div>
           <h2 className="m-0 max-w-[760px] font-heading text-[34px] font-bold leading-[1.05] tracking-[-0.03em] text-ink sm:text-5xl">
-            {data.benefitsTitle}
+            {data.modulosTitle}
           </h2>
-          <div className="mt-[52px] grid grid-cols-1 gap-[22px] md:grid-cols-2">
-            {data.benefits.map((b) => (
-              <div key={b.title} className="svc-card rounded-2xl border border-line bg-white p-[38px]">
-                <h3 className="m-0 font-heading text-[22px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
-                  {b.title}
+          <div className="mt-[52px] grid grid-cols-1 gap-[22px] md:grid-cols-2 xl:grid-cols-3">
+            {data.modulos.map((m) => (
+              <div key={m.title} className="svc-card rounded-2xl border border-line bg-white p-[34px]">
+                <h3 className="m-0 font-heading text-[20px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
+                  {m.title}
                 </h3>
-                <p className="mt-3 text-[15px] leading-[1.65] text-muted">{b.desc}</p>
+                <p className="mt-3 text-[15px] leading-[1.65] text-muted">{m.desc}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Audience */}
+        {/* Para quién es */}
         <section className="mx-auto max-w-[820px] px-5 pt-[100px] sm:px-10">
           <h2 className="m-0 font-heading text-[28px] font-bold leading-[1.12] tracking-[-0.025em] text-ink sm:text-[34px]">
             {data.audienceTitle}
@@ -121,7 +177,6 @@ export default function ServicePage({
           </ul>
         </section>
 
-        <Process lang={lang} />
         <Testimonials lang={lang} />
 
         {/* FAQ */}
@@ -144,7 +199,7 @@ export default function ServicePage({
           </div>
         </section>
 
-        {/* Internal links to sibling service pages */}
+        {/* Enlaces relacionados */}
         <section className="mx-auto max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] px-5 pt-[100px] sm:px-10">
           <div className="mb-[18px] font-code text-[13px] uppercase tracking-[0.12em]" style={{ color: "var(--accent)" }}>
             {ui.relatedEyebrow}
@@ -172,11 +227,6 @@ export default function ServicePage({
       </main>
 
       <Footer lang={lang} />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
     </div>
   );
 }

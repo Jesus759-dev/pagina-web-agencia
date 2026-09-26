@@ -14,7 +14,7 @@ export default function Navbar({ lang = "es" }: { lang?: Locale }) {
   // Root-relative anchors (`/#…` or `/en/#…`) so the nav works from subpages too.
   const links: { href: string; label: string; badge?: string }[] = [
     { href: `${base}/#servicios`, label: t.nav.servicios },
-    { href: `${base}/#punto-de-venta`, label: t.nav.puntoDeVenta },
+    { href: `${base}/productos`, label: t.nav.productos },
     { href: `${base}/#crm`, label: "CRM", badge: t.nav.newBadge },
     { href: `${base}/#proyectos`, label: t.nav.proyectos },
     { href: `${base}/#mapa-clientes`, label: t.nav.dondeOperamos },

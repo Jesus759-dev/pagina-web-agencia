@@ -20,6 +20,7 @@ export default function SistemasPage({ lang = "es" }: { lang?: Locale }) {
   // devuelven al visitante (y al rastreador) a las páginas que explican cómo
   // se construye uno así, para que la página no sea un callejón sin salida.
   const related = [
+    { href: "/productos", label: lang === "en" ? "Our products" : "Productos propios" },
     { href: "/erp-a-medida-villahermosa", label: lang === "en" ? "Custom ERP" : "ERP a la medida" },
     { href: "/crm-a-medida-villahermosa", label: lang === "en" ? "Custom CRM" : "CRM a la medida" },
     { href: "/wms-villahermosa", label: lang === "en" ? "WMS and inventory" : "WMS e inventario" },

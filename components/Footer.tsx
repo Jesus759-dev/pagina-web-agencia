@@ -27,6 +27,15 @@ export default function Footer({ lang = "es" }: { lang?: Locale }) {
     { href: `${base}/casos-de-exito`, label: t.footer.cases, absolute: true },
   ];
 
+  // Productos propios: su índice y cada ficha.
+  const products = [
+    { href: "/productos", label: t.footer.products },
+    { href: "/productos/software-punto-de-venta", label: "Tomín POS" },
+    { href: "/productos/software-para-veterinarias", label: "Huella" },
+    { href: "/productos/sistema-de-gestion-integral", label: "Núcleo SGI" },
+    { href: "/productos/software-de-inventario", label: lang === "en" ? "Inventory System" : "Sistema de Inventario" },
+  ];
+
   // Ciudades con página propia (SEO local). El orden es el de cercanía real.
   const cities = [
     { slug: "villahermosa", label: "Villahermosa" },
@@ -76,6 +85,16 @@ export default function Footer({ lang = "es" }: { lang?: Locale }) {
         {services.map((sv) => (
           <a key={sv.href} href={sv.absolute ? sv.href : `${base}${sv.href}`} className="navlink">
             {sv.label}
+          </a>
+        ))}
+      </div>
+
+      {/* Productos propios */}
+      <div className="mx-auto mt-5 flex max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] flex-wrap items-baseline gap-x-5 gap-y-2 text-[13px] text-faint">
+        <span>{t.footer.products}:</span>
+        {products.slice(1).map((p) => (
+          <a key={p.href} href={`${base}${p.href}`} className="navlink">
+            {p.label}
           </a>
         ))}
       </div>

@@ -23,6 +23,7 @@ const es = {
   nav: {
     servicios: "Servicios",
     puntoDeVenta: "Punto de Venta",
+    productos: "Productos",
     proyectos: "Proyectos",
     proceso: "Proceso",
     nosotros: "Nosotros",
@@ -148,6 +149,7 @@ const es = {
     lead: "Estas no son maquetas. Son plataformas y sitios que hoy operan en petróleo, construcción, mobiliario corporativo e ingeniería.",
     ctaSystems: "Ver los sistemas en vivo",
     ctaCases: "Leer los casos de éxito",
+    ctaProducts: "Conocer nuestros productos",
     crmBadge: "Nuevo producto",
     crmDesc: "Gestión de clientes, contactos, oportunidades y seguimiento de ventas en un solo lugar.",
     crmCta: "Abrir el CRM",
@@ -330,6 +332,7 @@ const es = {
     agenda: "Agenda una llamada",
     cities: "Atendemos en",
     services: "Servicios",
+    products: "Productos",
     cases: "Casos de éxito",
   },
   subscribe: {
@@ -540,6 +543,7 @@ const en: typeof es = {
   nav: {
     servicios: "Services",
     puntoDeVenta: "Point of Sale",
+    productos: "Products",
     proyectos: "Projects",
     proceso: "Process",
     nosotros: "About",
@@ -665,6 +669,7 @@ const en: typeof es = {
     lead: "These aren't mockups. They're platforms and sites running today in oil & gas, construction, corporate furniture and engineering.",
     ctaSystems: "See the systems live",
     ctaCases: "Read the case studies",
+    ctaProducts: "See our products",
     crmBadge: "New product",
     crmDesc: "Customer management, contacts, opportunities and sales tracking in one place.",
     crmCta: "Open the CRM",
@@ -847,6 +852,7 @@ const en: typeof es = {
     agenda: "Book a call",
     cities: "We work in",
     services: "Services",
+    products: "Products",
     cases: "Case studies",
   },
   subscribe: {

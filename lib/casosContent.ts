@@ -222,8 +222,9 @@ const es: CasosContent = {
       resultado:
         "Una empresa que necesita algo estándar arranca en días con un producto probado; y cuando su proceso es distinto, ese mismo producto sirve de base para el desarrollo a la medida.",
       servicios: [
-        { href: "/sistema-punto-de-venta-villahermosa", label: "Punto de venta" },
-        { href: "/sistemas-empresariales-tabasco", label: "Sistemas empresariales" },
+        { href: "/productos", label: "Ver los productos" },
+        { href: "/productos/software-para-veterinarias", label: "Huella" },
+        { href: "/productos/sistema-de-gestion-integral", label: "Núcleo SGI" },
       ],
     },
   ],
@@ -407,8 +408,9 @@ const en: CasosContent = {
       resultado:
         "A company that needs something standard starts in days with proven software; and when its process is different, that same product becomes the base for custom development.",
       servicios: [
-        { href: "/sistema-punto-de-venta-villahermosa", label: "Point of sale" },
-        { href: "/sistemas-empresariales-tabasco", label: "Business systems" },
+        { href: "/productos", label: "See the products" },
+        { href: "/productos/software-para-veterinarias", label: "Huella" },
+        { href: "/productos/sistema-de-gestion-integral", label: "Núcleo SGI" },
       ],
     },
   ],
