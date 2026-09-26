@@ -10,6 +10,30 @@ export const WHATSAPP_NUMBER = "529937226350";
 export const WHATSAPP_DISPLAY = "+52 993 722 6350";
 
 /**
+ * Domicilio del negocio — el MISMO texto que aparece en el Perfil de Empresa
+ * en Google. Para el SEO local lo que cuenta es que el NAP (nombre, dirección
+ * y teléfono) coincida letra por letra entre Google y el sitio, así que esto
+ * es la única fuente: de aquí lo toman el pie de página y el JSON-LD.
+ */
+export const BUSINESS_ADDRESS = {
+  /** Calle y número, como lo muestra Google. */
+  street: "C. Privada B, Mza. E, Lt. 5",
+  /** Colonia: en México va en la dirección aunque Schema.org no tenga campo. */
+  neighborhood: "Medellín y Madero 2ª Sección",
+  locality: "Villahermosa",
+  region: "Tabasco",
+  postalCode: "86270",
+  country: "MX",
+  countryName: "México",
+} as const;
+
+/** Una sola línea, para el pie de página y los datos estructurados. */
+export const BUSINESS_ADDRESS_LINE = `${BUSINESS_ADDRESS.street}, ${BUSINESS_ADDRESS.neighborhood}, ${BUSINESS_ADDRESS.postalCode} ${BUSINESS_ADDRESS.locality}, ${BUSINESS_ADDRESS.region}`;
+
+/** Lo que va en streetAddress del schema: calle + colonia. */
+export const BUSINESS_STREET_ADDRESS = `${BUSINESS_ADDRESS.street}, ${BUSINESS_ADDRESS.neighborhood}`;
+
+/**
  * Meta (Facebook/Instagram) Pixel ID, read from NEXT_PUBLIC_META_PIXEL_ID
  * (.env.local for dev, .env.production for the Hostinger build). Never hardcode it
  * here: when the variable is missing the pixel simply is not rendered.

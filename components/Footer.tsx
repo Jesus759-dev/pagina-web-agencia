@@ -1,6 +1,7 @@
 import NeuroviaLogo from "@/components/NeuroviaLogo";
 import SubscribeForm from "@/components/SubscribeForm";
 import { getDict, localeBase, type Locale } from "@/lib/i18n";
+import { BUSINESS_ADDRESS_LINE, BUSINESS_ADDRESS, WHATSAPP_DISPLAY, WHATSAPP_NUMBER } from "@/lib/site";
 
 export default function Footer({ lang = "es" }: { lang?: Locale }) {
   const t = getDict(lang);
@@ -60,6 +61,24 @@ export default function Footer({ lang = "es" }: { lang?: Locale }) {
             </span>
           </div>
           <div className="mt-1.5 text-[13px] leading-[1.5] text-faint">{t.footer.tagline}</div>
+
+          {/* Nombre, dirección y teléfono, idénticos a los del Perfil de Empresa
+              en Google: que coincidan es lo que Google usa para confirmar que
+              el sitio y la ficha son el mismo negocio. */}
+          <address className="mt-5 not-italic text-[13px] leading-[1.6] text-faint">
+            <div className="font-semibold text-ink-2">Neurovia Systems</div>
+            <div>{BUSINESS_ADDRESS_LINE}</div>
+            <div>{BUSINESS_ADDRESS.countryName}</div>
+            <div className="mt-1.5">
+              <a href={`tel:+${WHATSAPP_NUMBER}`} className="navlink">
+                {WHATSAPP_DISPLAY}
+              </a>
+              <span className="mx-2" aria-hidden="true">·</span>
+              <a href="mailto:ventas@neuroviasystems.com.mx" className="navlink">
+                ventas@neuroviasystems.com.mx
+              </a>
+            </div>
+          </address>
           <div className="mt-6 flex flex-wrap gap-x-[30px] gap-y-2 text-sm">
             {links.map((l) => (
               <a key={l.href} href={l.href} className="navlink">

@@ -3,6 +3,7 @@
 import { getDict, type Locale } from "@/lib/i18n";
 import { trackEmailClick } from "@/lib/analytics";
 import WaLink from "@/components/WaLink";
+import { BUSINESS_ADDRESS_LINE, BUSINESS_ADDRESS } from "@/lib/site";
 import LeadForm from "@/components/LeadForm";
 
 export default function Contact({ lang = "es" }: { lang?: Locale }) {
@@ -62,6 +63,9 @@ export default function Contact({ lang = "es" }: { lang?: Locale }) {
                 ventas@neuroviasystems.com.mx
               </a>
             </p>
+            <address className="mt-4 not-italic text-[15px] leading-[1.6] text-white/[0.78]">
+              {BUSINESS_ADDRESS_LINE}, {BUSINESS_ADDRESS.countryName}
+            </address>
             <div className="mt-[46px] flex flex-wrap justify-center gap-11">
               {t.figures.map((f) => (
                 <div key={f.label} className="text-center">

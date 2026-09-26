@@ -8,6 +8,7 @@ import ScrollChoreography from "@/components/ScrollChoreography";
 import WebMcpTools from "@/components/WebMcpTools";
 import ParticleFieldLoader from "@/components/ParticleFieldLoader";
 import Analytics from "@/components/Analytics";
+import { BUSINESS_ADDRESS, BUSINESS_STREET_ADDRESS } from "@/lib/site";
 
 // Editorial serif for headings (single weight 400, tight tracking) and a
 // clean geometric sans for everything else — the reference design pairing.
@@ -212,9 +213,12 @@ const structuredData = {
       },
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Villahermosa",
-        addressRegion: "Tabasco",
-        addressCountry: "MX",
+        // Mismo texto que el Perfil de Empresa en Google (lib/site.ts).
+        streetAddress: BUSINESS_STREET_ADDRESS,
+        addressLocality: BUSINESS_ADDRESS.locality,
+        addressRegion: BUSINESS_ADDRESS.region,
+        postalCode: BUSINESS_ADDRESS.postalCode,
+        addressCountry: BUSINESS_ADDRESS.country,
       },
       geo: {
         "@type": "GeoCoordinates",
