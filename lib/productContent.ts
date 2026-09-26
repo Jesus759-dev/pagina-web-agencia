@@ -72,7 +72,7 @@ export type ProductosHub = {
 /* ============================ ESPAÑOL ==================================== */
 
 const hubEs: ProductosHub = {
-  metaTitle: "Productos de Software de Neurovia Systems",
+  metaTitle: "Productos: Software Propio en Producción",
   metaDescription:
     "Software propio en producción: Huella para veterinarias, Tomín POS para punto de venta, Núcleo SGI para contratistas y control de inventario. Probado, no prototipos.",
   eyebrow: "Productos propios",
@@ -401,7 +401,7 @@ const es: Record<string, ProductPageData> = {
 /* ============================ ENGLISH ==================================== */
 
 const hubEn: ProductosHub = {
-  metaTitle: "Neurovia Systems Software Products",
+  metaTitle: "Products: Our Software in Production",
   metaDescription:
     "Our own software in production: Huella for veterinary clinics, Tomín POS for point of sale, Núcleo SGI for contractors and inventory control. Proven, not prototypes.",
   eyebrow: "Our products",
