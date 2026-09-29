@@ -116,6 +116,92 @@ const hubEs: ProductosHub = {
 };
 
 const es: Record<string, ProductPageData> = {
+  "software-control-de-obra": {
+    slug: "software-control-de-obra",
+    producto: "Neurovia Build",
+    metaTitle: "Neurovia Build: Software de Control de Obra",
+    metaDescription:
+      "Software de control de obra: requisiciones, compras, almacén y costo real por proyecto. Pruébalo ahora en la demo abierta, sin registrarte.",
+    keyword: "software para control de obra",
+    eyebrow: "Neurovia Build",
+    h1: "Neurovia Build: Software de Control de Obra",
+    heroLead:
+      "Requisiciones, compras, almacén y costo real por proyecto en un solo sistema, para constructoras y contratistas que hoy llevan la obra entre Excel y WhatsApp. Puedes entrar a probarlo ahora mismo: la demo está abierta y no pide contraseña.",
+    ogAlt: "Neurovia Build — software de control de obra",
+    waMessage: "Hola, vi Neurovia Build y quiero ver cómo aplicaría el control de obra en mi empresa.",
+    demoUrl: "https://construccion.neuroviasystems.cloud/login",
+    demoLabel: "Entrar a la demo, sin contraseña",
+    estado: "En producción · Demo abierta",
+    precioNota: "Cotización por proyecto, según frentes de obra y usuarios.",
+    appCategory: "BusinessApplication",
+    sections: [
+      {
+        h2: "El costo real de la obra se sabe cuando ya no se puede hacer nada",
+        body: [
+          "En casi todas las constructoras el material se pide por WhatsApp, la autorización es una llamada, la nota de remisión se queda en la camioneta del residente y el costo por frente se arma en Excel al cierre del mes. Cada pieza funciona por separado; junta, nadie sabe en tiempo real cuánto lleva gastada una obra.",
+          "El problema no es que falte orden, es que la información llega tarde. Cuando el reporte dice que un frente se pasó del presupuesto, el material ya se compró, ya se instaló y la discusión es de quién fue la culpa, no de cómo corregirlo.",
+          "Neurovia Build junta las cuatro piezas que definen el costo de una obra —lo que se pide, lo que se autoriza, lo que llega al almacén y lo que se gasta por proyecto— y las mantiene al día mientras la obra avanza.",
+        ],
+      },
+      {
+        h2: "Lo que el sistema controla",
+        body: [
+          "**Requisiciones por frente de obra.** El residente pide desde donde está, con la obra y el frente ya seleccionados. Se acabó el mensaje suelto que nadie sabe a qué proyecto cargarle.",
+          "**Autorización por nivel.** Quién pidió, quién autorizó y cuándo, con el monto a la vista. Es el rastro que después hace falta cuando alguien pregunta por qué se compró algo.",
+          "**Compras y proveedores.** La orden sale de la requisición autorizada, con su comparativo, su proveedor y su fecha comprometida.",
+          "**Almacén de obra.** Entradas por recepción, salidas al frente que las pidió y existencias reales. El material deja de desaparecer entre la bodega y la obra.",
+          "**Costo real por proyecto.** Lo gastado contra lo presupuestado, por obra y por frente, actualizado conforme se autoriza y se recibe, no al cierre del mes.",
+        ],
+      },
+      {
+        h2: "Pruébalo tú, no te lo contamos",
+        body: [
+          "La demo está abierta: entras con un clic, sin registrarte y sin contraseña, y te mueves como si fuera tu empresa. Puedes elegir el rol con el que quieres ver el sistema —Gerente de Proyecto, Residente de Obra, Compras, Almacén o Administrador— porque cada uno ve cosas distintas y esa es justo la gracia.",
+          "Lo que ves ahí es un ambiente de demostración con datos ficticios de una constructora inventada: ninguna empresa, obra, cliente o proveedor de la demo es real.",
+          "Preferimos esto a un PDF de funciones. En veinte minutos dentro del sistema sabes si te sirve, que es más de lo que saca cualquiera de una presentación.",
+        ],
+      },
+      {
+        h2: "Quién lo construye",
+        body: [
+          "Las mismas piezas que ves en Neurovia Build operan hoy en un cliente del sector petrolero: requisiciones y compras, mantenimiento vehicular e inventario sobre 23 áreas operativas. No es un módulo nuevo que estrenamos contigo.",
+          "En construcción también desarrollamos el sitio de Royers —constructora con más de 35 años y 500 obras entregadas— y el sistema de dictamen de equipos de la SOTOP, del Gobierno de Tabasco. Sabemos cómo se documenta una obra cuando el que revisa es un cliente exigente o una dependencia.",
+          "Y si tu empresa cuesta la obra de una forma propia, el sistema se ajusta: nosotros lo desarrollamos, así que los cambios los hace quien escribió el código.",
+        ],
+      },
+    ],
+    modulosTitle: "Qué incluye Neurovia Build",
+    modulos: [
+      { title: "Requisiciones", desc: "Solicitud por obra y frente de trabajo, desde la computadora o el celular." },
+      { title: "Autorizaciones por nivel", desc: "Quién pidió, quién autorizó, cuándo y por cuánto, con historial completo." },
+      { title: "Compras y proveedores", desc: "Orden de compra desde la requisición autorizada, con comparativo y fechas." },
+      { title: "Almacén de obra", desc: "Recepciones, salidas al frente que las pidió y existencias reales por bodega." },
+      { title: "Costo real por proyecto", desc: "Gastado contra presupuestado, por obra y por frente, al día." },
+      { title: "Perfiles por rol", desc: "Dirección, proyecto, residencia, compras y almacén: cada quien ve lo suyo." },
+    ],
+    audienceTitle: "¿Para quién es?",
+    audienceLead: "Para la empresa que tiene varias obras abiertas y el control en la cabeza de dos personas:",
+    audience: [
+      "Constructoras con dos o más obras simultáneas y frentes de trabajo.",
+      "Contratistas de obra pública que deben comprobar cada compra.",
+      "Empresas de instalación y mantenimiento que entregan material en campo.",
+      "Desarrolladores inmobiliarios que necesitan costo real por etapa.",
+      "Empresas donde el residente pide material por WhatsApp y compras lo persigue.",
+    ],
+    faq: [
+      { q: "¿La demo tiene datos reales de clientes?", a: "No. Es un ambiente de demostración con datos ficticios de una constructora inventada. Ninguna empresa, obra, cliente o proveedor que veas ahí existe." },
+      { q: "¿Cuánto cuesta?", a: "Se cotiza por proyecto según los frentes de obra, los usuarios y lo que haya que integrar. Se puede arrancar solo con requisiciones y compras, que es donde más se fuga el dinero, y crecer después." },
+      { q: "¿Se adapta a cómo costeamos nosotros?", a: "Sí. Cada constructora costea distinto: por partida, por frente, por etapa o por contrato. Nosotros desarrollamos el sistema, así que se ajusta a tu forma en lugar de obligarte a cambiarla." },
+      { q: "¿Sirve para obra pública?", a: "Sí, y es donde más pesa: cada requisición y cada compra queda con su autorización, su fecha y su respaldo. Ya desarrollamos el sistema de dictamen de equipos de la SOTOP, del Gobierno de Tabasco." },
+      { q: "¿Lo pueden usar desde la obra?", a: "Sí, funciona en el navegador del celular o de una tableta, que es donde está el residente. No hay que instalar nada." },
+    ],
+    related: [
+      { href: "/erp-a-medida-villahermosa", label: "ERP a la medida: requisiciones, compras y mantenimiento" },
+      { href: "/casos-de-exito", label: "Casos de éxito: sistemas en producción" },
+      { href: "/desarrollo-de-software-tabasco", label: "Desarrollo de software en Tabasco" },
+    ],
+  },
+
   "software-para-veterinarias": {
     slug: "software-para-veterinarias",
     producto: "Huella",
@@ -502,6 +588,92 @@ const hubEn: ProductosHub = {
 };
 
 const en: Record<string, ProductPageData> = {
+  "software-control-de-obra": {
+    slug: "software-control-de-obra",
+    producto: "Neurovia Build",
+    metaTitle: "Neurovia Build: Construction Control Software",
+    metaDescription:
+      "Construction management software: purchase requests, buying, site warehouse and real cost per project. Try the open demo now, no signup required.",
+    keyword: "construction management software",
+    eyebrow: "Neurovia Build",
+    h1: "Neurovia Build: Construction Control Software",
+    heroLead:
+      "Purchase requests, buying, site warehouse and real cost per project in one system, for builders and contractors still running the job between spreadsheets and WhatsApp. You can try it right now: the demo is open and asks for no password.",
+    ogAlt: "Neurovia Build — construction control software",
+    waMessage: "Hi, I saw Neurovia Build and I'd like to see how site control would work for my company.",
+    demoUrl: "https://construccion.neuroviasystems.cloud/login",
+    demoLabel: "Open the demo, no password",
+    estado: "In production · Open demo",
+    precioNota: "Quoted per project, based on work fronts and users.",
+    appCategory: "BusinessApplication",
+    sections: [
+      {
+        h2: "You learn the real cost when it is too late to act",
+        body: [
+          "In most construction companies material is requested over WhatsApp, approval is a phone call, the delivery note stays in the site manager's truck and cost per front is assembled in a spreadsheet at month-end. Each piece works on its own; together, nobody knows in real time how much a job has spent.",
+          "The problem is not a lack of order, it is that information arrives late. By the time the report says a front went over budget, the material has been bought and installed, and the conversation is about whose fault it was rather than how to fix it.",
+          "Neurovia Build brings together the four pieces that define a job's cost — what is requested, what is approved, what reaches the warehouse and what is spent per project — and keeps them current while the work advances.",
+        ],
+      },
+      {
+        h2: "What the system controls",
+        body: [
+          "**Purchase requests per work front.** The site manager requests from where they are, with the job and front already selected. No more loose messages nobody can assign to a project.",
+          "**Approval by level.** Who requested, who approved and when, with the amount in plain sight. That is the trail you need when somebody asks why something was bought.",
+          "**Buying and suppliers.** The order comes from the approved request, with its comparison, supplier and committed date.",
+          "**Site warehouse.** Receipts, issues to the front that requested them and real stock. Material stops disappearing between the store and the job.",
+          "**Real cost per project.** Spent against budget, per job and per front, updated as things are approved and received rather than at month-end.",
+        ],
+      },
+      {
+        h2: "Try it yourself",
+        body: [
+          "The demo is open: one click, no signup and no password, and you move through it as if it were your company. You can pick the role you want to see it with — Project Manager, Site Manager, Purchasing, Warehouse or Administrator — because each one sees something different, and that is the point.",
+          "What you see is a demonstration environment with fictional data from an invented construction company: no company, job, client or supplier in the demo is real.",
+          "We prefer this to a feature PDF. Twenty minutes inside the system tell you more than any presentation.",
+        ],
+      },
+      {
+        h2: "Who builds it",
+        body: [
+          "The same pieces you see in Neurovia Build run today for an oil & gas client: purchase requests and buying, vehicle maintenance and inventory across 23 operating areas. It is not a module we are trying out on you.",
+          "In construction we also built the site for Royers — a builder with 35+ years and 500+ delivered projects — and the equipment assessment system for SOTOP, Tabasco's public works ministry. We know how a job gets documented when the reviewer is a demanding client or a government body.",
+          "And if your company costs its jobs in its own way, the system adapts: we develop it, so changes are made by whoever wrote the code.",
+        ],
+      },
+    ],
+    modulosTitle: "What Neurovia Build includes",
+    modulos: [
+      { title: "Purchase requests", desc: "Requested per job and work front, from a computer or a phone." },
+      { title: "Approval levels", desc: "Who requested, who approved, when and for how much, with full history." },
+      { title: "Buying and suppliers", desc: "Purchase order from the approved request, with comparison and dates." },
+      { title: "Site warehouse", desc: "Receipts, issues to the requesting front and real stock per store." },
+      { title: "Real cost per project", desc: "Spent against budget, per job and per front, kept current." },
+      { title: "Role profiles", desc: "Management, project, site, purchasing and warehouse: each sees their own part." },
+    ],
+    audienceTitle: "Who is it for?",
+    audienceLead: "For the company running several jobs with the control living in two people's heads:",
+    audience: [
+      "Builders with two or more simultaneous jobs and work fronts.",
+      "Public-works contractors that must account for every purchase.",
+      "Installation and maintenance companies issuing material in the field.",
+      "Property developers that need real cost per phase.",
+      "Companies where the site manager requests over WhatsApp and purchasing chases it.",
+    ],
+    faq: [
+      { q: "Does the demo hold real client data?", a: "No. It is a demonstration environment with fictional data from an invented construction company. No company, job, client or supplier in it exists." },
+      { q: "How much does it cost?", a: "Quoted per project based on work fronts, users and what needs integrating. You can start with purchase requests and buying alone — where most money leaks — and grow from there." },
+      { q: "Can it match how we cost our jobs?", a: "Yes. Every builder costs differently: by item, by front, by phase or by contract. We develop the system, so it adapts to your way instead of forcing you to change it." },
+      { q: "Does it work for public works?", a: "Yes, and that is where it counts most: every request and purchase keeps its approval, date and backup. We built the equipment assessment system for SOTOP, Tabasco's public works ministry." },
+      { q: "Can it be used from the site?", a: "Yes, it runs in a phone or tablet browser, which is where the site manager is. Nothing to install." },
+    ],
+    related: [
+      { href: "/erp-a-medida-villahermosa", label: "Custom ERP: purchase requests, buying and maintenance" },
+      { href: "/casos-de-exito", label: "Case studies: systems in production" },
+      { href: "/desarrollo-de-software-tabasco", label: "Software development in Tabasco" },
+    ],
+  },
+
   "software-para-veterinarias": {
     slug: "software-para-veterinarias",
     producto: "Huella",
@@ -864,6 +1036,7 @@ const en: Record<string, ProductPageData> = {
 /** Orden en el que se muestran: primero el de mercado más amplio. */
 export const PRODUCT_SLUGS = [
   "software-punto-de-venta",
+  "software-control-de-obra",
   "software-para-veterinarias",
   "sistema-de-gestion-integral",
   "software-de-inventario",

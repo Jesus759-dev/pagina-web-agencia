@@ -489,6 +489,7 @@ const es: Record<string, ServicePageData> = {
     ],
     related: [
       { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a medida en Villahermosa" },
+      { href: "/productos/software-control-de-obra", label: "Neurovia Build: control de obra" },
       { href: "/sistemas-empresariales-tabasco", label: "Sistemas empresariales: ERP, CRM e inventario" },
       { href: "/casos-de-exito", label: "Casos de éxito: sistemas en producción" },
     ],
@@ -636,6 +637,7 @@ const es: Record<string, ServicePageData> = {
       { q: "¿El ERP queda a nombre de mi empresa?", a: "Sí, con su código y documentación. No quedas amarrado a nosotros: puedes llevártelo a otro proveedor o a tu propio equipo." },
     ],
     related: [
+      { href: "/productos/software-control-de-obra", label: "Neurovia Build: control de obra (demo abierta)" },
       { href: "/wms-villahermosa", label: "WMS y control de inventario en Villahermosa" },
       { href: "/crm-a-medida-villahermosa", label: "CRM a la medida en Villahermosa" },
       { href: "/casos-de-exito", label: "Casos de éxito: sistemas en producción" },
@@ -1727,6 +1729,7 @@ const en: Record<string, ServicePageData> = {
       { q: "Is the ERP owned by my company?", a: "Yes, with its code and documentation. You are not tied to us: you can take it to another provider or your own team." },
     ],
     related: [
+      { href: "/productos/software-control-de-obra", label: "Neurovia Build: construction control (open demo)" },
       { href: "/wms-villahermosa", label: "WMS and inventory control in Villahermosa" },
       { href: "/crm-a-medida-villahermosa", label: "Custom CRM in Villahermosa" },
       { href: "/casos-de-exito", label: "Case studies: systems in production" },

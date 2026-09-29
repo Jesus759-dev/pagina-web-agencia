@@ -39,6 +39,7 @@ export default function Footer({ lang = "es" }: { lang?: Locale }) {
   const products = [
     { href: "/productos", label: t.footer.products },
     { href: "/productos/software-punto-de-venta", label: "Tomín POS" },
+    { href: "/productos/software-control-de-obra", label: "Neurovia Build" },
     { href: "/productos/software-para-veterinarias", label: "Huella" },
     { href: "/productos/sistema-de-gestion-integral", label: "Núcleo SGI" },
     { href: "/productos/software-de-inventario", label: lang === "en" ? "Inventory System" : "Sistema de Inventario" },

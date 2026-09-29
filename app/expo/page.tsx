@@ -4,8 +4,9 @@ import Footer from "@/components/Footer";
 import WaLink from "@/components/WaLink";
 import ExpoDemoLink from "@/components/ExpoDemoLink";
 import ExpoVisitMark from "@/components/ExpoVisitMark";
+import { redirect } from "next/navigation";
 import { getDict } from "@/lib/i18n";
-import { EXPO } from "@/lib/expo";
+import { EXPO, isExpoActive } from "@/lib/expo";
 
 const t = getDict("es").expo;
 
@@ -16,7 +17,15 @@ export const metadata: Metadata = {
   robots: { index: false, follow: true },
 };
 
+/** Donde vive el sistema de obra cuando ya no hay evento. */
+const DEMO_HOME = "/productos/software-control-de-obra";
+
 export default function ExpoPage() {
+  // Terminado el evento, esta página deja de tener sentido, pero los códigos QR
+  // impresos siguen circulando. En vez de dejarlos en una campaña vencida, los
+  // mandamos a la ficha del sistema que fueron a ver.
+  if (!isExpoActive()) redirect(DEMO_HOME);
+
   return (
     <>
       <Navbar />
