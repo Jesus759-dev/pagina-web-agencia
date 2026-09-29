@@ -34,12 +34,24 @@ Página con el detalle de cada caso: https://neuroviasystems.com.mx/casos-de-exi
 - Royers S.A. de C.V.: sitio corporativo de constructora con más de 35 años y 500+ obras.
 - Alpha Mobil, Provalsa y TACEF Aceros: sitios corporativos con catálogo y contacto directo.
 
-## Productos SaaS propios
+## Productos de software propios (en producción)
 
-- Tomín POS: punto de venta con facturación CFDI para negocios locales. https://puntodeventa.neuroviasystems.cloud
-- Núcleo SGI: gestión integral y cumplimiento para contratistas del sector petrolero. https://sgi.neuroviasystems.cloud
-- Huella: sistema de gestión para clínicas veterinarias. https://huellapp.neuroviasystems.cloud
-- FlotaOps: control y rastreo de flotas vehiculares.
+Cada uno tiene ficha en el sitio; el subdominio .cloud es la aplicación.
+
+- Tomín POS — software de punto de venta en la nube con facturación CFDI 4.0, inventario automático, corte de caja y arqueo, multisucursal, tienda en línea y pedidos sin comisiones, modo restaurante (mesas, cuentas separadas, propinas), mayoreo y crédito. Planes: Inicial $500 MXN/mes (3 usuarios, 50 facturas), Pro $1,200 MXN/mes (8 usuarios, 200 facturas), Empresa $2,400 MXN/mes (usuarios y facturas ilimitados). Sin tarjeta al registrarse, sin plazos forzosos. https://neuroviasystems.com.mx/productos/software-punto-de-venta
+- Neurovia Build — software para constructoras y control de obra: requisiciones por frente de obra, autorizaciones por nivel, compras, almacén de obra y costo real por proyecto. Demo abierta sin contraseña (datos ficticios). Cotización por proyecto. https://neuroviasystems.com.mx/productos/software-control-de-obra
+- Huella — software para clínicas veterinarias: expediente por mascota, consultas, vacunas con aviso de refuerzo e inventario. Desde $399 MXN/mes. https://neuroviasystems.com.mx/productos/software-para-veterinarias
+- Núcleo SGI — sistema de gestión integral para contratistas del sector energético: documentos con vigencia, hallazgos, capacitación DC-3 y evidencia para auditoría. Cotización por proyecto. https://neuroviasystems.com.mx/productos/sistema-de-gestion-integral
+- Sistema de Inventario — en desarrollo, con lista de espera. https://neuroviasystems.com.mx/productos/software-de-inventario
+- FlotaOps — control y rastreo de flotas vehiculares.
+
+Índice de productos: https://neuroviasystems.com.mx/productos
+
+## Guías (respuestas directas)
+
+- ¿Cuánto cuesta un software a medida en México? https://neuroviasystems.com.mx/guias/cuanto-cuesta-un-software-a-medida
+- ¿Qué es un agente de inteligencia artificial y para qué le sirve a una empresa? https://neuroviasystems.com.mx/guias/que-es-un-agente-de-ia
+- Cómo elegir un software de punto de venta en México. https://neuroviasystems.com.mx/guias/como-elegir-software-punto-de-venta
 
 ## Stack tecnológico
 
@@ -54,23 +66,31 @@ WhatsApp (Twilio / API de Meta) y modelos de IA para voz, texto y documentos.
 - Otras plazas con página propia: Campeche y Ciudad del Carmen, Mérida, Veracruz, Monterrey, Guadalajara.
 - Resto de México y Latinoamérica: trabajo remoto.
 
-## Precios de referencia
+## Precios de referencia (publicados)
 
-- Proyectos de software a la medida: desde $65,000 MXN + IVA, construidos por módulos.
-- Automatización de procesos: desde $25,000 MXN + IVA.
+- Sistema de gestión a medida (ERP, CRM, almacén): desde $65,000 MXN + IVA, construido por módulos.
+- Aplicación web a medida: desde $32,000 MXN + IVA.
+- Automatización de procesos con IA: desde $25,000 MXN + IVA.
+- Agente de IA para WhatsApp o correo: desde $25,000 MXN + IVA, más el costo por uso del modelo.
+- Tomín POS: $500, $1,200 o $2,400 MXN al mes.
+- Huella: desde $399 MXN al mes.
 - Análisis inicial y estimado: sin costo.
 
 ## Contacto
 
-- Sitio web: https://neuroviasystems.com.mx
+- Dirección: C. Privada B, Mza. E, Lt. 5, Medellín y Madero 2ª Sección, 86270 Villahermosa, Tabasco, México
+- Horario: lunes a viernes de 9:00 a 18:00; sábado y domingo de 9:00 a 14:00
+- WhatsApp y teléfono: +52 993 722 6350
+- Correo: ventas@neuroviasystems.com.mx
 - Agenda una llamada de 20 minutos: https://neuroviasystems.com.mx/agenda
-- WhatsApp: +52 993 722 6350
-- Correo: soporte@neuroviasystems.com.mx
+- Perfil de Empresa en Google: https://share.google/PD6YaSDHqpFTMijnm
 
 ## Enlaces útiles
 
 - Inicio: https://neuroviasystems.com.mx
 - Casos de éxito: https://neuroviasystems.com.mx/casos-de-exito
+- Productos: https://neuroviasystems.com.mx/productos
+- Guías: https://neuroviasystems.com.mx/guias
 - Quiénes somos: https://neuroviasystems.com.mx/nosotros
 - Catálogo de sistemas: https://neuroviasystems.com.mx/sistemas
 - Aviso de privacidad: https://neuroviasystems.com.mx/aviso-de-privacidad

@@ -119,12 +119,12 @@ const es: Record<string, ProductPageData> = {
   "software-control-de-obra": {
     slug: "software-control-de-obra",
     producto: "Neurovia Build",
-    metaTitle: "Neurovia Build: Software de Control de Obra",
+    metaTitle: "Software para Constructoras: Neurovia Build",
     metaDescription:
-      "Software de control de obra: requisiciones, compras, almacén y costo real por proyecto. Pruébalo ahora en la demo abierta, sin registrarte.",
-    keyword: "software para control de obra",
+      "Software para constructoras: requisiciones, compras, almacén y costo real por obra. Pruébalo ahora en la demo abierta, sin registrarte.",
+    keyword: "software para constructoras",
     eyebrow: "Neurovia Build",
-    h1: "Neurovia Build: Software de Control de Obra",
+    h1: "Neurovia Build: Software para Constructoras y Control de Obra",
     heroLead:
       "Requisiciones, compras, almacén y costo real por proyecto en un solo sistema, para constructoras y contratistas que hoy llevan la obra entre Excel y WhatsApp. Puedes entrar a probarlo ahora mismo: la demo está abierta y no pide contraseña.",
     ogAlt: "Neurovia Build — software de control de obra",
@@ -282,7 +282,7 @@ const es: Record<string, ProductPageData> = {
   "software-punto-de-venta": {
     slug: "software-punto-de-venta",
     producto: "Tomín POS",
-    metaTitle: "Tomín POS: Punto de Venta con Facturación",
+    metaTitle: "Software de Punto de Venta: Tomín POS",
     metaDescription:
       "Punto de venta en la nube desde $500 al mes: ventas, inventario, cortes de caja, multisucursal, tienda en línea sin comisiones y facturación CFDI 4.0.",
     keyword: "software punto de venta con facturación",
@@ -405,6 +405,7 @@ const es: Record<string, ProductPageData> = {
       { q: "¿Migran mi catálogo de productos?", a: "Sí, desde Excel o desde el sistema que uses hoy, siempre que permita exportarlo." },
     ],
     related: [
+      { href: "/guias/como-elegir-software-punto-de-venta", label: "Guía: cómo elegir un software de punto de venta" },
       { href: "/sistema-punto-de-venta-villahermosa", label: "Punto de venta en Villahermosa (instalación local)" },
       { href: "/productos/software-de-inventario", label: "Control de inventario y almacén" },
       { href: "/wms-villahermosa", label: "WMS a la medida para almacenes" },
@@ -414,7 +415,7 @@ const es: Record<string, ProductPageData> = {
   "sistema-de-gestion-integral": {
     slug: "sistema-de-gestion-integral",
     producto: "Núcleo SGI",
-    metaTitle: "Núcleo SGI: Gestión Integral para Contratistas",
+    metaTitle: "Sistema de Gestión Integral: Núcleo SGI",
     metaDescription:
       "Software de gestión integral para contratistas del sector energético: documentos vigentes, hallazgos, capacitación DC-3 y evidencia lista para auditoría.",
     keyword: "sistema de gestión integral contratistas",
@@ -591,7 +592,7 @@ const en: Record<string, ProductPageData> = {
   "software-control-de-obra": {
     slug: "software-control-de-obra",
     producto: "Neurovia Build",
-    metaTitle: "Neurovia Build: Construction Control Software",
+    metaTitle: "Construction Software: Neurovia Build",
     metaDescription:
       "Construction management software: purchase requests, buying, site warehouse and real cost per project. Try the open demo now, no signup required.",
     keyword: "construction management software",
@@ -754,7 +755,7 @@ const en: Record<string, ProductPageData> = {
   "software-punto-de-venta": {
     slug: "software-punto-de-venta",
     producto: "Tomín POS",
-    metaTitle: "Tomín POS: Point of Sale with Invoicing",
+    metaTitle: "Point of Sale Software: Tomín POS",
     metaDescription:
       "Cloud point of sale from MXN $500 a month: sales, inventory, cash closing, multi-branch, a commission-free online store and CFDI 4.0 invoicing.",
     keyword: "point of sale software with invoicing",
@@ -886,7 +887,7 @@ const en: Record<string, ProductPageData> = {
   "sistema-de-gestion-integral": {
     slug: "sistema-de-gestion-integral",
     producto: "Núcleo SGI",
-    metaTitle: "Núcleo SGI: Management System for Contractors",
+    metaTitle: "Integrated Management System: Núcleo SGI",
     metaDescription:
       "Compliance management software for energy-sector contractors: current documents, findings, DC-3 training records and audit-ready evidence.",
     keyword: "integrated management system contractors",

@@ -42,9 +42,9 @@ const SITE_URL = "https://neuroviasystems.com.mx";
 const SITE_NAME = "Neurovia Systems";
 // Orden a propósito: servicio + ciudad primero, marca al final. Y por debajo
 // de ~65 caracteres, que es lo que Google alcanza a mostrar.
-const SITE_TITLE = "Desarrollo de Software e IA en Villahermosa | Neurovia Systems";
+const SITE_TITLE = "Empresa de Desarrollo de Software e IA | Neurovia Systems";
 const SITE_DESCRIPTION =
-  "Desarrollo de software a medida, sistemas empresariales, IA y automatización en Villahermosa, Tabasco. Consulta gratuita con quien construye.";
+  "Empresa de desarrollo de software en Villahermosa, Tabasco: sistemas a medida, ERP, CRM, automatización con IA y productos propios. Consulta gratuita.";
 const OG_IMAGE = `${SITE_URL}/images/og-robotic-hand.jpg`;
 
 /**

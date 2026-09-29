@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SERVICE_SLUGS } from "@/lib/serviceContent";
 import { PRODUCT_SLUGS } from "@/lib/productContent";
+import { GUIDE_SLUGS } from "@/lib/guidesContent";
 
 const BASE = "https://neuroviasystems.com.mx";
 
@@ -67,6 +68,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     ];
   });
+
+  // Guías: solo en español (el mercado es México), sin versión en inglés.
+  const guidePages: MetadataRoute.Sitemap = [
+    { url: `${BASE}/guias`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.7 },
+    ...GUIDE_SLUGS.map((slug) => ({
+      url: `${BASE}/guias/${slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+  ];
 
   return [
     {
@@ -198,5 +210,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...servicePages,
     ...productPages,
+    ...guidePages,
   ];
 }

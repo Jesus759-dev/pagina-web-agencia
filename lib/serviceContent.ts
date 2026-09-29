@@ -105,9 +105,9 @@ const es: Record<string, ServicePageData> = {
       { q: "¿Atienden solo en Villahermosa?", a: "Estamos en Villahermosa, Tabasco, y atendemos a toda la región. También trabajamos de forma remota con empresas del resto de México y Latinoamérica." },
     ],
     related: [
+      { href: "/guias/cuanto-cuesta-un-software-a-medida", label: "Guía: ¿cuánto cuesta un software a medida?" },
       { href: "/erp-a-medida-villahermosa", label: "ERP a la medida en Villahermosa" },
       { href: "/crm-a-medida-villahermosa", label: "CRM a la medida en Villahermosa" },
-      { href: "/automatizacion-con-ia-tabasco", label: "Automatización con inteligencia artificial en Tabasco" },
       { href: "/casos-de-exito", label: "Casos de éxito: sistemas en producción" },
     ],
   },
@@ -409,9 +409,10 @@ const es: Record<string, ServicePageData> = {
       { q: "¿Cómo empezamos?", a: "Con una consulta gratuita donde detectamos el proceso de mayor impacto y te proponemos un primer agente con un estimado claro." },
     ],
     related: [
+      { href: "/guias/que-es-un-agente-de-ia", label: "Guía: ¿qué es un agente de inteligencia artificial?" },
       { href: "/automatizacion-con-ia-tabasco", label: "Automatización con inteligencia artificial en Tabasco" },
       { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a medida en Villahermosa" },
-      { href: "/desarrollo-de-aplicaciones-web-tabasco", label: "Desarrollo de aplicaciones web a medida en Tabasco" },
+      { href: "/crm-a-medida-villahermosa", label: "CRM a la medida conectado a WhatsApp" },
     ],
   },
 
@@ -1002,7 +1003,7 @@ const es: Record<string, ServicePageData> = {
     slug: "desarrollo-de-software-a-medida-campeche",
     metaTitle: "Desarrollo de Software a Medida en Campeche",
     metaDescription:
-      "Desarrollo de software a medida en Campeche y Ciudad del Carmen: contratistas del sector energético, pesca, comercio y servicios. Sistemas, cumplimiento y automatización con IA.",
+      "Software a medida en Campeche y Ciudad del Carmen para contratistas del sector energético, pesca y comercio: sistemas, cumplimiento y automatización con IA.",
     keyword: "desarrollo de software a medida Campeche",
     eyebrow: "Software a medida",
     h1: "Desarrollo de Software a Medida en Campeche",
