@@ -58,6 +58,19 @@ export function businessHoursText(lang: Locale = "es"): string {
 }
 
 /**
+ * Píxel de medición de OpenAI (anuncios en ChatGPT). El ID es público por
+ * diseño —viaja en el HTML—, igual que el de GA4. Se carga desde
+ * components/Analytics.tsx con las mismas reglas que Meta: solo en el dominio
+ * real y nunca para tráfico interno.
+ *
+ * DEBUG escribe en la consola del navegador todo lo que hace el SDK. Sirve
+ * mientras se valida la fuente de datos en Ads Manager; después hay que
+ * ponerlo en false, porque lo verían todos los visitantes en su consola.
+ */
+export const OPENAI_PIXEL_ID = "RgfbtxQ4gc3BYKmGpLgRsS";
+export const OPENAI_PIXEL_DEBUG = true;
+
+/**
  * Meta (Facebook/Instagram) Pixel ID, read from NEXT_PUBLIC_META_PIXEL_ID
  * (.env.local for dev, .env.production for the Hostinger build). Never hardcode it
  * here: when the variable is missing the pixel simply is not rendered.

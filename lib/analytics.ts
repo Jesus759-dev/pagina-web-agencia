@@ -6,6 +6,7 @@
 // - ads_conversion_Contacto_1 → la conversión de Google Ads que ya existe en la
 //   cuenta; se alimenta ahora de leads reales, no de clics.
 // - fbq("track","Lead") → lo que optimizan las campañas de Meta.
+// - oaiq("measure","lead_created") → la conversión de los anuncios en ChatGPT.
 // - whatsapp_click / email_click / newsletter_signup → secundarios, para ver
 //   qué botones mueven a la gente sin inflar las conversiones.
 
@@ -20,18 +21,44 @@ function allowed(): boolean {
   return false;
 }
 
+/**
+ * Los píxeles no existen al montar la página: components/Analytics.tsx decide
+ * en un efecto si se cargan y luego next/script los inyecta, unos cientos de
+ * milisegundos después. Un evento que se dispara al montar —el lead en
+ * /gracias— llegaba antes y se perdía en silencio en los tres píxeles.
+ *
+ * Por eso cada llamada espera a que su píxel aparezca (hasta WAIT_MS) en lugar
+ * de descartarse. Si nunca aparece —tráfico interno, que no carga Meta ni
+ * OpenAI, o un bloqueador— la llamada se abandona sin errores.
+ */
+const WAIT_MS = 10_000;
+type PixelName = "gtag" | "fbq" | "oaiq";
+
+function whenReady(name: PixelName, args: unknown[]): void {
+  if (!allowed() || typeof window === "undefined") return;
+  const start = Date.now();
+  const tick = () => {
+    const fn = window[name] as ((...a: unknown[]) => void) | undefined;
+    if (typeof fn === "function") {
+      fn(...args);
+      return;
+    }
+    if (Date.now() - start < WAIT_MS) window.setTimeout(tick, 150);
+  };
+  tick();
+}
+
 function gtag(...args: unknown[]): void {
-  if (!allowed()) return;
-  if (typeof window !== "undefined" && typeof window.gtag === "function") {
-    window.gtag(...args);
-  }
+  whenReady("gtag", args);
 }
 
 function fbq(command: "init" | "track" | "trackCustom", ...args: unknown[]): void {
-  if (!allowed()) return;
-  if (typeof window !== "undefined" && typeof window.fbq === "function") {
-    window.fbq(command, ...args);
-  }
+  whenReady("fbq", [command, ...args]);
+}
+
+/** Píxel de OpenAI. Solo aparece si Analytics lo cargó (dominio real, no interno). */
+function oaiq(command: "measure", ...args: unknown[]): void {
+  whenReady("oaiq", [command, ...args]);
 }
 
 /**
@@ -42,6 +69,7 @@ export function trackFormLead(source: LeadSource): void {
   gtag("event", "generate_lead", { currency: "MXN", value: 1, lead_source: source });
   gtag("event", "ads_conversion_Contacto_1");
   fbq("track", "Lead", { content_name: source });
+  oaiq("measure", "lead_created", { type: "customer_action" });
 }
 
 /** Clic a WhatsApp: evento secundario, NO es conversión. */
