@@ -6,7 +6,8 @@
 // - ads_conversion_Contacto_1 → la conversión de Google Ads que ya existe en la
 //   cuenta; se alimenta ahora de leads reales, no de clics.
 // - fbq("track","Lead") → lo que optimizan las campañas de Meta.
-// - oaiq("measure","lead_created") → la conversión de los anuncios en ChatGPT.
+// - oaiq("measure","lead_created") → la conversión de los anuncios en ChatGPT:
+//   formulario y chatbot, y además el clic a WhatsApp (ver trackWhatsAppClick).
 // - whatsapp_click / email_click / newsletter_signup → secundarios, para ver
 //   qué botones mueven a la gente sin inflar las conversiones.
 
@@ -72,9 +73,19 @@ export function trackFormLead(source: LeadSource): void {
   oaiq("measure", "lead_created", { type: "customer_action" });
 }
 
-/** Clic a WhatsApp: evento secundario, NO es conversión. */
+/**
+ * Clic a WhatsApp. En GA4, Google Ads y Meta es un evento SECUNDARIO: no es
+ * conversión, para no optimizar campañas hacia gente que solo hizo clic.
+ *
+ * En ChatGPT Ads sí cuenta como lead_created, por decisión de Jesús: WhatsApp
+ * es el canal por donde llega la mayoría de sus prospectos y, sin eso, la
+ * campaña casi no tendría conversiones de las que aprender. Todos los
+ * botones de WhatsApp del sitio pasan por components/WaLink.tsx, que abre en
+ * pestaña nueva y llama aquí: un solo punto, sin doble conteo.
+ */
 export function trackWhatsAppClick(location: string): void {
   gtag("event", "whatsapp_click", { location });
+  oaiq("measure", "lead_created", { type: "customer_action" });
 }
 
 /** Clic al correo: evento secundario. */
