@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { notifyLead, type LeadPayload } from "@/lib/leadDelivery";
+import { conversionContextFrom } from "@/lib/openaiConversions";
 
 /**
  * POST /api/lead — captura de prospectos del formulario y del chatbot.
@@ -85,6 +86,8 @@ export async function POST(request: Request) {
     source,
     page: str(body.page, 300),
     attribution: typeof body.attribution === "object" && body.attribution ? (body.attribution as Record<string, string>) : {},
+    // El navegador genera el id y se lo pasa también al píxel en /gracias.
+    tracking: conversionContextFrom(request, typeof body.eventId === "string" ? body.eventId : undefined),
   };
 
   try {

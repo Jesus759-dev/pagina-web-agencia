@@ -2,6 +2,7 @@
 // Debe ir primero: sin esto, /api/lead no ve Telegram ni el correo (el archivo
 // solo lo cargaba la ruta del chatbot).
 import "@/lib/chat/serverEnv";
+import { openAIConversionsEnabled, sendLeadToOpenAI, type ConversionContext } from "@/lib/openaiConversions";
 
 /**
  * Entrega de prospectos (solo servidor).
@@ -13,6 +14,10 @@ import "@/lib/chat/serverEnv";
  * Si uno falla, el otro sale igual y el visitante llega a /gracias. Solo se
  * considera un fallo real cuando NINGÚN canal entregó: ahí sí hay que avisarle
  * al visitante, para que no crea que su solicitud llegó.
+ *
+ * Aparte, y sin contar para lo anterior: la conversión va a la Conversions API
+ * de OpenAI si existe OPENAI_CAPI_KEY. Es medición, no aviso: si OpenAI
+ * responde bien pero Telegram y el correo fallan, el lead SÍ se perdió.
  */
 
 export type LeadPayload = {
@@ -25,9 +30,11 @@ export type LeadPayload = {
   source: "form" | "chatbot";
   page: string;
   attribution: Record<string, string>;
+  /** Solo lo que sabe la petición HTTP (id compartido con el píxel, cookie, IP). */
+  tracking?: ConversionContext;
 };
 
-export type DeliveryResult = { channel: "telegram" | "resend" | "smtp"; ok: boolean; error?: string };
+export type DeliveryResult = { channel: "telegram" | "resend" | "smtp" | "openai"; ok: boolean; error?: string };
 
 const RESEND_API = process.env.RESEND_API_BASE || "https://api.resend.com";
 const TELEGRAM_API = process.env.TELEGRAM_API_BASE || "https://api.telegram.org";
@@ -186,7 +193,10 @@ function emailChannel(): "resend" | "smtp" | null {
  * del otro. Devuelve el resultado por canal (lo usa el endpoint de prueba).
  * Lanza solo si ningún canal entregó.
  */
-export async function deliverLead(lead: LeadPayload): Promise<DeliveryResult[]> {
+export async function deliverLead(
+  lead: LeadPayload,
+  { test = false }: { test?: boolean } = {}
+): Promise<DeliveryResult[]> {
   const text = plainText(lead);
   const jobs: { channel: DeliveryResult["channel"]; run: () => Promise<void> }[] = [];
 
@@ -201,9 +211,16 @@ export async function deliverLead(lead: LeadPayload): Promise<DeliveryResult[]> 
     throw new Error("sin canales configurados: falta TELEGRAM_BOT_TOKEN+TELEGRAM_CHAT_ID y RESEND_API_KEY o SMTP_PASS");
   }
 
-  const settled = await Promise.allSettled(jobs.map((j) => j.run()));
+  // La conversión para ChatGPT Ads corre en paralelo. En la prueba va en modo
+  // validación: OpenAI la revisa pero no la cuenta como conversión.
+  const measure = openAIConversionsEnabled()
+    ? [{ channel: "openai" as const, run: () => sendLeadToOpenAI(lead, lead.tracking, { validateOnly: test }) }]
+    : [];
+  const all = [...jobs, ...measure];
+
+  const settled = await Promise.allSettled(all.map((j) => j.run()));
   const results: DeliveryResult[] = settled.map((r, i) => ({
-    channel: jobs[i].channel,
+    channel: all[i].channel,
     ok: r.status === "fulfilled",
     error: r.status === "rejected" ? String(r.reason).slice(0, 300) : undefined,
   }));
@@ -213,7 +230,8 @@ export async function deliverLead(lead: LeadPayload): Promise<DeliveryResult[]> 
     else console.log(`[lead] canal ${r.channel} ok (${lead.source}: ${lead.name})`);
   }
 
-  if (!results.some((r) => r.ok)) throw new Error("todos los canales fallaron");
+  // El aviso a Jesús es lo que decide si el lead llegó; OpenAI no cuenta.
+  if (!results.some((r) => r.ok && r.channel !== "openai")) throw new Error("todos los canales fallaron");
   return results;
 }
 

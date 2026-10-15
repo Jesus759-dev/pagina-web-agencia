@@ -128,6 +128,7 @@ export default function ChatWidget() {
         reply?: string;
         events?: string[];
         handoff?: string;
+        leadEventId?: string;
         error?: string;
       };
       if (!res.ok || !data.ok || !data.reply) {
@@ -137,7 +138,7 @@ export default function ChatWidget() {
       // Una conversión por conversación: un contacto seguido de una cita sigue
       // siendo un solo prospecto. El lead ya se entregó en el servidor (Telegram
       // y correo) desde app/api/chat/route.ts.
-      if (data.events?.length && !state.handoff) trackFormLead("chatbot");
+      if (data.events?.length && !state.handoff) trackFormLead("chatbot", data.leadEventId);
       setState((s) => ({
         ...s,
         turns: [...turns, { role: "assistant", text: data.reply as string }],

@@ -54,6 +54,17 @@ export default function LeadForm({
     if (!consent) return setError(t.errConsent);
 
     setSending(true);
+    // id del lead compartido entre el servidor (Conversions API) y el píxel en
+    // /gracias, para que ChatGPT Ads no lo cuente dos veces.
+    const eventId =
+      typeof crypto !== "undefined" && "randomUUID" in crypto
+        ? crypto.randomUUID()
+        : `lead-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+    try {
+      window.sessionStorage.setItem("nv-lead-event-id", eventId);
+    } catch {
+      /* sin sessionStorage: el servidor lo manda igual; solo se pierde la deduplicación */
+    }
     try {
       const res = await fetch("/api/lead", {
         method: "POST",
@@ -67,6 +78,7 @@ export default function LeadForm({
           message: String(data.get("message") ?? "").trim(),
           website: String(data.get("website") ?? ""), // honeypot
           source: "form",
+          eventId,
           page: window.location.pathname,
           attribution: getAttribution(),
         }),

@@ -16,7 +16,7 @@ const SITE_URL = "https://neuroviasystems.com.mx";
 // TODO (Jesús): reemplaza por el domicilio fiscal real del responsable.
 const DOMICILIO_FISCAL = "[TODO: domicilio fiscal completo], Villahermosa, Tabasco, México";
 const CORREO_PRIVACIDAD = "soporte@neuroviasystems.com.mx";
-const ULTIMA_ACTUALIZACION = "25 de agosto de 2026";
+const ULTIMA_ACTUALIZACION = "15 de octubre de 2026";
 
 export const metadata: Metadata = {
   title: "Aviso de Privacidad",
@@ -149,8 +149,15 @@ export default function AvisoDePrivacidadPage() {
             <strong>Google Analytics 4 (GA4)</strong>, para recopilar información
             estadística sobre el uso del sitio (páginas visitadas, origen del tráfico,
             tipo de dispositivo) y mejorar la experiencia. Esta información se trata de
-            forma agregada. Puede deshabilitar las cookies desde la configuración de su
-            navegador; algunas funciones podrían verse afectadas.
+            forma agregada.
+          </P>
+          <P>
+            También utilizamos los píxeles de medición de publicidad de{" "}
+            <strong>Meta</strong> (Facebook e Instagram) y de <strong>OpenAI</strong>{" "}
+            (anuncios en ChatGPT), que nos permiten saber si una visita o una solicitud
+            de contacto provino de uno de nuestros anuncios. Puede deshabilitar las
+            cookies desde la configuración de su navegador; algunas funciones podrían
+            verse afectadas.
           </P>
 
           <H2>6. Transferencias de datos</H2>
@@ -158,8 +165,18 @@ export default function AvisoDePrivacidadPage() {
             El Responsable no vende sus datos personales. Sus datos pueden ser tratados
             por proveedores de servicios (por ejemplo, plataformas de correo,
             analítica y hospedaje) que actúan por cuenta del Responsable y conforme a
-            este aviso. En caso de requerirse transferencias que exijan su
-            consentimiento conforme a la ley, se le solicitará previamente.
+            este aviso.
+          </P>
+          <P>
+            Cuando usted nos envía una solicitud de contacto, comunicamos a las
+            plataformas de publicidad que utilizamos (Google, Meta y OpenAI) que se
+            produjo una conversión, con el único fin de medir el resultado de nuestros
+            anuncios. Su teléfono y su correo, cuando se comparten, se envían cifrados
+            de forma irreversible (función hash SHA-256), junto con datos técnicos de la
+            visita como la dirección IP y el tipo de navegador; nunca se envían su
+            nombre ni el contenido de su mensaje. En caso de requerirse transferencias
+            que exijan su consentimiento conforme a la ley, se le solicitará
+            previamente.
           </P>
 
           <H2>7. Cambios al Aviso de Privacidad</H2>

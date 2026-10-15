@@ -4,7 +4,9 @@ import { deliverLead, leadSubject, type LeadPayload } from "@/lib/leadDelivery";
 /**
  * GET /api/lead/test — manda un prospecto FALSO por todos los canales y dice
  * cuál funcionó. Sirve para comprobar el correo y Telegram sin ensuciar los
- * informes de GA4 (no dispara ninguna conversión).
+ * informes de GA4 (no dispara ninguna conversión). A ChatGPT Ads lo manda en
+ * modo validación: OpenAI confirma que la clave y el formato sirven, pero no
+ * lo registra como conversión.
  *
  * Protegido: en producción exige ?token=<LEAD_TEST_TOKEN>. Si esa variable no
  * está puesta, en producción responde 404 (no existe manera de invocarlo).
@@ -35,7 +37,7 @@ export async function GET(request: Request) {
   };
 
   try {
-    const results = await deliverLead(lead);
+    const results = await deliverLead(lead, { test: true });
     return NextResponse.json({ ok: true, subject: leadSubject(lead), results });
   } catch (err) {
     return NextResponse.json({ ok: false, error: String(err).slice(0, 300) }, { status: 502 });

@@ -89,6 +89,7 @@ SMTP_PORT=                # 465
 SMTP_USER=                # ventas@neuroviasystems.com.mx
 SMTP_PASS=
 LEAD_TEST_TOKEN=          # para /api/lead/test en producción
+OPENAI_CAPI_KEY=          # Conversions API de ChatGPT Ads (lead desde el servidor)
 NEXT_PUBLIC_META_PIXEL_ID=
 ```
 

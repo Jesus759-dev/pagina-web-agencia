@@ -4,6 +4,7 @@ import { NextResponse } from "next/server";
 import { CHAT_SYSTEM_PROMPT } from "@/lib/chat/knowledge";
 import { notifyConfigured, notifyOwner } from "@/lib/chat/notify";
 import { notifyLead } from "@/lib/leadDelivery";
+import { conversionContextFrom, safeEventId } from "@/lib/openaiConversions";
 import { getDict } from "@/lib/i18n";
 
 /**
@@ -189,6 +190,8 @@ export async function POST(request: Request) {
   const messages: Anthropic.Beta.BetaMessageParam[] = turns.map((t) => ({ role: t.role, content: t.text }));
   const events: string[] = [];
   let handoff = "";
+  /** id del lead para deduplicar servidor y píxel en ChatGPT Ads. */
+  let leadEventId: string | undefined;
 
   try {
     let reply = "";
@@ -246,6 +249,9 @@ export async function POST(request: Request) {
         if (tu.name === "guardar_contacto") {
           if (!leadSessions.has(sessionId)) {
             leadSessions.add(sessionId);
+            // Mismo id para la Conversions API (aquí) y para el píxel (el
+            // navegador lo recibe en la respuesta): OpenAI cuenta uno solo.
+            leadEventId = safeEventId(undefined);
             await notifyOwner({ kind: "lead", page, lang, data, transcript });
             // Mismo buzón de prospectos que el formulario (ventas@), con el
             // mismo formato, para no llevar dos listas distintas.
@@ -259,6 +265,7 @@ export async function POST(request: Request) {
               source: "chatbot",
               page,
               attribution: {},
+              tracking: conversionContextFrom(request, leadEventId),
             }).catch((err) => console.error("[chat] lead a ventas@ falló", String(err)));
           }
           events.push("lead");
@@ -279,7 +286,7 @@ export async function POST(request: Request) {
     if (!reply) {
       reply = lang === "en" ? "Got it. Jesús will reach out soon." : "Listo. Jesús te contactará muy pronto.";
     }
-    return NextResponse.json({ ok: true, reply, events: Array.from(new Set(events)), handoff });
+    return NextResponse.json({ ok: true, reply, events: Array.from(new Set(events)), handoff, leadEventId });
   } catch (error) {
     if (error instanceof Anthropic.RateLimitError) {
       console.error("[chat] rate limited by API");

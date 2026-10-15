@@ -66,11 +66,13 @@ function oaiq(command: "measure", ...args: unknown[]): void {
  * Prospecto real: dejó nombre y WhatsApp. Se dispara una sola vez por lead
  * (en /gracias para el formulario, al guardar contacto en el chatbot).
  */
-export function trackFormLead(source: LeadSource): void {
+export function trackFormLead(source: LeadSource, eventId?: string): void {
   gtag("event", "generate_lead", { currency: "MXN", value: 1, lead_source: source });
   gtag("event", "ads_conversion_Contacto_1");
   fbq("track", "Lead", { content_name: source });
-  oaiq("measure", "lead_created", { type: "customer_action" });
+  // Con el mismo id que mandó el servidor a la Conversions API, OpenAI cuenta
+  // el lead una sola vez aunque le llegue por los dos lados.
+  oaiq("measure", "lead_created", { type: "customer_action" }, eventId ? { event_id: eventId } : undefined);
 }
 
 /**

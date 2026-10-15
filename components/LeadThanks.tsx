@@ -17,7 +17,13 @@ export default function LeadThanks() {
     } catch {
       /* sin sessionStorage: se dispara igual, es preferible a perder la conversión */
     }
-    trackFormLead("form");
+    let eventId: string | undefined;
+    try {
+      eventId = window.sessionStorage.getItem("nv-lead-event-id") ?? undefined;
+    } catch {
+      /* sin sessionStorage */
+    }
+    trackFormLead("form", eventId);
   }, []);
 
   return null;
