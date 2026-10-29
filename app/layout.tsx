@@ -228,8 +228,9 @@ const structuredData = {
       },
       geo: {
         "@type": "GeoCoordinates",
-        latitude: 17.9892,
-        longitude: -92.9281,
+        // Pin exacto del Perfil de Empresa en Google Maps.
+        latitude: 18.1115598,
+        longitude: -92.8583091,
       },
       hasMap: GOOGLE_BUSINESS_URL,
       // Horario real del Perfil de Empresa: es lo que permite que Google
