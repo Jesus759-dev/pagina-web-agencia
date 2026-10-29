@@ -44,7 +44,7 @@ const SITE_NAME = "Neurovia Systems";
 // de ~65 caracteres, que es lo que Google alcanza a mostrar.
 const SITE_TITLE = "Empresa de Desarrollo de Software e IA | Neurovia Systems";
 const SITE_DESCRIPTION =
-  "Empresa de desarrollo de software en Villahermosa, Tabasco: sistemas a medida, ERP, CRM, automatización con IA y productos propios. Consulta gratuita.";
+  "Empresa de desarrollo de software en Villahermosa, Tabasco: sistemas a la medida, ERP, CRM, automatización con IA y productos propios. Consulta gratuita.";
 const OG_IMAGE = `${SITE_URL}/images/og-robotic-hand.jpg`;
 
 /**
@@ -195,7 +195,7 @@ const structuredData = {
         "Agencia mexicana de desarrollo de software y automatización con inteligencia artificial con sede en Villahermosa, Tabasco. No relacionada con otras empresas que comparten el nombre Neurovia.",
       slogan: "Un solo equipo para todo tu stack tecnológico.",
       knowsAbout: [
-        "Desarrollo de software a medida",
+        "Desarrollo de software a la medida",
         "Inteligencia artificial para empresas",
         "Automatización de procesos",
         "Agentes de inteligencia artificial",
@@ -278,7 +278,7 @@ const structuredData = {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Desarrollo de software a medida",
+              name: "Desarrollo de software a la medida",
               url: `${SITE_URL}/desarrollo-de-software-a-medida-villahermosa`,
               description:
                 "Sistemas, plataformas web y dashboards construidos alrededor de la operación de cada empresa.",

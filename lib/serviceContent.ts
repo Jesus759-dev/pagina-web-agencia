@@ -45,12 +45,12 @@ export type ServicePageData = {
 const es: Record<string, ServicePageData> = {
   "desarrollo-de-software-a-medida-villahermosa": {
     slug: "desarrollo-de-software-a-medida-villahermosa",
-    metaTitle: "Desarrollo de Software a Medida en Villahermosa",
+    metaTitle: "Desarrollo de Software a la Medida en Villahermosa",
     metaDescription:
-      "Desarrollo de software a medida en Villahermosa, Tabasco. Creamos sistemas, plataformas y dashboards que automatizan tu empresa. Agenda tu consulta gratuita.",
-    keyword: "desarrollo de software a medida Villahermosa",
-    eyebrow: "Software a medida",
-    h1: "Desarrollo de Software a Medida en Villahermosa",
+      "Desarrollo de software a la medida en Villahermosa, Tabasco. Creamos sistemas, plataformas y dashboards que automatizan tu empresa. Agenda tu consulta gratuita.",
+    keyword: "desarrollo de software a la medida Villahermosa",
+    eyebrow: "Software a la medida",
+    h1: "Desarrollo de Software a la Medida en Villahermosa",
     heroLead:
       "En Neurovia Systems hacemos desarrollo de software a medida en Villahermosa para empresas de Tabasco que ya no quieren adaptarse a programas genéricos. Construimos sistemas, plataformas web y dashboards diseñados exactamente para tu operación.",
     ogAlt: "Desarrollo de software a medida en Villahermosa — Neurovia Systems",
@@ -105,7 +105,7 @@ const es: Record<string, ServicePageData> = {
       { q: "¿Atienden solo en Villahermosa?", a: "Estamos en Villahermosa, Tabasco, y atendemos a toda la región. También trabajamos de forma remota con empresas del resto de México y Latinoamérica." },
     ],
     related: [
-      { href: "/guias/cuanto-cuesta-un-software-a-medida", label: "Guía: ¿cuánto cuesta un software a medida?" },
+      { href: "/guias/cuanto-cuesta-un-software-a-medida", label: "Guía: ¿cuánto cuesta un software a la medida?" },
       { href: "/erp-a-medida-villahermosa", label: "ERP a la medida en Villahermosa" },
       { href: "/crm-a-medida-villahermosa", label: "CRM a la medida en Villahermosa" },
       { href: "/casos-de-exito", label: "Casos de éxito: sistemas en producción" },
@@ -176,7 +176,7 @@ const es: Record<string, ServicePageData> = {
     ],
     related: [
       { href: "/agentes-de-inteligencia-artificial", label: "Agentes de IA que atienden WhatsApp y correo" },
-      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a medida en Villahermosa" },
+      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a la medida en Villahermosa" },
       { href: "/sistemas-empresariales-tabasco", label: "Sistemas empresariales: ERP, CRM e inventario" },
     ],
   },
@@ -234,7 +234,7 @@ const es: Record<string, ServicePageData> = {
     ],
     related: [
       { href: "/productos/software-punto-de-venta", label: "Tomín POS: planes y funciones" },
-      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a medida en Villahermosa" },
+      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a la medida en Villahermosa" },
       { href: "/wms-villahermosa", label: "WMS y control de inventario" },
     ],
   },
@@ -291,20 +291,20 @@ const es: Record<string, ServicePageData> = {
       { q: "¿Yo puedo actualizar el contenido después?", a: "Sí. Entregamos sitios fáciles de mantener y te orientamos para que puedas hacer cambios, o nos encargamos nosotros con un plan de soporte." },
     ],
     related: [
-      { href: "/desarrollo-de-aplicaciones-web-tabasco", label: "Desarrollo de aplicaciones web a medida en Tabasco" },
-      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a medida en Villahermosa" },
+      { href: "/desarrollo-de-aplicaciones-web-tabasco", label: "Desarrollo de aplicaciones web a la medida en Tabasco" },
+      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a la medida en Villahermosa" },
       { href: "/sistema-punto-de-venta-villahermosa", label: "Sistema de punto de venta en Villahermosa" },
     ],
   },
 
   "desarrollo-de-aplicaciones-web-tabasco": {
     slug: "desarrollo-de-aplicaciones-web-tabasco",
-    metaTitle: "Desarrollo de Aplicaciones Web a Medida en Tabasco",
+    metaTitle: "Desarrollo de Aplicaciones Web a la Medida en Tabasco",
     metaDescription:
-      "Desarrollo de aplicaciones web a medida en Tabasco: plataformas, paneles y sistemas en la nube, escalables para tu empresa. Agenda tu consulta gratuita.",
-    keyword: "desarrollo de aplicaciones web a medida Tabasco",
+      "Desarrollo de aplicaciones web a la medida en Tabasco: plataformas, paneles y sistemas en la nube, escalables para tu empresa. Agenda tu consulta gratuita.",
+    keyword: "desarrollo de aplicaciones web a la medida Tabasco",
     eyebrow: "Aplicaciones web",
-    h1: "Desarrollo de Aplicaciones Web a Medida en Tabasco",
+    h1: "Desarrollo de Aplicaciones Web a la Medida en Tabasco",
     heroLead:
       "Hacemos desarrollo de aplicaciones web a medida en Tabasco: plataformas y sistemas en la nube a los que tu equipo entra desde el navegador, sin instalar nada. Herramientas creadas para resolver problemas concretos de tu empresa.",
     ogAlt: "Desarrollo de aplicaciones web a medida en Tabasco — Neurovia Systems",
@@ -350,7 +350,7 @@ const es: Record<string, ServicePageData> = {
       { q: "¿Puede crecer con el tiempo?", a: "Totalmente. Construimos sobre tecnología escalable, así que puedes empezar con lo esencial y agregar usuarios y funciones por etapas." },
     ],
     related: [
-      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a medida en Villahermosa" },
+      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a la medida en Villahermosa" },
       { href: "/diseno-de-paginas-web-villahermosa", label: "Diseño de páginas web en Villahermosa" },
       { href: "/automatizacion-con-ia-tabasco", label: "Automatización con inteligencia artificial en Tabasco" },
     ],
@@ -358,12 +358,12 @@ const es: Record<string, ServicePageData> = {
 
   "agentes-de-inteligencia-artificial": {
     slug: "agentes-de-inteligencia-artificial",
-    metaTitle: "Agentes de Inteligencia Artificial a Medida",
+    metaTitle: "Agentes de Inteligencia Artificial a la Medida",
     metaDescription:
-      "Creamos agentes de inteligencia artificial a medida: automatizan tareas, atienden clientes y procesan información 24/7. Agenda tu consulta gratuita.",
+      "Creamos agentes de inteligencia artificial a la medida: automatizan tareas, atienden clientes y procesan información 24/7. Agenda tu consulta gratuita.",
     keyword: "agentes de inteligencia artificial",
     eyebrow: "Agentes de IA",
-    h1: "Creamos Agentes de Inteligencia Artificial a Medida",
+    h1: "Creamos Agentes de Inteligencia Artificial a la Medida",
     heroLead:
       "En Neurovia Systems desarrollamos agentes de inteligencia artificial que trabajan para tu empresa: responden a tus clientes, automatizan procesos y ejecutan tareas por ti, las 24 horas. No un chatbot genérico — un agente entrenado con tu información y conectado a tus sistemas.",
     ogAlt: "Agentes de inteligencia artificial a medida — Neurovia Systems",
@@ -411,7 +411,7 @@ const es: Record<string, ServicePageData> = {
     related: [
       { href: "/guias/que-es-un-agente-de-ia", label: "Guía: ¿qué es un agente de inteligencia artificial?" },
       { href: "/automatizacion-con-ia-tabasco", label: "Automatización con inteligencia artificial en Tabasco" },
-      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a medida en Villahermosa" },
+      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a la medida en Villahermosa" },
       { href: "/crm-a-medida-villahermosa", label: "CRM a la medida conectado a WhatsApp" },
     ],
   },
@@ -420,7 +420,7 @@ const es: Record<string, ServicePageData> = {
     slug: "desarrollo-de-software-tabasco",
     metaTitle: "Desarrollo de Software en Tabasco",
     metaDescription:
-      "Empresa de desarrollo de software en Tabasco: sistemas de gestión, ERP, CRM e inteligencia artificial para empresas de Villahermosa, Cárdenas, Comalcalco y Paraíso.",
+      "Empresa de desarrollo de software en Tabasco: sistemas de gestión, ERP, CRM e IA para empresas de Villahermosa, Cárdenas, Comalcalco y Paraíso.",
     keyword: "desarrollo de software Tabasco",
     eyebrow: "Software en Tabasco",
     h1: "Desarrollo de Software en Tabasco",
@@ -489,7 +489,7 @@ const es: Record<string, ServicePageData> = {
       { q: "¿Qué pasa si ya tengo un sistema a medias?", a: "Lo revisamos antes de proponer nada. A veces conviene retomarlo y a veces rehacer la parte que falla; te decimos cuál de las dos y por qué." },
     ],
     related: [
-      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a medida en Villahermosa" },
+      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a la medida en Villahermosa" },
       { href: "/productos/software-control-de-obra", label: "Neurovia Build: control de obra" },
       { href: "/sistemas-empresariales-tabasco", label: "Sistemas empresariales: ERP, CRM e inventario" },
       { href: "/casos-de-exito", label: "Casos de éxito: sistemas en producción" },
@@ -575,7 +575,7 @@ const es: Record<string, ServicePageData> = {
     slug: "erp-a-medida-villahermosa",
     metaTitle: "ERP a la Medida en Villahermosa",
     metaDescription:
-      "Desarrollo de ERP a la medida en Villahermosa: requisiciones, compras, inventario, mantenimiento y costos por proyecto. Se implementa por etapas, sin parar tu operación.",
+      "ERP a la medida en Villahermosa: requisiciones, compras, inventario, mantenimiento y costos por proyecto. Se implementa por etapas, sin parar tu operación.",
     keyword: "ERP a medida Villahermosa",
     eyebrow: "ERP a la medida",
     h1: "ERP a la Medida en Villahermosa",
@@ -721,7 +721,7 @@ const es: Record<string, ServicePageData> = {
     slug: "wms-villahermosa",
     metaTitle: "WMS y Control de Inventario en Villahermosa",
     metaDescription:
-      "Sistema WMS y control de inventario a la medida en Villahermosa: multi-almacén, lotes, códigos de barras, conteos y kardex que cuadra. Conectado a tu facturación.",
+      "WMS y control de inventario a la medida en Villahermosa: multi-almacén, lotes, códigos de barras, conteos y kardex que cuadra. Conectado a tu facturación.",
     keyword: "WMS Villahermosa",
     eyebrow: "WMS e inventario",
     h1: "Sistema WMS y Control de Inventario en Villahermosa",
@@ -785,20 +785,21 @@ const es: Record<string, ServicePageData> = {
       { q: "¿Cómo empezamos si hoy todo está en Excel?", a: "Con un inventario inicial y la migración de catálogos y existencias. A partir de esa fecha el sistema es la fuente y el Excel deja de usarse." },
     ],
     related: [
+      { href: "/guias/plantilla-de-inventario-en-excel", label: "Plantilla de inventario en Excel gratis" },
       { href: "/sistema-punto-de-venta-villahermosa", label: "Sistema de punto de venta en Villahermosa" },
       { href: "/erp-a-medida-villahermosa", label: "ERP a la medida en Villahermosa" },
-      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a medida en Villahermosa" },
+      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a la medida en Villahermosa" },
     ],
   },
 
   "desarrollo-de-software-a-medida-monterrey": {
     slug: "desarrollo-de-software-a-medida-monterrey",
-    metaTitle: "Desarrollo de Software a Medida en Monterrey",
+    metaTitle: "Desarrollo de Software a la Medida en Monterrey",
     metaDescription:
-      "Desarrollo de software a medida para empresas en Monterrey, Nuevo León: sistemas, plataformas y automatización con IA. Trabajo remoto. Agenda tu consulta gratuita.",
-    keyword: "desarrollo de software a medida Monterrey",
-    eyebrow: "Software a medida",
-    h1: "Desarrollo de Software a Medida en Monterrey",
+      "Desarrollo de software a la medida para empresas de Monterrey, Nuevo León: sistemas, plataformas y automatización con IA. Consulta gratuita.",
+    keyword: "desarrollo de software a la medida Monterrey",
+    eyebrow: "Software a la medida",
+    h1: "Desarrollo de Software a la Medida en Monterrey",
     heroLead:
       "Desarrollamos software a medida para empresas de Monterrey y Nuevo León: sistemas de gestión, plataformas web y automatización con inteligencia artificial. Trabajamos de forma remota con el mismo estándar técnico, sin que la distancia sea un problema.",
     ogAlt: "Desarrollo de software a medida en Monterrey — Neurovia Systems",
@@ -849,20 +850,20 @@ const es: Record<string, ServicePageData> = {
       { q: "¿Cuánto cuesta?", a: "Depende del alcance. Partimos de un análisis gratuito y un estimado claro por etapas, para que puedas empezar por lo esencial." },
     ],
     related: [
-      { href: "/desarrollo-de-software-a-medida-guadalajara", label: "Desarrollo de software a medida en Guadalajara" },
+      { href: "/desarrollo-de-software-a-medida-guadalajara", label: "Desarrollo de software a la medida en Guadalajara" },
       { href: "/automatizacion-con-ia-tabasco", label: "Automatización con inteligencia artificial" },
-      { href: "/agentes-de-inteligencia-artificial", label: "Agentes de inteligencia artificial a medida" },
+      { href: "/agentes-de-inteligencia-artificial", label: "Agentes de inteligencia artificial a la medida" },
     ],
   },
 
   "desarrollo-de-software-a-medida-merida": {
     slug: "desarrollo-de-software-a-medida-merida",
-    metaTitle: "Desarrollo de Software a Medida en Mérida",
+    metaTitle: "Desarrollo de Software a la Medida en Mérida",
     metaDescription:
-      "Desarrollo de software a medida para empresas de Mérida, Yucatán: sistemas de gestión, inventarios, integraciones y automatización con IA. Consulta gratuita.",
-    keyword: "desarrollo de software a medida Mérida",
-    eyebrow: "Software a medida",
-    h1: "Desarrollo de Software a Medida en Mérida",
+      "Desarrollo de software a la medida para empresas de Mérida, Yucatán: sistemas de gestión, inventarios, integraciones y automatización con IA. Consulta gratuita.",
+    keyword: "desarrollo de software a la medida Mérida",
+    eyebrow: "Software a la medida",
+    h1: "Desarrollo de Software a la Medida en Mérida",
     heroLead:
       "Desarrollamos sistemas a la medida para empresas de Mérida y la península de Yucatán: control de operación, inventarios, expedientes de clientes y automatización con inteligencia artificial. Trabajamos en remoto, con entregas por etapas y el mismo estándar técnico que usamos en los proyectos del sureste.",
     ogAlt: "Desarrollo de software a medida en Mérida — Neurovia Systems",
@@ -922,19 +923,19 @@ const es: Record<string, ServicePageData> = {
       { q: "¿Qué pasa si mi negocio crece o cambia?", a: "El sistema se hizo para eso: se agregan módulos y usuarios sin rehacerlo. Al ser código propio y documentado, también puedes llevarlo con otro equipo si algún día lo decides." },
     ],
     related: [
-      { href: "/desarrollo-de-software-a-medida-campeche", label: "Desarrollo de software a medida en Campeche" },
+      { href: "/desarrollo-de-software-a-medida-campeche", label: "Desarrollo de software a la medida en Campeche" },
       { href: "/automatizacion-con-ia-tabasco", label: "Automatización con inteligencia artificial" },
       { href: "/sistema-punto-de-venta-villahermosa", label: "Sistema de punto de venta" },
     ],
   },
   "desarrollo-de-software-a-medida-veracruz": {
     slug: "desarrollo-de-software-a-medida-veracruz",
-    metaTitle: "Desarrollo de Software a Medida en Veracruz",
+    metaTitle: "Desarrollo de Software a la Medida en Veracruz",
     metaDescription:
-      "Desarrollo de software a medida para empresas de Veracruz: logística portuaria, agroindustria, distribución y servicios. Sistemas, integraciones y automatización con IA.",
-    keyword: "desarrollo de software a medida Veracruz",
-    eyebrow: "Software a medida",
-    h1: "Desarrollo de Software a Medida en Veracruz",
+      "Software a la medida para empresas de Veracruz: logística portuaria, agroindustria, distribución y servicios. Sistemas, integraciones y automatización con IA.",
+    keyword: "desarrollo de software a la medida Veracruz",
+    eyebrow: "Software a la medida",
+    h1: "Desarrollo de Software a la Medida en Veracruz",
     heroLead:
       "Sistemas hechos para cómo opera una empresa veracruzana: movimiento de mercancía, control de embarques, inventarios, costos por operación y automatización con inteligencia artificial. Trabajo remoto, entregas por etapas y código que se queda contigo.",
     ogAlt: "Desarrollo de software a medida en Veracruz — Neurovia Systems",
@@ -994,19 +995,19 @@ const es: Record<string, ServicePageData> = {
       { q: "¿Qué pasa con mis datos?", a: "Son tuyos. El sistema se despliega en infraestructura a tu nombre o en la nuestra, según prefieras, y te entregamos respaldos y documentación." },
     ],
     related: [
-      { href: "/desarrollo-de-software-a-medida-campeche", label: "Desarrollo de software a medida en Campeche" },
-      { href: "/desarrollo-de-software-a-medida-merida", label: "Desarrollo de software a medida en Mérida" },
+      { href: "/desarrollo-de-software-a-medida-campeche", label: "Desarrollo de software a la medida en Campeche" },
+      { href: "/desarrollo-de-software-a-medida-merida", label: "Desarrollo de software a la medida en Mérida" },
       { href: "/automatizacion-con-ia-tabasco", label: "Automatización con inteligencia artificial" },
     ],
   },
   "desarrollo-de-software-a-medida-campeche": {
     slug: "desarrollo-de-software-a-medida-campeche",
-    metaTitle: "Desarrollo de Software a Medida en Campeche",
+    metaTitle: "Desarrollo de Software a la Medida en Campeche",
     metaDescription:
-      "Software a medida en Campeche y Ciudad del Carmen para contratistas del sector energético, pesca y comercio: sistemas, cumplimiento y automatización con IA.",
-    keyword: "desarrollo de software a medida Campeche",
-    eyebrow: "Software a medida",
-    h1: "Desarrollo de Software a Medida en Campeche",
+      "Software a la medida en Campeche y Ciudad del Carmen para contratistas del sector energético, pesca y comercio: sistemas, cumplimiento y automatización con IA.",
+    keyword: "desarrollo de software a la medida Campeche",
+    eyebrow: "Software a la medida",
+    h1: "Desarrollo de Software a la Medida en Campeche",
     heroLead:
       "Sistemas a la medida para empresas de Campeche y Ciudad del Carmen: control de personal y equipo, requisiciones, evidencias de cumplimiento y automatización con inteligencia artificial. Conocemos cómo se trabaja cuando el cliente es del sector energético.",
     ogAlt: "Desarrollo de software a medida en Campeche — Neurovia Systems",
@@ -1067,19 +1068,19 @@ const es: Record<string, ServicePageData> = {
       { q: "¿El sistema queda a nombre de mi empresa?", a: "Sí, con su código y su documentación. Puedes moverlo a otro proveedor o a tu propio equipo cuando quieras." },
     ],
     related: [
-      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a medida en Villahermosa" },
-      { href: "/desarrollo-de-software-a-medida-merida", label: "Desarrollo de software a medida en Mérida" },
-      { href: "/agentes-de-inteligencia-artificial", label: "Agentes de inteligencia artificial a medida" },
+      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a la medida en Villahermosa" },
+      { href: "/desarrollo-de-software-a-medida-merida", label: "Desarrollo de software a la medida en Mérida" },
+      { href: "/agentes-de-inteligencia-artificial", label: "Agentes de inteligencia artificial a la medida" },
     ],
   },
   "desarrollo-de-software-a-medida-guadalajara": {
     slug: "desarrollo-de-software-a-medida-guadalajara",
-    metaTitle: "Desarrollo de Software a Medida en Guadalajara",
+    metaTitle: "Desarrollo de Software a la Medida en Guadalajara",
     metaDescription:
-      "Desarrollo de software a medida para empresas en Guadalajara, Jalisco: sistemas, plataformas y automatización con IA. Trabajo remoto. Agenda tu consulta gratuita.",
-    keyword: "desarrollo de software a medida Guadalajara",
-    eyebrow: "Software a medida",
-    h1: "Desarrollo de Software a Medida en Guadalajara",
+      "Desarrollo de software a la medida para empresas de Guadalajara, Jalisco: sistemas, plataformas y automatización con IA. Consulta gratuita.",
+    keyword: "desarrollo de software a la medida Guadalajara",
+    eyebrow: "Software a la medida",
+    h1: "Desarrollo de Software a la Medida en Guadalajara",
     heroLead:
       "Desarrollamos software a medida para empresas de Guadalajara y Jalisco: sistemas de gestión, plataformas web y automatización con inteligencia artificial. Trabajamos en remoto con el mismo estándar técnico, sin que la ubicación sea un límite.",
     ogAlt: "Desarrollo de software a medida en Guadalajara — Neurovia Systems",
@@ -1130,9 +1131,9 @@ const es: Record<string, ServicePageData> = {
       { q: "¿Cuánto cuesta?", a: "Depende del alcance. Partimos de un análisis gratuito y un estimado claro por etapas." },
     ],
     related: [
-      { href: "/desarrollo-de-software-a-medida-monterrey", label: "Desarrollo de software a medida en Monterrey" },
+      { href: "/desarrollo-de-software-a-medida-monterrey", label: "Desarrollo de software a la medida en Monterrey" },
       { href: "/automatizacion-con-ia-tabasco", label: "Automatización con inteligencia artificial" },
-      { href: "/agentes-de-inteligencia-artificial", label: "Agentes de inteligencia artificial a medida" },
+      { href: "/agentes-de-inteligencia-artificial", label: "Agentes de inteligencia artificial a la medida" },
     ],
   },
 };
@@ -1668,7 +1669,7 @@ const en: Record<string, ServicePageData> = {
     slug: "erp-a-medida-villahermosa",
     metaTitle: "Custom ERP Development in Villahermosa",
     metaDescription:
-      "Custom ERP development in Villahermosa: purchase requests, buying, inventory, maintenance and cost per project. Implemented in stages, without stopping your operation.",
+      "Custom ERP in Villahermosa: purchase requests, buying, inventory, maintenance and cost per project. Implemented in stages, without stopping your operation.",
     keyword: "custom ERP Villahermosa",
     eyebrow: "Custom ERP",
     h1: "Custom ERP Development in Villahermosa",
@@ -2143,9 +2144,9 @@ const en: Record<string, ServicePageData> = {
   },
   "desarrollo-de-software-a-medida-guadalajara": {
     slug: "desarrollo-de-software-a-medida-guadalajara",
-    metaTitle: "Custom Software Development in Guadalajara",
+    metaTitle: "Custom Software Development & Solutions in Guadalajara",
     metaDescription:
-      "Custom software development for companies in Guadalajara, Jalisco: systems, platforms and AI automation. Fully remote. Book a free consultation.",
+      "Custom software solutions for Guadalajara companies: ERP, inventory, client portals and AI automation. You own the code. Projects from MXN $65,000 + VAT.",
     keyword: "custom software development Guadalajara",
     eyebrow: "Custom software",
     h1: "Custom Software Development in Guadalajara",

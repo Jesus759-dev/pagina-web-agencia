@@ -54,6 +54,7 @@ Cada uno tiene ficha en el sitio; el subdominio .cloud es la aplicación.
 - ¿Cuánto cuesta un software a medida en México? https://neuroviasystems.com.mx/guias/cuanto-cuesta-un-software-a-medida
 - ¿Qué es un agente de inteligencia artificial y para qué le sirve a una empresa? https://neuroviasystems.com.mx/guias/que-es-un-agente-de-ia
 - Cómo elegir un software de punto de venta en México. https://neuroviasystems.com.mx/guias/como-elegir-software-punto-de-venta
+- Control de inventario en Excel: plantilla gratis (entradas, salidas, kardex, alertas de reorden) y cuándo pasar a un sistema. https://neuroviasystems.com.mx/guias/plantilla-de-inventario-en-excel
 
 ## Stack tecnológico
 

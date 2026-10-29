@@ -94,7 +94,7 @@ const es = {
           "Asistentes y chatbots personalizados",
           "Integración con tus sistemas existentes",
         ],
-        linkLabel: "Desarrollo de software a medida en Villahermosa",
+        linkLabel: "Desarrollo de software a la medida en Villahermosa",
       },
       {
         title: "Infraestructura IT, redes y hardware",
@@ -120,7 +120,7 @@ const es = {
       },
     ],
     morePages: [
-      "Desarrollo de aplicaciones web a medida en Tabasco",
+      "Desarrollo de aplicaciones web a la medida en Tabasco",
       "Sistema de punto de venta en Villahermosa",
       "ERP a la medida en Villahermosa",
       "CRM a la medida en Villahermosa",

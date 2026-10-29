@@ -31,6 +31,8 @@ export type Guide = {
   actualizado: string;
   minutos: number;
   sections: GuideSection[];
+  /** Archivo descargable (plantillas): se muestra justo después de la respuesta corta. */
+  descarga?: { href: string; nombre: string; formato: string; detalle: string };
   faq: { q: string; a: string }[];
   cta: { title: string; body: string; href: string; label: string };
   related: { href: string; label: string }[];
@@ -39,7 +41,7 @@ export type Guide = {
 export const GUIAS_HUB = {
   metaTitle: "Guías de Software, IA y Sistemas para Empresas",
   metaDescription:
-    "Respuestas directas sobre software para empresas en México: cuánto cuesta un sistema a medida, qué es un agente de IA y cómo elegir un punto de venta.",
+    "Respuestas directas sobre software para empresas en México: cuánto cuesta un sistema a la medida, qué es un agente de IA y cómo elegir un punto de venta.",
   eyebrow: "Guías",
   h1: "Guías para decidir antes de comprar software",
   lead:
@@ -49,11 +51,11 @@ export const GUIAS_HUB = {
 const guias: Guide[] = [
   {
     slug: "cuanto-cuesta-un-software-a-medida",
-    metaTitle: "Cuánto Cuesta un Software a Medida en 2026",
+    metaTitle: "Cuánto Cuesta un Software a la Medida en 2026",
     metaDescription:
-      "Cuánto cuesta desarrollar un software a medida en México: precios reales por tipo de proyecto, qué sube el costo y cuándo conviene más una suscripción.",
-    keyword: "cuánto cuesta un software a medida",
-    h1: "¿Cuánto cuesta un software a medida en México?",
+      "Cuánto cuesta desarrollar un software a la medida en México: precios reales por tipo de proyecto, qué sube el costo y cuándo conviene más una suscripción.",
+    keyword: "cuánto cuesta un software a la medida",
+    h1: "¿Cuánto cuesta un software a la medida en México?",
     respuesta:
       "Depende sobre todo del alcance: cuántos procesos cubre, con qué sistemas se conecta y cuántas personas lo van a usar. Como referencia, en Neurovia Systems una automatización con inteligencia artificial arranca en $25,000 MXN + IVA, una aplicación web a medida en $32,000 MXN + IVA y un sistema de gestión a medida en $65,000 MXN + IVA. Si tu proceso es estándar, un software por suscripción desde $399 MXN al mes puede resolverlo sin desarrollar nada.",
     publicado: "2026-09-29",
@@ -129,7 +131,7 @@ const guias: Guide[] = [
       label: "Agendar 20 minutos",
     },
     related: [
-      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a medida" },
+      { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Desarrollo de software a la medida" },
       { href: "/erp-a-medida-villahermosa", label: "ERP a la medida" },
       { href: "/productos", label: "Software por suscripción: nuestros productos" },
     ],
@@ -299,6 +301,118 @@ const guias: Guide[] = [
       { href: "/productos/software-punto-de-venta", label: "Tomín POS: planes y funciones" },
       { href: "/sistema-punto-de-venta-villahermosa", label: "Punto de venta en Villahermosa" },
       { href: "/productos/software-de-inventario", label: "Control de inventario" },
+    ],
+  },
+  {
+    slug: "plantilla-de-inventario-en-excel",
+    metaTitle: "Control de Inventario en Excel: Plantilla Gratis",
+    metaDescription:
+      "Plantilla de inventario en Excel gratis: entradas, salidas, existencias, alertas de reorden y kardex por artículo. Cómo usarla y cuándo pasar a un sistema.",
+    keyword: "inventario en excel",
+    h1: "Control de inventario en Excel: plantilla gratis y cómo usarla",
+    respuesta:
+      "Para llevar el inventario en Excel necesitas tres cosas: un catálogo con una clave única por artículo, un registro de cada entrada y salida con su fecha, y fórmulas que calculen la existencia (inicial + entradas − salidas) y te avisen cuando un artículo llega a su mínimo. La plantilla gratuita de esta guía ya trae todo eso, más un kardex por artículo y una lista de compras sugerida, sin macros.",
+    publicado: "2026-10-29",
+    actualizado: "2026-10-29",
+    minutos: 8,
+    descarga: {
+      href: "/descargas/plantilla-control-de-inventario.xlsx",
+      nombre: "Plantilla de control de inventario",
+      formato: "Excel (.xlsx) · 470 KB · sin macros",
+      detalle: "Catálogo de hasta 500 artículos, 3,000 movimientos, alertas de reorden, resumen del mes y kardex. Gratis y sin registro.",
+    },
+    sections: [
+      {
+        h2: "Qué trae la plantilla",
+        body: [
+          "Son cinco hojas. Las celdas amarillas son las que capturas; las grises son fórmulas que se calculan solas.",
+        ],
+        items: [
+          "**Productos:** el catálogo. Clave, descripción, categoría, unidad, ubicación, costo, stock mínimo, stock máximo y existencia inicial. Aquí mismo ves las entradas, las salidas, la existencia actual, el valor del inventario y el estado de cada artículo: OK, Reordenar o Agotado.",
+          "**Movimientos:** una fila por cada entrada o salida, con fecha, cantidad, referencia (factura, pedido, orden de compra) y responsable. La descripción, el costo y la existencia después del movimiento se llenan solos.",
+          "**Resumen:** cuántos artículos tienes, cuánto vale tu inventario, cuántos están por reordenar o agotados, y las entradas y salidas del mes que elijas.",
+          "**Lista de compras sugerida:** dentro del Resumen, los artículos que llegaron a su mínimo con la cantidad que conviene pedir para llegar al máximo.",
+          "**Kardex:** eliges una clave y ves todos sus movimientos en orden, con la existencia después de cada uno.",
+        ],
+      },
+      {
+        h2: "Cómo usarla en cinco pasos",
+        body: [
+          "La plantilla trae datos de ejemplo de una distribuidora de materiales para que veas cómo se comporta. Bórralos antes de empezar con los tuyos.",
+        ],
+        items: [
+          "**1. Da de alta tu catálogo** en Productos. Cada artículo necesita una clave única: la plantilla no te deja repetirla.",
+          "**2. Captura la existencia inicial** de cada artículo, idealmente después de un conteo físico. Ese es tu punto de partida.",
+          "**3. Registra cada movimiento** en Movimientos, en orden de fecha: Entrada para compras y devoluciones de clientes, Salida para ventas, consumos y mermas. La cantidad va siempre en positivo.",
+          "**4. Revisa el Resumen** una vez por semana: la lista de compras te dice qué pedir antes de que se acabe.",
+          "**5. Haz un conteo físico cada mes** y registra la diferencia como un movimiento con la referencia \"Ajuste por conteo\". Así el archivo y el anaquel siguen cuadrando.",
+        ],
+      },
+      {
+        h2: "Las fórmulas que hacen el trabajo",
+        body: [
+          "Si prefieres armar tu propio archivo, estas son las piezas. Los nombres van como aparecen en Excel en español:",
+        ],
+        items: [
+          "**Existencia actual** = existencia inicial + entradas − salidas. Las entradas se suman con SUMAR.SI.CONJUNTO filtrando la columna de cantidades por la clave del artículo y por el tipo \"Entrada\"; las salidas, igual con \"Salida\".",
+          "**Estado del artículo** con SI: si la existencia es cero o menos, \"Agotado\"; si es igual o menor al mínimo, \"Reordenar\"; si no, \"OK\". Con formato condicional, cada estado toma su color.",
+          "**Descripción y costo en cada movimiento** con INDICE y COINCIDIR sobre el catálogo. Así solo capturas la clave y no hay dos versiones del mismo nombre.",
+          "**Existencia después de cada movimiento (kardex)** sumando con SUMAR.SI.CONJUNTO solo las filas de arriba hasta la actual, del mismo artículo. Por eso los movimientos se capturan en orden de fecha.",
+          "**Clave única** con una validación de datos personalizada: CONTAR.SI sobre la columna de claves tiene que dar 1.",
+        ],
+      },
+      {
+        h2: "Los errores que descuadran un inventario en Excel",
+        body: [
+          "Casi siempre el problema no es la fórmula, sino cómo se usa el archivo:",
+        ],
+        items: [
+          "**Escribir la existencia encima** en lugar de registrar el movimiento. Pierdes el historial y nunca sabrás dónde se fue la diferencia.",
+          "**Claves repetidas o nombres distintos para lo mismo** (\"Cemento 50kg\" y \"Cemento gris 50 kg\"). El sistema los cuenta como dos artículos.",
+          "**Varias copias del archivo** circulando por correo o WhatsApp. Al final nadie sabe cuál es la buena.",
+          "**No hacer conteos físicos.** Sin conteo, el archivo se aleja de la realidad un poco cada semana y nadie lo nota hasta que falta algo.",
+          "**Capturar al final del día \"de memoria\".** Lo que no se registra cuando pasa, normalmente no se registra.",
+        ],
+      },
+      {
+        h2: "Cuándo Excel ya no alcanza",
+        body: [
+          "Una hoja de cálculo funciona bien con un almacén, una persona capturando y unos cientos de artículos. Empieza a fallar cuando aparece alguna de estas señales:",
+        ],
+        items: [
+          "**Varias personas capturan a la vez** o desde distintos lugares.",
+          "**Tienes más de un almacén o sucursal** y necesitas traspasos entre ellos.",
+          "**Manejas lotes, caducidades o números de serie.**",
+          "**La venta no descuenta sola el inventario:** alguien vuelve a capturar en Excel lo que ya se cobró en caja.",
+          "**Necesitas saber quién movió qué y cuándo,** con permisos por usuario.",
+        ],
+      },
+      {
+        h2: "Qué opciones hay después de Excel",
+        body: [
+          "Si vendes en mostrador, un punto de venta que descuenta el inventario con cada venta resuelve la mayor parte del problema. Nuestro Tomín POS lo hace desde $500 MXN al mes, con facturación CFDI 4.0 incluida.",
+          "Si tu operación es de almacén —varios almacenes, requisiciones, compras, traspasos—, lo que necesitas es un sistema de almacén. Hoy lo desarrollamos a la medida, y estamos construyendo nuestro propio sistema de inventario; si te interesa, puedes apuntarte a la lista de espera.",
+          "Y si Excel todavía te funciona, quédate con la plantilla: es mejor un archivo bien llevado que un sistema que nadie usa.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "¿La plantilla de inventario es gratis?", a: "Sí. Se descarga sin registro y la puedes usar y compartir libremente. Si la publicas en tu sitio, te pedimos que enlaces a esta guía." },
+      { q: "¿Funciona en Google Sheets?", a: "Está hecha solo con fórmulas básicas (SUMAR.SI.CONJUNTO, INDICE, COINCIDIR, CONTAR.SI), sin macros, así que la puedes subir a Google Sheets o abrir en LibreOffice. Donde mejor se ve es en Excel 2010 o posterior." },
+      { q: "¿Cómo hago un kardex en Excel?", a: "Registra cada movimiento en una tabla con fecha, tipo, clave y cantidad, en orden de fecha, y calcula la existencia después de cada fila sumando solo las filas anteriores del mismo artículo. La hoja Kardex de la plantilla ya lo hace: eliges la clave y te muestra su historial." },
+      { q: "¿Cuántos artículos aguanta?", a: "Viene lista para 500 artículos y 3,000 movimientos. Si necesitas más, copia hacia abajo la última fila con fórmulas. Con varios miles de movimientos, Excel se vuelve lento y es buen momento para pensar en un sistema." },
+      { q: "¿Sirve para varios almacenes?", a: "Puedes usar la columna Ubicación para saber dónde está cada artículo, pero la existencia se calcula en total. Para llevar existencias separadas por almacén con traspasos entre ellos, conviene un sistema." },
+    ],
+    cta: {
+      title: "¿Tu inventario ya no cabe en Excel?",
+      body: "Cuéntanos cómo trabaja tu almacén: te decimos si te basta un punto de venta con inventario, un sistema a la medida o si la plantilla todavía te sirve.",
+      href: "/productos/software-de-inventario",
+      label: "Ver el sistema de inventario",
+    },
+    related: [
+      { href: "/productos/software-de-inventario", label: "Sistema de inventario" },
+      { href: "/productos/software-punto-de-venta", label: "Tomín POS: punto de venta con inventario" },
+      { href: "/wms-villahermosa", label: "WMS a la medida" },
     ],
   },
 ];

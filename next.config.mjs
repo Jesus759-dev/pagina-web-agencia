@@ -59,6 +59,13 @@ const nextConfig = {
     { source: "/paginas-web-villahermosa", destination: "/diseno-de-paginas-web-villahermosa", permanent: true },
     { source: "/paginas-web-tabasco", destination: "/desarrollo-de-aplicaciones-web-tabasco", permanent: true },
     { source: "/casos-de-exito/:slug", destination: "/casos-de-exito#:slug", permanent: true },
+    // En México se escribe "a la medida": esa variante de URL va a la página de la ciudad.
+    { source: "/desarrollo-de-software-a-la-medida-:ciudad", destination: "/desarrollo-de-software-a-medida-:ciudad", permanent: true },
+
+    // Atajos para compartir por WhatsApp o en un QR.
+    // /resena abre el formulario de reseña del Perfil de Empresa (Place ID de NeuroviaSystems).
+    { source: "/resena", destination: "https://search.google.com/local/writereview?placeid=ChIJbwsZg_Z37oURQsDB43m81YQ", permanent: false },
+    { source: "/plantilla-inventario", destination: "/guias/plantilla-de-inventario-en-excel", permanent: true },
   ],
   headers: async () => [
     {

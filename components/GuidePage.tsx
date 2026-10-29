@@ -67,7 +67,23 @@ export default function GuidePage({ guide }: { guide: Guide }) {
         inLanguage: "es-MX",
         keywords: guide.keyword,
         timeRequired: `PT${guide.minutos}M`,
+        ...(guide.descarga && { associatedMedia: { "@id": `${url}#descarga` } }),
       },
+      ...(guide.descarga
+        ? [
+            {
+              "@type": "DigitalDocument",
+              "@id": `${url}#descarga`,
+              name: guide.descarga.nombre,
+              description: guide.descarga.detalle,
+              url: `${SITE_URL}${guide.descarga.href}`,
+              encodingFormat: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+              isAccessibleForFree: true,
+              inLanguage: "es-MX",
+              publisher: { "@id": ORG_ID },
+            },
+          ]
+        : []),
       {
         "@type": "FAQPage",
         "@id": `${url}#faq`,
@@ -125,6 +141,26 @@ export default function GuidePage({ guide }: { guide: Guide }) {
               <p className="m-0 mt-3 text-[18px] leading-[1.65] text-ink">{guide.respuesta}</p>
             </div>
           </section>
+
+          {guide.descarga && (
+            <section aria-label="Descarga" className="mx-auto max-w-[820px] px-5 pt-6 sm:px-10">
+              <div className="flex flex-col gap-5 rounded-2xl border border-line bg-white px-6 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+                <div>
+                  <div className="font-heading text-[19px] font-semibold leading-[1.3] text-ink">{guide.descarga.nombre}</div>
+                  <p className="m-0 mt-1 text-[13px] text-faint">{guide.descarga.formato}</p>
+                  <p className="m-0 mt-2 text-[15px] leading-[1.6] text-muted">{guide.descarga.detalle}</p>
+                </div>
+                {/* GA4 cuenta la descarga solo (file_download de la medición mejorada). */}
+                <a
+                  href={guide.descarga.href}
+                  download
+                  className="btn-primary inline-flex shrink-0 items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold no-underline"
+                >
+                  Descargar gratis <span aria-hidden="true">↓</span>
+                </a>
+              </div>
+            </section>
+          )}
 
           {guide.sections.map((s) => (
             <section key={s.h2} className="mx-auto max-w-[820px] px-5 pt-[64px] sm:px-10">

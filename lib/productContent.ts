@@ -92,7 +92,7 @@ export type ProductosHub = {
 const hubEs: ProductosHub = {
   metaTitle: "Productos: Software Propio en Producción",
   metaDescription:
-    "Software propio en producción: Huella para veterinarias, Tomín POS para punto de venta, Núcleo SGI para contratistas y control de inventario. Probado, no prototipos.",
+    "Software propio en producción: Huella para veterinarias, Tomín POS para punto de venta, Núcleo SGI para contratistas y más. Probado, no prototipos.",
   eyebrow: "Productos propios",
   h1: "Software Propio de Neurovia Systems",
   lead:
@@ -553,6 +553,7 @@ const es: Record<string, ProductPageData> = {
       { q: "¿Se va a conectar con facturación?", a: "Sí, la integración con CFDI 4.0 está contemplada, igual que en los demás sistemas que desarrollamos." },
     ],
     related: [
+      { href: "/guias/plantilla-de-inventario-en-excel", label: "Plantilla de inventario en Excel gratis" },
       { href: "/wms-villahermosa", label: "WMS a la medida (disponible hoy)" },
       { href: "/productos/software-punto-de-venta", label: "Tomín POS: punto de venta con inventario" },
       { href: "/erp-a-medida-villahermosa", label: "ERP a la medida" },
@@ -565,7 +566,7 @@ const es: Record<string, ProductPageData> = {
 const hubEn: ProductosHub = {
   metaTitle: "Products: Our Software in Production",
   metaDescription:
-    "Our own software in production: Huella for veterinary clinics, Tomín POS for point of sale, Núcleo SGI for contractors and inventory control. Proven, not prototypes.",
+    "Our own software in production: Huella for veterinary clinics, Tomín POS for point of sale, Núcleo SGI for contractors and more. Proven, not prototypes.",
   eyebrow: "Our products",
   h1: "Software Built by Neurovia Systems",
   lead:
@@ -963,7 +964,7 @@ const en: Record<string, ProductPageData> = {
     producto: "Inventory System",
     metaTitle: "Inventory and Warehouse Control Software",
     metaDescription:
-      "Inventory software for small and mid-size companies: receipts, issues, transfers, minimum alerts and a ledger that reconciles. In development — join the waiting list.",
+      "Inventory software for small and mid-size companies: receipts, issues, transfers, minimum alerts and a ledger that reconciles. Join the waiting list.",
     keyword: "inventory software for companies",
     eyebrow: "Inventory System",
     h1: "Inventory and Warehouse Control Software",

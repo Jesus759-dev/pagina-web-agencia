@@ -55,7 +55,7 @@ const es: CasosContent = {
   eyebrow: "Casos de éxito",
   h1: "Casos de Éxito: Sistemas que Operan Todos los Días",
   lead:
-    "Estos no son conceptos ni maquetas. Son sistemas y sitios que hoy usan empresas del sector petrolero, la construcción, el comercio, los talleres y el gobierno de Tabasco.",
+    "Estos no son conceptos ni maquetas. Son sistemas y sitios que hoy usan empresas del sector petrolero, la construcción, el comercio, la industria y los talleres, además de una escuela en Cancún y el gobierno de Tabasco.",
   intro: [
     "Cada caso sigue la misma estructura: cuál era el problema, qué construimos, con qué tecnología y qué cambió en la operación. Donde no tenemos una cifra verificable del cliente, lo decimos en palabras en lugar de inventar un porcentaje.",
     "Varios de estos proyectos son de empresas de Villahermosa y del resto de Tabasco; en algunos el nombre no aparece porque el contrato lo impide, no porque no exista.",
@@ -138,8 +138,31 @@ const es: CasosContent = {
       resultado:
         "La captura pasó del papel al momento en que ocurre el trabajo, y el historial de cada equipo dejó de depender de que alguien se acordara de transcribir la hoja al final del día.",
       servicios: [
-        { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Software a medida" },
+        { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Software a la medida" },
         { href: "/desarrollo-de-aplicaciones-web-tabasco", label: "Aplicaciones web y móviles" },
+      ],
+    },
+    {
+      id: "emasur",
+      cliente: "EMASUR — Especialistas en Maquinados del Sureste",
+      sector: "Industria · Almacén, requisiciones y compras",
+      badge: "Villahermosa, Tabasco",
+      problema:
+        "En un taller de maquinados, que falte el material o la herramienta de corte detiene una máquina. EMASUR necesitaba saber qué hay en el almacén, qué pidió cada área y en qué va cada compra, y que dirección pudiera seguir todo eso con números.",
+      solucion:
+        "Desarrollamos un sistema que junta en un mismo lugar el almacén, las requisiciones y las órdenes de compra, con un tablero de indicadores (KPIs) arriba de todo para seguir la operación.",
+      construido: [
+        "Inventario del almacén con entradas, salidas y existencias",
+        "Requisiciones de material",
+        "Órdenes de compra a proveedores",
+        "Tablero de indicadores (KPIs) de almacén y compras",
+      ],
+      tecnologias: ["Sistema web a la medida", "Control de almacén", "Tablero de indicadores"],
+      resultado:
+        "Almacén, requisiciones y compras dejaron de ser tres registros separados: lo que se pide, lo que se compra y lo que entra al almacén quedó en un solo sistema, con indicadores a la vista.",
+      servicios: [
+        { href: "/wms-villahermosa", label: "WMS e inventario" },
+        { href: "/erp-a-medida-villahermosa", label: "ERP a la medida" },
       ],
     },
     {
@@ -161,6 +184,29 @@ const es: CasosContent = {
       servicios: [
         { href: "/desarrollo-de-software-tabasco", label: "Desarrollo de software en Tabasco" },
         { href: "/sistemas-empresariales-tabasco", label: "Sistemas empresariales" },
+      ],
+    },
+    {
+      id: "est32",
+      cliente: "Escuela Secundaria Técnica N.° 32 \"Independencia de México\"",
+      sector: "Educación · Panel escolar web",
+      badge: "Cancún, Quintana Roo",
+      problema:
+        "Una secundaria con turno matutino y vespertino necesitaba tener en un solo lugar la asistencia, los citatorios a padres de familia y el expediente de cada alumno, en vez de repartirlos entre libretas y archivos de cada turno.",
+      solucion:
+        "Construimos un panel escolar web al que el personal entra con usuario y contraseña desde el navegador, sin instalar nada, con la información de los dos turnos.",
+      construido: [
+        "Registro de asistencia de los turnos matutino y vespertino",
+        "Citatorios a padres de familia",
+        "Expediente por alumno",
+        "Acceso con usuario y contraseña",
+      ],
+      tecnologias: ["Sistema web a la medida", "Expediente digital", "Acceso por usuario"],
+      resultado:
+        "La asistencia, los citatorios y los expedientes de ambos turnos quedaron en un mismo panel, disponible para el personal desde cualquier computadora.",
+      servicios: [
+        { href: "/desarrollo-de-aplicaciones-web-tabasco", label: "Aplicaciones web a la medida" },
+        { href: "/desarrollo-de-software-tabasco", label: "Desarrollo de software" },
       ],
     },
     {
@@ -202,7 +248,7 @@ const es: CasosContent = {
         "Las tres pasaron de no tener presencia útil a un sitio que funciona como catálogo y como primer filtro comercial, con el contacto siempre a la vista.",
       servicios: [
         { href: "/diseno-de-paginas-web-villahermosa", label: "Diseño de páginas web" },
-        { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Software a medida" },
+        { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Software a la medida" },
       ],
     },
     {
@@ -241,7 +287,7 @@ const en: CasosContent = {
   eyebrow: "Case studies",
   h1: "Case Studies: Systems That Run Every Day",
   lead:
-    "These are not concepts or mockups. They are systems and sites used today by companies in oil and gas, construction, distribution, workshops and the government of Tabasco.",
+    "These are not concepts or mockups. They are systems and sites used today by companies in oil and gas, construction, distribution, industry and workshops, plus a school in Cancún and the government of Tabasco.",
   intro: [
     "Every case follows the same structure: what the problem was, what we built, with which technology and what changed in the operation. Where we do not have a verifiable figure from the client, we say it in words instead of inventing a percentage.",
     "Several of these projects belong to companies in Villahermosa and the rest of Tabasco; in some the name is missing because the contract says so, not because the project does not exist.",
@@ -329,6 +375,29 @@ const en: CasosContent = {
       ],
     },
     {
+      id: "emasur",
+      cliente: "EMASUR — Especialistas en Maquinados del Sureste",
+      sector: "Industry · Warehouse, purchase requests and purchasing",
+      badge: "Villahermosa, Tabasco",
+      problema:
+        "In a machining shop, running out of material or cutting tools stops a machine. EMASUR needed to know what is in the warehouse, what each area requested and where every purchase stands, and management needed to follow all of it with numbers.",
+      solucion:
+        "We built a system that brings the warehouse, purchase requests and purchase orders into one place, with a KPI dashboard on top to follow the operation.",
+      construido: [
+        "Warehouse inventory with stock in, stock out and on-hand quantities",
+        "Material purchase requests",
+        "Purchase orders to suppliers",
+        "KPI dashboard for the warehouse and purchasing",
+      ],
+      tecnologias: ["Custom web system", "Warehouse control", "KPI dashboard"],
+      resultado:
+        "Warehouse, requests and purchasing stopped being three separate records: what is requested, what is bought and what comes into the warehouse now live in one system, with the indicators in plain sight.",
+      servicios: [
+        { href: "/wms-villahermosa", label: "WMS and inventory" },
+        { href: "/erp-a-medida-villahermosa", label: "Custom ERP" },
+      ],
+    },
+    {
       id: "sotop",
       cliente: "SOTOP — Government of Tabasco",
       sector: "Government · Internal web system",
@@ -347,6 +416,29 @@ const en: CasosContent = {
       servicios: [
         { href: "/desarrollo-de-software-tabasco", label: "Software development in Tabasco" },
         { href: "/sistemas-empresariales-tabasco", label: "Business systems" },
+      ],
+    },
+    {
+      id: "est32",
+      cliente: "Technical Secondary School No. 32 \"Independencia de México\"",
+      sector: "Education · School web panel",
+      badge: "Cancún, Quintana Roo",
+      problema:
+        "A secondary school with morning and afternoon shifts needed attendance, parent notices and each student's record in one place, instead of spread across each shift's notebooks and files.",
+      solucion:
+        "We built a school web panel that staff open from the browser with a username and password, with no installation, covering both shifts.",
+      construido: [
+        "Attendance for the morning and afternoon shifts",
+        "Notices to parents",
+        "Record per student",
+        "Username and password access",
+      ],
+      tecnologias: ["Custom web system", "Digital records", "User access"],
+      resultado:
+        "Attendance, notices and student records for both shifts now live in one panel that staff can open from any computer.",
+      servicios: [
+        { href: "/desarrollo-de-aplicaciones-web-tabasco", label: "Custom web apps" },
+        { href: "/desarrollo-de-software-tabasco", label: "Software development" },
       ],
     },
     {
