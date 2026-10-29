@@ -105,7 +105,7 @@ export default function NosotrosPage({ lang = "es" }: { lang?: Locale }) {
           </ul>
           <div className="mt-10">
             <a
-              href={`${base}/agenda`}
+              href="/agenda"
               className="btn-primary inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold no-underline"
             >
               {c.ctaLabel} <span aria-hidden="true">→</span>

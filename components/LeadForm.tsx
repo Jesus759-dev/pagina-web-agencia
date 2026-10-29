@@ -157,7 +157,7 @@ export default function LeadForm({
         <span>
           {t.consentPrefix}{" "}
           <a
-            href={`${localeBase(lang)}/aviso-de-privacidad`}
+            href="/aviso-de-privacidad"
             target="_blank"
             rel="noopener noreferrer"
             className={onAccent ? "text-white underline underline-offset-2" : "text-ink underline underline-offset-2"}

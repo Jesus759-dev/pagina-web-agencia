@@ -147,10 +147,11 @@ export default function Footer({ lang = "es" }: { lang?: Locale }) {
       <div className="mx-auto mt-9 flex max-w-[1240px] xl:max-w-[1520px] 2xl:max-w-[1680px] flex-wrap items-center justify-between gap-4 border-t border-line-soft pt-5 text-xs text-faint">
         <span>{t.footer.copyright}</span>
         <div className="flex flex-wrap gap-x-6 gap-y-2">
-          <a href={`${base}/agenda`} className="navlink">
+          {/* La agenda y el aviso de privacidad solo existen en español. */}
+          <a href="/agenda" className="navlink">
             {t.footer.agenda}
           </a>
-          <a href={`${base}/aviso-de-privacidad`} className="navlink">
+          <a href="/aviso-de-privacidad" className="navlink">
             {t.footer.privacy}
           </a>
         </div>

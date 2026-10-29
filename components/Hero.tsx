@@ -1,6 +1,6 @@
 "use client";
 
-import { getDict, localeBase, type Locale } from "@/lib/i18n";
+import { getDict, type Locale } from "@/lib/i18n";
 import WaLink from "@/components/WaLink";
 
 /**
@@ -15,7 +15,6 @@ import WaLink from "@/components/WaLink";
  */
 export default function Hero({ lang = "es" }: { lang?: Locale }) {
   const t = getDict(lang).hero;
-  const base = localeBase(lang);
 
   return (
     <section
@@ -72,7 +71,7 @@ export default function Hero({ lang = "es" }: { lang?: Locale }) {
               {t.ctaPrimary}
             </WaLink>
             <a
-              href={`${base}/agenda`}
+              href="/agenda"
               className="cta-outline inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-[15px] font-semibold no-underline"
             >
               {t.ctaSecondary} <span className="arr">→</span>

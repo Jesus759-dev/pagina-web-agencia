@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { getDict, localeBase, type Locale } from "@/lib/i18n";
+import { getDict, type Locale } from "@/lib/i18n";
 import { trackNewsletter } from "@/lib/analytics";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -23,7 +23,6 @@ export default function SubscribeForm({
   variant?: "light" | "dark";
 }) {
   const t = getDict(lang).subscribe;
-  const base = localeBase(lang);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
@@ -118,7 +117,7 @@ export default function SubscribeForm({
         <span>
           {t.consentPre}{" "}
           <a
-            href={`${base}/aviso-de-privacidad`}
+            href="/aviso-de-privacidad"
             className={`font-semibold underline underline-offset-2 ${onDark ? "text-white" : "text-ink"}`}
           >
             {t.consentLink}
