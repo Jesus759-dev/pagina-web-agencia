@@ -471,8 +471,8 @@ export default function RootLayout({
         {/* Geo targeting — Villahermosa, Tabasco (México) */}
         <meta name="geo.region" content="MX-TAB" />
         <meta name="geo.placename" content="Villahermosa, Tabasco, México" />
-        <meta name="geo.position" content="17.9892;-92.9281" />
-        <meta name="ICBM" content="17.9892, -92.9281" />
+        <meta name="geo.position" content="18.1115598;-92.8583091" />
+        <meta name="ICBM" content="18.1115598, -92.8583091" />
         <meta name="language" content="es-MX" />
 
         {/* JSON-LD structured data — the single @graph covers all entities */}
