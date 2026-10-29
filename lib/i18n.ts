@@ -181,12 +181,13 @@ const es = {
     emasur: {
       cat: "Sistema a la medida · Industria",
       title: "EMASUR",
-      desc: "Sistema para Especialistas en Maquinados del Sureste: inventario del almacén, requisiciones y órdenes de compra, con indicadores (KPIs) para seguir la operación.",
+      desc: "Sistema para Especialistas en Maquinados del Sureste (Villahermosa, Tabasco): inventario del almacén, requisiciones y órdenes de compra, con indicadores (KPIs) para seguir la operación.",
+      alt: "EMASUR — Sistema de almacén, requisiciones y compras (pantalla de inicio de sesión)",
     },
     est32: {
       cat: "Sistema web · Educación",
       title: "Escuela Secundaria Técnica N.° 32",
-      descPrefix: "Panel escolar de la E.S.T. N.° 32 \"Independencia de México\": asistencia, citatorios y expedientes de los turnos matutino y vespertino en un solo lugar — ",
+      descPrefix: "Panel escolar de la E.S.T. N.° 32 \"Independencia de México\" (Cancún, Quintana Roo): asistencia, citatorios y expedientes de los turnos matutino y vespertino en un solo lugar — ",
       alt: "Panel escolar de la Escuela Secundaria Técnica N.° 32 (pantalla de inicio de sesión)",
     },
     hidraulica: {
@@ -713,12 +714,13 @@ const en: typeof es = {
     emasur: {
       cat: "Custom system · Industry",
       title: "EMASUR",
-      desc: "A system for Especialistas en Maquinados del Sureste: warehouse inventory, purchase requests and purchase orders, with KPIs to track the operation.",
+      desc: "A system for Especialistas en Maquinados del Sureste (Villahermosa, Tabasco): warehouse inventory, purchase requests and purchase orders, with KPIs to track the operation.",
+      alt: "EMASUR — Warehouse, purchase request and purchasing system (login screen)",
     },
     est32: {
       cat: "Web system · Education",
       title: "Technical Secondary School No. 32",
-      descPrefix: "School panel for E.S.T. No. 32 \"Independencia de México\": attendance, parent notices and student records for the morning and afternoon shifts in one place — ",
+      descPrefix: "School panel for E.S.T. No. 32 \"Independencia de México\" (Cancún, Quintana Roo): attendance, parent notices and student records for the morning and afternoon shifts in one place — ",
       alt: "School panel for Technical Secondary School No. 32 (login screen)",
     },
     hidraulica: {

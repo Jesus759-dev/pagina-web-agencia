@@ -5,7 +5,7 @@
 > software a la medida, sistemas empresariales (ERP, CRM, inventario), agentes
 > de IA e infraestructura TI para empresas, y desarrollamos productos SaaS
 > propios. Base en Villahermosa; atendemos todo Tabasco y, en remoto, el resto
-> de México (proyectos en Monterrey y Guadalajara).
+> de México (proyectos en Monterrey, Guadalajara y Cancún).
 
 ## Servicios
 
@@ -31,6 +31,8 @@ Página con el detalle de cada caso: https://neuroviasystems.com.mx/casos-de-exi
 - CAPOSA (Villahermosa): sistema de gestión a la medida de 24 módulos con inventario multi-almacén, facturación CFDI 4.0 y reportes con IA.
 - ASC Motores (Villahermosa): sistema de taller de 18 módulos con app Android e iOS.
 - SOTOP, Gobierno de Tabasco: sistema web de dictamen de equipos de soporte.
+- EMASUR, Especialistas en Maquinados del Sureste (Villahermosa): inventario del almacén, requisiciones y órdenes de compra con indicadores (KPIs).
+- Escuela Secundaria Técnica N.° 32 "Independencia de México" (Cancún, Quintana Roo): panel escolar de asistencia, citatorios y expedientes de los turnos matutino y vespertino.
 - Royers S.A. de C.V.: sitio corporativo de constructora con más de 35 años y 500+ obras.
 - Alpha Mobil, Provalsa y TACEF Aceros: sitios corporativos con catálogo y contacto directo.
 
@@ -64,6 +66,7 @@ WhatsApp (Twilio / API de Meta) y modelos de IA para voz, texto y documentos.
 - Base: Villahermosa, Tabasco, México.
 - Tabasco: Villahermosa, Cárdenas, Comalcalco, Paraíso, Macuspana, Cunduacán, Huimanguillo.
 - Otras plazas con página propia: Campeche y Ciudad del Carmen, Mérida, Veracruz, Monterrey, Guadalajara.
+- Proyectos también en Cancún, Quintana Roo.
 - Resto de México y Latinoamérica: trabajo remoto.
 
 ## Precios de referencia (publicados)

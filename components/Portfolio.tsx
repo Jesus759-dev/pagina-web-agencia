@@ -198,18 +198,19 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
           </div>
         </a>
 
-        {/* EMASUR — cliente, sistema de almacén y compras. Sin enlace ni captura:
-            el sistema no está publicado bajo neuroviasystems.cloud. */}
+        {/* EMASUR — cliente, sistema de almacén y compras. La imagen es una
+            recreación de su pantalla de acceso: el sistema no está publicado
+            bajo neuroviasystems.cloud y no hay captura del original. Sin enlace. */}
         <article className="proj-card overflow-hidden rounded-2xl border border-line bg-white">
-          <div
-            className="relative flex aspect-video flex-col items-center justify-center gap-1 overflow-hidden px-6 text-center"
-            style={{ background: "linear-gradient(150deg, #3b4b5e, #161e29)" }}
-          >
-            <span className="font-heading text-[34px] font-bold tracking-[0.06em] text-white">EMASUR</span>
-            <span className="text-[12px] font-medium text-white/75">Especialistas en Maquinados del Sureste</span>
-            <span className="mt-1.5 font-code text-[10px] uppercase tracking-[0.16em]" style={{ color: "#9ad6f7" }}>
-              Almacén · Requisiciones · Compras · KPIs
-            </span>
+          <div className="relative aspect-video overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/projects/emasur-login.webp"
+              alt={t.emasur.alt}
+              className="block h-full w-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div className="p-[26px]">
             <div className="mb-[11px] flex items-center gap-2.5">

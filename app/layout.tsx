@@ -245,6 +245,7 @@ const structuredData = {
         { "@type": "City", name: "Monterrey" },
         { "@type": "City", name: "Santa Catarina" },
         { "@type": "City", name: "Guadalajara" },
+        { "@type": "City", name: "Cancún" },
         { "@type": "State", name: "Tabasco" },
         { "@type": "Country", name: "México" },
         { "@type": "Place", name: "Latinoamérica" },
