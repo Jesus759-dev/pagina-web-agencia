@@ -1,0 +1,8 @@
+# Hostinger (LiteSpeed) sirve public/ directamente, sin pasar por Next, y su
+# lista de tipos no trae .xlsx: sin esto la plantilla sale como text/plain.
+AddType application/vnd.openxmlformats-officedocument.spreadsheetml.sheet .xlsx
+<IfModule mod_headers.c>
+  <FilesMatch "\.xlsx$">
+    Header set Content-Disposition "attachment"
+  </FilesMatch>
+</IfModule>
