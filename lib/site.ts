@@ -48,13 +48,13 @@ export const GOOGLE_KG_URL = "https://www.google.com/search?kgmid=/g/11nr285ngk"
  */
 export const BUSINESS_HOURS = [
   { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "18:00" },
-  { days: ["Saturday", "Sunday"], opens: "09:00", closes: "14:00" },
+  { days: ["Saturday"], opens: "09:00", closes: "14:00" },
 ] as const;
 
 export function businessHoursText(lang: Locale = "es"): string {
   return lang === "en"
-    ? "Monday to Friday, 9:00 to 18:00 · Saturday and Sunday, 9:00 to 14:00"
-    : "Lunes a viernes de 9:00 a 18:00 · Sábado y domingo de 9:00 a 14:00";
+    ? "Monday to Friday, 9:00 to 18:00 · Saturday, 9:00 to 14:00"
+    : "Lunes a viernes de 9:00 a 18:00 · Sábado de 9:00 a 14:00";
 }
 
 /**

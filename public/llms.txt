@@ -83,7 +83,7 @@ WhatsApp (Twilio / API de Meta) y modelos de IA para voz, texto y documentos.
 ## Contacto
 
 - Dirección: C. Privada B, Mza. E, Lt. 5, Medellín y Madero 2ª Sección, 86270 Villahermosa, Tabasco, México
-- Horario: lunes a viernes de 9:00 a 18:00; sábado y domingo de 9:00 a 14:00
+- Horario: lunes a viernes de 9:00 a 18:00; sábado de 9:00 a 14:00; domingo cerrado
 - WhatsApp y teléfono: +52 993 722 6350
 - Correo: ventas@neuroviasystems.com.mx
 - Agenda una llamada de 20 minutos: https://neuroviasystems.com.mx/agenda
