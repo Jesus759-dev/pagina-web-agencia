@@ -198,10 +198,14 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
           </div>
         </a>
 
-        {/* EMASUR — cliente, sistema de almacén y compras. La imagen es una
-            recreación de su pantalla de acceso: el sistema no está publicado
-            bajo neuroviasystems.cloud y no hay captura del original. Sin enlace. */}
-        <article className="proj-card overflow-hidden rounded-2xl border border-line bg-white">
+        {/* EMASUR — cliente, sistema de almacén y compras. Enlaza a la demo
+            pública (datos ficticios); su sistema real no está publicado. */}
+        <a
+          href="https://emasur-sistema-demo.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="proj-card block overflow-hidden rounded-2xl border border-line bg-white no-underline"
+        >
           <div className="relative aspect-video overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -220,9 +224,15 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
             <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
               {t.emasur.title}
             </h3>
-            <p className="mt-[11px] text-sm leading-[1.6] text-muted">{t.emasur.desc}</p>
+            <p className="mt-[11px] text-sm leading-[1.6] text-muted">
+              {t.emasur.descPrefix}
+              <span className="font-semibold" style={{ color: "var(--accent)" }}>
+                {t.tapToDemo}
+              </span>
+              .
+            </p>
           </div>
-        </article>
+        </a>
 
         {/* E.S.T. N.° 32 — escuela, panel de asistencia y expedientes (captura real + enlace) */}
         <a

@@ -156,6 +156,7 @@ const es = {
     inProduction: "En producción",
     confidential: "Confidencial",
     tapToVisit: "toca para visitar el sitio",
+    tapToDemo: "toca para entrar a la demo",
     featured: {
       cat: "Suite ERP · Petróleo & Gas",
       title: "Cliente petrolero — Suite ERP",
@@ -181,7 +182,7 @@ const es = {
     emasur: {
       cat: "Sistema a la medida · Industria",
       title: "EMASUR",
-      desc: "Sistema para Especialistas en Maquinados del Sureste (Villahermosa, Tabasco): inventario del almacén, requisiciones y órdenes de compra, con indicadores (KPIs) para seguir la operación.",
+      descPrefix: "Sistema para Especialistas en Maquinados del Sureste (Villahermosa, Tabasco): inventario del almacén, requisiciones y órdenes de compra, con indicadores (KPIs) para seguir la operación — ",
       alt: "EMASUR — Sistema de almacén, requisiciones y compras (pantalla de inicio de sesión)",
     },
     est32: {
@@ -689,6 +690,7 @@ const en: typeof es = {
     inProduction: "In production",
     confidential: "Confidential",
     tapToVisit: "tap to visit the site",
+    tapToDemo: "tap to open the demo",
     featured: {
       cat: "ERP Suite · Oil & Gas",
       title: "Oil & gas client — ERP Suite",
@@ -714,7 +716,7 @@ const en: typeof es = {
     emasur: {
       cat: "Custom system · Industry",
       title: "EMASUR",
-      desc: "A system for Especialistas en Maquinados del Sureste (Villahermosa, Tabasco): warehouse inventory, purchase requests and purchase orders, with KPIs to track the operation.",
+      descPrefix: "A system for Especialistas en Maquinados del Sureste (Villahermosa, Tabasco): warehouse inventory, purchase requests and purchase orders, with KPIs to track the operation — ",
       alt: "EMASUR — Warehouse, purchase request and purchasing system (login screen)",
     },
     est32: {
