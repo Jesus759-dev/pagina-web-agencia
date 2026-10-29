@@ -178,6 +178,17 @@ const es = {
       descPrefix: "Sistema de taller a la medida con 18 módulos, más app móvil (Android) y app para iOS, para operar el taller desde cualquier lugar — ",
       alt: "ASC Motores — Sistema de Taller (pantalla de inicio de sesión)",
     },
+    emasur: {
+      cat: "Sistema a la medida · Industria",
+      title: "EMASUR",
+      desc: "Sistema para Especialistas en Maquinados del Sureste: inventario del almacén, requisiciones y órdenes de compra, con indicadores (KPIs) para seguir la operación.",
+    },
+    est32: {
+      cat: "Sistema web · Educación",
+      title: "Escuela Secundaria Técnica N.° 32",
+      descPrefix: "Panel escolar de la E.S.T. N.° 32 \"Independencia de México\": asistencia, citatorios y expedientes de los turnos matutino y vespertino en un solo lugar — ",
+      alt: "Panel escolar de la Escuela Secundaria Técnica N.° 32 (pantalla de inicio de sesión)",
+    },
     hidraulica: {
       cat: "Software técnico",
       title: "Cliente petrolero — Hidráulica v1.3",
@@ -698,6 +709,17 @@ const en: typeof es = {
       title: "ASC Motores",
       descPrefix: "A custom workshop system with 18 modules, plus Android and iOS apps, to run the shop from anywhere — ",
       alt: "ASC Motores — Workshop System (login screen)",
+    },
+    emasur: {
+      cat: "Custom system · Industry",
+      title: "EMASUR",
+      desc: "A system for Especialistas en Maquinados del Sureste: warehouse inventory, purchase requests and purchase orders, with KPIs to track the operation.",
+    },
+    est32: {
+      cat: "Web system · Education",
+      title: "Technical Secondary School No. 32",
+      descPrefix: "School panel for E.S.T. No. 32 \"Independencia de México\": attendance, parent notices and student records for the morning and afternoon shifts in one place — ",
+      alt: "School panel for Technical Secondary School No. 32 (login screen)",
     },
     hidraulica: {
       cat: "Technical software",

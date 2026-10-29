@@ -198,6 +198,66 @@ export default function Portfolio({ lang = "es" }: { lang?: Locale }) {
           </div>
         </a>
 
+        {/* EMASUR — cliente, sistema de almacén y compras. Sin enlace ni captura:
+            el sistema no está publicado bajo neuroviasystems.cloud. */}
+        <article className="proj-card overflow-hidden rounded-2xl border border-line bg-white">
+          <div
+            className="relative flex aspect-video flex-col items-center justify-center gap-1 overflow-hidden px-6 text-center"
+            style={{ background: "linear-gradient(150deg, #3b4b5e, #161e29)" }}
+          >
+            <span className="font-heading text-[34px] font-bold tracking-[0.06em] text-white">EMASUR</span>
+            <span className="text-[12px] font-medium text-white/75">Especialistas en Maquinados del Sureste</span>
+            <span className="mt-1.5 font-code text-[10px] uppercase tracking-[0.16em]" style={{ color: "#9ad6f7" }}>
+              Almacén · Requisiciones · Compras · KPIs
+            </span>
+          </div>
+          <div className="p-[26px]">
+            <div className="mb-[11px] flex items-center gap-2.5">
+              <Pill label={t.inProduction} />
+              <span className="text-[13px] text-[#69798a]">{t.emasur.cat}</span>
+            </div>
+            <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
+              {t.emasur.title}
+            </h3>
+            <p className="mt-[11px] text-sm leading-[1.6] text-muted">{t.emasur.desc}</p>
+          </div>
+        </article>
+
+        {/* E.S.T. N.° 32 — escuela, panel de asistencia y expedientes (captura real + enlace) */}
+        <a
+          href="https://panelest32.neuroviasystems.cloud"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="proj-card block overflow-hidden rounded-2xl border border-line bg-white no-underline"
+        >
+          <div className="relative aspect-video overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/projects/est32-panel-login.webp"
+              alt={t.est32.alt}
+              className="block h-full w-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div className="p-[26px]">
+            <div className="mb-[11px] flex items-center gap-2.5">
+              <Pill label={t.inProduction} />
+              <span className="text-[13px] text-[#69798a]">{t.est32.cat}</span>
+            </div>
+            <h3 className="m-0 font-heading text-[21px] font-semibold leading-[1.18] tracking-[-0.02em] text-ink">
+              {t.est32.title}
+            </h3>
+            <p className="mt-[11px] text-sm leading-[1.6] text-muted">
+              {t.est32.descPrefix}
+              <span className="font-semibold" style={{ color: "var(--accent)" }}>
+                {t.tapToVisit}
+              </span>
+              .
+            </p>
+          </div>
+        </a>
+
         {/* Núcleo SGI — nuevo producto propio (gestión integral) */}
         <a
           href="https://sgi.neuroviasystems.cloud"
