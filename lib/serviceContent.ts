@@ -103,6 +103,8 @@ const es: Record<string, ServicePageData> = {
       { q: "¿Cuánto tarda el desarrollo?", a: "Una primera versión funcional suele estar lista en semanas, no meses. Trabajamos por entregas para que veas avances reales desde el inicio y puedas usar el sistema mientras lo seguimos mejorando." },
       { q: "¿El software queda a mi nombre?", a: "Sí. El sistema y su código son de tu empresa. Te lo entregamos documentado para que tengas control total y libertad de proveedor." },
       { q: "¿Atienden solo en Villahermosa?", a: "Estamos en Villahermosa, Tabasco, y atendemos a toda la región. También trabajamos de forma remota con empresas del resto de México y Latinoamérica." },
+      { q: "¿Son una agencia de desarrollo de software en Villahermosa?", a: "Sí. Neurovia Systems es una empresa de desarrollo de software a la medida con base en Villahermosa, Tabasco, con sistemas en producción en el sector petrolero, la construcción, el gobierno y el comercio de la región." },
+      { q: "¿Es seguro y confiable contratarlos?", a: "Sí. Te entregamos el código documentado y a tu nombre, trabajamos por etapas con entregas que puedes revisar antes de seguir, y ya tenemos sistemas operando a diario en empresas reales de Tabasco. No partimos de promesas, sino de proyectos en uso." },
     ],
     related: [
       { href: "/guias/cuanto-cuesta-un-software-a-medida", label: "Guía: ¿cuánto cuesta un software a la medida?" },
@@ -241,9 +243,9 @@ const es: Record<string, ServicePageData> = {
 
   "diseno-de-paginas-web-villahermosa": {
     slug: "diseno-de-paginas-web-villahermosa",
-    metaTitle: "Diseño de Páginas Web en Villahermosa",
+    metaTitle: "Diseño de Páginas Web en Villahermosa y Tabasco",
     metaDescription:
-      "Diseño de páginas web en Villahermosa, Tabasco: sitios rápidos, optimizados para SEO que convierten visitantes en clientes. Agenda tu consulta gratuita.",
+      "Diseño de páginas web en Villahermosa y Tabasco: sitios rápidos, con posicionamiento en Google (SEO) y pensados para convertir visitas en clientes. Agenda tu consulta gratuita.",
     keyword: "diseño de páginas web Villahermosa",
     eyebrow: "Diseño web",
     h1: "Diseño de Páginas Web en Villahermosa",
@@ -289,6 +291,7 @@ const es: Record<string, ServicePageData> = {
       { q: "¿La página va a aparecer en Google?", a: "Construimos cada sitio con buenas prácticas de SEO para que pueda posicionar. El posicionamiento toma tiempo, pero partimos con una base técnica optimizada y contenido local." },
       { q: "¿Se ve bien en celular?", a: "Sí. Todos nuestros sitios son responsivos y se diseñan pensando primero en el móvil, que es donde navega la mayoría de tus clientes." },
       { q: "¿Yo puedo actualizar el contenido después?", a: "Sí. Entregamos sitios fáciles de mantener y te orientamos para que puedas hacer cambios, o nos encargamos nosotros con un plan de soporte." },
+      { q: "¿El diseño incluye posicionamiento en Google (SEO)?", a: "Sí. Cada sitio se construye con buenas prácticas de SEO desde el inicio —estructura, velocidad y contenido local de Villahermosa y Tabasco— para que tenga base para posicionar. Si quieres acelerar el posicionamiento, lo trabajamos como servicio aparte." },
     ],
     related: [
       { href: "/desarrollo-de-aplicaciones-web-tabasco", label: "Desarrollo de aplicaciones web a la medida en Tabasco" },
@@ -1201,6 +1204,7 @@ const en: Record<string, ServicePageData> = {
       { q: "How long does development take?", a: "A first working version is usually ready in weeks, not months. We work in deliverables so you see real progress from the start and can use the system while we keep improving it." },
       { q: "Do I own the software?", a: "Yes. The system and its code belong to your company. We hand it over documented so you have full control and vendor freedom." },
       { q: "Do you only serve Villahermosa?", a: "We're in Villahermosa, Tabasco, and serve the whole region. We also work remotely with companies across Mexico and Latin America." },
+      { q: "Are you a software development company in Villahermosa?", a: "Yes. Neurovia Systems is a custom software development company based in Villahermosa, Tabasco, with systems in production across oil & gas, construction, government and retail in the region." },
     ],
     related: [
       { href: "/erp-a-medida-villahermosa", label: "Custom ERP in Villahermosa" },
@@ -1339,9 +1343,9 @@ const en: Record<string, ServicePageData> = {
 
   "diseno-de-paginas-web-villahermosa": {
     slug: "diseno-de-paginas-web-villahermosa",
-    metaTitle: "Web Design in Villahermosa",
+    metaTitle: "Web Design in Villahermosa & Tabasco",
     metaDescription:
-      "Professional web design in Villahermosa, Tabasco: fast, modern sites optimized for SEO that turn visitors into customers. Book a free consultation.",
+      "Professional web design in Villahermosa and Tabasco: fast, modern sites with Google ranking (SEO) built to turn visitors into customers. Book a free consultation.",
     keyword: "web design Villahermosa",
     eyebrow: "Web design",
     h1: "Web Design in Villahermosa",
@@ -1387,6 +1391,7 @@ const en: Record<string, ServicePageData> = {
       { q: "Will the site show up on Google?", a: "We build every site with SEO best practices so it can rank. Ranking takes time, but we start with an optimized technical base and local content." },
       { q: "Does it look good on mobile?", a: "Yes. All our sites are responsive and designed mobile-first, which is where most of your customers browse." },
       { q: "Can I update the content myself later?", a: "Yes. We deliver sites that are easy to maintain and guide you to make changes, or we handle it with a support plan." },
+      { q: "Does the design include Google ranking (SEO)?", a: "Yes. Every site is built with SEO best practices from the start —structure, speed and local content for Villahermosa and Tabasco— so it has a base to rank. If you want to speed up ranking, we handle it as a separate service." },
     ],
     related: [
       { href: "/desarrollo-de-aplicaciones-web-tabasco", label: "Custom web app development in Tabasco" },
