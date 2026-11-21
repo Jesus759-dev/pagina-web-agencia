@@ -412,6 +412,8 @@ const es: Record<string, ServicePageData> = {
       { q: "¿Con qué se puede conectar?", a: "Con WhatsApp, correo, tu CRM, hojas de cálculo, tu ERP y más, mediante integraciones por API. Aprovechamos las herramientas que ya usas." },
       { q: "¿Es seguro para mi empresa?", a: "Sí. Diseñamos accesos, controles y validaciones, y mantenemos supervisión humana en los puntos críticos del proceso." },
       { q: "¿Cómo empezamos?", a: "Con una consulta gratuita donde detectamos el proceso de mayor impacto y te proponemos un primer agente con un estimado claro." },
+      { q: "¿Son una empresa de agentes de IA en México?", a: "Sí. Neurovia Systems es una empresa mexicana que desarrolla agentes de inteligencia artificial a la medida, con base en Villahermosa y atención remota en todo México." },
+      { q: "¿Qué es un agente virtual inteligente?", a: "Es un asistente de IA que no solo responde: entiende la petición, consulta tus sistemas y ejecuta la tarea —cotizar, agendar, dar seguimiento, procesar un documento— según las reglas que defines. A diferencia de un chatbot de respuestas fijas, actúa con criterio y bajo supervisión." },
     ],
     related: [
       { href: "/guias/que-es-un-agente-de-ia", label: "Guía: ¿qué es un agente de inteligencia artificial?" },
@@ -788,6 +790,8 @@ const es: Record<string, ServicePageData> = {
       { q: "¿Sirve para varias sucursales?", a: "Sí. Maneja varios almacenes con existencias independientes, traspasos con acuse y una vista consolidada para dirección." },
       { q: "¿Se conecta con mi facturación?", a: "Sí, integramos CFDI 4.0 y los sistemas de facturación o contabilidad que ya uses, siempre que permitan conexión." },
       { q: "¿Cómo empezamos si hoy todo está en Excel?", a: "Con un inventario inicial y la migración de catálogos y existencias. A partir de esa fecha el sistema es la fuente y el Excel deja de usarse." },
+      { q: "¿Es lo mismo un WMS que un software para control de inventario?", a: "En la práctica, para la mayoría de las empresas sí: te damos un software para control de inventario y de almacén —entradas, salidas, traspasos, mínimos y kardex— y, cuando la operación lo pide, le sumamos las funciones de WMS como ubicaciones y surtido por escaneo." },
+      { q: "¿Desarrollan un sistema de control de inventarios para almacenes de cualquier parte de México?", a: "Sí. Estamos en Villahermosa, pero desarrollamos el programa de inventario y lo implementamos de forma remota para distribuidoras y almacenes de todo México y Latinoamérica." },
     ],
     related: [
       { href: "/guias/plantilla-de-inventario-en-excel", label: "Plantilla de inventario en Excel gratis" },
@@ -1514,6 +1518,8 @@ const en: Record<string, ServicePageData> = {
       { q: "What can it connect to?", a: "WhatsApp, email, your CRM, spreadsheets, your ERP and more, through API integrations. We build on the tools you already use." },
       { q: "Is it secure for my company?", a: "Yes. We design access controls and validations, and keep human oversight at the critical points of the process." },
       { q: "How do we start?", a: "With a free consultation where we find the highest-impact process and propose a first agent with a clear estimate." },
+      { q: "Are you an AI agent company in Mexico?", a: "Yes. Neurovia Systems is a Mexican company that builds custom AI agents, based in Villahermosa and serving the whole country remotely." },
+      { q: "What is an intelligent virtual agent?", a: "It's an AI assistant that doesn't just reply: it understands the request, queries your systems and executes the task —quoting, scheduling, follow-up, processing a document— based on your rules. Unlike a fixed-answer chatbot, it acts with judgment and under oversight." },
     ],
     related: [
       { href: "/automatizacion-con-ia-tabasco", label: "AI automation in Tabasco" },
@@ -1883,6 +1889,8 @@ const en: Record<string, ServicePageData> = {
       { q: "Does it handle several branches?", a: "Yes. Several warehouses with independent stock, transfers with acknowledgement and a consolidated view for management." },
       { q: "Does it connect to my invoicing?", a: "Yes, we integrate CFDI 4.0 and the invoicing or accounting systems you already use, when they allow a connection." },
       { q: "How do we start if everything is in spreadsheets today?", a: "With an opening count and the migration of catalogues and stock. From that date the system is the source and the spreadsheet is retired." },
+      { q: "Is a WMS the same as inventory control software?", a: "For most companies, in practice yes: we give you inventory and warehouse control software —receipts, issues, transfers, low-stock alerts and a kardex— and, when the operation needs it, we add WMS features like locations and scan-based picking." },
+      { q: "Do you build inventory control systems for warehouses anywhere in Mexico?", a: "Yes. We're in Villahermosa, but we build the inventory program and deploy it remotely for distributors and warehouses across Mexico and Latin America." },
     ],
     related: [
       { href: "/sistema-punto-de-venta-villahermosa", label: "Point of sale system in Villahermosa" },
