@@ -16,8 +16,12 @@ for "desarrollo de software a medida Villahermosa". Breaking these invariants co
   available — and Turbopack requires native bindings.
 - The config **must stay `next.config.mjs`** (plain JS). A TypeScript `next.config.ts`
   fails to load under the wasm SWC (`ERR_MODULE_NOT_FOUND`).
-- Next is pinned to **`16.3.0-canary.69`**. Stable `16.2.9` fails the build while
-  prerendering the internal `/_global-error` page (a Next bug). Revisit when 16.3 ships stable.
+- Next is on **`16.4.6`** (stable). It was previously pinned to `16.3.0-canary.69` because
+  `16.2.9` failed prerendering `/_global-error`; on 2026-11-21 it was moved to `16.4.6` to
+  patch 5 critical Next RCE/DoS CVEs, and the Hostinger deploy was confirmed to build fine
+  with it (keep `next build --webpack`). Do **not** downgrade to the old canary — that
+  re-introduces the CVEs. Bump deliberately for security; verify a clean local webpack build
+  and the hPanel → Deployments status after pushing.
 - Push to `master` triggers the Hostinger build. The live site returns **503 for 1–3 minutes**
   during the rebuild, then recovers. That is expected.
 - **Verify with a green build before committing.**
