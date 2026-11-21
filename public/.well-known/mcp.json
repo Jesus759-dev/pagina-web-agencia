@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "2025-06-18",
+  "name": "neurovia-systems",
+  "title": "Neurovia Systems",
+  "description": "Herramientas de agente expuestas por el sitio de Neurovia Systems (agencia de desarrollo de software y agentes de IA en Villahermosa, Tabasco, México). Se exponen a agentes dentro del navegador vía WebMCP (navigator.modelContext); no hay un servidor MCP remoto.",
+  "version": "1.0.0",
+  "websiteUrl": "https://neuroviasystems.com.mx",
+  "transport": {
+    "type": "webmcp",
+    "description": "In-browser WebMCP via navigator.modelContext.provideContext(). Las herramientas se registran al cargar la página; no hay endpoint HTTP de MCP.",
+    "advertisedOn": "https://neuroviasystems.com.mx/"
+  },
+  "capabilities": {
+    "tools": {}
+  },
+  "tools": [
+    {
+      "name": "get_neurovia_contact",
+      "description": "Devuelve los datos de contacto de Neurovia Systems (WhatsApp, correo, ubicación y enlace para agendar).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "subscribe_newsletter",
+      "description": "Suscribe un correo al boletín de Neurovia Systems. Requiere consentimiento explícito del usuario.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "description": "Nombre de la persona" },
+          "email": { "type": "string", "description": "Correo electrónico" },
+          "consent": { "type": "boolean", "description": "Consentimiento explícito para recibir comunicaciones" }
+        },
+        "required": ["name", "email", "consent"]
+      }
+    }
+  ],
+  "contact": {
+    "email": "ventas@neuroviasystems.com.mx",
+    "url": "https://neuroviasystems.com.mx/agenda"
+  }
+}

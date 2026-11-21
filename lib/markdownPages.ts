@@ -26,12 +26,29 @@ Presencia en Villahermosa, Monterrey y Guadalajara.
 - **Huella** — sistema de gestión para clínicas veterinarias.
 - **FlotaOps** — control y rastreo de flotas vehiculares.
 
+## Precios de referencia
+
+- Software / sistema de gestión a la medida (ERP, CRM, almacén): desde $65,000 MXN + IVA, por módulos.
+- Aplicación web a la medida: desde $32,000 MXN + IVA.
+- Automatización de procesos con IA: desde $25,000 MXN + IVA.
+- Agente de IA para WhatsApp o correo: desde $25,000 MXN + IVA, más el costo por uso del modelo.
+- Tomín POS: $500, $1,200 o $2,400 MXN al mes.
+- Huella: desde $399 MXN al mes.
+- Análisis inicial y estimado: sin costo.
+- Detalle: https://neuroviasystems.com.mx/precios
+
+## Empresa
+
+- Quiénes somos (About): https://neuroviasystems.com.mx/nosotros
+- Aviso de privacidad (legal): https://neuroviasystems.com.mx/aviso-de-privacidad
+
 ## Contacto
 
 - Web: https://neuroviasystems.com.mx
 - Agenda una llamada: https://neuroviasystems.com.mx/agenda
 - WhatsApp: +52 993 722 6350
-- Correo: soporte@neuroviasystems.com.mx
+- Correo: ventas@neuroviasystems.com.mx
+- Dirección: C. Privada B, Mza. E, Lt. 5, Medellín y Madero 2ª Sección, 86270 Villahermosa, Tabasco, México
 
 Descripción completa para modelos: https://neuroviasystems.com.mx/llms.txt
 `,

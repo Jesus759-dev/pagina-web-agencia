@@ -37,6 +37,27 @@
         "Automatización con inteligencia artificial para empresas",
         "Agencia de software en Tabasco, Monterrey y Guadalajara"
       ]
+    },
+    {
+      "id": "urn:air:neuroviasystems.com.mx:content:precios",
+      "displayName": "Precios de referencia de Neurovia Systems",
+      "type": "text/html",
+      "url": "https://neuroviasystems.com.mx/precios",
+      "representationQueries": [
+        "¿Cuánto cuesta un software a la medida?",
+        "Precios de Neurovia Systems",
+        "¿Cuánto cuesta un agente de IA o una automatización?"
+      ]
+    },
+    {
+      "id": "urn:air:neuroviasystems.com.mx:service:mcp-server-card",
+      "displayName": "MCP Server Card (herramientas WebMCP del sitio)",
+      "type": "application/json",
+      "url": "https://neuroviasystems.com.mx/.well-known/mcp.json",
+      "representationQueries": [
+        "¿Qué herramientas de agente expone Neurovia?",
+        "MCP tools de Neurovia Systems"
+      ]
     }
   ]
 }

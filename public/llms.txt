@@ -9,58 +9,43 @@
 
 ## Servicios
 
-- Desarrollo de software a la medida en Villahermosa: sistemas de gestión, plataformas y dashboards construidos alrededor de la operación del cliente. https://neuroviasystems.com.mx/desarrollo-de-software-a-medida-villahermosa
-- Desarrollo de software en Tabasco (estatal: Villahermosa, Cárdenas, Comalcalco, Paraíso, Macuspana). https://neuroviasystems.com.mx/desarrollo-de-software-tabasco
-- Sistemas empresariales a la medida (ERP + CRM + inventario + automatización, por etapas). https://neuroviasystems.com.mx/sistemas-empresariales-tabasco
-- ERP a la medida: requisiciones y compras con autorizaciones, inventario, mantenimiento, costo por proyecto. https://neuroviasystems.com.mx/erp-a-medida-villahermosa
-- CRM a la medida: prospectos, cotizaciones que se vuelven pedido, WhatsApp, conectado a inventario y facturación. https://neuroviasystems.com.mx/crm-a-medida-villahermosa
-- WMS y control de inventario: multi-almacén, lotes y caducidades, códigos de barras, conteos cíclicos, kardex. https://neuroviasystems.com.mx/wms-villahermosa
-- Automatización de procesos con IA: lectura de documentos, integración de APIs, reportes automáticos. https://neuroviasystems.com.mx/automatizacion-con-ia-tabasco
-- Agentes de inteligencia artificial: asistentes que atienden WhatsApp y correo 24/7 y califican prospectos. https://neuroviasystems.com.mx/agentes-de-inteligencia-artificial
-- Diseño y desarrollo de páginas web en Villahermosa. https://neuroviasystems.com.mx/diseno-de-paginas-web-villahermosa
-- Desarrollo de aplicaciones web a la medida en Tabasco. https://neuroviasystems.com.mx/desarrollo-de-aplicaciones-web-tabasco
-- Sistema de punto de venta en Villahermosa. https://neuroviasystems.com.mx/sistema-punto-de-venta-villahermosa
-- Infraestructura TI, redes y hardware: armado de equipos, redes Ubiquiti, mantenimiento y soporte.
-- Consultoría TI: diagnóstico, recomendación de stack y acompañamiento a decisiones técnicas.
+- [Desarrollo de software a la medida en Villahermosa](https://neuroviasystems.com.mx/desarrollo-de-software-a-medida-villahermosa): sistemas de gestión, plataformas y dashboards construidos alrededor de la operación del cliente.
+- [Desarrollo de software en Tabasco](https://neuroviasystems.com.mx/desarrollo-de-software-tabasco): cobertura estatal (Villahermosa, Cárdenas, Comalcalco, Paraíso, Macuspana).
+- [Sistemas empresariales a la medida](https://neuroviasystems.com.mx/sistemas-empresariales-tabasco): ERP + CRM + inventario + automatización, por etapas.
+- [ERP a la medida](https://neuroviasystems.com.mx/erp-a-medida-villahermosa): requisiciones y compras con autorizaciones, inventario, mantenimiento, costo por proyecto.
+- [CRM a la medida](https://neuroviasystems.com.mx/crm-a-medida-villahermosa): prospectos, cotizaciones que se vuelven pedido, WhatsApp, conectado a inventario y facturación.
+- [WMS y control de inventario](https://neuroviasystems.com.mx/wms-villahermosa): multi-almacén, lotes y caducidades, códigos de barras, conteos cíclicos, kardex.
+- [Automatización de procesos con IA](https://neuroviasystems.com.mx/automatizacion-con-ia-tabasco): lectura de documentos, integración de APIs, reportes automáticos.
+- [Agentes de inteligencia artificial](https://neuroviasystems.com.mx/agentes-de-inteligencia-artificial): asistentes que atienden WhatsApp y correo 24/7 y califican prospectos.
+- [Diseño y desarrollo de páginas web en Villahermosa](https://neuroviasystems.com.mx/diseno-de-paginas-web-villahermosa): sitios rápidos con posicionamiento en Google (SEO).
+- [Desarrollo de aplicaciones web a la medida en Tabasco](https://neuroviasystems.com.mx/desarrollo-de-aplicaciones-web-tabasco): plataformas en la nube a las que se entra desde el navegador.
+- [Sistema de punto de venta en Villahermosa](https://neuroviasystems.com.mx/sistema-punto-de-venta-villahermosa): ventas, inventario y reportes en tiempo real.
+- [Infraestructura TI, redes y hardware](https://neuroviasystems.com.mx/#servicios): armado de equipos, redes Ubiquiti, mantenimiento y soporte.
+- [Consultoría TI](https://neuroviasystems.com.mx/#servicios): diagnóstico, recomendación de stack y acompañamiento a decisiones técnicas.
 
 ## Casos y experiencia (verificables en el sitio)
 
-Página con el detalle de cada caso: https://neuroviasystems.com.mx/casos-de-exito
-
-- Cliente del sector petrolero (confidencial): suite ERP con requisiciones y compras, mantenimiento vehicular e inventario sobre 23 áreas operativas.
-- CAPOSA (Villahermosa): sistema de gestión a la medida de 24 módulos con inventario multi-almacén, facturación CFDI 4.0 y reportes con IA.
-- ASC Motores (Villahermosa): sistema de taller de 18 módulos con app Android e iOS.
-- SOTOP, Gobierno de Tabasco: sistema web de dictamen de equipos de soporte.
-- EMASUR, Especialistas en Maquinados del Sureste (Villahermosa): inventario del almacén, requisiciones y órdenes de compra con indicadores (KPIs).
-- Escuela Secundaria Técnica N.° 32 "Independencia de México" (Cancún, Quintana Roo): panel escolar de asistencia, citatorios y expedientes de los turnos matutino y vespertino.
-- Royers S.A. de C.V.: sitio corporativo de constructora con más de 35 años y 500+ obras.
-- Alpha Mobil, Provalsa y TACEF Aceros: sitios corporativos con catálogo y contacto directo.
+- [Casos de éxito (detalle de cada proyecto)](https://neuroviasystems.com.mx/casos-de-exito): cliente del sector petrolero (suite ERP sobre 23 áreas), CAPOSA (24 módulos, inventario multi-almacén, CFDI 4.0), ASC Motores (taller, 18 módulos, app Android/iOS), SOTOP (Gobierno de Tabasco, dictamen de equipos), EMASUR (inventario, requisiciones y KPIs), Escuela Secundaria Técnica N.° 32 de Cancún (panel escolar), Royers (constructora, 35+ años, 500+ obras), y sitios corporativos de Alpha Mobil, Provalsa y TACEF Aceros.
 
 ## Productos de software propios (en producción)
 
-Cada uno tiene ficha en el sitio; el subdominio .cloud es la aplicación.
-
-- Tomín POS — software de punto de venta en la nube con facturación CFDI 4.0, inventario automático, corte de caja y arqueo, multisucursal, tienda en línea y pedidos sin comisiones, modo restaurante (mesas, cuentas separadas, propinas), mayoreo y crédito. Planes: Inicial $500 MXN/mes (3 usuarios, 50 facturas), Pro $1,200 MXN/mes (8 usuarios, 200 facturas), Empresa $2,400 MXN/mes (usuarios y facturas ilimitados). Sin tarjeta al registrarse, sin plazos forzosos. https://neuroviasystems.com.mx/productos/software-punto-de-venta
-- Neurovia Build — software para constructoras y control de obra: requisiciones por frente de obra, autorizaciones por nivel, compras, almacén de obra y costo real por proyecto. Demo abierta sin contraseña (datos ficticios). Cotización por proyecto. https://neuroviasystems.com.mx/productos/software-control-de-obra
-- Huella — software para clínicas veterinarias: expediente por mascota, consultas, vacunas con aviso de refuerzo e inventario. Desde $399 MXN/mes. https://neuroviasystems.com.mx/productos/software-para-veterinarias
-- Núcleo SGI — sistema de gestión integral para contratistas del sector energético: documentos con vigencia, hallazgos, capacitación DC-3 y evidencia para auditoría. Cotización por proyecto. https://neuroviasystems.com.mx/productos/sistema-de-gestion-integral
-- Sistema de Inventario — en desarrollo, con lista de espera. https://neuroviasystems.com.mx/productos/software-de-inventario
-- FlotaOps — control y rastreo de flotas vehiculares.
-
-Índice de productos: https://neuroviasystems.com.mx/productos
+- [Tomín POS](https://neuroviasystems.com.mx/productos/software-punto-de-venta): punto de venta en la nube con facturación CFDI 4.0, inventario automático, corte de caja, multisucursal, tienda en línea, modo restaurante y mayoreo. Planes: Inicial $500 MXN/mes, Pro $1,200 MXN/mes, Empresa $2,400 MXN/mes. Sin tarjeta al registrarse.
+- [Neurovia Build](https://neuroviasystems.com.mx/productos/software-control-de-obra): software para constructoras y control de obra con requisiciones por frente, autorizaciones, compras y costo real por proyecto. Demo abierta. Cotización por proyecto.
+- [Huella](https://neuroviasystems.com.mx/productos/software-para-veterinarias): software para clínicas veterinarias (expediente por mascota, vacunas, inventario). Desde $399 MXN/mes.
+- [Núcleo SGI](https://neuroviasystems.com.mx/productos/sistema-de-gestion-integral): sistema de gestión integral para contratistas del sector energético (documentos con vigencia, hallazgos, DC-3, evidencia para auditoría). Cotización por proyecto.
+- [Sistema de Inventario](https://neuroviasystems.com.mx/productos/software-de-inventario): producto propio en desarrollo, con lista de espera. Versión a la medida disponible hoy.
+- [Índice de productos](https://neuroviasystems.com.mx/productos): FlotaOps (control y rastreo de flotas) y todas las fichas.
 
 ## Guías (respuestas directas)
 
-- ¿Cuánto cuesta un software a medida en México? https://neuroviasystems.com.mx/guias/cuanto-cuesta-un-software-a-medida
-- ¿Qué es un agente de inteligencia artificial y para qué le sirve a una empresa? https://neuroviasystems.com.mx/guias/que-es-un-agente-de-ia
-- Cómo elegir un software de punto de venta en México. https://neuroviasystems.com.mx/guias/como-elegir-software-punto-de-venta
-- Control de inventario en Excel: plantilla gratis (entradas, salidas, kardex, alertas de reorden) y cuándo pasar a un sistema. https://neuroviasystems.com.mx/guias/plantilla-de-inventario-en-excel
+- [¿Cuánto cuesta un software a medida en México?](https://neuroviasystems.com.mx/guias/cuanto-cuesta-un-software-a-medida)
+- [¿Qué es un agente de inteligencia artificial y para qué le sirve a una empresa?](https://neuroviasystems.com.mx/guias/que-es-un-agente-de-ia)
+- [Cómo elegir un software de punto de venta en México](https://neuroviasystems.com.mx/guias/como-elegir-software-punto-de-venta)
+- [Control de inventario en Excel: plantilla gratis y cuándo pasar a un sistema](https://neuroviasystems.com.mx/guias/plantilla-de-inventario-en-excel)
 
-## Stack tecnológico
+## Precios de referencia (publicados)
 
-Laravel, Livewire, Filament, Node.js, React, Next.js, TypeScript, Tailwind CSS,
-PostgreSQL, Supabase, Docker, Python/FastAPI. Integraciones: CFDI 4.0,
-WhatsApp (Twilio / API de Meta) y modelos de IA para voz, texto y documentos.
+- [Página de precios](https://neuroviasystems.com.mx/precios): sistema de gestión a medida (ERP, CRM, almacén) desde $65,000 MXN + IVA por módulos; aplicación web a medida desde $32,000 MXN + IVA; automatización de procesos con IA desde $25,000 MXN + IVA; agente de IA para WhatsApp o correo desde $25,000 MXN + IVA más el costo por uso del modelo; Tomín POS $500, $1,200 o $2,400 MXN al mes; Huella desde $399 MXN al mes; análisis inicial y estimado sin costo.
 
 ## Ubicación y cobertura
 
@@ -70,15 +55,11 @@ WhatsApp (Twilio / API de Meta) y modelos de IA para voz, texto y documentos.
 - Proyectos también en Cancún, Quintana Roo.
 - Resto de México y Latinoamérica: trabajo remoto.
 
-## Precios de referencia (publicados)
+## Stack tecnológico
 
-- Sistema de gestión a medida (ERP, CRM, almacén): desde $65,000 MXN + IVA, construido por módulos.
-- Aplicación web a medida: desde $32,000 MXN + IVA.
-- Automatización de procesos con IA: desde $25,000 MXN + IVA.
-- Agente de IA para WhatsApp o correo: desde $25,000 MXN + IVA, más el costo por uso del modelo.
-- Tomín POS: $500, $1,200 o $2,400 MXN al mes.
-- Huella: desde $399 MXN al mes.
-- Análisis inicial y estimado: sin costo.
+Laravel, Livewire, Filament, Node.js, React, Next.js, TypeScript, Tailwind CSS,
+PostgreSQL, Supabase, Docker, Python/FastAPI. Integraciones: CFDI 4.0,
+WhatsApp (Twilio / API de Meta) y modelos de IA para voz, texto y documentos.
 
 ## Contacto
 
@@ -86,16 +67,17 @@ WhatsApp (Twilio / API de Meta) y modelos de IA para voz, texto y documentos.
 - Horario: lunes a viernes de 9:00 a 18:00; sábado de 9:00 a 14:00; domingo cerrado
 - WhatsApp y teléfono: +52 993 722 6350
 - Correo: ventas@neuroviasystems.com.mx
-- Agenda una llamada de 20 minutos: https://neuroviasystems.com.mx/agenda
-- Perfil de Empresa en Google: https://share.google/PD6YaSDHqpFTMijnm
+- [Agenda una llamada de 20 minutos](https://neuroviasystems.com.mx/agenda)
+- [Perfil de Empresa en Google](https://share.google/PD6YaSDHqpFTMijnm)
 
 ## Enlaces útiles
 
-- Inicio: https://neuroviasystems.com.mx
-- Casos de éxito: https://neuroviasystems.com.mx/casos-de-exito
-- Productos: https://neuroviasystems.com.mx/productos
-- Guías: https://neuroviasystems.com.mx/guias
-- Quiénes somos: https://neuroviasystems.com.mx/nosotros
-- Catálogo de sistemas: https://neuroviasystems.com.mx/sistemas
-- Aviso de privacidad: https://neuroviasystems.com.mx/aviso-de-privacidad
-- Versión en inglés: https://neuroviasystems.com.mx/en
+- [Inicio](https://neuroviasystems.com.mx)
+- [Quiénes somos](https://neuroviasystems.com.mx/nosotros)
+- [Precios](https://neuroviasystems.com.mx/precios)
+- [Casos de éxito](https://neuroviasystems.com.mx/casos-de-exito)
+- [Productos](https://neuroviasystems.com.mx/productos)
+- [Guías](https://neuroviasystems.com.mx/guias)
+- [Catálogo de sistemas](https://neuroviasystems.com.mx/sistemas)
+- [Aviso de privacidad](https://neuroviasystems.com.mx/aviso-de-privacidad)
+- [Versión en inglés](https://neuroviasystems.com.mx/en)

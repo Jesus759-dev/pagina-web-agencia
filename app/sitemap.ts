@@ -149,6 +149,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
+      url: `${BASE}/precios`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+      alternates: {
+        languages: {
+          es: `${BASE}/precios`,
+          en: `${BASE}/en/precios`,
+        },
+      },
+    },
+    {
+      url: `${BASE}/en/precios`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: {
+        languages: {
+          es: `${BASE}/precios`,
+          en: `${BASE}/en/precios`,
+        },
+      },
+    },
+    {
       url: `${BASE}/casos-de-exito`,
       lastModified: now,
       changeFrequency: "monthly",

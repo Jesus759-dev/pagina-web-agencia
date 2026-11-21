@@ -85,7 +85,7 @@ const nextConfig = {
         {
           key: "Link",
           value:
-            "</llms.txt>; rel=\"describedby\"; type=\"text/plain\", </.well-known/ai-catalog.json>; rel=\"service-desc\"; type=\"application/json\"",
+            "</llms.txt>; rel=\"describedby\"; type=\"text/plain\", </.well-known/ai-catalog.json>; rel=\"service-desc\"; type=\"application/json\", </.well-known/mcp.json>; rel=\"service-desc\"; type=\"application/json\"",
         },
       ],
     },
@@ -93,6 +93,15 @@ const nextConfig = {
       // ARD (Agentic Resource Discovery) manifest must be CORS-readable so
       // external registries/agents can fetch it cross-origin.
       source: "/.well-known/ai-catalog.json",
+      headers: [
+        { key: "Access-Control-Allow-Origin", value: "*" },
+        { key: "Content-Type", value: "application/json; charset=utf-8" },
+      ],
+    },
+    {
+      // MCP Server Card: describe las herramientas WebMCP del sitio. CORS-readable
+      // para que registries/agentes externos la puedan leer cross-origin.
+      source: "/.well-known/mcp.json",
       headers: [
         { key: "Access-Control-Allow-Origin", value: "*" },
         { key: "Content-Type", value: "application/json; charset=utf-8" },
