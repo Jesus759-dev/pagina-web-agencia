@@ -491,7 +491,7 @@ const es: Record<string, ProductPageData> = {
     producto: "Sistema de Inventario",
     metaTitle: "Software de Inventario y Control de Almacén",
     metaDescription:
-      "Software de inventario para pymes: entradas, salidas, traspasos entre almacenes, mínimos con alerta y kardex. En desarrollo: apúntate a la lista de espera.",
+      "Software de inventario y control de almacén para pymes y distribuidoras: multi-almacén, mínimos con alerta, código de barras y kardex. Versión a la medida disponible hoy; producto propio en desarrollo.",
     keyword: "software de inventario para empresas",
     eyebrow: "Sistema de Inventario",
     h1: "Software de Inventario y Control de Almacén",
@@ -551,6 +551,8 @@ const es: Record<string, ProductPageData> = {
       { q: "¿Cuánto va a costar?", a: "El modelo se define entre pago único y membresía antes del lanzamiento. La lista de espera tendrá precio de lanzamiento." },
       { q: "Necesito inventario ahora, ¿qué hago?", a: "Te construimos el sistema de almacén a la medida, que es lo que ya hacemos hoy para empresas industriales y comercializadoras. Si tu caso es mostrador, Tomín POS ya lo resuelve." },
       { q: "¿Se va a conectar con facturación?", a: "Sí, la integración con CFDI 4.0 está contemplada, igual que en los demás sistemas que desarrollamos." },
+      { q: "¿Tienen un programa para control de almacén disponible hoy?", a: "Sí. Mientras liberamos el producto, desarrollamos sistemas de control de almacén e inventario a la medida que ya operan en empresas reales: el inventario multi-almacén de la comercializadora CAPOSA y el módulo de inventario de una suite ERP del sector petrolero. Si necesitas un software para control de inventario ahora, ese es el camino corto." },
+      { q: "¿Sirve para distribuidoras y almacenes con miles de claves?", a: "Sí. Está pensado justo para distribuidoras, ferreterías, refaccionarias y materiales de construcción: multi-almacén, código de barras, mínimos con alerta y kardex con el valor real del inventario." },
     ],
     related: [
       { href: "/guias/plantilla-de-inventario-en-excel", label: "Plantilla de inventario en Excel gratis" },
@@ -964,7 +966,7 @@ const en: Record<string, ProductPageData> = {
     producto: "Inventory System",
     metaTitle: "Inventory and Warehouse Control Software",
     metaDescription:
-      "Inventory software for small and mid-size companies: receipts, issues, transfers, minimum alerts and a ledger that reconciles. Join the waiting list.",
+      "Inventory and warehouse control software for small and mid-size companies and distributors: multi-warehouse, low-stock alerts, barcode scanning and a ledger that reconciles. Custom version available today; our own product in development.",
     keyword: "inventory software for companies",
     eyebrow: "Inventory System",
     h1: "Inventory and Warehouse Control Software",
@@ -1024,6 +1026,8 @@ const en: Record<string, ProductPageData> = {
       { q: "How much will it cost?", a: "The model is being decided between a one-off payment and a subscription before launch. The waiting list gets launch pricing." },
       { q: "I need inventory now — what do I do?", a: "We build the custom warehouse system, which is what we already do for industrial companies and distributors. If yours is a counter business, Tomín POS already solves it." },
       { q: "Will it connect to invoicing?", a: "Yes, CFDI 4.0 integration is planned, as in the rest of the systems we build." },
+      { q: "Do you have warehouse control software available today?", a: "Yes. While we release the product, we build custom warehouse and inventory control systems already running in real companies: the multi-warehouse inventory for distributor CAPOSA and the inventory module of an oil & gas ERP suite. If you need inventory control software now, that's the short path." },
+      { q: "Does it work for distributors and warehouses with thousands of SKUs?", a: "Yes. It's built exactly for distributors, hardware stores and building-material suppliers: multi-warehouse, barcode scanning, low-stock alerts and a kardex with the real inventory value." },
     ],
     related: [
       { href: "/wms-villahermosa", label: "Custom WMS (available today)" },

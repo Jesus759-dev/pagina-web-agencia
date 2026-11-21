@@ -233,6 +233,8 @@ const es: Record<string, ServicePageData> = {
       { q: "¿Puedo controlar el inventario?", a: "Sí. Cada venta descuenta el stock automáticamente y puedes ver existencias, productos más vendidos y alertas de inventario bajo." },
       { q: "¿Sirve para más de una sucursal?", a: "Sí. Al estar en la nube puedes consultar y administrar varias sucursales desde un mismo lugar y comparar su desempeño." },
       { q: "¿Lo pueden adaptar a mi tipo de negocio?", a: "Sí. Como nosotros lo desarrollamos, lo ajustamos a tu giro: control de mesas, servicios, catálogos específicos y la forma de cobro que uses." },
+      { q: "¿Sirve para restaurante con facturación CFDI 4.0?", a: "Sí. Maneja control de mesas y comandas, y la facturación CFDI 4.0 queda integrada para que emitas la factura al cliente sin salir del punto de venta." },
+      { q: "¿Funciona para papelería, abarrotes o depósito de bebidas?", a: "Sí. Es ideal para papelerías, abarrotes, misceláneas y depósitos: catálogo con miles de claves, código de barras, control de inventario y corte de caja diario." },
     ],
     related: [
       { href: "/productos/software-punto-de-venta", label: "Tomín POS: planes y funciones" },
@@ -1333,6 +1335,8 @@ const en: Record<string, ServicePageData> = {
       { q: "Can I control inventory?", a: "Yes. Every sale deducts stock automatically and you can see stock levels, best-selling products and low-inventory alerts." },
       { q: "Does it work for more than one location?", a: "Yes. Being in the cloud, you can view and manage several locations from one place and compare their performance." },
       { q: "Can you adapt it to my type of business?", a: "Yes. Since we build it, we tailor it to your business: table control, services, specific catalogs and the checkout method you use." },
+      { q: "Does it work for a restaurant with CFDI 4.0 invoicing?", a: "Yes. It handles table and order control, and CFDI 4.0 invoicing is built in so you can bill the customer without leaving the point of sale." },
+      { q: "Does it work for a stationery store, grocery or drink depot?", a: "Yes. It's ideal for stationery stores, grocery stores and depots: a catalog with thousands of SKUs, barcode scanning, inventory control and a daily cash cut." },
     ],
     related: [
       { href: "/desarrollo-de-software-a-medida-villahermosa", label: "Custom software development in Villahermosa" },
