@@ -40,6 +40,12 @@ const nextConfig = {
     { source: "/en/portafolio", destination: "/en#proyectos", permanent: true },
     { source: "/en/projects", destination: "/en#proyectos", permanent: true },
 
+    // Páginas que SOLO existen en español: sus variantes /en/… daban 404 (Google
+    // las tenía de un índice viejo). Se redirigen a la versión en español.
+    { source: "/en/agenda", destination: "/agenda", permanent: true },
+    { source: "/en/aviso-de-privacidad", destination: "/aviso-de-privacidad", permanent: true },
+    { source: "/en/expo", destination: "/expo", permanent: true },
+
     // Variantes que la gente teclea o enlaza y que apuntan a la MISMA
     // intención que una página existente. Se redirigen en vez de crear
     // páginas gemelas que competirían entre sí en Google.

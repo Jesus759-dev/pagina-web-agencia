@@ -32,6 +32,7 @@ export default function Footer({ lang = "es" }: { lang?: Locale }) {
     { href: "/agentes-de-inteligencia-artificial", label: lang === "en" ? "AI agents" : "Agentes de IA" },
     { href: "/diseno-de-paginas-web-villahermosa", label: lang === "en" ? "Web design" : "Páginas web" },
     { href: "/sistema-punto-de-venta-villahermosa", label: lang === "en" ? "Point of sale" : "Punto de venta" },
+    { href: "/sistemas", label: lang === "en" ? "Systems catalog" : "Catálogo de sistemas" },
     { href: `${base}/casos-de-exito`, label: t.footer.cases, absolute: true },
     // Las guías existen solo en español: desde /en también apuntan a /guias.
     { href: "/guias", label: lang === "en" ? "Guides (ES)" : "Guías", absolute: true },

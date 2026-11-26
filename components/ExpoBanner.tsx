@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { trackExpo } from "@/lib/analytics";
 import { captureAttribution, isGoogleAdsVisitor } from "@/lib/leadTracking";
 import { EXPO, cameFromExpo, markExpoVisit } from "@/lib/expo";
-import { getDict, localeBase, type Locale } from "@/lib/i18n";
+import { getDict, type Locale } from "@/lib/i18n";
 
 /**
  * Aviso flotante para quien nos conoció en la expo.
@@ -96,7 +96,7 @@ export default function ExpoBanner({ lang = "es" }: { lang?: Locale }) {
           <p className="m-0 mt-1.5 max-w-[42ch] text-[13.5px] leading-[1.5] text-white/70">{t.bannerText}</p>
 
           <a
-            href={`${localeBase(lang)}${EXPO.path}`}
+            href={EXPO.path}
             onClick={() => trackExpo("expo_banner_click")}
             className="mt-3.5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2.5 text-[14px] font-semibold text-[#0f2a44] no-underline transition-transform duration-200 hover:scale-[1.03] active:scale-95"
           >
