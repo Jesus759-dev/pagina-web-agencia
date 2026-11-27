@@ -6,9 +6,9 @@ import type { Locale } from "@/lib/i18n";
  * texto visible vive aquí en `es` y `en`, nunca hardcodeado en el componente.
  *
  * Nota legal: "monday.com" se nombra solo en texto; no se usa su logo ni sus
- * colores. Las cifras de la calculadora son editables por el visitante y no se
- * afirman precios de monday.com (solo hechos públicos: cobro por usuario,
- * mínimo de 3 usuarios en planes de pago).
+ * colores. Las cifras de Monday en la comparativa y en la calculadora son
+ * ESTIMACIONES con fines comparativos (en MXN), con la nota de consultar su
+ * página oficial; no se presentan como su cotización.
  */
 
 export interface MondayCard {
@@ -22,12 +22,21 @@ export interface MondayCompareRow {
   neurovia: string;
 }
 
-export interface MondayPlan {
+export interface MondayTier {
   tag: string;
   title: string;
   price: string;
+  priceSuffix: string;
+  highlight?: boolean;
+  badge?: string;
   features: string[];
-  note?: string;
+}
+
+export interface MondayPriceRow {
+  users: string;
+  mondayStd: string;
+  mondayPro: string;
+  neurovia: string;
 }
 
 export interface MondayReplaceItem {
@@ -54,7 +63,7 @@ export interface MondayCalc {
   cheaperMondayNote: string;
   cta: string;
   disclaimer: string;
-  /** Referencia de la suscripción mensual de Neurovia (MXN/mes) para comparar. */
+  /** Referencia de la suscripción de Neurovia (plan Operación, MXN/mes) para comparar. */
   neuroviaMonthlyMXN: number;
   defaultPriceUSD: number;
   defaultFx: number;
@@ -79,11 +88,22 @@ export interface MondayData {
   compareRows: MondayCompareRow[];
   compareNote: string;
   calc: MondayCalc;
+  priceCompareTitle: string;
+  priceCompareHead: { users: string; mondayStd: string; mondayPro: string; neurovia: string };
+  priceCompareRows: MondayPriceRow[];
+  priceCompareClosing: string;
+  priceCompareNote: string;
   stepsTitle: string;
   steps: MondayCard[];
-  plansTitle: string;
-  plans: MondayPlan[];
-  plansNote: string;
+  tiersTitle: string;
+  tiersLead: string;
+  tiers: MondayTier[];
+  tiersFootnote: string;
+  oneTimeTitle: string;
+  oneTimePrice: string;
+  oneTimeDesc: string;
+  termsTitle: string;
+  terms: string[];
   replaceTitle: string;
   replace: MondayReplaceItem[];
   faqTitle: string;
@@ -91,7 +111,6 @@ export interface MondayData {
   finalTitle: string;
   finalLead: string;
   ctaAgenda: string;
-  diagnosisCta: string;
 }
 
 const es: MondayData = {
@@ -106,9 +125,9 @@ const es: MondayData = {
   ctaCalc: "Calcula cuánto ahorras",
   ctaWa: "Pregúntanos por WhatsApp",
   heroTrust: [
-    "Migración de tus tableros sin costo",
+    "Precio fijo, usuarios ilimitados",
     "Implementación en 4 a 6 semanas",
-    "Soporte directo con quien programa tu sistema",
+    "Migración incluida con plan anual",
   ],
   problemsTitle: "Por qué las empresas dejan monday.com",
   problems: [
@@ -126,7 +145,7 @@ const es: MondayData = {
     },
   ],
   problemsNote:
-    "No afirmamos precios de monday.com en esta página: su costo por usuario y su mínimo de 3 usuarios en planes de pago son información pública; para tarifas exactas consulta su página oficial.",
+    "No afirmamos precios de monday.com en esta página: su cobro por usuario y su mínimo de 3 usuarios en planes de pago son información pública; para tarifas exactas consulta su página oficial.",
   compareTitle: "monday.com vs. un sistema propio con Neurovia",
   compareHead: { feature: "", monday: "monday.com", neurovia: "Neurovia Systems" },
   compareRows: [
@@ -142,12 +161,12 @@ const es: MondayData = {
   calc: {
     title: "Calcula cuánto ahorras al año",
     intro:
-      "Ajusta los datos a tu caso. El costo de monday.com es un estimado con los valores que tú pongas; no es una cotización oficial de monday.com.",
+      "Ajusta los datos a tu caso. El costo de monday.com es un estimado con los valores que tú pongas; no es una cotización oficial de monday.com. Se compara contra el plan Operación ($2,490/mes).",
     usersLabel: "Número de usuarios",
     priceLabel: "Precio por usuario al mes (USD)",
     fxLabel: "Tipo de cambio (MXN por USD)",
     mondayCostLabel: "Costo anual estimado en monday.com",
-    neuroviaCostLabel: "Costo anual con Neurovia (suscripción)",
+    neuroviaCostLabel: "Costo anual con Neurovia (plan Operación)",
     perYear: "al año",
     saveLabel: "Ahorras",
     minUsersNote: "monday.com cobra un mínimo de 3 usuarios en planes de pago, así que calculamos al menos 3.",
@@ -155,11 +174,23 @@ const es: MondayData = {
       "Con tu equipo actual monday te sale más barato; te convenimos cuando crece tu equipo o necesitas tu propio proceso.",
     cta: "Quiero mi diagnóstico gratis",
     disclaimer: "Estimado con los valores que ingresaste. Los precios reales de monday.com están en su página oficial.",
-    neuroviaMonthlyMXN: 1200,
+    neuroviaMonthlyMXN: 2490,
     defaultPriceUSD: 12,
     defaultFx: 18,
-    defaultUsers: 10,
+    defaultUsers: 15,
   },
+  priceCompareTitle: "Cómo te comparas con monday.com según tu equipo",
+  priceCompareHead: { users: "Usuarios", mondayStd: "monday Estándar*", mondayPro: "monday Pro*", neurovia: "Neurovia Operación" },
+  priceCompareRows: [
+    { users: "5", mondayStd: "$1,200", mondayPro: "$1,900", neurovia: "$2,490" },
+    { users: "10", mondayStd: "$2,400", mondayPro: "$3,800", neurovia: "$2,490" },
+    { users: "20", mondayStd: "$4,800", mondayPro: "$7,600", neurovia: "$2,490" },
+    { users: "30", mondayStd: "$7,200", mondayPro: "$11,400", neurovia: "$2,490" },
+  ],
+  priceCompareClosing:
+    "Hasta unos 10 usuarios cuestas casi lo mismo que monday.com, pero con tu proceso hecho a la medida. Arriba de ahí ahorras miles cada mes: mientras más crece tu equipo, más ahorras.",
+  priceCompareNote:
+    "*Cifras de monday.com en MXN al mes, estimación con fines comparativos (según su cobro por usuario); consulta los precios exactos en su página oficial. El plan Neurovia es precio fijo, usuarios ilimitados, + IVA.",
   stepsTitle: "Cómo funciona la migración",
   steps: [
     { title: "Diagnóstico gratis (20 min)", desc: "Revisamos tus tableros y cómo trabaja tu equipo." },
@@ -167,24 +198,67 @@ const es: MondayData = {
     { title: "Construimos y migramos (4 a 6 semanas)", desc: "Tu sistema con tus datos históricos ya cargados." },
     { title: "Capacitación y arranque", desc: "Tu equipo trabaja desde el día uno y te damos soporte por WhatsApp." },
   ],
-  plansTitle: "Dos formas de contratarlo",
-  plans: [
+  tiersTitle: "Planes: precio fijo, usuarios ilimitados",
+  tiersLead: "Todos los planes son con usuarios ilimitados y precio fijo al mes, más IVA. La migración desde monday.com o Excel va incluida con plan anual.",
+  tiers: [
     {
-      tag: "Opción A",
-      title: "Suscripción mensual",
-      price: "desde $1,200 MXN/mes + IVA",
-      features: ["Usuarios ilimitados", "Hospedaje, respaldos y mejoras", "Soporte por WhatsApp", "Migración incluida"],
-      note: "Precio sugerido; se confirma en el diagnóstico.",
+      tag: "Esencial",
+      title: "Esencial",
+      price: "$1,490",
+      priceSuffix: "/mes + IVA",
+      features: [
+        "Usuarios ilimitados",
+        "1 módulo (CRM o proyectos)",
+        "Automatizaciones básicas",
+        "Tablero general",
+        "Soporte por WhatsApp en horario laboral",
+        "Migración incluida con plan anual",
+      ],
     },
     {
-      tag: "Opción B",
-      title: "Pago único",
-      price: "desde $65,000 MXN + IVA",
-      features: ["El sistema es tuyo", "Mantenimiento opcional", "Migración incluida", "Tu base de datos, exportable"],
-      note: "Mismo precio base publicado en /precios para sistemas de gestión.",
+      tag: "Operación",
+      title: "Operación",
+      price: "$2,490",
+      priceSuffix: "/mes + IVA",
+      highlight: true,
+      badge: "El más elegido",
+      features: [
+        "Usuarios ilimitados",
+        "Hasta 3 módulos (CRM, proyectos, compras/almacén, servicio)",
+        "Automatizaciones ilimitadas",
+        "Tableros por área",
+        "Facturación CFDI 4.0 opcional",
+        "Soporte por WhatsApp prioritario",
+        "Migración incluida con plan anual",
+      ],
+    },
+    {
+      tag: "Empresa",
+      title: "Empresa",
+      price: "$3,990",
+      priceSuffix: "/mes + IVA",
+      features: [
+        "Usuarios ilimitados",
+        "Los módulos que necesites, hechos a tu proceso",
+        "Automatizaciones ilimitadas + avisos por WhatsApp",
+        "Tableros de dirección a la medida",
+        "Facturación CFDI 4.0 incluida",
+        "Asistente con IA incluido",
+        "Soporte prioritario + mejoras mensuales",
+      ],
     },
   ],
-  plansNote: "El precio final depende de los módulos; el diagnóstico es gratis.",
+  tiersFootnote: "Precios de referencia; el plan final se define en el diagnóstico según tus módulos.",
+  oneTimeTitle: "¿Prefieres que el sistema sea tuyo? Pago único",
+  oneTimePrice: "desde $65,000 MXN + IVA",
+  oneTimeDesc:
+    "En vez de suscripción, pagas una vez y el sistema es de tu empresa, con tu base de datos. El mantenimiento es opcional. Mismo precio base que publicamos en /precios para sistemas de gestión.",
+  termsTitle: "Para que te quede claro",
+  terms: [
+    "Con plan anual, la migración e implementación van gratis: recuperas tu inversión en el año.",
+    "Con plan mensual sin plazo, la implementación se cobra desde $8,000.",
+    "Los cambios a la medida fuera de los módulos de tu plan se cotizan aparte.",
+  ],
   replaceTitle: "Qué podemos reemplazar de monday.com",
   replace: [
     { label: "CRM y embudo de ventas", href: "/crm-a-medida-villahermosa" },
@@ -200,13 +274,12 @@ const es: MondayData = {
     { q: "¿Cuánto tarda la migración?", a: "Normalmente de 4 a 6 semanas, según el número de módulos." },
     { q: "¿Puedo seguir usando monday mientras tanto?", a: "Sí. Lo usas hasta que el sistema nuevo esté listo y probado." },
     { q: "¿Está en la nube?", a: "Sí. Entras desde cualquier navegador y desde el celular." },
-    { q: "¿Puede facturar CFDI 4.0?", a: "Sí, se puede integrar facturación electrónica." },
+    { q: "¿Puede facturar CFDI 4.0?", a: "Sí, se puede integrar facturación electrónica (opcional en el plan Operación, incluida en Empresa)." },
     { q: "¿Y si solo uso monday para una lista de pendientes?", a: "Entonces probablemente no te convenga un sistema propio. Somos la opción cuando monday ya es donde opera tu empresa." },
   ],
   finalTitle: "Deja de pagar por cada persona que contratas.",
   finalLead: "Te decimos con números si te conviene migrar. El diagnóstico es gratis y sin compromiso.",
   ctaAgenda: "Agenda tu diagnóstico gratis",
-  diagnosisCta: "Quiero mi diagnóstico gratis",
 };
 
 const en: MondayData = {
@@ -221,9 +294,9 @@ const en: MondayData = {
   ctaCalc: "Calculate your savings",
   ctaWa: "Ask us on WhatsApp",
   heroTrust: [
-    "Board migration at no cost",
+    "Flat price, unlimited users",
     "Live in 4 to 6 weeks",
-    "Direct support with whoever builds your system",
+    "Migration included with an annual plan",
   ],
   problemsTitle: "Why companies leave monday.com",
   problems: [
@@ -257,12 +330,12 @@ const en: MondayData = {
   calc: {
     title: "Calculate your yearly savings",
     intro:
-      "Adjust the figures to your case. The monday.com cost is an estimate from the values you enter; it is not an official monday.com quote.",
+      "Adjust the figures to your case. The monday.com cost is an estimate from the values you enter; it is not an official monday.com quote. It compares against the Operación plan (MXN $2,490/mo).",
     usersLabel: "Number of users",
     priceLabel: "Price per user per month (USD)",
     fxLabel: "Exchange rate (MXN per USD)",
     mondayCostLabel: "Estimated yearly cost on monday.com",
-    neuroviaCostLabel: "Yearly cost with Neurovia (subscription)",
+    neuroviaCostLabel: "Yearly cost with Neurovia (Operación plan)",
     perYear: "per year",
     saveLabel: "You save",
     minUsersNote: "monday.com charges a 3-user minimum on paid plans, so we compute at least 3.",
@@ -270,11 +343,23 @@ const en: MondayData = {
       "With your current team monday is cheaper; we become the better option as your team grows or when you need your own process.",
     cta: "I want my free assessment",
     disclaimer: "Estimate from the values you entered. monday.com's real prices are on their official site.",
-    neuroviaMonthlyMXN: 1200,
+    neuroviaMonthlyMXN: 2490,
     defaultPriceUSD: 12,
     defaultFx: 18,
-    defaultUsers: 10,
+    defaultUsers: 15,
   },
+  priceCompareTitle: "How you compare with monday.com as your team grows",
+  priceCompareHead: { users: "Users", mondayStd: "monday Standard*", mondayPro: "monday Pro*", neurovia: "Neurovia Operación" },
+  priceCompareRows: [
+    { users: "5", mondayStd: "$1,200", mondayPro: "$1,900", neurovia: "$2,490" },
+    { users: "10", mondayStd: "$2,400", mondayPro: "$3,800", neurovia: "$2,490" },
+    { users: "20", mondayStd: "$4,800", mondayPro: "$7,600", neurovia: "$2,490" },
+    { users: "30", mondayStd: "$7,200", mondayPro: "$11,400", neurovia: "$2,490" },
+  ],
+  priceCompareClosing:
+    "Up to about 10 users you pay almost the same as monday.com, but with your process built to measure. Above that you save thousands every month: the more your team grows, the more you save.",
+  priceCompareNote:
+    "*monday.com figures in MXN per month, an estimate for comparison (based on their per-user pricing); check exact prices on their official site. The Neurovia plan is a flat price, unlimited users, + VAT.",
   stepsTitle: "How the migration works",
   steps: [
     { title: "Free assessment (20 min)", desc: "We review your boards and how your team works." },
@@ -282,24 +367,67 @@ const en: MondayData = {
     { title: "We build and migrate (4 to 6 weeks)", desc: "Your system with your historical data already loaded." },
     { title: "Training and go-live", desc: "Your team works from day one and we support you over WhatsApp." },
   ],
-  plansTitle: "Two ways to get it",
-  plans: [
+  tiersTitle: "Plans: flat price, unlimited users",
+  tiersLead: "Every plan has unlimited users and a flat monthly price, plus VAT. Migration from monday.com or Excel is included with an annual plan.",
+  tiers: [
     {
-      tag: "Option A",
-      title: "Monthly subscription",
-      price: "from MXN $1,200/mo + VAT",
-      features: ["Unlimited users", "Hosting, backups and improvements", "WhatsApp support", "Migration included"],
-      note: "Suggested price; confirmed in the assessment.",
+      tag: "Essential",
+      title: "Essential",
+      price: "$1,490",
+      priceSuffix: "/mo + VAT",
+      features: [
+        "Unlimited users",
+        "1 module (CRM or projects)",
+        "Basic automations",
+        "General dashboard",
+        "WhatsApp support in business hours",
+        "Migration included with an annual plan",
+      ],
     },
     {
-      tag: "Option B",
-      title: "One-time payment",
-      price: "from MXN $65,000 + VAT",
-      features: ["The system is yours", "Optional maintenance", "Migration included", "Your database, exportable"],
-      note: "Same base price published on /precios for management systems.",
+      tag: "Operation",
+      title: "Operation",
+      price: "$2,490",
+      priceSuffix: "/mo + VAT",
+      highlight: true,
+      badge: "Most popular",
+      features: [
+        "Unlimited users",
+        "Up to 3 modules (CRM, projects, purchasing/warehouse, service)",
+        "Unlimited automations",
+        "Dashboards per area",
+        "Optional CFDI 4.0 invoicing",
+        "Priority WhatsApp support",
+        "Migration included with an annual plan",
+      ],
+    },
+    {
+      tag: "Enterprise",
+      title: "Enterprise",
+      price: "$3,990",
+      priceSuffix: "/mo + VAT",
+      features: [
+        "Unlimited users",
+        "Whatever modules you need, built for your process",
+        "Unlimited automations + WhatsApp alerts",
+        "Custom management dashboards",
+        "CFDI 4.0 invoicing included",
+        "AI assistant included",
+        "Priority support + monthly improvements",
+      ],
     },
   ],
-  plansNote: "The final price depends on the modules; the assessment is free.",
+  tiersFootnote: "Reference prices; the final plan is defined in the assessment based on your modules.",
+  oneTimeTitle: "Prefer the system to be yours? One-time payment",
+  oneTimePrice: "from MXN $65,000 + VAT",
+  oneTimeDesc:
+    "Instead of a subscription, you pay once and the system belongs to your company, with your database. Maintenance is optional. Same base price we publish on /precios for management systems.",
+  termsTitle: "So it's clear",
+  terms: [
+    "With an annual plan, migration and setup are free: you recover your investment within the year.",
+    "With a no-commitment monthly plan, setup is charged from $8,000.",
+    "Custom changes outside your plan's modules are quoted separately.",
+  ],
   replaceTitle: "What we can replace from monday.com",
   replace: [
     { label: "CRM and sales pipeline", href: "/crm-a-medida-villahermosa" },
@@ -315,13 +443,12 @@ const en: MondayData = {
     { q: "How long does the migration take?", a: "Usually 4 to 6 weeks, depending on the number of modules." },
     { q: "Can I keep using monday meanwhile?", a: "Yes. You use it until the new system is ready and tested." },
     { q: "Is it in the cloud?", a: "Yes. You log in from any browser and from your phone." },
-    { q: "Can it issue CFDI 4.0 invoices?", a: "Yes, electronic invoicing can be integrated." },
+    { q: "Can it issue CFDI 4.0 invoices?", a: "Yes, electronic invoicing can be integrated (optional on Operation, included on Enterprise)." },
     { q: "What if I only use monday for a to-do list?", a: "Then a custom system probably isn't worth it for you. We're the option when monday is already where your company operates." },
   ],
   finalTitle: "Stop paying for every person you hire.",
   finalLead: "We'll tell you in numbers whether migrating is worth it. The assessment is free and with no commitment.",
   ctaAgenda: "Book your free assessment",
-  diagnosisCta: "I want my free assessment",
 };
 
 export function getMonday(lang: Locale): MondayData {
