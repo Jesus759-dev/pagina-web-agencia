@@ -173,6 +173,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
+      url: `${BASE}/alternativa-a-monday`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+      alternates: {
+        languages: {
+          es: `${BASE}/alternativa-a-monday`,
+          en: `${BASE}/en/alternativa-a-monday`,
+        },
+      },
+    },
+    {
+      url: `${BASE}/en/alternativa-a-monday`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: {
+        languages: {
+          es: `${BASE}/alternativa-a-monday`,
+          en: `${BASE}/en/alternativa-a-monday`,
+        },
+      },
+    },
+    {
       url: `${BASE}/casos-de-exito`,
       lastModified: now,
       changeFrequency: "monthly",

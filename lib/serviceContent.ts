@@ -721,6 +721,7 @@ const es: Record<string, ServicePageData> = {
       { href: "/agentes-de-inteligencia-artificial", label: "Agentes de IA que atienden WhatsApp" },
       { href: "/erp-a-medida-villahermosa", label: "ERP a la medida en Villahermosa" },
       { href: "/sistemas-empresariales-tabasco", label: "Sistemas empresariales en Tabasco" },
+      { href: "/alternativa-a-monday", label: "Alternativa a monday.com en México" },
     ],
   },
 
@@ -1821,6 +1822,7 @@ const en: Record<string, ServicePageData> = {
       { href: "/agentes-de-inteligencia-artificial", label: "AI agents that answer WhatsApp" },
       { href: "/erp-a-medida-villahermosa", label: "Custom ERP in Villahermosa" },
       { href: "/sistemas-empresariales-tabasco", label: "Business systems in Tabasco" },
+      { href: "/alternativa-a-monday", label: "monday.com alternative in Mexico" },
     ],
   },
 

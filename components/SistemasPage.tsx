@@ -26,6 +26,7 @@ export default function SistemasPage({ lang = "es" }: { lang?: Locale }) {
     { href: "/crm-a-medida-villahermosa", label: lang === "en" ? "Custom CRM" : "CRM a la medida" },
     { href: "/wms-villahermosa", label: lang === "en" ? "WMS and inventory" : "WMS e inventario" },
     { href: "/sistema-punto-de-venta-villahermosa", label: lang === "en" ? "Point of sale" : "Punto de venta" },
+    { href: "/alternativa-a-monday", label: lang === "en" ? "monday.com alternative" : "Alternativa a monday.com" },
     { href: "/casos-de-exito", label: lang === "en" ? "Case studies" : "Casos de éxito" },
   ];
 

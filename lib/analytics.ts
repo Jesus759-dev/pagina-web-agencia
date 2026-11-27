@@ -110,6 +110,11 @@ export function trackExpo(name: "expo_banner_click" | "expo_page_view" | "expo_d
   gtag("event", name);
 }
 
+/** Uso de la calculadora de ahorro (landing monday). Evento SECUNDARIO, no conversión. */
+export function trackCalculator(): void {
+  gtag("event", "calculator_use");
+}
+
 /** Meta Pixel PageView — usado por el listener de rutas (navegación SPA). */
 export function trackPageView(): void {
   fbq("track", "PageView");

@@ -88,7 +88,7 @@ export const CALENDLY_URL = process.env.NEXT_PUBLIC_CALENDLY_URL ?? "";
  * Where a WhatsApp CTA lives. The prefilled message depends on it so the
  * visitor never lands on an empty chat box.
  */
-export type WaContext = "general" | "float" | "pos" | "custom" | "inventario" | "agenda" | "expo";
+export type WaContext = "general" | "float" | "pos" | "custom" | "inventario" | "agenda" | "expo" | "monday";
 
 export const WA_MESSAGES: Record<Locale, Record<WaContext, string>> = {
   es: {
@@ -99,6 +99,7 @@ export const WA_MESSAGES: Record<Locale, Record<WaContext, string>> = {
     inventario: "Hola, quiero cotizar un sistema de inventario. ¿Me pueden dar informes?",
     agenda: "Hola, quiero agendar una llamada para platicar de un proyecto. ¿Qué horarios tienen?",
     expo: "Hola, los vi en la Expo Construcción Villahermosa. Quiero ver cómo aplicaría un sistema en mi obra o mi empresa.",
+    monday: "Hola, uso monday.com y quiero saber cuánto costaría pasarme a un sistema propio.",
   },
   en: {
     general: "Hi, I'd like a quote for a system for my business. Can you send me details?",
@@ -108,6 +109,7 @@ export const WA_MESSAGES: Record<Locale, Record<WaContext, string>> = {
     inventario: "Hi, I'd like a quote for an inventory system. Can you send me details?",
     agenda: "Hi, I'd like to book a call to talk about a project. What times do you have available?",
     expo: "Hi, I saw you at the Expo Construcción in Villahermosa. I'd like to see how a system would work for my company.",
+    monday: "Hi, I use monday.com and I'd like to know how much it would cost to move to my own system.",
   },
 };
 
